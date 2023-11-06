@@ -1,0 +1,136 @@
+{% extends 'panel.html' %}
+{% block title %}Projects{% endblock %}
+{% block content %}
+{% load static %}
+{% if user.is_authenticated %}
+
+<div class='row mt-4 mb-4'>
+	<div class='col-4'>
+		<div class='sections-small h-100'>
+			<i class="fa-solid fa-plus">
+				<a onclick="window.location.href='{% url 'project-calendar' year month2 %}'">
+					Add Event
+				</a>
+			</i>
+			<div class='row mt-4 mb-4'>
+				<div class='col-12'>
+					<h1 class='h1-1 text-center'>
+						Soft Subversion Calendar
+					</h1>
+				</div>
+				<div class='col-4 text-center'>
+					{% if month0 == 'December' %}
+					<i class="fa-solid fa-arrow-left" onclick="window.location.href='{% url 'project-calendar' last_year month0 %}'"></i>
+					{% else %}
+					<i class="fa-solid fa-arrow-left" onclick="window.location.href='{% url 'project-calendar' year month0 %}'"></i>
+					{% endif%}
+				</div>
+				<div class='col-4 text-center'>
+					<h1 class='nums'>
+						 {{cal_date|date:"M Y"}}
+					</h1>
+
+				</div>
+				<div class='col-4 text-center'>
+					{% if month2 == 'January' %}
+					<i class="fa-solid fa-arrow-right" onclick="window.location.href='{% url 'project-calendar' next_year month2 %}'"></i>
+					{% else %}
+					<i class="fa-solid fa-arrow-right" onclick="window.location.href='{% url 'project-calendar' year month2 %}'"></i>
+					{% endif%}
+				</div>
+			</div>
+		
+			<h1 class='h1-1 text-center'>Selected Events</h1>
+			<hr>
+			<div class="overflow-auto sections-2"  style='max-height:40vh'>
+				{% for event in event_list %}
+				<div class="collapse w-100" id="{{ event.date|date:"M-d-Y"|slugify }}"> 
+					<div class="inv-card mt-4 mb-4">
+						<div class='inv-card-content'>
+
+							<h1 class='h1-1'>{{ event.title|title }}</h1> 
+
+							<hr>
+							<p class='p-p'>Client: {{ event.project_id.user_id.first_name|title}} {{ event.project_id.user_id.last_name|title}}</p>
+							<p class='p-p'>Date: {{ event.date|date:"Y-M-d"|title}}</p>
+							<p class='p-p'>Start: {{ event.start}} To {{ event.end}} </p> 
+							<button class='btn-cust' onclick="window.location.href='{% url 'project-event' event.id %}'">
+								Event Details
+							</button>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<div class='col-8'>
+		<div class='sections-small'>
+			<div class="big-cal">
+
+				<div class="day_name">Mon</div>
+				<div class="day_name">Tue</div>
+				<div class="day_name">Wed</div>
+				<div class="day_name">Thu</div>
+				<div class="day_name">Fri</div>
+				<div class="day_name">Sat</div>
+				<div class="day_name">Sun</div>
+
+				<div class="day"><div class="{% if cal.week1.Mon.day > 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week1.Mon.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week1.Mon.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d" == cal.week1.Mon.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %} ></div></div></div>
+				<div class="day"><div class="{% if cal.week1.Tue.day > 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week1.Tue.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week1.Tue.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d" == cal.week1.Tue.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %} ></div></div></div>
+				<div class="day"><div class="{% if cal.week1.Wed.day > 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week1.Wed.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week1.Wed.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d" == cal.week1.Wed.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %} ></div></div></div>
+				<div class="day"><div class="{% if cal.week1.Thu.day > 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week1.Thu.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week1.Thu.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d" == cal.week1.Thu.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %} ></div></div></div>
+				<div class="day"><div class="{% if cal.week1.Fri.day > 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week1.Fri.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week1.Fri.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d" == cal.week1.Fri.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %} ></div></div></div>
+				<div class="day"><div class="{% if cal.week1.Sat.day > 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week1.Sat.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week1.Sat.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d" == cal.week1.Sat.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %} ></div></div></div>
+				<div class="day"><div class="{% if cal.week1.Sun.day > 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week1.Sun.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week1.Sun.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d" == cal.week1.Sun.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %} ></div></div></div>
+  
+				<div class="day"><div class="{% if cal.week2.Mon.day > 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week2.Mon.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week2.Mon.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d" == cal.week2.Mon.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %} ></div></div></div>
+				<div class="day"><div class="{% if cal.week2.Tue.day > 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week2.Tue.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week2.Tue.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d" == cal.week2.Tue.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %} ></div></div></div>
+				<div class="day"><div class="{% if cal.week2.Wed.day > 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week2.Wed.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week2.Wed.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d" == cal.week2.Wed.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %} ></div></div></div>
+				<div class="day"><div class="{% if cal.week2.Thu.day > 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week2.Thu.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week2.Thu.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d" == cal.week2.Thu.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %} ></div></div></div>
+				<div class="day"><div class="{% if cal.week2.Fri.day > 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week2.Fri.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week2.Fri.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d" == cal.week2.Fri.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %} ></div></div></div>
+				<div class="day"><div class="{% if cal.week2.Sat.day > 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week2.Sat.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week2.Sat.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d" == cal.week2.Sat.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %} ></div></div></div>
+				<div class="day"><div class="{% if cal.week2.Sun.day > 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week2.Sun.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week2.Sun.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d" == cal.week2.Sun.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %} ></div></div></div>
+ 
+				<div class="day"><div class="day-box" data-bs-toggle="collapse" data-bs-target="#{{ cal.week3.Mon.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week3.Mon.day }}</p> <div {% for event in event_list %} {% if event.date|date:"Y-m-d" == cal.week3.Mon.date|date:"Y-m-d" %} class="event-tag"{% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="day-box" data-bs-toggle="collapse" data-bs-target="#{{ cal.week3.Tue.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week3.Tue.day }}</p> <div {% for event in event_list %} {% if event.date|date:"Y-m-d" == cal.week3.Tue.date|date:"Y-m-d" %} class="event-tag"{% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="day-box" data-bs-toggle="collapse" data-bs-target="#{{ cal.week3.Wed.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week3.Wed.day }}</p> <div {% for event in event_list %} {% if event.date|date:"Y-m-d" == cal.week3.Wed.date|date:"Y-m-d" %} class="event-tag"{% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="day-box" data-bs-toggle="collapse" data-bs-target="#{{ cal.week3.Thu.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week3.Thu.day }}</p> <div {% for event in event_list %} {% if event.date|date:"Y-m-d" == cal.week3.Thu.date|date:"Y-m-d" %} class="event-tag"{% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="day-box" data-bs-toggle="collapse" data-bs-target="#{{ cal.week3.Fri.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week3.Fri.day }}</p> <div {% for event in event_list %} {% if event.date|date:"Y-m-d" == cal.week3.Fri.date|date:"Y-m-d" %} class="event-tag"{% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="day-box" data-bs-toggle="collapse" data-bs-target="#{{ cal.week3.Sat.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week3.Sat.day }}</p> <div {% for event in event_list %} {% if event.date|date:"Y-m-d" == cal.week3.Sat.date|date:"Y-m-d" %} class="event-tag"{% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="day-box" data-bs-toggle="collapse" data-bs-target="#{{ cal.week3.Sun.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week3.Sun.day }}</p> <div {% for event in event_list %} {% if event.date|date:"Y-m-d" == cal.week3.Sun.date|date:"Y-m-d" %} class="event-tag"{% endif %}{% endfor %}></div></div></div>
+ 
+				<div class="day"><div class="day-box" data-bs-toggle="collapse" data-bs-target="#{{ cal.week4.Mon.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week4.Mon.day }}</p> <div {% for event in event_list %} {% if event.date|date:"Y-m-d" == cal.week4.Mon.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="day-box" data-bs-toggle="collapse" data-bs-target="#{{ cal.week4.Tue.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week4.Tue.day }}</p> <div {% for event in event_list %} {% if event.date|date:"Y-m-d" == cal.week4.Tue.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="day-box" data-bs-toggle="collapse" data-bs-target="#{{ cal.week4.Wed.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week4.Wed.day }}</p> <div {% for event in event_list %} {% if event.date|date:"Y-m-d" == cal.week4.Wed.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="day-box" data-bs-toggle="collapse" data-bs-target="#{{ cal.week4.Thu.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week4.Thu.day }}</p> <div {% for event in event_list %} {% if event.date|date:"Y-m-d" == cal.week4.Thu.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="day-box" data-bs-toggle="collapse" data-bs-target="#{{ cal.week4.Fri.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week4.Fri.day }}</p> <div {% for event in event_list %} {% if event.date|date:"Y-m-d" == cal.week4.Fri.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="day-box" data-bs-toggle="collapse" data-bs-target="#{{ cal.week4.Sat.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week4.Sat.day }}</p> <div {% for event in event_list %} {% if event.date|date:"Y-m-d" == cal.week4.Sat.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="day-box" data-bs-toggle="collapse" data-bs-target="#{{ cal.week4.Sun.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week4.Sun.day }}</p> <div {% for event in event_list %} {% if event.date|date:"Y-m-d" == cal.week4.Sun.date|date:"Y-m-d" %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+
+				<div class="day"><div class="{% if cal.week5.Mon.day < 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week5.Mon.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week5.Mon.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d"  == cal.week5.Mon.date|date:"Y-m-d"  %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="{% if cal.week5.Tue.day < 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week5.Tue.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week5.Tue.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d"  == cal.week5.Tue.date|date:"Y-m-d"  %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="{% if cal.week5.Wed.day < 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week5.Wed.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week5.Wed.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d"  == cal.week5.Wed.date|date:"Y-m-d"  %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="{% if cal.week5.Thu.day < 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week5.Thu.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week5.Thu.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d"  == cal.week5.Thu.date|date:"Y-m-d"  %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="{% if cal.week5.Fri.day < 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week5.Fri.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week5.Fri.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d"  == cal.week5.Fri.date|date:"Y-m-d"  %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="{% if cal.week5.Sat.day < 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week5.Sat.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week5.Sat.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d"  == cal.week5.Sat.date|date:"Y-m-d"  %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="{% if cal.week5.Sun.day < 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week5.Sun.date|date:"M-d-Y"|slugify }}" role="button" ><p class='p-p'>{{ cal.week5.Sun.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d"  == cal.week5.Sun.date|date:"Y-m-d"  %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+ 
+				<div class="day"><div class="{% if cal.week6.Mon.day < 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week6.Mon.date|date:"M-d-Y"|slugify }}" role="button"><p class='p-p'>{{ cal.week6.Mon.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d"  == cal.week6.Mon.date|date:"Y-m-d"  %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="{% if cal.week6.Tue.day < 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week6.Tue.date|date:"M-d-Y"|slugify }}" role="button"><p class='p-p'>{{ cal.week6.Tue.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d"  == cal.week6.Tue.date|date:"Y-m-d"  %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="{% if cal.week6.Wed.day < 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week6.Wed.date|date:"M-d-Y"|slugify }}" role="button"><p class='p-p'>{{ cal.week6.Wed.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d"  == cal.week6.Wed.date|date:"Y-m-d"  %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="{% if cal.week6.Thu.day < 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week6.Thu.date|date:"M-d-Y"|slugify }}" role="button"><p class='p-p'>{{ cal.week6.Thu.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d"  == cal.week6.Thu.date|date:"Y-m-d"  %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="{% if cal.week6.Fri.day < 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week6.Fri.date|date:"M-d-Y"|slugify }}" role="button"><p class='p-p'>{{ cal.week6.Fri.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d"  == cal.week6.Fri.date|date:"Y-m-d"  %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="{% if cal.week6.Sat.day < 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week6.Sat.date|date:"M-d-Y"|slugify }}" role="button"><p class='p-p'>{{ cal.week6.Sat.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d"  == cal.week6.Sat.date|date:"Y-m-d"  %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+				<div class="day"><div class="{% if cal.week6.Sun.day < 20 %} day-tail {% else %} day-box {% endif %}" data-bs-toggle="collapse" data-bs-target="#{{ cal.week6.Sun.date|date:"M-d-Y"|slugify }}" role="button"><p class='p-p'>{{ cal.week6.Sun.day }}</p><div {% for event in event_list %}{% if event.date|date:"Y-m-d"  == cal.week6.Sun.date|date:"Y-m-d"  %} class="event-tag" {% endif %}{% endfor %}></div></div></div>
+ 
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'panel.html' %}
+{% block title %}New Project Event{% endblock %}
+{% block content %}
+
+
+
+{% if user.is_authenticated %}
+
+
+    <div class="sections p-p form-fit h-100 form-group">
+        <h1 class='h1-1'>Add New Event</h1>
+        <p class='p-p'> </p>
+        <hr>
+        <form method=POST enctype="multipart/form-data">
+            <div class='sections-2'>
+                {% csrf_token %}
+                <div class='row'>
+                    <div class='col-12'>
+                        <label for="id_title">Title:</label>
+                        <input class='form-control' type="text" name="title" maxlength="255" required="" id="id_title">
+                    </div>
+                    <div class='col-12'>
+                        <label for="id_project_id">Project id:</label>
+                        <select class='form-control' name="project_id" required="" id="id_project_id">
+                            <option>----------</option>
+                            {% for projects in project %}
+                                {% if projects %}
+                                <option value="{{ projects.id }}">{{ projects|title }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class='col-4'>
+                        <label for="id_date">Date:</label>
+                        <input class='form-control' type="date" name="date" required="" id="id_date">
+                    </div>
+
+                    <div class='col-4'>
+                        <label for="id_start">Start:</label>
+                        <input class='form-control' type="time" name="start" id="id_start">
+                    </div>
+
+                    <div class='col-4'>
+                        <label for="id_end">End:</label>
+                        <input class='form-control' type="time" name="end" id="id_end">
+                    </div>
+
+                    <div class='col-12'>
+                        <label for="id_event_type">Event type:</label>
+                        <select class='form-control' type="select" name="event_type" maxlength="50" id="id_event_type">
+                            <option value="Consultation ">Consultation</option>
+                            <option value="Timed Session">Timed Session</option>
+                            <option value="All-Day Session">All-Day Session</option>
+                        </select>
+                    </div>
+
+                    <div class='col-12'>
+                    
+                        <label for="id_details">Details:</label>
+                        <textarea 
+                        class='form-control'
+                        rows='6'
+                        name="details" 
+                        maxlength="500" 
+                        id="id_details"></textarea>
+                    </div>
+                </div>  
+            </div>  
+            <div class='col-12'>
+                <button class="btn-cust">
+                    Add
+                </button>
+            </div>  
+        </form>
+    </div>
+
+
+
+{% endif %}
+
+{% endblock %}

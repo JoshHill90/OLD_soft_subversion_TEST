@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  web:
+    tty: true
+    build: .
+    volumes:
+      - .:/code
+      - dockVert:/code
+    command: python ./GalleryProject/manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+      - "3306:3306"
+
+
+volumes:
+  dockVert:
+
+
+
+

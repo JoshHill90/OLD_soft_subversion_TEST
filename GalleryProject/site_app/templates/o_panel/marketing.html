@@ -1,0 +1,41 @@
+
+{% extends 'panel.html' %}
+{% block title %}O | Marketing{% endblock %}
+{% block content %}
+{% load static %}
+<div class='row mt-4 mb-4'>
+	<div class='col-6 col-md-4 h-100'>
+		<div class='section-small'>
+			<h1 class='h1-1'>
+				Total Images Stored
+			</h1>
+			<hr>
+		</div>
+	</div>
+	<div class='col-6 col-md-4 h-100'>
+		<div class='section-small'>
+			<h1 class='h1-1'>
+				Total Objects Stored
+			</h1>
+			<hr>
+		</div>
+	</div>
+	<div class='col-6 col-md-4 h-100'>
+		<div class='section-small'>
+			<h1 class='h1-1'>
+				YTD Earnings
+			</h1>
+			<hr>
+		</div>
+	</div>
+</div>
+
+
+
+<div class='row mt-4 mb-4'>
+</div>
+
+
+<script src={% static 'js/graphs.js' %}></script>
+
+{% endblock %}

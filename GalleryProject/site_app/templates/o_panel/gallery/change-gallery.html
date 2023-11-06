@@ -1,0 +1,178 @@
+
+{% extends 'panel.html' %}
+{% block title %}O | {{ gal }} Gallery{% endblock %}
+{% block content %}
+{% load static %}
+<div class='row mt-4 mb-4'>
+	<div class='col-12'>
+		<div class='section-small'>
+
+			<h1 class='h1-1 text-center'>{{ gal| title}} Gallery</h1>
+			
+			{% for image in current_list %}
+			
+			<div class="mini-Slides text-center">
+				<div class="numbertext">Image Gallery #{{ forloop.counter }}</div>
+				<img style="max-height:60vh" src="{{ image.image_link }}">
+			</div>
+		
+			{% endfor %}
+
+			<div class="caption-container text-center">
+				<p id="caption"></p>
+			
+				<a class="prev-mini" onclick="plusSlides(-1)"><i class="fa-solid fa-circle-arrow-left fa-2xl icon-color"></i></a>
+
+				<a class="next-mini" onclick="plusSlides(1)"><i class="fa-solid fa-circle-arrow-right fa-2xl icon-color"></i></a>
+			</div>
+			
+			<div class='overflow-auto text-center max-scroll'>
+				<div 'img-box-gall-sm'>
+					<div class="row" style='width:80vw;'>
+						{% for image in current_list %}
+						<div class="col">
+							
+							<img load='lazy'
+							class="demo mt-4 mb-4  cursor-mini" 
+							src="{{ image.image_link }}" 
+							style="height:10vh" 
+							onclick="currentSlide({{ forloop.counter }})" 
+							alt="Image ID: {{image.id}}"
+							>
+						</div>
+						{% endfor %}
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<hr>
+	<div class='col-12 mt-4 mb-4'>
+		<div class='section-med'>
+			<h1 class='h1-1 mb-2'>Client Search and Filter</h1>
+			<form method="GET" action="." class='form-group'>
+				<div class='row'>
+					<div class='col-12 mb-2'>
+						<input class="form-control" list="project-list" type="search" name="project" placeholder="Project">
+						<datalist id="project-list">
+						{% for project in project_list %}
+							<option value="{{ project.name }}"></option>
+						{% endfor %}
+						</datalist>
+					</div>
+					<div class='col-12 mb-2'>
+						<input class="form-control" 
+						list="client-list" 
+						type="search" 
+						name="client" 
+						placeholder="Client"
+						>
+						<datalist id="client-list">
+						{% for client in client_info %}
+							<option value="{{ client.client_details.client }}"></option>
+						{% endfor %}
+						</datalist>
+					</div>
+				</div>
+				<div class='row'>
+					<div class="col-6 col-md-2 mt-4">
+						<select class="form-select" type="select" name="order">
+							<option value="Newest">Newest</option>
+							<option value="Oldest">Oldest</option>
+						</select>
+					</div>                
+					<div class="col-6">
+						<button type="submit" class="btn-cust btn-cust-color mt-4">Search</button>
+					</div>
+				</div>
+			</form>
+			<div class="row" >
+				<div class='col-12 mt-4'>
+					<div class='row'>
+						<div class='col'>
+							<p class="p-p">
+								Select All 
+								<input class="form-check-input text-center" type="checkbox" value="" id="selectAll">
+							</p>
+						</div>
+
+						<div class='col'>
+							<p class="p-p">
+								Image Title: 
+							</p>
+						</div>
+						<div class='col'>
+							<p class="p-p">
+								Image ID: 
+							</p>
+						</div>
+						<div class='col'>
+							<p class="p-p">
+								Projet Name: 
+							</p>
+						</div>
+						<div class='col'>
+							<p class="p-p">
+								Image: 
+							</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class='overflow-auto max-scroll'>
+				<div class="row" style='width:80vw;'>
+					{% for image in all_images %}
+					<div class="col-12 mb-4 text-center">
+						<div class="row">
+							<div class="col">
+								<p class='p-p'>
+									Include: 
+									<input class="form-check-input text-center" type="checkbox" value="" id="selectAll">
+								</p>
+							</div>
+							<div class="col">
+								<p class='p-p'>
+									{{ image.title|title }} 
+								</p>
+							</div>
+							<div class="col">
+								<p class='p-p'>
+									{{ image.id }}
+								</p>
+							</div>
+							<div class="col">
+								<p class='p-p'>
+									{{ image.project_id|title}}
+								</p>
+							</div>
+							<div class="col">
+								<img load='lazy' 
+								src="{{ image.image_link }}" 
+								style="height:10vh"
+								>
+							</div>
+						</div>
+					
+					</div>
+					<hr>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	
+	</div>
+
+
+</div>
+
+<div class='row mt-4 mb-4'>
+</div>
+
+
+<script src={% static 'js/mini_gallery.js' %}></script>
+
+{% endblock %}

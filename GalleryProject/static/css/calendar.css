@@ -1,0 +1,161 @@
+/* --------------------------------
+calendar
+--------------------------------*/
+
+.big-cal {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* Create 7 evenly spaced columns */
+  grid-gap: 10px;
+}
+
+.day_name {
+  position: relative;
+  text-align: center; 
+  width: 100%;
+  height: 50%;
+}
+
+.day {
+  text-align: center; 
+  width: 100%;
+  height: 10vh;
+  border-radius: 20px;
+  padding: 1px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  background-image:var(--lingrand-bar);
+  z-index: 2;
+}
+
+.day-box {
+  background: var(--bg-color-secondary);
+  background-image: var(--bg-color-secondary);
+  border-radius: 15px;
+  width: 100%;
+  height: 95%; 
+  position: relative;
+}
+.day-box:active {
+  background-color: #7b2be47a;
+  background-image: none;
+}
+
+.event-tag {
+
+  width: 20px;
+  height: 20px;
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #2be4c8 0%, #7933FC 100%);
+  border-radius: 50%;
+  margin-left: 2.5rem;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.sm-event-tag {
+  position: absolute;
+  border-radius: 50%;
+  animation: pulse 3s ease-in-out infinite;
+  left: 30%;
+  top: 50%;
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #2be4c8 0%, #7933FC 100%);
+  width: 20px;
+  height: 20px;
+}
+
+.event-tag:nth-child(1),
+.sm-event-tag:nth-child(1){
+  animation-delay: .9s;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #d0d309 0%, #C850C0 46%, #2b6ce4 100%);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+}
+
+.day p{
+  vertical-align: top;
+  position: relative;
+  border: .5px solid #9e9e9e69;
+  top: -3px;
+  width: 110%;
+  left: -5%;
+  background-color: #e7e7e7;
+}
+.day-tail {
+  border-radius: 15px;
+  width: 100%;
+  height: 95%;
+  position: relative;
+  background-color: #d6d6d6c2!important;
+}
+
+.sm-day p {
+  position: relative;
+}
+
+.sm-day {
+  text-align: center; 
+  width: 100%;
+  border-radius: 20px;
+  padding: 1px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  background-image:var(--lingrand-bar);
+  z-index: 2;
+}
+
+.sm-day-box{
+  background: var(--bg-color-secondary);
+  background-image: var(--bg-color-secondary);
+  border-radius: 30px;
+  width: 100%;
+  height: 95%;
+  position: relative;
+}
+
+.sm-day-tail {
+  border-radius: 30px;
+  width: 100%;
+  height: 95%;
+  position: relative;
+  background-color: #d6d6d6c2!important;
+}
+
+.mod-cust {
+  width: 100%;
+}
+
+
+/*---------------
+calendar week view
+-------------------*/
+.cal-box {
+  position: relative;
+  background-color: var(--bg-color-opec)!important;
+}
+
+.cal-info {
+  position: relative;
+  background-color: var(--first-color)!important;
+  height: 300px;
+  clip-path: polygon(100% 0, 90% 16%, 86% 31%, 87% 45%, 94% 57%, 98% 70%, 100% 84%, 100% 100%, 0 100%, 0 0);
+}
+
+.cal-day {
+  position: relative;
+  background-color: var(--sec-color)!important;
+  height: 300px;
+}

@@ -1,0 +1,139 @@
+{% extends 'panel.html' %}
+{% block title %}Projects{% endblock %}
+{% block content %}
+{% load static %}
+<div class='row mt-4 mb-4'>
+
+	<div class='col-12 mt-4 mb-4'>
+		<div class='section-min'>
+		<h1 class='h1-1'>Project Options</h1>
+		<hr>
+			<div class='row'>
+				
+				<div class='col'>
+					<a href="{% url 'o-project' %}">
+						<div class='section-pad addLoader text-center' >
+						<i class="fa-solid fa-folder-plus fa-2xl"></i>
+						<p class='mt-2'>Project Request</p>
+						</div>
+					</a>
+				</div>
+
+				<div class='col'>
+					<a href="{% url 'project-calendar' year month %}">
+						<div class='section-pad addLoader text-center' >
+						<i class="fa-solid fa-calendar-day fa-2xl"></i>
+						<p class='mt-2'>Project Calendar</p>
+						</div>
+					</a>
+				</div>
+
+				
+				<div class='col'>
+					<a href="{% url 'o-project' %}">
+						<div class='section-pad addLoader text-center' >
+						<i class="fa-solid fa-folder-open fa-2xl"></i>
+						<p class='mt-2'>Edit Project</p>
+						</div>
+					</a>
+				</div>
+
+				<div class='col'>
+					<a href="{% url 'o-project' %}">
+						<div class='section-pad addLoader text-center' >
+						<i class="fa-solid fa-folder-minus fa-2xl"></i>
+						<p class='mt-2'>Cancel Project</p>
+						</div>
+					</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class='col-12'>
+		<div class='section-med h-100'>
+			<h1 class='h1-1 mb-2'>Search and Filter Project List</h1>
+			<form method="GET" action="." class='form-group'>
+				<div class='row'>
+					<div class='col-12 mb-2'>
+						<input class="form-control" list="project-list" type="search" name="project" placeholder="Project">
+						<datalist id="project-list">
+						{% for project in project_list %}
+							<option value="{{ project.name }}"></option>
+						{% endfor %}
+						</datalist>
+					</div>
+					<div class='col-12 mb-2'>
+						<input class="form-control" list="client-list" type="search" name="client" placeholder="Client">
+						<datalist id="client-list">
+						{% for client in client_info %}
+							<option value="{{ client.client_details.client }}"></option>
+						{% endfor %}
+						</datalist>
+					</div>
+				</div>
+				<div class='row'>
+					<div class="col-4 mt-4">
+						<select class="form-select" type="select" name="order">
+							<option value="Newest">Newest</option>
+							<option value="Oldest">Oldest</option>
+						</select>
+					</div>                
+					<div class="col-4">
+						<button type="submit" class="btn-cust btn-cust-color mt-4">Search</button>
+					</div>
+					<div class="col-4">
+						<button
+						type="submit"
+						class="btn-cust btn-cust-color mt-4"
+						onclick="window.location.href='{% url 'o-project' %}'">
+						Clear Search</button>
+					</div>
+				</div>
+			</form>
+
+
+			<div class="overflow-auto section-small scroll-menu">
+				<div class='row'>
+				{% for project in project_info %}
+					<div class='col-12 mt-4'>
+						<div class='inv-card'>
+							<div class='inv-card-content'>
+								<div class='row mt-1'>
+									<div class='col-5'>
+										<p class="p-p">
+											{{ project.project_details.project }} 
+											<br>
+											{{ project.project_details.project_client }}
+										</p>
+									</div>
+									<div class='col-5'>
+										
+										<p class="p-p">Status: <br> {{ project.project_details.project_status }}</p>
+									</div>
+									<div class='col-2'>
+										<button
+										class="btn-icon" 
+										onclick="window.location.href='{% url 'project-details' project.project_details.project_id %}'">
+											<i class="fa-regular fa-folder-open"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<script src={% static 'js/graphs.js' %}></script>
+
+
+{% endblock %}

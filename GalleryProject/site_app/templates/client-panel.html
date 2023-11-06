@@ -1,0 +1,91 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel='stylesheet' href="{% static 'css/panel.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+
+    <title>    
+        {% block title %}
+          Silk Threads
+        {% endblock %}
+    </title>
+</head>
+<body class='body-main' id="body-pd">
+{% if user.is_authenticated %}
+
+{% for group in user.groups.all %}
+{% if group.name == 'client' %}
+<header class="header" id="header">
+    <div class="header_toggle">
+        <i class="fa-solid fa-ellipsis fa-2xl menu-icon"></i>
+    </div>
+	 <i class="fa-solid fa-right-from-bracket fa-2xl home-i"></i>
+</header>
+<div class="l-navbar" id="nav-bar">
+	<nav class="nav">
+		<div> 
+			<a href="/" class="nav_logo"> 
+				<i class="fa-solid fa-house-chimney fa-xl home-i"></i>
+				<span class="nav_logo-name">Soft Subversion</span>
+			</a>
+			<div class="nav_list"> 
+
+				<a href="{% url 'project-binder' user.id %}" class="nav_link">
+					<i class="fa-solid fa-book fa-xl"></i>
+					<span class="nav_name">Binder</span> 
+				</a> 
+
+				<a href="#" class="nav_link"> 
+					<i class="fa-solid fa-camera-retro fa-xl"></i>
+					<span class="nav_name">Gallery</span> 
+				</a>
+				<a href="#" class="nav_link"> 
+					<i class="fa-solid fa-money-bill fa-xl"></i>
+					<span class="nav_name">Marketing</span>
+				</a> 
+			</div>
+		</div> 
+	</nav>	
+</div>
+
+<div class="height-100">
+
+	<!-- 									-->
+	<!--        dynamic content block       -->
+	<!--									-->
+
+	<div class='container'>
+		{% block content %}
+
+		{% endblock %}
+	</div>
+
+	<!--									-->
+	<!--       dynamic content block 		-->
+	<!--									-->  
+</div>
+
+
+{% else %}
+
+
+{% endif %}
+{% endfor %}
+{% endif %}
+<script src={% static 'js/panelNav.js' %}></script>
+<script src="https://kit.fontawesome.com/00f4d71521.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
+

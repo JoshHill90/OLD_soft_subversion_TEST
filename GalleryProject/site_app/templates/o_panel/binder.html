@@ -1,0 +1,75 @@
+
+{% extends 'panel.html' %}
+{% block title %}O | Binder{% endblock %}
+{% block content %}
+{% load static %}
+<div class='row mt-4 sections-small'>
+	<div class='col-6 col-md-3 mt-4'>
+		<a href="{% url 'o-client' %}">
+			<div class='section-pad addLoader text-center' >
+				<i class="fa-solid fa-users-line fa-2xl"></i>
+				<p class='mt-2'>Cleints</p>
+
+			</div>
+		</a>
+	</div>
+	<div class='col-6 col-md-3 mt-4'>
+		<a href="{% url 'o-project' %}">
+			<div class='section-pad addLoader text-center'>
+				<i class="fa-solid fa-folder fa-2xl"></i>
+				<p class='mt-2'>Projects</p>
+			</div>
+		</a>
+	</div>
+	<div class='col-6 col-md-3 mt-4'>
+		<a href="{% url 'o-client' %}">
+			<div class='section-pad addLoader text-center'>
+				<i class="fa-solid fa-file-invoice fa-2xl"></i>
+				<p class='mt-2'>Billing</p>
+			</div>
+		</a>
+	</div>
+	<div class='col-6 col-md-3 mt-4'>
+		<a href="{% url 'o-client' %}">
+			<div class='section-pad addLoader text-center'>
+				<i class="fa-solid fa-gears fa-2xl"></i>
+				<p class='mt-2'>Automate</p>
+			</div>
+		</a>
+	</div>
+	<div class='col-6 col-md-3 mt-4'>
+		<a href="{% url 'invite' %}">
+			<div class='section-pad addLoader text-center'>
+				<i class="fa-solid fa-user-plus fa-2xl"></i>
+				<p class='mt-2'>Client Intake</p>
+			</div>
+		</a>
+	</div>
+	<div class='col-6 col-md-3 mt-4'>
+		<a href="{% url 'o-client' %}">
+			<div class='section-pad addLoader text-center'>
+				<i class="fa-regular fa-comments fa-2xl"></i>
+				<p class='mt-2'>Project Request</p>
+			</div>
+		</a>
+	</div>
+	<div class='col-6 col-md-3 mt-4'>
+		<a href="{% url 'o-client' %}">
+			<div class='section-pad addLoader text-center'>
+				<i class="fa-solid fa-plus fa-2xl"></i>
+				<p class='mt-2'>Add Invoice</p>
+			</div>
+		</a>
+	</div>
+	<div class='col-6 col-md-3 mt-4'>
+		<a href="{% url 'o-client' %}">
+			<div class='section-pad addLoader text-center'>
+				<i class="fa-solid fa-file-contract fa-2xl"></i>
+				<p class='mt-2'>Documents</p>
+			</div>
+		</a>
+	</div>
+</div>
+<script src={% static 'js/graphs.js' %}></script>
+
+{% endblock %}

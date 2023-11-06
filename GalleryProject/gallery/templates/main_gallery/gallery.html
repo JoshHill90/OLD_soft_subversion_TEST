@@ -1,0 +1,167 @@
+
+{% extends 'scheme.html' %}
+{% block title %}Gallery{% endblock %}
+{% block content %}
+{% load static %}
+<div class='container'>
+    <div class='section-height'>
+        <div class='row'>
+            <div class='col-12 col-md-4 slide-up' id='slide-in'>
+                <button class='card card-attrs'>
+                    <div class="card-body">
+                        {% for image in image_list %}
+                        {% if image.display == 'model' %}
+                        <div class='card-shot'>
+                        <img class='img-fluid' src="{{ image.image_link }}" onclick="window.location.href='{% url 'site-gall' 'model' 'modelgal' %}'">
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        <div class='card-text'>
+                            <p class='p-p'>
+                                Model Gallery
+                            </p>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class='col-12 col-md-4 slide-up' id='slide-in'>
+                <button class='card card-attrs'>
+                    <div class="card-body">
+                        {% for image in image_list %}
+                        {% if image.display == 'wedding' %}
+                        <div class='card-shot'>
+                            <img class='img-fluid' src="{{ image.image_link }}" onclick="window.location.href='{% url 'site-gall' 'wedding' 'weddinggal' %}'">
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        <div class='card-text'>
+                            <p class='p-p'>
+                                Wedding Gallery
+                            </p>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class='col-12 col-md-4 slide-up' id='slide-in'>
+                <button class='card card-attrs'>
+                    <div class="card-body">
+                        {% for image in image_list %}
+                        {% if image.display == 'family' %}
+                        <div class='card-shot'>
+                            <img class='img-fluid' src="{{ image.image_link }}" onclick="window.location.href='{% url 'site-gall' 'family' 'familygal' %}'">
+                        </div>   
+                        {% endif %}
+                        {% endfor %}
+                        <div class='card-text'>
+                            <p class='p-p'>
+                                Fameliy & Pets Gallery
+                            </p>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='container'>
+    <div class='section-height'>
+        <hr class='hr-hr'>
+            <p class='p-p text-center' id='how'>
+                How the process works
+            </p>
+        <hr class='hr-hr'>
+        <div class="row">
+            <div class='timeline col-12 col-md-2 slide-left' id='slide-in'>
+                <div class='time-box time-box-top slide-left' id='slide-in'>
+                    <div class='time-text fade-in'>
+                        <h2 class='h2-2'>Connect</h2>
+                        <p class='p-p'>Book a session and spark the dance of notification joy. Our creative journey commences here.</p>
+                    </div>
+                    <i class="fa-solid fa-bell fa-2xl icons-gal icon-color"></i>
+                </div>
+            </div>
+
+            <div class='timeline col-12 col-md-2 slide-left' id='slide-in'>
+                <div class='time-box time-box-bottum slide-left' id='slide-in'>
+                    <i class="fa-solid fa-mobile-screen-button fa-2xl icons-gal icon-color"></i>
+                    <div class='time-text fade-in'>
+                        <h2 class='h2-2'>Collaborate</h2>
+                        <p class='p-p'>Chat, call, or Skype; we're artisans crafting art. Scope, budget, vision, we're in sync.</p>
+                    </div>
+                </div>
+                
+            </div>
+ 
+            <div class='timeline col-12 col-md-2 slide-left' id='slide-in'>
+                <div class='time-box time-box-top slide-left' id='slide-in'>
+                    <div class='time-text fade-in'>
+                        <h2 class='h2-2'>Capture Magic</h2>
+                        <p class='p-p'>Meet at a scenic spot, you, me, lights, camera. Moments etched into memories.</p>
+                    </div>
+                    <i class="fa-solid fa-wand-magic-sparkles fa-2xl icons-gal icon-color"></i>
+                </div>
+            </div>
+
+            <div class='timeline col-12 col-md-2 slide-left' id='slide-in'>
+                <div class='time-box time-box-bottum slide-left' id='slide-in'>
+                    <div class='time-text fade-in'>
+                        <h2 class='h2-2'>Sneak Peek</h2>
+                        <p class='p-p'>Exclusive code unlocks your project preview gallery. Witness magic before the world.</p>
+                    </div>
+                    <i class="fa-solid fa-eye-low-vision fa-2xl icons-gal icon-color"></i>
+                </div>
+            </div>
+            <div class='timeline col-12 col-md-2 slide-left' id='slide-in'>
+                <div class='time-box time-box-top slide-left' id='slide-in'>
+                    <div class='time-text fade-in'>
+                        <h2 class='h2-2'>Unveil Splendor</h2>
+                        <p class='p-p'>Curated images emerge, feedback refines. We co-create your unique story.</p>
+                    </div>
+                    <i class="fa-solid fa-photo-film fa-2xl icons-gal icon-color"></i>
+                </div>
+            </div>
+            <div class='timeline col-12 col-md-2 slide-left' id='slide-in'>
+                <div class='time-box time-box-bottum slide-left' id='slide-in'>
+                    <div class='time-text fade-in'>
+                        <h2 class='h2-2'>Embrace Memories</h2>
+                        <p class='p-p'>Payment done, personal gallery awaits. Cherished memories, one click away.</p>
+                    </div>
+                    <i class="fa-solid fa-heart fa-2xl icons-gal icon-color"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-12'>
+            <a href='#nextBook'>
+                <h1 class='h1-1 next-book'>
+                <b>Get Started</b> <i class="fa-solid fa-arrow-down"></i>
+                </h1>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class='container mt-4 mb-4'>
+    <div class='section-height sub-height'>
+        <div class='gall-back  h-100'>
+            <div class='row'>
+                <div class='col-12'>
+                    <div class='item-gal4'>
+                        <p class='p-2 shadow' id='nextBook'>
+                            This isn't just a shoot – it's your unique spirit's visual symphony. We blend elegance and style to craft your vivid vision.
+                        </p>
+
+                        <button class="btn-cust btn-cust-color" onclick="window.location.href='{% url 'contact' %}'">Book</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src={% static 'js/float_in.js' %}></script>
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+
+{% extends 'portal.html' %}
+{% block title %}login{% endblock %}
+{% block content %}
+<div class='container'>
+    <div class='box text-center'>
+        <h1 class='h1-1'>Login</h1>
+        <div class="form-group">
+            <form class='froms-reg' method=POST>
+                {% csrf_token %}
+                <labelfor="{{ form.username.id_for_label }}">Username:</label>
+                {{ form.username }}
+                <br>
+                <label for="{{ form.password.id_for_label }}">Password:</label>
+                {{ form.password }}
+                <br>
+                <button class="btn-cust btn-cust-color" type="submit">Login</button>
+            </form>
+        </div>
+        <div class='header-box mt-4 mb-4'>
+            <h1 class='h1-1'>Not yet a member</h1>
+            <button class="btn-cust btn-cust-color" onclick="window.location.href='{% url 'register' %}'">Register</button>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

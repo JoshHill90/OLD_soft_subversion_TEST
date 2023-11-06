@@ -1,0 +1,196 @@
+
+{% extends 'portal.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class='container'>
+    <div class="form-group">
+        <form name='regForm' method=POST>
+            {% csrf_token %}
+
+            <div class='box' id='card-1'>
+
+                <p>
+                    <label for="id_hexkey">Hexkey:</label>
+                    <input type="text" name="hexkey" maxlength="255" class="form-control" required="" id="id_hexkey">
+                </p>
+
+                <p>
+                    <label for="id_username">Username:</label>
+                    <input type="text" name="username" maxlength="150" autofocus="" class="form-control" required="" id="id_username">
+                    <span class="helptext">
+                        Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+                    </span>
+                </p>
+                
+                                
+                <p>
+                    <label for="id_password1">Password:</label>
+                    <input type="password" name="password1" autocomplete="new-password" class="form-control" required="" id="id_password1">
+                    
+                    <span class="helptext"></span>
+                </p>
+
+                <p>
+                    <ul>
+                        <li id=''>Your password can’t be a commonly used password.</li>
+                        <li id='pass_length'>Your password must contain at least 8 characters.</li>
+                        <li id='pass_number'>One number</li>
+                        <li id='pass_letter'>One Letter</li>
+                        <li id='pass_spec'>One of the following specail characters <br> ~,!,@,`,#,$,%,^,&,*, or a baknl space</li>
+                    </ul>
+                </p>
+
+                <p>
+                    <label for="id_password2">Password confirmation:</label>
+                    <input type="password" name="password2" autocomplete="new-password" class="form-control" required="" id="id_password2">
+                    <span class="helptext">Enter the same password as before, for verification.</span>
+                </p>
+                <p class='text-center'>
+                    <i class="fa-solid icon-color  fa-house fa-2xl"onclick="window.location.href='{% url 'index' %}'"></i>
+                    <i class="fa-solid icon-color  fa-circle-arrow-right fa-2xl"onclick='userInfo()'></i>
+                </p>
+            </div>
+
+            <div class='box' id='card-2'>
+                <p>
+                    <label for="id_first_name">First name:</label>
+                    <input type="text" name="first_name" maxlength="255" class="form-control" required="" id="id_first_name">    
+                </p>
+    
+                <p>
+                    <label for="id_last_name">Last name:</label>
+                    <input type="text" name="last_name" maxlength="255" class="form-control" required="" id="id_last_name">           
+                </p>
+
+                <p>
+                    <label for="id_email">Email:</label>
+                    <input type="email" name="email" maxlength="320" class="form-control" required="" id="id_email">
+                </p>
+
+                <p>
+                    <label for="id_phone">Phone:</label>
+                    <input type="text" name="phone" class="form-control" required="" id="id_phone">
+                </p>
+                
+                <p>
+                    <label for="id_contact_method">Contact method:</label>
+                    <select type="text" name="contact_method" class="form-select" required="" id="id_contact_method">
+                        <option selected>Select one</option>
+                        <option value="Email">Email</option>
+                        <option value="Text">Text</option>
+                        <option value="Call">Call</option>
+                    </select>
+                </p>
+                <p class='text-center'>
+                    <i class="fa-solid icon-color  fa-circle-arrow-left fa-2xl" onclick='loginInfo()'></i>
+                    <i class="fa-solid icon-color  fa-circle-arrow-right fa-2xl" onclick='contactInfo()'></i>
+                </p>
+            </div>
+
+            <div class='box' id='card-3'>
+                <p>
+                    <label for="id_address_1">Address 1:</label>
+                    <input type="text" name="address_1" maxlength="255" class="form-control" required="" id="id_address_1">
+                </p>
+            
+                <p>
+                    <label for="id_address_2">Address 2:</label>
+                    <input type="text" name="address_2" maxlength="255" class="form-control" required="" id="id_address_2">
+                </p>
+
+                <p>
+                    <label for="id_city">City:</label>
+                    <input type="text" name="city" maxlength="255" class="form-control" required="" id="id_city">
+                </p>
+            
+                <p>
+                    <label for="id_state">State:</label>
+                    <select type="text" name="state" maxlength="255" class="form-select" required="" id="id_state">
+                        <option selected>Select a State</option>
+                        <option value="AL">AL</option>
+                        <option value="AK">AK</option>
+                        <option value="AZ">AZ</option>
+                        <option value="AR">AR</option>
+                        <option value="CA">CA</option>
+                        <option value="CO">CO</option>
+                        <option value="CT">CT</option>
+                        <option value="DE">DE</option>
+                        <option value="FL">FL</option>
+                        <option value="GA">GA</option>
+                        <option value="HI">HI</option>
+                        <option value="ID">ID</option>
+                        <option value="IL">IL</option>
+                        <option value="IN">IN</option>
+                        <option value="IA">IA</option>
+                        <option value="KS">KS</option>
+                        <option value="KY">KY</option>
+                        <option value="LA">LA</option>
+                        <option value="ME">ME</option>
+                        <option value="MD">MD</option>
+                        <option value="MA">MA</option>
+                        <option value="MI">MI</option>
+                        <option value="MN">MN</option>
+                        <option value="MS">MS</option>
+                        <option value="MO">MO</option>
+                        <option value="MT">MT</option>
+                        <option value="NE">NE</option>
+                        <option value="NV">NV</option>
+                        <option value="NH">NH</option>
+                        <option value="NJ">NJ</option>
+                        <option value="NM">NM</option>
+                        <option value="NY">NY</option>
+                        <option value="NC">NC</option>
+                        <option value="ND">ND</option>
+                        <option value="OH">OH</option>
+                        <option value="OK">OK</option>
+                        <option value="OR">OR</option>
+                        <option value="PA">PA</option>
+                        <option value="RI">RI</option>
+                        <option value="SC">SC</option>
+                        <option value="SD">SD</option>
+                        <option value="TN">TN</option>
+                        <option value="TX">TX</option>
+                        <option value="UT">UT</option>
+                        <option value="VT">VT</option>
+                        <option value="VA">VA</option>
+                        <option value="WA">WA</option>
+                        <option value="WV">WV</option>
+                        <option value="WI">WI</option>
+                        <option value="WY">WY</option>
+                    </select>
+                
+                </p>
+
+                <p>
+                    <label for="id_zip_code">Zip code:</label>
+                    <input type="text" name="zip_code" maxlength="255" class="form-control" required="" id="id_zip_code">
+                </p>
+                <p class='text-center'>
+                    <i class="fa-solid icon-color  fa-circle-arrow-left fa-2xl" onclick='userInfo2()'></i>
+                    <button class='btn-cust'>Submit</button>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+
+              
+
+            
+              
+
+            
+
+
+
+              
+
+            
+
+
+
+<script src="{% static 'js/reg_form.js' %}"></script>
+
+{% endblock %}

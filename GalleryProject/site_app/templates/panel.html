@@ -1,0 +1,127 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel='stylesheet' href="{% static 'css/panel.css' %}">
+	<link rel='stylesheet' href="{% static 'css/panel_scroll.css' %}">
+	<link rel='stylesheet' href="{% static 'css/panel_sections.css' %}">
+	<link rel='stylesheet' href="{% static 'css/calendar.css' %}">
+	<link rel='stylesheet' href="{% static 'css/window_load.css' %}">
+	<link rel='stylesheet' href="{% static 'css/animation.css' %}">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+
+    <title>    
+        {% block title %}
+          Silk Threads
+        {% endblock %}
+    </title>
+</head>
+<body class='body-main' id="body-pd">
+{% if user.is_authenticated %}
+
+{% for group in user.groups.all %}
+{% if group.name == 'owner' %}
+<header class="header" id="header">
+    <div class="header_toggle">
+        <i class="fa-solid fa-ellipsis fa-2xl menu-icon"></i>
+    </div>
+	 <i class="fa-solid fa-right-from-bracket fa-2xl home-i"></i>
+</header>
+<div class="l-navbar" id="nav-bar">
+	<nav class="nav">
+		<div> 
+			<a href="/" class="nav_logo addLoader"> 
+				<i class="fa-solid fa-house-chimney fa-xl home-i"></i>
+				<span class="nav_logo-name">Soft Subversion</span>
+			</a>
+			<div class="nav_list"> 
+				<a href="{% url 'o_panel' %}" class="nav_link addLoader"> 
+					<i class="fa-solid fa-gauge-high fa-xl"></i>
+					<span class="nav_name">Dashboard</span> 
+				</a> 
+				<a href="{% url 'binder' %}" class="nav_link addLoader">
+					<i class="fa-solid fa-book fa-xl"></i>
+					<span class="nav_name">Binder</span> 
+				</a> 
+				<a href="{% url 'image-upload' %}" class="nav_link addLoader"> 
+					<i class="fa-solid fa-photo-film fa-xl"></i>
+					<span class="nav_name">Images</span>
+				</a> 
+				<a href="{% url 'o-gallery' %}" class="nav_link addLoader"> 
+					<i class="fa-solid fa-camera-retro fa-xl"></i>
+					<span class="nav_name">Gallery</span> 
+				</a>
+				<a href="{% url 'binder' %}" class="nav_link addLoader" > 
+					<i class="fa-solid fa-money-bill-trend-up fa-xl"></i>
+					<span class="nav_name">Marketing</span>
+				</a> 
+			</div>
+		</div> 
+	</nav>	
+</div>
+
+<div class="height-100">
+
+	<!-- 									-->
+	<!--        dynamic content block       -->
+	<!--									-->
+
+	<div class='container'>
+		<div id='main' class='fade-in'>
+		{% block content %}
+
+		{% endblock %}
+		</div>
+		<div class="loader" id='windowLoader' style='display:none'>
+			<div class="square">
+				<span style="--i:0;"></span>
+				<span style="--i:1;"></span>
+				<span style="--i:2;"></span>
+				<span style="--i:3;"></span>
+			</div>
+			<div class="square">
+				<span style="--i:0;"></span>
+				<span style="--i:1;"></span>
+				<span style="--i:2;"></span>
+				<span style="--i:3;"></span>
+			</div>
+			<div class="square">
+				<span style="--i:0;"></span>
+				<span style="--i:1;"></span>
+				<span style="--i:2;"></span>
+				<span style="--i:3;"></span>
+			</div>
+		</div>
+	</div>
+
+	<!--									-->
+	<!--       dynamic content block 		-->
+	<!--									-->  
+</div>
+
+
+{% else %}
+
+
+{% endif %}
+{% endfor %}
+{% endif %}
+
+
+
+<script src={% static 'js/panelNav.js' %}></script>
+<script src={% static 'js/float_in.js' %}></script>
+<script src="https://kit.fontawesome.com/00f4d71521.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
+

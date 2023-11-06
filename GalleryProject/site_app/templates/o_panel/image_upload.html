@@ -1,0 +1,93 @@
+
+{% extends 'panel.html' %}
+{% block title %}O | Image Upload{% endblock %}
+{% block content %}
+{% load static %}
+
+
+
+
+{{object_path}}
+<div class='row mt-4 mb-4'>
+	<div class='col-12 h-100'>
+        <form class='form-group' id="uploadForm" method="post" enctype="multipart/form-data">
+            <div class='section-form'>
+              <h1 class='h1-1'>Upload Image and Prints</h1>
+                <div class="mb-5" id='onWait'>
+            {% csrf_token %}
+                    <input class="form-control" id='cfURL' type="text" value="{{ front_end_url }}" hidden>
+
+                    <input class="form-control mt-4 mb-4" value="" type="file" id="imageUpload">
+                    <h1 class='h1-1'>Upload Procedure and Limitations</h1>
+                    <p class='p-p'> All uploaded images are securely stored using Cloudflare's image hosting service.</p>
+                    <p class='p-p'>You are welcome to upload images in the following formats:</p>
+                    <ol>
+                      <p class='p-p'>PNG</p>
+                      <p class='p-p'>GIF</p>
+                      <p class='p-p'>JPEG</p>
+                      <p class='p-p'>SVG</p>
+                    </ol>
+                    <p class='p-p'>Please keep in mind the following size and dimension limitations:</p>
+                    <ol>
+                      <p class='p-p'>The maximum image dimension allowed is 12,000 pixels.</p>
+                      <p class='p-p'>Images are limited to a maximum area of 100 megapixels.</p>
+                      <p class='p-p'>Metadata associated with images cannot exceed 1024 bytes.</p>
+                      <p class='p-p'>Images are subject to a file size limit of 10 megabytes</p>
+                      <p class='p-p'>Animated GIFs, inclusive of all frames, must adhere to a limit of 50 megapixels</p>
+                    </ol>
+                    <p class='p-p'>If an error message shows upload fails please contact the site admin.</p>
+
+                    <input class="form-control" value="{{clfr_id}}" type="text" id="cloudflareid" hidden>
+                    <button class="btn-cust mt-3" onclick="delayedRedirect(#)">Upload Image</button>
+                </div>
+            </div>
+        </form>
+	</div>
+</div>
+
+
+        <script>
+          const uploadForm = document.getElementById("uploadForm");
+          const imageUpload = document.getElementById("imageUpload");
+          const cfURL = document.getElementById("cfURL");
+
+          uploadForm.addEventListener("submit", e => {
+            e.preventDefault();
+            const cloudflareId=document.getElementById("cloudflareid").value;
+            localStorage.setItem('setId', cloudflareId);
+            const cloudflare = cfURL.value;
+            const multiPart = new FormData();
+            const metaData = new FormData(uploadForm);
+            multiPart.append('file', imageUpload.files[0]);
+
+            fetch(cloudflare, {
+              method: "post",
+              body: multiPart,
+            })
+              .then(response => response.json())
+              .then(data => {
+
+                console.log(data); // You can access the response data here
+              })
+              .catch(error => {
+                console.error(error);
+                alert(error);
+                return false;
+              });
+          });
+
+          function delayedRedirect(url) {
+            setTimeout(function() {
+              window.location.href = url;
+            }, 1000); // Delay of 1 second (3000 milliseconds)
+          }
+        </script>
+
+
+<div class='row mt-4 mb-4'>
+</div>
+
+
+<script src={% static 'js/graphs.js' %}></script>
+
+{% endblock %}

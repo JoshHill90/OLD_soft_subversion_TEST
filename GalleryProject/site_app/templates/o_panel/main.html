@@ -1,0 +1,114 @@
+
+{% extends 'panel.html' %}
+{% block title %}O | Main{% endblock %}
+{% block content %}
+{% load static %}
+<div class='row'>
+	<div class='col-12 col-md-4  mt-4 mb-4 h-100'>
+		<div class='section-small'>
+			<h1 class='h1-1'>
+				Total Images Stored
+			</h1>
+			<hr>
+		</div>
+	</div>
+	<div class='col-12 col-md-4  mt-4 mb-4 h-100'>
+		<div class='section-small'>
+			<h1 class='h1-1'>
+				Total Objects Stored
+			</h1>
+			<hr>
+		</div>
+	</div>
+	<div class='col-12 col-md-4  mt-4 mb-4 h-100'>
+		<div class='section-small'>
+			<h1 class='h1-1'>
+				YTD Earnings
+			</h1>
+			<hr>
+		</div>
+	</div>
+</div>
+
+<div class='row'>
+	<div class='col-12 col-md-8 mt-4 mb-4 h-100'>
+		<div class='section-small'>
+			<h1 class='h1-1'>
+				Images by Client
+			</h1>
+			<hr>
+		</div>
+	</div>
+
+	<div class='col-12 col-md-4  mt-4 mb-4 h-100'>
+		<div class='section-small'>
+			<h1 class='h1-1'>
+				Total Outstanding
+			</h1>
+			<hr>
+		</div>
+	</div>
+</div>
+
+<div class='row'>
+	<div class='col-12 col-md-4  mt-4 mb-4 h-100'>
+		<div class='section-small'>
+			<h1 class='h1-1'>
+				Invoice by Status
+			</h1>
+			<hr>
+		</div>
+	</div>
+
+	<div class='col-12  mt-4 mb-4 col-md-8 h-100'>
+		<div class='section-small'>
+			<h1 class='h1-1'>
+				Payment over time
+			</h1>
+			<hr>
+		</div>
+	</div>
+</div>
+
+<div class='row'>
+	<div class='col-6 col-md-3 mt-4 mb-4 h-100'>
+		<div class='section-small'>
+			<h1 class='h1-1'>
+				Recent Cleints
+			</h1>
+			<hr>
+		</div>
+	</div>
+	<div class='col-6 col-md-3  mt-4 mb-4 h-100'>
+		<div class='section-small'>
+			<h1 class='h1-1'>
+				Project Request
+			</h1>
+			<hr>
+		</div>
+	</div>
+	<div class='col-6 col-md-3  mt-4 mb-4 h-100'>
+		<div class='section-small'>
+			<h1 class='h1-1'>
+				Recent Project
+			</h1>
+			<hr>
+		</div>
+	</div>
+	<div class='col-6 col-md-3  mt-4 mb-4 h-100'>
+		<div class='section-small'>
+			<h1 class='h1-1'>
+				Recent Images
+			</h1>
+			<hr>
+		</div>
+	</div>
+</div>
+
+<div class='row mt-4 mb-4'>
+</div>
+
+
+<script src={% static 'js/graphs.js' %}></script>
+
+{% endblock %}

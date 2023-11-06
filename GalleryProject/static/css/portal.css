@@ -1,0 +1,161 @@
+/*font import*/
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Cormorant+Garamond:wght@300;400;600;700&display=swap');
+
+/*variable*/
+:root{
+    --text-color:rgb(255, 255, 255);
+    --text-color-secondary:rgb(0, 0, 0);
+    --bg-color:rgb(24, 24, 24);
+    --bg-color-secondary:rgba(61, 61, 61);
+    --bg-color-opec:rgba(56, 56, 56, 0.534);  
+    --font-family-header:'Arvo', serif;
+    --font-family-body: 'Arvo', serif;
+    --h1: 28px;
+    --p:16px;
+    --font-weights-norm: 400;
+    --font-weights-bold: 700;
+    --arvo-light: 300;
+    --arvo-norm: 400;
+    --arvo-simi: 600;
+    --arvo-bold: 700;
+
+}
+
+/* --------------------------------
+Topography
+--------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+
+.body-main {
+  display: block;
+  margin: none;
+  padding: 0;
+  font-family: var(--font-family-body);
+  font-display: swap;
+  margin: none;
+  background-image: url(https://imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/975061b2-c4b2-4554-5b7b-04eb2627d100/heroObjectLeft);
+  background-repeat: no-repeat;
+  background-color:black ;
+  background-position: center;
+  height: 100vh;
+
+}
+
+@font-face {
+  font-family: "MyWebFont";
+  src: url(myfont.woff2) format("woff2"),
+        url(myfont.woff) format("woff");
+  font-display: swap;
+}
+
+.section-height {
+  height: 100vh;
+  max-height: 1000px;
+}
+
+@media (max-width:774px) and (orientation: portrait) { 
+  .section-height {
+    height: auto;
+    min-height: 600px;
+    max-height: none;
+  }
+}
+
+.h1-1 {
+  font-size: var(--h1);
+  font-family: var(--font-family-header);
+  color: var(--text-color);
+  font-weight: 300;
+  padding: var(--h1) var(--h1);
+}
+
+.p-p {
+  font-size: var(--p);
+  font-weight: var(--font-weights-norm);
+  color: var(--text-color);
+}
+
+.p-2 {
+  font-size:var(--p);
+  font-weight: var(--font-weights-norm);
+  color: var(--text-color-secondary);
+}
+
+.ham{
+  color:36px!important;
+}
+
+hr {
+  color: #7933fc79;
+}
+
+/* --------------------------------
+button
+--------------------------------*/
+
+.btn-cust{
+
+font-family: Roboto, sans-serif;
+font-weight: 100;
+font-size: 14px;
+color: #fff;
+background-color: #7933fc79;
+padding: 10px 21px;
+border: 2px solid #7933fc79;
+box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+border-radius: 25px;
+transition : 777ms;
+align-items: center;
+margin: 5px;
+cursor: pointer;
+}
+
+.btn-cust:hover{
+transition : 777ms;
+padding: 10px 24px;
+background-color: #ffffff00;
+color: #7933fc;
+border: solid 2px #7933fc79;
+}
+
+
+/* --------------------------------
+main
+--------------------------------*/
+
+.box {
+  position: absolute;
+  border: 2px solid #7933fc79 ;
+  background-color: #000000cb ;
+  padding: 15px;
+  height: 95vh;
+  border-radius: 25px;
+  color:#fff;
+  width: 400px;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+#card-1,
+#card-2,
+#card-3 {
+  transform: translateY(-100%); 
+
+  opacity: 0;
+}
+
+
+
+.froms-reg input{
+	width: 100%;
+}
+
+.icon-color{
+  color:#fc3379;
+  transition: color 0.5s ease-in-out;
+}
+
+.icon-color:hover {
+  color:#7d4af3
+}

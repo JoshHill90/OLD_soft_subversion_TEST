@@ -1,0 +1,90 @@
+/*-------------------------------/
+
+Animation effects 
+
+/-------------------------------*/
+
+.float-in {
+  opacity: 0;
+  transition: opacity 1900ms ease-in;
+}
+
+.float-in.appear {
+  opacity: 1;
+}
+
+.float-in-sec {
+  opacity: .2;
+  transition: opacity 2300ms ease-in, transform 3000ms;
+  transform: translate3d(-50px, -50px, 0);
+}
+
+.float-in-sec.appear {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: skew(0);
+  transition: transform 1200ms,  opacity 1000ms  ease-in;
+}
+
+.fade-in.appear {
+  transform: skew(1);
+  opacity: 1;
+}
+.windowLoader{
+	opacity: 0;
+	transform: translate3d(0);
+	transition: transform 300ms,  opacity 200ms  ease-in-out;
+}
+
+.windowLoader.appear {
+	transform: translate3d(1);
+	opacity: 1;
+  }
+
+.slide-down{
+  transform: translateY(25%);
+  opacity: 0;
+}
+
+.slide-up{
+  transform: translateY(45%);
+  opacity: 0;
+}
+
+.slide-up,
+.slide-down {
+  transition:  transform 1500ms, opacity 1600ms ease-in;
+  opacity: 0;
+} 
+
+.slide-up.appear,
+.slide-down.appear {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.slide-right{
+  transform: translateX(50%);
+  opacity: 0;
+}
+
+.slide-left{
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.slide-left,
+.slide-right {
+  transition:transform 1200ms,  opacity 2000ms  ease-in;
+  opacity: 0;
+} 
+
+.slide-left.appear,
+.slide-right.appear {
+  transform: translateX(0);
+  opacity: 1;
+}

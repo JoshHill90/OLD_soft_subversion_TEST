@@ -1,0 +1,34 @@
+{% extends 'panel.html' %}
+{% block title %}O | Clients Intake{% endblock %}
+{% block content %}
+{% load static %}
+{% if user.is_authenticated %}
+
+<div class='row'>
+	<div class='col-12 mt-4 mb-4'>
+		<div class='section-form'>
+			<h1 class='h1-1'>Send Client Invite</h1>
+			<form method=POST enctype="multipart/form-data">
+				{% csrf_token %}
+				{{form.as_p}}
+				<p class='p-p'> 
+					This will send a unique code to the client that will grant them access to register. 
+				</p>
+	
+				<button class="btn-cust">
+					Submit
+				</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script src={% static 'js/graphs.js' %}></script>
+
+
+  
+
+{% endif %}
+
+
+{% endblock %}

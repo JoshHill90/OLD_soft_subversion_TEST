@@ -1,0 +1,93 @@
+.loader {
+  position: relative;
+  width: 100%;
+  margin-top: 300px;
+  left: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader .square {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+
+.loader .square:nth-child(2) {
+  transform: translate(-25%, -25%) rotateX(180deg);
+  filter: hue-rotate(30deg);
+}
+
+.loader .square:nth-child(3) {
+  transform: translate(25%, 25%) rotate(180deg);
+  filter: hue-rotate(60deg);
+}
+
+.loader .square::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #7933FC;
+  box-shadow: 0 0 0 8px rgba(47, 18, 102, 0.767), 0 0 0 15px rgba(121, 51, 252, 0.336);
+  animation: animateSquare 4s linear infinite;
+}
+
+@keyframes animateSquare {
+  0% {
+    transform: translate(2px,2px);
+  }
+
+  25% {
+    transform: translate(178px,2px);
+  }
+
+  50% {
+    transform: translate(178px,178px);
+  }
+
+  75% {
+    transform: translate(2px,178px);
+  }
+
+  100% {
+    transform: translate(2px,2px);
+  }
+}
+
+.loader .square span {
+  position: absolute;
+  inset: 10px;
+  overflow: hidden;
+  transform: rotate(calc(90deg * var(--i)));
+}
+
+.loader .square span::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: #9257ff;
+  transform: translateX(-100%);
+  animation: animate 4s linear infinite;
+  animation-delay: calc(1s * var(--i));
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50%,100% {
+    transform: translateX(100%);
+  }
+}
+	
+@media (max-width:774px) and (orientation: portrait) { 
+	.loader {
+		top: 10%;
+		left: 10%;
+	}
+}
+  

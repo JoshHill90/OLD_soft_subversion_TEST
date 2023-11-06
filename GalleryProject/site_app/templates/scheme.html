@@ -1,0 +1,159 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel='stylesheet' href="{% static 'css/main_style.css' %}">
+    <link rel='stylesheet' href="{% static 'css/animation.css' %}">
+    <link rel='stylesheet' href="{% static 'css/loader.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+		<script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+
+    <title>    
+        {% block title %}
+          Silk Threads
+        {% endblock %}
+    </title>
+</head>
+<body class='body-main'>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand">Soft Subveersion</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'index' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-p" href="{% url 'gallery' %}">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-p" href="{% url 'contact' %}">Book</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-p" href="{% url 'about' %}">About</a>
+          </li>
+
+          {% if user.is_authenticated %}
+
+          {% for groups in user.groups.all %}
+              {% if groups.name == 'client' %}
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Member Profile 
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Clients Panel</a></li>
+                    <li><a class="dropdown-item" href="#">Billing</a></li>
+                    <div class="dropdown-divider"></div>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                  </ul>
+                </li>
+                {% else %}
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Owners 
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="{% url 'o_panel' %}">Owners Panel</a></li>
+                    <div class="dropdown-divider"></div>
+                    <li><a class="dropdown-item" href="#">Clients Panel</a></li>
+                    <li><a class="dropdown-item" href="#">Gallery Panel</a></li>
+                    <li><a class="dropdown-item" href="#">Billing Panel</a></li>
+                    <div class="dropdown-divider"></div>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                  </ul>
+                </li>
+              {% endif %}
+              {% endfor %}
+
+          {% else  %} 
+               
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle p-p" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Members Portal
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="{% url 'login'%}">Login</a></li>
+                <li><a class="dropdown-item" href="{% url 'register'%}">Register</a></li>
+              </ul>
+            </li>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!------------------------------------------------>
+  <!-- dynamic content block -->
+  <!------------------------------------------------>
+  
+  <div class='container-fluid'>
+    {% block content %}
+  
+    {% endblock %}
+  </div>
+
+    <!------------------------------------------------>
+    <!-- dynamic content block -->
+    <!------------------------------------------------>  
+    <div class="container-fluid bg-dark">
+      <footer class="py-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h3 class='h3-3'>Soft Subversion</h3>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" target="_blank" class="nav-link p-0 p-p text-body-secondary">How it Works</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 p-p text-body-secondary">Contact</a></li>
+              <li class="nav-item mb-2"><a href="#" target="_blank" class="nav-link p-0 p-p text-body-secondary">Gallery</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 p-p text-body-secondary">About</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-6 col-md-2 mb-3">
+            <h3 class='h3-3 text-center'>Follow Me</h3>
+            <div class="nav">
+            <ul>
+              <a  href='https://github.com/JoshHill90' target='bank'> <i class="fa-brands fa-instagram fa-2xl fa-space" style="color: #7933fc;"></i></a>
+            </ul>
+            </div>
+          </div>
+    
+          <div class="col-md-5 offset-md-3 mb-3 form-group">
+            <form autocomplete="off" method="POST" action="{% url 'index' %}">
+              <h3 class='h3-3'>Soft Subversion</h3>
+              <p class='p-p'>Book you next shoot today!</p>
+              <button type="submit" class="btn-cust btn-cust-color">Book</button>
+            </form>
+          </div>
+        </div>
+        <hr class='p-p'>
+        <div class="row">
+          <p class='p-p text-center'>Created and maintained by <a class='footer-link p-p' href='https://silkthreaddev.com'>Silk Thread Dev</a></p>
+          
+          <p class='p-p text-center'>© 2022 
+            <a class='footer-link p-p' href='https://softsubversion.com'>Soft Subversion </a>, 
+            Inc. All rights reserved. All data collected is kept private and safe</p>
+          <p class='p-p text-center'></p>
+        </div>
+        
+      </footer>
+    </div>
+      <script src="https://kit.fontawesome.com/00f4d71521.js" crossorigin="anonymous"></script>
+</body>
+</html>

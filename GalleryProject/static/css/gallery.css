@@ -1,0 +1,371 @@
+/*font import*/
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Cormorant+Garamond:wght@300;400;600;700&display=swap');
+
+/*variable*/
+:root{
+    --text-color:rgb(255, 255, 255);
+    --text-color-secondary:rgb(0, 0, 0);
+    --bg-color:rgb(24, 24, 24);
+    --bg-color-secondary:rgb(255, 254, 254);
+    --bg-color-opec:rgba(255, 253, 253, 0.534);  
+    --font-family-header:'Cormorant Garamond', serif;
+    --font-family-body: 'Arvo', serif;
+    --h1: 48px;
+    --h2: 42px;
+    --h3: 20px;
+    --p:16px;
+    --font-weights-norm: 400;
+    --font-weights-bold: 700;
+    --arvo-light: 300;
+    --arvo-norm: 400;
+    --arvo-simi: 600;
+    --arvo-bold: 700;
+
+}
+
+
+/* --------------------------------
+Gallery 
+--------------------------------*/
+
+.card-attrs {
+  background-color: var(--bg-color);
+  position: relative;
+  height: auto;
+  border: 3px solid var(--bg-color-secondary);
+  z-index: 1;
+}
+
+.card-shot{
+  width: 100%;
+  height: 80vh;
+  max-height: 900px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-shot img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  object-position: center;
+  transform: scale(1);
+  transition:transform 1.2s ease-in-out !important;
+}
+
+.card-attrs p{
+  padding-top: 18px;
+}
+
+
+.card-shot:hover img{
+
+  transform: scale(1.08);
+}
+
+.hr-hr {
+  color: var(--text-color);
+}
+
+.timeline{
+  position: relative;
+  animation: slideLeft 1s linear forwards;
+  opacity: 0;
+}
+@keyframes slideLeft {
+  0% {
+    right: 100%; 
+    opacity: 0;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+
+.timeline::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-color);
+  left:0;
+  top: 40vh;
+  margin-top: -3px;
+  z-index: -1;
+}
+
+
+.time-box {
+  padding: 5px;
+  width: 100%;
+  position: relative;
+  border: 3px solid var(--bg-color-secondary);
+  border-radius: 8px;
+}
+
+
+.time-box::after{
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: var(--text-color);
+  z-index: -1;
+}
+
+.time-box-top {
+  top:5vh;
+  width: 175%;
+}
+
+.time-box-bottum {
+  top: 55vh;
+  width: 165%;
+  left: -55%;
+}
+
+.time-box-top::after {
+  height: 20vh;
+  top: 15vh;
+  margin-left: 65px;
+}
+
+.time-box-bottum::after {
+  height: 16vh;
+  top: -15vh;
+  margin-left: 45px;
+}
+
+.time-text{
+  padding: 4px 4px;
+  background-color: var(--bg-color);
+  z-index: 0;
+  position: relative;
+}
+
+@media (max-width:774px) and (orientation: portrait) { 
+  .time-box{
+    margin-top: 25px;
+  }
+  .time-box-top{
+    width: 100%;
+    height: auto;
+    top: 0;
+    margin-left: 0;
+  }
+  .time-box-bottum{
+    width: 100%;
+    height: auto;
+    top: 0;
+    margin-left: 50%;
+  }
+  .timeline::after{
+    width: 0;
+    height:0;
+    top: 0;
+  }
+  .time-box::after{
+    width: 100%;
+  }
+  .time-box-bottum::after, .time-box-top::after {
+    height: 0;
+    top: 0;
+  }
+  .time-box-top::after{
+    margin-left:-15px;
+  }
+  .time-box-bottum::after{
+    margin-left:0;
+  }
+}
+
+.icons-gal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+}
+
+.gall-back {
+  background-image: url(https://imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/ce6217c7-d3d2-44aa-5918-97aa6fb8bc00/display);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: relative;
+  height: 100vh;
+}
+.sub-height{
+  margin: auto;
+}
+.item-gal4{
+  top:20%;
+  width: 300px;
+  position: relative;
+  left: -50px;
+  margin: auto ;
+}
+@media (max-width:774px) and (orientation: portrait) {
+  .gall-back {
+    background-position: center;
+    background-size: auto 100vh ;
+    overflow: hidden;
+  }
+  .sub-height{
+    height: 100vh;
+  }
+  .item-gal4{
+    left: 0;
+    margin: auto ;
+  }
+}
+/*-------------------------------/
+
+sub gallery view 
+
+/-------------------------------*/
+.gal-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.gal-hero-image{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: 80vh;
+  transform: scale(1);
+  transition:transform 1.2s ease-in-out !important;
+}
+
+.gal-hero-image:hover{
+
+  transform: scale(1.08);
+}
+
+.gal-hero-box {
+  top: 35%;
+  left: 65%;
+  position: absolute;
+  padding: 5px 5px;
+  background-color: #181324b0;
+  width: 30%;
+}
+
+.gal-hero-box::after {
+  content: '';
+  top: 25%;
+  right: 25%;
+  position: absolute;
+  background-color: #f156d8;
+  width: 78%;
+  height: 1px;
+  z-index: 0;
+}
+.gal-hero-text{
+  z-index: 3;
+}
+.gal-hero-text::after {
+  content: '';
+  top: 15%;
+  right:28%;
+  position: absolute;
+  background-color: #f1a9e5;
+  width: 1px;
+  height: 90%;
+  z-index: -1;
+}
+
+
+@media (max-width:774px) and (orientation: portrait) {
+  .gal-hero-box {
+    top: 55%;
+    left: 0;
+    width: 100%;
+    margin: auto;
+  }
+}
+
+.gal-roller {
+  background-color: #71717250;
+  position: relative;
+  height: 60px;
+
+}
+
+.gal-inner {
+  width: 60%;
+  position: relative;
+  object-position: center;
+  margin: auto;
+}
+
+.gal-inner button{
+  width: 90%;
+}
+
+
+
+.sub-gal-img{
+  max-height: 50vh;
+  cursor: pointer;
+  width: auto;
+  object-fit: cover;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  height: 100vh;
+  overflow: auto;
+  background-color: black;
+}
+
+
+.modal-content {
+  position: relative;
+  display: block;
+  background-color: var(--bg-color);
+  margin: auto;
+  padding: 0;
+  height: 90vh;
+}
+.modal-content img{
+  position: relative;
+  max-height: 85vh;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.gal-slide{
+  display: none;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}

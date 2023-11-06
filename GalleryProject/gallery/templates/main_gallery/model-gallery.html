@@ -1,0 +1,105 @@
+{% extends 'scheme.html' %}
+{% load static %}
+
+{% block title %}Gallery{% endblock %}
+{% block content %}
+
+<div class='container'>
+	<div class="gal-hero float-in">
+		{% for image in image_list %}
+		{% if image.display == 'model' %}
+		<div class="gal-hero-image" style=" background-image: url({{ image.image_link }})">
+			<div class='gal-hero-box float-in-sec'>
+				<h2 class='h2-2'>Capter the magic</h2>
+				<p class='p-p'>Save the memories from your specail day</p>
+			</div>
+		</div>
+		{% endif %}
+		{% endfor %}
+
+	</div>
+</div>
+
+
+<div class='container mt-4 mb-4'>
+	<div class="lightbox">
+		<div class='row'>
+			<div class='col-4 col-md-3 mb-4 mb-lg-0'>
+			{% for image1 in image_col1 %}
+				<img 
+				loading="lazy"
+				class="w-100 shadow-1-strong rounded mb-4 sub-gal-img slide-up" id='slide-in' 
+				src="{{ image1.image_link }}"
+				data-mdb-img="{{ image1.image_link }}"
+				onclick="openModal();currentSlide({{ forloop.counter }})">
+			{% endfor %}
+			</div>
+			<div class='col-4 col-md-6 mb-4 mb-lg-0'>
+				{% for image2 in image_col2 %}
+					<img 
+					loading="lazy"
+					class="w-100 shadow-1-strong rounded mb-4 sub-gal-img slide-up" id='slide-in'
+					src="{{ image2.image_link }}"
+					data-mdb-img="{{ image2.image_link }}"
+					onclick="openModal();currentSlide({{ forloop.counter|add:len1 }})">
+				{% endfor %}
+			</div>
+			<div class='col-4 col-md-3 mb-4 mb-lg-0'>
+				{% for image3 in image_col3 %}
+					<img 
+					loading="lazy"
+					class="w-100 shadow-1-strong rounded mb-4 sub-gal-img slide-up" id='slide-in'
+					src="{{ image3.image_link }}"
+					data-mdb-img="{{ image3.image_link }}"
+					onclick="openModal();currentSlide({{forloop.counter|add:len2 }})">
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class='container'>
+	<div class='row'>
+		<div id="modal_displayer" class="modal">
+			<span class="close cursor" onclick="closeModal()"><i class="fa-solid fa-circle-xmark fa-lg icon-color"></i></span>
+			<div class="modal-content">
+		
+			
+				{% for image4 in new_list %}
+				<div class="gal-slide  text-center">
+					<div class="numbertext p-p">Image #{{ image4.id }} | {{image4.title}} by. Carly</div>
+					<img loading="lazy" class='text-center img-fluid' src="{{ image4.image_link }}" alt='{{image4.title}}'>
+				</div>
+				{% endfor %}
+			
+				<a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-circle-arrow-left fa-2xl icon-color"></i></a>
+				<a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-circle-arrow-right fa-2xl icon-color"></i></a>
+			
+				<div class="caption-container">
+					<p id="caption"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div clss='container'>
+	<div class='gal-roller'>
+		<div class='row gal-inner '>
+			<div class='col mb-4 mb-lg-0'>
+				<button class='btn-cust-2'  onclick="window.location.href='{% url 'gallery' %}#how'">How it works</button>
+			</div>
+			<div class='col mb-4 mb-lg-0'>
+				<button class='btn-cust btn-cust-color'  onclick="window.location.href='{% url 'contact' %}'">Book</button>
+			</div>
+			<div class='col mb-4 mb-lg-0'>
+				<button class='btn-cust-2'  onclick="window.location.href='{% url 'site-gall' 'wedding' 'weddinggal' %}'">Wedding Gallery</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="{% static 'js/lightbox.js' %}"></script>
+<script src="{% static 'js/float_in.js' %}"></script>
+{% endblock %}
