@@ -1,0 +1,26 @@
+{% extends 'error_scheme.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+  <div class="row hero-img-success">
+    <div class="col-6 hero-box-success">
+        <h2 class="h2-2 mb-4">Ohh Noo! There was an issue!</h2>
+        <p class="p-p">
+			Please go back and refresh the page, if the issue persist, 
+			please use the link below to send a notice to the site admin:
+			<a href='mailto:leadteam@silkthreaddev.com?subject=ERROR_LOGGED&body=Error Code {{ status }}:{{ e }}'>
+				Contact Us</a>
+
+
+		</p>
+
+		<p class="p-p">
+			Error Code {{ status }}: 
+			<br> 
+			{{ e }}
+		</p>
+      <a href="/index.html">
+    </div>
+  </div>
+</div>
+{% endblock %}

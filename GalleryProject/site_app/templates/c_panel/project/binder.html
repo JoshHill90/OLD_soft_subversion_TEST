@@ -1,0 +1,125 @@
+
+{% extends 'c-panel.html' %}
+{% block title %}Client Panel{% endblock %}
+{% block content %}
+{% load static %}
+{% if user.id == client_info.user_id.id %}
+
+<div class='row mt-4 mb-4 sections'>
+	<h1 class='h1-1 '>
+		Project Binder Options
+	</h1>
+	<hr>
+	<div class='col-6 col-md-3 '>
+		<a href="{% url 'project-request' %}">
+			<div class='section-pad addLoader text-center'>
+				<i class="fa-solid fa-folder-open fa-2xl"></i>
+				<p class='mt-2'>Request New Project</p>
+			</div>
+		</a>
+	</div>
+
+	<div class='col-6 col-md-3'>
+		<a href="{% url 'create-invoice' %}">
+			<div class='section-pad addLoader text-center'>
+				<i class="fa-solid fa-credit-card fa-2xl"></i>
+				<p class='mt-2'>Make a Payment</p>
+			</div>
+		</a>
+	</div>
+
+	<div class='col-6 col-md-3'>
+		<a href="{% url 'o-project' %}">
+			<div class='section-pad addLoader text-center'>
+				<i class="fa-solid fa-user-gear fa-2xl"></i>
+				<p class='mt-2'>Profile</p>
+			</div>
+		</a>
+	</div>
+
+	<div class='col-6 col-md-3'>
+		<a href="{% url 'o-project' %}">
+			<div class='section-pad addLoader text-center'>
+				<i class="fa-solid fa-gear fa-2xl"></i>
+				<p class='mt-2'>Settings</p>
+			</div>
+		</a>
+	</div>
+
+</div>
+
+<div class='row mt-4 sections-small'>
+ 
+
+	<div class='row mt-4'>
+		<div class='col-4'>
+			<div class='sections'>
+				<h1 class='h1-1'>Pending Project Request</h1>
+				<div class='row mt-4 '>
+					<div class="overflow-auto scroll-menu">
+						{% for project in project_request %}
+						{% if project.status == 'pending' %}
+						<div class='col-12 mt-1 inv-card'>
+							<div class='row text-center inv-card-content'>
+								<div class='col-12'>
+									<p class="p-p">
+										{{ project.name }} 
+										<br>
+									</p>
+								</div>
+								<div class='col-12'>
+									<button href="#" class="btn-cust btn-cust-color" onclick="window.location.href='{% url 'request-status' project.slug %}'">Details</button>
+								</div>
+							</div>
+						</div>
+						{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class='col-8'>
+			<div class='sections'>
+				<h1 class='h1-1'>Open Projects</h1>
+				<div class='row mt-4'>
+					<div class="overflow-auto scroll-menu">
+						{% for project in project_list %}
+						{% if project.status != 'closed' %}
+						<div class='col-12 mt-1 inv-card'>
+							<div class='row inv-card-content'>
+								<div class='col-6'>
+									<h1 class="h1-1">
+										{{ project.name }} 
+									</h1>
+									<button class="btn-cust btn-cust-color" onclick="window.location.href='{% url 'project-details' project.pk %}'">Details</button>
+								</div>
+								<div class='col-6'>
+									{% if project.status == 'Pending Deposit' %}
+									<p class="p-p"> Status:{{ project.status }}</p>
+									<p class="p-p"> Deposit Due:{{ project.deposit_amount }}</p>
+									{% elif project.status == 'Open Pending Payment' %}
+									<p class="p-p"> Status:{{ project.status }}</p>
+									<p class="p-p"> Amount Due:{{ project.cost }}</p>
+									{% elif project.status == 'Open' %}
+									<p class="p-p"> Status:{{ project.status }}</p>
+									<p class="p-p"> Amount Paid:{{ project.cost }}</p>
+									{% elif project.status == 'closed' %}
+									{% endif %}
+								</div>
+							</div>
+						</div>
+						{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src={% static 'js/graphs.js' %}></script>
+
+
+{% endif %}
+{% endblock %}

@@ -1,0 +1,189 @@
+{% extends 'panel.html' %}
+{% block title %}Client Request{% endblock %}
+{% block content %}
+{% load static %}
+<div class='row'>
+	<div class='col-12 col-md-8'>
+		<div class='sections mt-4 mb-4'>
+			<h1 class='h1-1 text-center'>
+				Project:  {{ client_request|title }}
+			</h1>
+			<hr>
+			<p class='p-p text-center'>
+				Client and Project Details
+			</p>
+			<div class='sections-2'>
+				<div class='row'>
+					<div class='col-12 col-sm-6 mt-4'>
+						
+						<h1 class='h1-1 mb-4'> Project Detials</h1>
+						<p class='p-p mt-4'>
+							Photographer: {{ user.first_name|title  }} {{ user.last_name|title  }}<br>
+						</p>
+
+						<p class='p-p'>
+							Project Scope: {{ client_request.scope|title  }}<br>
+						</p>
+						<p class='p-p'>
+							Location Type: {{ client_request.location|title  }}<br>
+						</p>
+						<p class='p-p'>
+							Project Number: {{ client_request.slug}}<br>
+						</p>
+
+					</Div>
+					<div class='col-12 col-sm-6 mt-4'>
+						<h1 class='h1-1 mb-4'> Client Detials</h1>
+						<p class='p-p'>
+							Clients Name: {{ client_request.user_id.first_name|title  }} {{ client_request.user_id.last_name|title  }}<br>
+						</p>
+						<p class='p-p'>
+							Clients Email: {{ client_request.user_id.email|title  }}<br>
+						</p>
+						<p class='p-p'>
+							Project Scope: {{ client_info.phone }}<br>
+						</p>
+						<p class='p-p'>
+							Billing Address <br>
+							{{ client_info.address_1|title  }}<br>
+							{{ client_info.address_2|title  }}<br>
+							{{ client_info.city|title  }} {{ client_info.state|title  }}, {{ client_info.zip_code }}
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class='col-12 text-center mt-4 mb-4'>
+			<h1 class='h1-1'>Project Cost and Outline</h1>
+			<hr>
+			<p class='p-p'></p>
+			</div>
+
+
+			<div class='sections-2'>
+			<form method=POST class='p-p row'>
+				{% csrf_token %}
+
+
+				
+				<div class='col-6 mt-4 mb-4'>
+					<div class="form-check form-switch">
+						<input class="form-check-input"  type="checkbox" data-bs-toggle="collapse" data-bs-target="#projectCostCollapse" aria-expanded="false" aria-controls="projectCostCollapse">
+						<label for="id_deposit" class=' mt-2'>
+							Add Project Cost
+						</label>
+					</div>
+
+					<div class="form-check form-switch">
+					<input class="form-check-input"  type="checkbox" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+						<label for="id_deposit" class=' mt-2'>	
+							Add Deposit
+						</label>
+					</div>
+
+					<div class="collapse" id="projectCostCollapse">
+						<div class=" mt-4">
+							<label for="id_project_cost">Project cost:</label>
+							<input type="text" name="project_cost" value="0.00" class="form-control" required="" id="id_project_cost">
+						</div>
+					</div>
+
+
+					<div class="collapse" id="collapseExample">
+						<div class="mt-4">
+
+							<label for="id_deposit" class=' mt-2'>Deposit:</label>
+							<input type="text" name="deposit" value="0.00" class="form-control" required="" id="id_deposit">
+						</div>
+					</div>
+				</div>
+
+				
+				<div class='col-6 text-center mt-4 mb-4'>
+					<div class='sections-small'>
+						<h1 class='h1-1'>
+							Desired Date
+						</h1>
+						<h1 class='nums'>
+							{{ client_request.date }}
+						</h1>
+					</div>
+				</div>
+
+				<div class='col-12 mt-4 mb-4'>
+						<h1 class='h1-1'>Session Outline</h1>
+						<p class='p-p'>Please detail anny Addtional notes about the services that will be provded</p>
+
+						<label for="id_services">Outline Details</label>
+						<textarea name="services" cols="40" rows="10" class="form-control" maxlength="500" id="id_services"></textarea>
+				</div>
+
+				<div class='col-12 mt-4'>
+					<button class="btn-cust">
+						Submit
+					</button>
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+
+	<div class='col-12 col-md-4'>
+		<div class='sections mt-4 mb-4'>
+			<h1 class='h1-1'>
+				Request Thread
+			</h1>
+			<hr>
+			<p class='p-p'>
+				<a class="btn-cust" data-bs-toggle="collapse" href="#collapseComments" role="button" aria-expanded="false" aria-controls="collapse1">
+					Project Request Thread
+				</a>
+			</p>
+		  
+	
+			<div class='row'>
+				<div class="collapse" id="collapseComments" style='width:100%'>
+				<div class='overflow-auto sections-2 scroll-menu'>
+					{% for comment in comments %}
+					{% if comment.user_id == user %}
+					<div class='col-12 mt-4 mb-4'>
+						<div class='row'>
+							<div class='col-12 comment-sub-box'> 
+								<div class="user-content" >
+									<h1 class='user-box h1-1'>
+										{{ comment.user_id }}
+									</h1>
+									<hr>
+									<p class='p-p'>
+										{{ comment.comment}}
+									</p>
+									<div class='comment-line-3'></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% else %}
+					<div class='col-12 mt-4 mb-4'>
+						<div class='row'>
+							<div class='col-12 comment-sub-box'> 
+								<div class="comment-content" >
+									<h1 class='h1-1'>
+										{{ comment.user_id }}
+									</h1>
+									<hr>
+									<p class='p-p'>
+										{{ comment.comment}}
+									</p>
+									<div class='comment-line-2'></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

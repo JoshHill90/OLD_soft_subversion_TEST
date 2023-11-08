@@ -49,7 +49,7 @@ class Invite(models.Model):
     
 class ProjectRequest(models.Model):
     name = models.CharField(max_length=255, verbose_name='Project Name')
-    user_id = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    client_id = models.ForeignKey(Client, null=True, blank=True, on_delete=models.SET_NULL)
     date = models.CharField(max_length=10)
     scope = models.CharField(max_length=255, verbose_name='Project-Type/Scope')
     details = models.CharField(max_length=3000, verbose_name='Project Details')
@@ -76,7 +76,7 @@ class RequestReply(models.Model):
 
     def get_absolute_url(self):
         
-        return reverse("request-status", kwargs={"slug": self.slug})
+        return reverse("request-status", args=(str(self.id)))
     
 class ProjectTerms(models.Model):
     project_request_id = models.ForeignKey(ProjectRequest, null=True, blank=True, on_delete=models.SET_NULL)

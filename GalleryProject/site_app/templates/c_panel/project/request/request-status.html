@@ -1,0 +1,132 @@
+{% extends 'c-panel.html' %}
+{% block title %}Request Status{% endblock %}
+{% block content %}
+<div class='row'>
+	<div class='col-12'>
+		<div class='mt-4 text-center mt-4 mb-4 sections-small'>
+			<h1 class='h1-1'>
+				Requested Project Status
+			</h1>
+		</div>
+	</div>
+</div>
+<div class='row'>
+	<div class='col-6'>
+		<div class='mt-4 mt-4 mb-4 sections-small'>
+			<h1 class='h1-1'>
+				Requested Project Name: 
+				<hr>
+				{{projectrequest}}
+			</h1>
+		</div>
+		
+		<div class='mt-4 mb-4 sections-small'>
+			<h1 class='h1-1'>
+				Requested Project Scope:
+			</h1>
+			<hr>
+			<ul>
+				<ol><p class='p-p'>Project-Type/Scope: {{projectrequest.scope}}</p></ol>
+				<ol><p class='p-p'>Desired Date: {{projectrequest.date}}</p></ol>
+				<ol><p class='p-p'>Location type: {{projectrequest.location}}</p></ol>
+	
+			</ul>
+		</div>
+	</div>
+
+	<div class='col-6 mt-4 mb-4'>
+		<div class='sections h-100'>
+			<h1 class='h1-1'>
+				Requested Project Details:
+			</h1>
+			<hr>
+			<p class='p-p'>{{projectrequest.details}}</p>
+		</div>
+	</div>
+	<div class='col-12 mt-4 mb-4'>
+		<div class='text-center sections-small'>
+			<h1 class='h1-1'>
+				Requested Status: {{ projectrequest.status}}
+			</h1>
+		</div>
+	</div>
+</div>
+
+	<div class="sections-small mt-4 mb-4 form-group">
+		<p class='p-p'>
+			<a class="btn-cust" data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">
+				Send a Message
+			</a>
+		</p>
+
+		<div class="collapse" id="collapse1" style='width:100%'>
+			<form method=POST>
+				{% csrf_token %}
+				{{comment_form.as_p}}
+				<button class="btn-cust">
+					Submit
+				</button>
+			</form>
+		</div>
+	</div>
+
+	<div class="sections-small mt-4 mb-4 form-group">
+		<p class='p-p'>
+			<a class="btn-cust" data-bs-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse1">
+				Project Request Thread
+			</a>
+		</p>
+	  
+
+
+		<div class="collapse" id="collapse2" style='width:100%'>
+
+			{% for comment in comments %}
+			{% if comment.user_id == user %}
+			<div class='col-12 mt-4 mb-4'>
+				<div class='row'>
+					<div class='col-12 comment-sub-box'> 
+						<div class="user-content" >
+							<h1 class='user-box h1-1'>
+								{{ comment.user_id }}
+							</h1>
+							<hr>
+							<p class='p-p'>
+								{{ comment.comment}}
+							</p>
+							<div class='comment-line-3'></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% else %}
+			<div class='col-12 mt-4 mb-4'>
+				<div class='row'>
+					<div class='col-12 comment-sub-box'> 
+						<div class="comment-content" >
+							<h1 class='h1-1'>
+								{{ comment.user_id }}
+							</h1>
+							<hr>
+							<p class='p-p'>
+								{{ comment.comment}}
+							</p>
+							<div class='comment-line-2'></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+
+
+
+
+
+</row>
+
+
+
+{% endblock %}

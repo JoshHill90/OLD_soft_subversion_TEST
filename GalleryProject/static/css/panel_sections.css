@@ -62,5 +62,17 @@
 	margin: auto;
 	position: relative;
 	padding: 10px 10px;
-
 }
+
+.section-scroll {
+	max-height: 30vh;
+}
+
+
+
+@media screen and (max-width: 768px){
+	.section-form {
+		width: 100%;
+	}
+	
+  }

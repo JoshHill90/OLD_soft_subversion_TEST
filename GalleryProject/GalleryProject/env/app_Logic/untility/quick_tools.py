@@ -72,11 +72,11 @@ class DateFunction:
 # hex_gen
 #-------------------------------------------------------------------------------------------------------#
 class Hexer:
-	def hex_gen():
+	def hex_gen(self):
 		random_hex = secrets.token_hex(16)
 		return str(random_hex)
 
-	def hex_gen_small():
+	def hex_gen_small(self):
 		random_hex = secrets.token_hex(4)
 		return str(random_hex)
 

@@ -5,69 +5,150 @@
 {% load static %}
 <div class='row mt-4 sections-small'>
 	<div class='col-6 col-md-3 mt-4'>
-		<a href="{% url 'o-client' %}">
-			<div class='section-pad addLoader text-center' >
-				<i class="fa-solid fa-users-line fa-2xl"></i>
-				<p class='mt-2'>Cleints</p>
+		<h1 class='h1-1 '>
+			Client
+		</h1>
+		<hr>
+		
+		<div class='mt-4 mb-4'>
+			<a href="{% url 'o-client' %}">
+				<div class='section-pad addLoader text-center' >
+					<i class="fa-solid fa-users-line fa-2xl"></i>
+					<p class='mt-2'>Cleints</p>
 
-			</div>
-		</a>
-	</div>
-	<div class='col-6 col-md-3 mt-4'>
-		<a href="{% url 'o-project' %}">
-			<div class='section-pad addLoader text-center'>
-				<i class="fa-solid fa-folder fa-2xl"></i>
-				<p class='mt-2'>Projects</p>
-			</div>
-		</a>
-	</div>
-	<div class='col-6 col-md-3 mt-4'>
-		<a href="{% url 'o-client' %}">
-			<div class='section-pad addLoader text-center'>
-				<i class="fa-solid fa-file-invoice fa-2xl"></i>
-				<p class='mt-2'>Billing</p>
-			</div>
-		</a>
-	</div>
-	<div class='col-6 col-md-3 mt-4'>
-		<a href="{% url 'o-client' %}">
-			<div class='section-pad addLoader text-center'>
-				<i class="fa-solid fa-gears fa-2xl"></i>
-				<p class='mt-2'>Automate</p>
-			</div>
-		</a>
-	</div>
-	<div class='col-6 col-md-3 mt-4'>
-		<a href="{% url 'invite' %}">
-			<div class='section-pad addLoader text-center'>
+				</div>
+			</a>
+		</div>
+		
+		<div class='mt-4 mb-4'>
+			<a href="{% url 'invite' %}">
+				<div class='section-pad addLoader text-center' >
 				<i class="fa-solid fa-user-plus fa-2xl"></i>
 				<p class='mt-2'>Client Intake</p>
-			</div>
-		</a>
+				</div>
+			</a>
+		</div>
+		
+		<div class='mt-4 mb-4'>
+			<a href="{% url 'o-client' %}">
+				<div class='section-pad text-center'>
+					<i class="fa-regular fa-address-book fa-2xl"></i>
+					<p class='mt-2'>Message Client</p>
+				</div>
+			</a>
+		</div>
+
 	</div>
+
 	<div class='col-6 col-md-3 mt-4'>
-		<a href="{% url 'o-client' %}">
-			<div class='section-pad addLoader text-center'>
-				<i class="fa-regular fa-comments fa-2xl"></i>
+		<h1 class='h1-1 '>
+			Project
+		</h1>
+		<hr>
+		<div class='mt-4 mb-4'>
+			<a href="{% url 'o-project' %}">
+				<div class='section-pad addLoader text-center'>
+					<i class="fa-solid fa-folder fa-2xl"></i>
+					<p class='mt-2'>Projects</p>
+				</div>
+			</a>
+		</div>
+		
+		<div class='mt-4 mb-4'>
+			<a href="{% url 'o-reqeust' %}">
+				<div class='section-pad addLoader text-center' >
+				<i class="fa-solid fa-folder-plus fa-2xl"></i>
 				<p class='mt-2'>Project Request</p>
-			</div>
-		</a>
+				</div>
+			</a>
+
+		</div>
+		
+		<div class='mt-4 mb-4'>
+			<a href="{% url 'project-calendar' year month%}">
+				<div class='section-pad addLoader text-center' >
+				<i class="fa-solid fa-calendar-day fa-2xl"></i>
+				<p class='mt-2'>Project Calendar</p>
+				</div>
+			</a>
+		</div>
 	</div>
+
 	<div class='col-6 col-md-3 mt-4'>
-		<a href="{% url 'o-client' %}">
+		<h1 class='h1-1 '>
+			Billing
+		</h1>
+		<hr>
+		<div class='mt-4 mb-4'>
+			<a href="{% url 'o-billing' %}">
+				<div class='section-pad addLoader text-center'>
+					<i class="fa-solid fa-file-invoice fa-2xl"></i>
+					<p class='mt-2'>Billing</p>
+				</div>
+			</a>
+		</div>
+
+		<div class='mt-4 mb-4'>
+		<a href="{% url 'create-invoice' %}">
 			<div class='section-pad addLoader text-center'>
-				<i class="fa-solid fa-plus fa-2xl"></i>
-				<p class='mt-2'>Add Invoice</p>
+				<i class="fa-solid fa-file-invoice fa-2xl"></i>
+				<p class='mt-2'>Create Invoice</p>
 			</div>
 		</a>
+		</div>
+
+		<div class='mt-4 mb-4'>
+			<a href="{% url 'o-project' %}">
+				<div class='section-pad addLoader text-center'>
+					<i class="fa-solid fa-money-bill-1-wave fa-2xl"></i>
+					<p class='mt-2'>Cash Payment</p>
+				</div>
+			</a>
+		</div>
 	</div>
+
+
 	<div class='col-6 col-md-3 mt-4'>
-		<a href="{% url 'o-client' %}">
-			<div class='section-pad addLoader text-center'>
-				<i class="fa-solid fa-file-contract fa-2xl"></i>
-				<p class='mt-2'>Documents</p>
-			</div>
-		</a>
+		<h1 class='h1-1 '>
+			Settings
+		</h1>
+		<hr>
+		<div class='mt-4 mb-4'>
+			<a href="{% url 'o-client' %}">
+				<div class='section-pad addLoader text-center'>
+					<i class="fa-solid fa-gears fa-2xl"></i>
+					<p class='mt-2'>Automate</p>
+				</div>
+			</a>
+		</div>
+		
+		<div class='mt-4 mb-4'>
+			<a href="{% url 'invite' %}">
+					<div class='section-pad addLoader text-center' >
+					<i class="fa-solid fa-user-gear fa-2xl"></i>
+					<p class='mt-2'>Client settings</p>
+				</div>
+			</a>
+		</div>
+		
+		<div class='mt-4 mb-4'>		
+			<a href="{% url 'o-project' %}">
+				<div class='section-pad addLoader text-center'>
+					<i class="fa-solid fa-sliders fa-2xl"></i>
+					<p class='mt-2'>Invoice Settings</p>
+				</div>
+			</a>
+		</div>
+		
+		<div class='mt-4 mb-4'>
+			<a href="{% url 'o-client' %}">
+				<div class='section-pad addLoader text-center'>
+					<i class="fa-solid fa-file-contract fa-2xl"></i>
+					<p class='mt-2'>Documents</p>
+				</div>
+			</a>
+		</div>
+
 	</div>
 </div>
 <script src={% static 'js/graphs.js' %}></script>

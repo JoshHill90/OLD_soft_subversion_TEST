@@ -1,6 +1,6 @@
 import ssl
 import smtplib
-from..text_py.text_for_emails import *
+from ..text_py.text_for_emails import *
 from email.message import EmailMessage
 from email.utils import formataddr
 from pathlib import Path
@@ -9,9 +9,8 @@ from dotenv import load_dotenv
 from functools import reduce
 
 current_dir = Path(__file__).resolve().parent
-ven = current_dir / "../.env"
+ven = current_dir / "../.." / ".env"
 load_dotenv(ven)
-
 
 
 #-------------------------------------------------------------------------------------------------------#
@@ -26,8 +25,8 @@ class AutoReply:
     email_password = os.getenv("EMAIL_PASSWORD")
     email_port = os.getenv("EMAIL_PORT")
     email_backend = os.getenv("EMAIL_BACKEND_SMTP")
-    owners_email = os.getenv("REMAIL_CONTACT")
-    
+    alart_email = os.getenv("REPLYER")
+    receive_email = os.getenv("RECEIVE_EMAILS")
     #------------------------#
     # Contact form auto reply
     #------------------------#
@@ -116,8 +115,8 @@ class AutoReply:
 
         mailer = EmailMessage()
 
-        mailer['From'] = formataddr(("Contact Form", f"{self.send_from}"))
-        mailer['To'] = self.owners_email
+        mailer['From'] = formataddr(("Contact Form", f"{self.alart_email}"))
+        mailer['To'] = self.receive_email
         mailer['Subject'] = contact_subject
         mailer.set_content(contact_body)
 
@@ -125,7 +124,7 @@ class AutoReply:
             try:
                 server.starttls()
                 server.login(self.send_from, self.email_password)
-                server.sendmail(self.send_from, self.owners_email, mailer.as_string())
+                server.sendmail(self.send_from, self.receive_email, mailer.as_string())
                 server.close()
                 print('alart sent')
             except Exception as e:
@@ -136,7 +135,7 @@ class AutoReply:
     #------------------------#
 
     def send_invite(self, client_email, client_name, hexkey):
-
+        print(self.email_port, ' port')
         contact_subject = "Your Exclusive Registration Key for Soft Subversion's Online Studio"
 
         text_swap = {'[client_name]': client_name,
@@ -187,8 +186,8 @@ class AutoReply:
 
         mailer = EmailMessage()
 
-        mailer['From'] = formataddr(("Soft Subversion", f"{self.send_from}"))
-        mailer['To'] = self.owners_email
+        mailer['From'] = formataddr(("Soft Subversion", f"{self.alart_email}"))
+        mailer['To'] = self.receive_email
         mailer['Subject'] = contact_subject
         mailer.set_content(contact_body)
 
@@ -196,7 +195,7 @@ class AutoReply:
             try:
                 server.starttls()
                 server.login(self.send_from, self.email_password)
-                server.sendmail(self.send_from, self.owners_email, mailer.as_string())
+                server.sendmail(self.send_from, self.receive_email, mailer.as_string())
                 server.close()
                 print('alart sent')
             except Exception as e:
@@ -206,7 +205,7 @@ class AutoReply:
     # project/invoice creation
     #------------------------#
 
-    def new_project_and_invoice(self, client_email, client_name, payment_link, project_link, invoice_link):
+    def send_new_project_and_invoice(self, client_email, client_name, payment_link, project_link, invoice_link):
 
         contact_subject = "New Project in your Project Binder"
 

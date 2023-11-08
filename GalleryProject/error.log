@@ -1,30 +1,37 @@
-2023-11-05 22:21:39,780 [INFO]: Watching for file changes with StatReloader
-2023-11-05 22:21:43,342 [WARNING]: Not Found: /favicon.ico
-2023-11-05 23:13:00,373 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:15:46,415 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\site_app\admin.py changed, reloading.
-2023-11-05 23:15:47,112 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:15:53,028 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:17:56,812 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:17:57,449 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:19:58,751 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:19:59,408 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:21:58,703 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:21:59,383 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:22:59,819 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\site_app\views.py changed, reloading.
-2023-11-05 23:23:00,473 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:23:25,085 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\site_app\views.py changed, reloading.
-2023-11-05 23:23:25,715 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:24:57,172 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\site_app\views.py changed, reloading.
-2023-11-05 23:24:57,792 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:26:50,689 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:26:51,356 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:27:01,619 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:27:02,414 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:28:49,735 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:28:50,307 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:30:18,716 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:30:19,354 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:30:34,306 [ERROR]: Internal Server Error: /
+2023-11-08 00:31:26,224 [WARNING]: Not Found: /user_system/register
+2023-11-08 01:07:59,277 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\user_system\views.py changed, reloading.
+2023-11-08 01:07:59,943 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:26:09,831 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
+2023-11-08 01:26:10,524 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:26:54,169 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
+2023-11-08 01:26:54,886 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:26:57,318 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
+2023-11-08 01:26:58,060 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:30:09,992 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
+2023-11-08 01:30:10,800 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:30:25,587 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
+2023-11-08 01:30:26,261 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:36:55,748 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
+2023-11-08 01:36:56,534 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:36:59,881 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
+2023-11-08 01:37:00,497 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:40:57,687 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
+2023-11-08 01:40:58,537 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:45:37,923 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
+2023-11-08 01:45:38,597 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:45:44,583 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
+2023-11-08 01:45:45,254 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:49:58,224 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
+2023-11-08 01:49:58,960 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:50:21,450 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
+2023-11-08 01:50:22,161 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:56:01,100 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
+2023-11-08 01:56:01,722 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:56:21,007 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
+2023-11-08 01:56:21,671 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:56:32,751 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
+2023-11-08 01:56:33,397 [INFO]: Watching for file changes with StatReloader
+2023-11-08 01:57:45,736 [ERROR]: Internal Server Error: /
 Traceback (most recent call last):
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
     response = get_response(request)
@@ -32,107 +39,9 @@ Traceback (most recent call last):
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\site_app\views.py", line 58, in index_page
-    cf_api_call.mass_import()
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py", line 226, in mass_import
-    print(imageid +'\n' + filename +'\n' + variants +'\n' + uploaded +'\n' + meta)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
-TypeError: can only concatenate str (not "list") to str
-2023-11-05 23:31:21,370 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:31:22,047 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:31:26,086 [ERROR]: Internal Server Error: /
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\site_app\views.py", line 58, in index_page
-    cf_api_call.mass_import()
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py", line 225, in mass_import
-    meta = image['meta']
-           ~~~~~^^^^^^^^
-KeyError: 'meta'
-2023-11-05 23:31:56,243 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:31:56,894 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:32:38,270 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:32:38,918 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:33:45,933 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:33:46,721 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:34:33,203 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:34:33,850 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:34:40,921 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:34:41,624 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:35:25,935 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:35:26,795 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:35:29,575 [ERROR]: Internal Server Error: /
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\site_app\views.py", line 58, in index_page
-    cf_api_call.mass_import()
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py", line 225, in mass_import
-    meta = image['meta']
-           ~~~~~^^^^^^^^
-KeyError: 'meta'
-2023-11-05 23:37:09,871 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:37:10,576 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:37:26,176 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:37:26,842 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:46:00,780 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:46:01,479 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:46:22,808 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:46:23,478 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:46:33,651 [ERROR]: Internal Server Error: /
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\site_app\views.py", line 58, in index_page
-    cf_api_call.mass_import()
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py", line 230, in mass_import
-    client = Client.objects.get(name='Soft Subversion')
-     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\query.py", line 637, in get
-    raise self.model.DoesNotExist(
-client.models.Client.DoesNotExist: Client matching query does not exist.
-2023-11-05 23:47:11,321 [WARNING]: Not Found: /admin
-2023-11-05 23:50:43,554 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:50:44,190 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:51:21,390 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:51:22,084 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:51:45,842 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\GalleryProject\env\cloudflare_API\CFAPI.py changed, reloading.
-2023-11-05 23:51:46,576 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:52:10,551 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\site_app\views.py changed, reloading.
-2023-11-05 23:52:11,173 [INFO]: Watching for file changes with StatReloader
-2023-11-05 23:52:48,584 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\site_app\views.py changed, reloading.
-2023-11-05 23:52:49,188 [INFO]: Watching for file changes with StatReloader
-2023-11-06 00:00:33,687 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\gallery\models.py changed, reloading.
-2023-11-06 00:00:34,526 [INFO]: Watching for file changes with StatReloader
-2023-11-06 00:05:42,290 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\gallery\views.py changed, reloading.
-2023-11-06 00:05:42,903 [INFO]: Watching for file changes with StatReloader
-2023-11-06 00:05:49,499 [ERROR]: Internal Server Error: /gallery/gallery-hall/
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\gallery\views.py", line 60, in gallery_hall
-    return render(request, 'main_gallery/gallery.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\site_app\views.py", line 60, in index_page
+    return render(request, 'index.html', { 'image_list': image_list})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
     content = loader.render_to_string(template_name, context, request, using=using)
               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -157,175 +66,15 @@ Traceback (most recent call last):
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
     return self.render(context)
            ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 157, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 63, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 238, in render
-    nodelist.append(node.render_annotated(context))
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 471, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\base.py", line 88, in reverse
-    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'model' with no arguments not found. 1 pattern(s) tried: ['gallery/gallery/(?P<gal>[-a-zA-Z0-9_]+)/(?P<subgal>[-a-zA-Z0-9_]+)\\Z']
-2023-11-06 00:07:09,245 [ERROR]: Internal Server Error: /gallery/gallery-hall/
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\gallery\views.py", line 60, in gallery_hall
-    return render(request, 'main_gallery/gallery.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 175, in render
-    return self._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 157, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 63, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 238, in render
-    nodelist.append(node.render_annotated(context))
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 471, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\base.py", line 88, in reverse
-    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'model' with arguments '('', '')' not found. 1 pattern(s) tried: ['gallery/gallery/(?P<gal>[-a-zA-Z0-9_]+)/(?P<subgal>[-a-zA-Z0-9_]+)\\Z']
-2023-11-06 00:07:26,974 [ERROR]: Internal Server Error: /gallery/gallery-hall/
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\gallery\views.py", line 60, in gallery_hall
-    return render(request, 'main_gallery/gallery.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
-    template = get_template(template_name, using=using)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 15, in get_template
-    return engine.get_template(template_name)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
-    return Template(self.engine.get_template(template_name), self)
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\engine.py", line 175, in get_template
-    template, origin = self.find_template(template_name)
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\engine.py", line 157, in find_template
     template = loader.get_template(name, skip=skip)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -346,17 +95,9 @@ Traceback (most recent call last):
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 511, in parse
     compiled_result = compile_func(self, token)
                       ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
-    nodelist = parser.parse()
-               ^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 513, in parse
-    raise self.error(token, e)
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 511, in parse
-    compiled_result = compile_func(self, token)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 232, in do_block
-    nodelist = parser.parse(("endblock",))
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 513, in parse
     raise self.error(token, e)
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 511, in parse
@@ -373,21 +114,18 @@ Traceback (most recent call last):
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 953, in do_if
     nodelist = parser.parse(("elif", "else", "endif"))
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 513, in parse
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 484, in parse
     raise self.error(token, e)
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 511, in parse
-    compiled_result = compile_func(self, token)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 1389, in url
-    args.append(parser.compile_filter(value))
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 600, in compile_filter
     return FilterExpression(token, self)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 703, in __init__
     raise TemplateSyntaxError(
-django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ',' from 'model,'
-2023-11-06 00:07:41,839 [ERROR]: Internal Server Error: /gallery/gallery-hall/
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' c-panel user.id' from 'url c-panel user.id'
+2023-11-08 01:57:58,656 [ERROR]: Internal Server Error: /
 Traceback (most recent call last):
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
     response = get_response(request)
@@ -395,9 +133,193 @@ Traceback (most recent call last):
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\gallery\views.py", line 60, in gallery_hall
-    return render(request, 'main_gallery/gallery.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\site_app\views.py", line 60, in index_page
+    return render(request, 'index.html', { 'image_list': image_list})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' 'c-panel' user.id' from 'url 'c-panel' user.id'
+2023-11-08 01:58:37,258 [ERROR]: Internal Server Error: /client/c-panel/binder/3
+Traceback (most recent call last):
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 485, in c_panel
+    project_list = Project.objects.filter(Q(user_id__id=users_id))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\sql\query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\sql\query.py", line 1393, in build_filter
+    return self._add_q(
+           ^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\sql\query.py", line 1415, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\sql\query.py", line 1225, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\sql\query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'user_id' into field. Choices are: client_id, client_id_id, id, image, invoice, name, note, projectevents, projectterms, slug, status
+2023-11-08 02:01:52,009 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\models.py changed, reloading.
+2023-11-08 02:01:52,691 [INFO]: Watching for file changes with StatReloader
+2023-11-08 02:02:47,841 [INFO]: Watching for file changes with StatReloader
+2023-11-08 02:02:54,286 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\models.py changed, reloading.
+2023-11-08 02:02:54,934 [INFO]: Watching for file changes with StatReloader
+2023-11-08 02:03:31,313 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
+2023-11-08 02:03:31,969 [INFO]: Watching for file changes with StatReloader
+2023-11-08 02:03:54,708 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
+2023-11-08 02:03:55,326 [INFO]: Watching for file changes with StatReloader
+2023-11-08 02:04:31,097 [INFO]: Watching for file changes with StatReloader
+2023-11-08 02:04:39,202 [ERROR]: Internal Server Error: /client/c-panel/binder/3
+Traceback (most recent call last):
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 486, in c_panel
+    project_request_info = ProjectRequest.objects.filter(cleint_id=client_id)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\sql\query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\sql\query.py", line 1415, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\sql\query.py", line 1225, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\db\models\sql\query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'cleint_id' into field. Choices are: client_id, client_id_id, date, details, id, location, name, projectterms, requestreply, scope, slug, status
+2023-11-08 02:04:48,263 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
+2023-11-08 02:04:49,092 [INFO]: Watching for file changes with StatReloader
+2023-11-08 02:09:57,298 [ERROR]: Internal Server Error: /client/c-panel/binder/3
+Traceback (most recent call last):
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 489, in c_panel
+    return render(request, 'c_panel/project/binder.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
     content = loader.render_to_string(template_name, context, request, using=using)
               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -437,9 +359,9 @@ Traceback (most recent call last):
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
     return self.render(context)
            ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 63, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
     return SafeString("".join([node.render_annotated(context) for node in self]))
                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -475,8 +397,8 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
     raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'model' with arguments '('', '')' not found. 1 pattern(s) tried: ['gallery/gallery/(?P<gal>[-a-zA-Z0-9_]+)/(?P<subgal>[-a-zA-Z0-9_]+)\\Z']
-2023-11-06 00:08:11,814 [ERROR]: Internal Server Error: /gallery/gallery-hall/
+django.urls.exceptions.NoReverseMatch: Reverse for 'project-binder' not found. 'project-binder' is not a valid view function or pattern name.
+2023-11-08 02:12:19,397 [ERROR]: Internal Server Error: /client/c-panel/binder/3
 Traceback (most recent call last):
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
     response = get_response(request)
@@ -484,336 +406,9 @@ Traceback (most recent call last):
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\gallery\views.py", line 60, in gallery_hall
-    return render(request, 'main_gallery/gallery.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 175, in render
-    return self._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 157, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 63, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 238, in render
-    nodelist.append(node.render_annotated(context))
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 471, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\base.py", line 88, in reverse
-    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'model' with arguments '('', '')' not found. 1 pattern(s) tried: ['gallery/gallery/(?P<gal>[-a-zA-Z0-9_]+)/(?P<subgal>[-a-zA-Z0-9_]+)\\Z']
-2023-11-06 00:08:32,475 [ERROR]: Internal Server Error: /gallery/gallery-hall/
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\gallery\views.py", line 60, in gallery_hall
-    return render(request, 'main_gallery/gallery.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 175, in render
-    return self._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 157, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 63, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 238, in render
-    nodelist.append(node.render_annotated(context))
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 471, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\base.py", line 88, in reverse
-    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'wedding' not found. 'wedding' is not a valid view function or pattern name.
-2023-11-06 00:09:08,900 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\gallery\urls.py changed, reloading.
-2023-11-06 00:09:09,640 [INFO]: Watching for file changes with StatReloader
-2023-11-06 00:09:18,143 [ERROR]: Internal Server Error: /gallery/gallery/model/modelgal
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\gallery\views.py", line 68, in site_gallery
-    return render(request, 'main_gallery/model-gallery.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 175, in render
-    return self._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 157, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 63, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 471, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\base.py", line 88, in reverse
-    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'wedding' not found. 'wedding' is not a valid view function or pattern name.
-2023-11-06 00:14:50,168 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\gallery\views.py changed, reloading.
-2023-11-06 00:14:51,000 [INFO]: Watching for file changes with StatReloader
-2023-11-06 00:42:36,689 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
-2023-11-06 00:42:37,365 [INFO]: Watching for file changes with StatReloader
-2023-11-06 00:54:59,127 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
-2023-11-06 00:55:00,097 [INFO]: Watching for file changes with StatReloader
-2023-11-06 00:55:29,990 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
-2023-11-06 00:55:30,631 [INFO]: Watching for file changes with StatReloader
-2023-11-06 00:55:34,661 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
-2023-11-06 00:55:35,282 [INFO]: Watching for file changes with StatReloader
-2023-11-06 00:55:49,584 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
-2023-11-06 00:55:50,170 [INFO]: Watching for file changes with StatReloader
-2023-11-06 00:56:00,355 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
-2023-11-06 00:56:00,952 [INFO]: Watching for file changes with StatReloader
-2023-11-06 00:56:07,037 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
-2023-11-06 00:56:07,758 [INFO]: Watching for file changes with StatReloader
-2023-11-06 00:56:57,358 [ERROR]: Internal Server Error: /client/o-panel/binder/project
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 173, in project_main
-    return render(request, 'o_panel/project/projects.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
-    template = get_template(template_name, using=using)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 19, in get_template
-    raise TemplateDoesNotExist(template_name, chain=chain)
-django.template.exceptions.TemplateDoesNotExist: o_panel/project/projects.html
-2023-11-06 00:57:17,541 [ERROR]: Internal Server Error: /client/o-panel/binder/project
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 173, in project_main
-    return render(request, 'o_panel/project/projects.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
-    template = get_template(template_name, using=using)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 19, in get_template
-    raise TemplateDoesNotExist(template_name, chain=chain)
-django.template.exceptions.TemplateDoesNotExist: o_panel/project/projects.html
-2023-11-06 00:57:33,591 [ERROR]: Internal Server Error: /client/o-panel/binder/project
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 173, in project_main
-    return render(request, 'o_panel/project/projects.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
-    template = get_template(template_name, using=using)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 19, in get_template
-    raise TemplateDoesNotExist(template_name, chain=chain)
-django.template.exceptions.TemplateDoesNotExist: o_panel/project/projects.html
-2023-11-06 00:58:18,553 [ERROR]: Internal Server Error: /client/o-panel/binder/project
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 173, in project_main
-    return render(request, 'o_panel/project/projects.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 489, in c_panel
+    return render(request, 'c_panel/project/binder.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
     content = loader.render_to_string(template_name, context, request, using=using)
               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -915,10 +510,8 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
     raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'projects' not found. 'projects' is not a valid view function or pattern name.
-2023-11-06 01:00:50,515 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
-2023-11-06 01:00:51,214 [INFO]: Watching for file changes with StatReloader
-2023-11-06 01:01:01,029 [ERROR]: Internal Server Error: /client/o-panel/binder/project
+django.urls.exceptions.NoReverseMatch: Reverse for 'billing' not found. 'billing' is not a valid view function or pattern name.
+2023-11-08 02:42:27,821 [ERROR]: Internal Server Error: /client/c-panel/binder/new-request
 Traceback (most recent call last):
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
     response = get_response(request)
@@ -926,120 +519,36 @@ Traceback (most recent call last):
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 173, in project_main
-    return render(request, 'o_panel/project/projects.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 175, in render
-    return self._render(context)
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\views\generic\edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\views\generic\edit.py", line 153, in post
+    return self.form_valid(form)
            ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 157, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 238, in render
-    nodelist.append(node.render_annotated(context))
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 63, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 471, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 533, in form_valid
+    return redirect('request-status', slug_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\base.py", line 88, in reverse
     return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
     raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'projects' not found. 'projects' is not a valid view function or pattern name.
-2023-11-06 01:02:00,725 [ERROR]: Internal Server Error: /client/project/events/2023/November
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 337, in clandar
-    month_number = int(month)
-                   ^^^^^^^^^^
-ValueError: invalid literal for int() with base 10: 'November'
-
-During handling of the above exception, another exception occurred:
-
+django.urls.exceptions.NoReverseMatch: Reverse for 'request-status' with arguments '('3-107013e0-prj',)' not found. 1 pattern(s) tried: ['client/c\\-panel/binder/requests/(?P<id>[0-9]+)\\Z']
+2023-11-08 02:43:43,007 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
+2023-11-08 02:43:43,806 [INFO]: Watching for file changes with StatReloader
+2023-11-08 02:43:50,493 [ERROR]: Internal Server Error: /client/c-panel/binder/requests/2
 Traceback (most recent call last):
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
     response = get_response(request)
@@ -1047,631 +556,6 @@ Traceback (most recent call last):
   File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 340, in clandar
-    month_number = list(calendar.month_name).index(month)
-                        ^^^^^^^^
-NameError: name 'calendar' is not defined
-2023-11-06 01:08:37,305 [ERROR]: Internal Server Error: /client/project/events/2023/November
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 337, in clandar
-    month_number = int(month)
-                   ^^^^^^^^^^
-ValueError: invalid literal for int() with base 10: 'November'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 340, in clandar
-    month_number = list(calendar.month_name).index(month)
-                        ^^^^^^^^
-NameError: name 'calendar' is not defined
-2023-11-06 01:19:12,007 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
-2023-11-06 01:19:12,639 [INFO]: Watching for file changes with StatReloader
-2023-11-06 01:19:59,981 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
-2023-11-06 01:20:00,649 [INFO]: Watching for file changes with StatReloader
-2023-11-06 01:21:10,484 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
-2023-11-06 01:21:11,076 [INFO]: Watching for file changes with StatReloader
-2023-11-06 01:21:13,939 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
-2023-11-06 01:21:14,682 [INFO]: Watching for file changes with StatReloader
-2023-11-06 01:21:46,216 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
-2023-11-06 01:21:46,859 [INFO]: Watching for file changes with StatReloader
-2023-11-06 01:22:00,882 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
-2023-11-06 01:22:01,557 [INFO]: Watching for file changes with StatReloader
-2023-11-06 01:22:09,604 [ERROR]: Internal Server Error: /client/o-panel/binder/project
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 174, in project_main
-    return render(request, 'o_panel/project/projects.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 175, in render
-    return self._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 157, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 238, in render
-    nodelist.append(node.render_annotated(context))
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 63, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 471, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\base.py", line 88, in reverse
-    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'project-calendar' not found. 'project-calendar' is not a valid view function or pattern name.
-2023-11-06 01:22:22,383 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\urls.py changed, reloading.
-2023-11-06 01:22:23,175 [INFO]: Watching for file changes with StatReloader
-2023-11-06 01:22:27,844 [ERROR]: Internal Server Error: /client/o-panel/binder/project/events/2023/November
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 350, in clandar
-    return render(request, 'gallery/project/project-events/calendar.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
-    template = get_template(template_name, using=using)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 19, in get_template
-    raise TemplateDoesNotExist(template_name, chain=chain)
-django.template.exceptions.TemplateDoesNotExist: gallery/project/project-events/calendar.html
-2023-11-06 01:27:18,892 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
-2023-11-06 01:27:19,567 [INFO]: Watching for file changes with StatReloader
-2023-11-06 01:39:11,886 [ERROR]: Internal Server Error: /client/o-panel/binder/project
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 174, in project_main
-    return render(request, 'o_panel/project/projects.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 175, in render
-    return self._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 157, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 238, in render
-    nodelist.append(node.render_annotated(context))
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 63, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 471, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\base.py", line 88, in reverse
-    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for '' not found. '' is not a valid view function or pattern name.
-2023-11-06 01:44:12,417 [ERROR]: Internal Server Error: /client/o-panel/binder/project
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 174, in project_main
-    return render(request, 'o_panel/project/projects.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 175, in render
-    return self._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 157, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 238, in render
-    nodelist.append(node.render_annotated(context))
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 63, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 471, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\base.py", line 88, in reverse
-    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'project-calendar' with no arguments not found. 1 pattern(s) tried: ['client/o\\-panel/binder/project/events/(?P<year>[0-9]+)/(?P<month>[^/]+)\\Z']
-2023-11-06 01:51:08,412 [ERROR]: Internal Server Error: /client/o-panel/binder/project
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 174, in project_main
-    return render(request, 'o_panel/project/projects.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 175, in render
-    return self._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 157, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 238, in render
-    nodelist.append(node.render_annotated(context))
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 63, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 471, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\base.py", line 88, in reverse
-    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'project' not found. 'project' is not a valid view function or pattern name.
-2023-11-06 01:51:29,736 [ERROR]: Internal Server Error: /client/o-panel/binder/project
-Traceback (most recent call last):
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py", line 174, in project_main
-    return render(request, 'o_panel/project/projects.html', {
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\shortcuts.py", line 24, in render
-    content = loader.render_to_string(template_name, context, request, using=using)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
-    return template.render(context, request)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\backends\django.py", line 61, in render
-    return self.template.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 175, in render
-    return self._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 157, in render
-    return compiled_parent._render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 167, in _render
-    return self.nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 238, in render
-    nodelist.append(node.render_annotated(context))
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\loader_tags.py", line 63, in render
-    result = block.nodelist.render(context)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 321, in render
-    return nodelist.render(context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in render
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
-    return SafeString("".join([node.render_annotated(context) for node in self]))
-                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\base.py", line 966, in render_annotated
-    return self.render(context)
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\template\defaulttags.py", line 471, in render
-    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\base.py", line 88, in reverse
-    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\vert\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
-    raise NoReverseMatch(msg)
-django.urls.exceptions.NoReverseMatch: Reverse for 'projects' not found. 'projects' is not a valid view function or pattern name.
-2023-11-06 21:18:41,664 [INFO]: Watching for file changes with StatReloader
-2023-11-06 21:18:44,870 [WARNING]: Not Found: /favicon.ico
-2023-11-06 21:19:25,610 [WARNING]: Not Found: /favicon.ico
+TypeError: request_status() got an unexpected keyword argument 'id'
+2023-11-08 02:44:23,636 [INFO]: C:\Users\joshu\Documents\Code Book\Websites\Silk Thread Dev - sites\client-sites\soft_subversionProd\GalleryProject\client\views.py changed, reloading.
+2023-11-08 02:44:24,344 [INFO]: Watching for file changes with StatReloader

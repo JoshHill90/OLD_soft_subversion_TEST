@@ -1,0 +1,145 @@
+{% extends 'panel.html' %}
+{% block title %}Crate Invoice{% endblock %}
+{% block content %}
+{% load static %}
+<div class="sections p-p form-group">
+    <h1 class='h1-1'>Invoice Details</h1>
+    <hr>
+        
+    <form method=POST>
+        {% csrf_token %}
+        <div class='sections-2'>
+
+            <div class='row'>
+                <div class='col-6'>
+                    <label for="id_due_date">Due date:</label>
+                    <input type="date" name="due_date" class="form-control" id="id_due_date">
+                
+                    <label for="id_project_id">Project id:</label>
+                    <select name="project_id" class="form-control" required="" id="id_project_id">
+                        <option value="" selected="">---------</option>
+                        {% for project in project_list %}
+                        <option value="{{project.id}}">{{project}}</option>
+                        
+                        {%endfor%}
+                        
+                    </select>
+                    <label for="id_payment_type">Payment type:</label>
+                    <select name="payment_type" class="form-control" maxlength="30" id="id_payment_type">
+                        <option value="Project Invoice">Project Invoice</option>
+                        <option value="Item Invoice">Item Invoice</option>
+                        <option value="Travle Cost">Travle Cost</option>
+                        <option value="Overnight Stayt Cost">Overnight Stayt Cost</option>
+                    </select>
+                </div>
+                <div class='col-6'>
+                    <label for="id_details">Details:</label>
+                    <textarea name="details" rows="6" class="form-control" maxlength="500" required="" id="id_details"></textarea>
+                </div>
+
+
+            </div>
+        </div>
+		<div class='section-small'>
+			<h1 class='h1-1 mt-4'>Line items</h1>
+			<hr>
+
+			<div class='col-12'>
+				<div class="row">
+					<div class='col-12'>
+						<p class='p-p'>Add Line Items</p>
+						<i type="button" class='btn-icon fa-solid fa-plus mb-4' onclick="newItem()" ></i>
+					</div>  
+
+				</div>
+				
+				<div class="row">
+					<div class='col-12'>
+						<div class='section-scroll overflow-auto' id='itemSection'>
+							<div class="row" id='lineItems' style='width:95%'>
+								<div class="col-5">
+									<p class='p-p'>
+										Line item amount
+									</p>
+								</div>
+								<div class="col-5">
+									<p class='p-p'>
+										Line item description
+									</p>
+								</div>
+								<div class="col-2 text-center">
+									<p class='p-p'>
+										Remove
+									</p>
+								</div>
+								<hr>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+
+            
+        <h1 class='h1-1 mt-4'>Finalize Details</h1>
+        <hr>
+        
+        <div class='section-small'>
+            <div class="row">
+                <div class='col-4'>
+                    <div class="row">
+                        <div class='col-6'>
+                            <div class=" form-check form-switch">
+                                <label class="form-check-label" for="id_open">Open</label>
+                                <input class="form-check-input" type="checkbox" name="open" id="id_open" value='yes'>
+                            </div>
+                        </div>
+                        <div class='col-6'>
+                            <div class="form-check form-switch">
+                                <label class="form-check-label" for="id_paidCash">Paid</label>
+                                <input class="form-check-input" type="checkbox" name="paidCash" id="id_paidCash" value='yes'>
+                            </div>
+                        </div>
+
+                        <div class='col-6'>
+                            <i class="btn-icon fa-solid fa-circle-info" type="button" data-bs-toggle="collapse" data-bs-target="#openInfo" aria-expanded="false" aria-controls="openInfo">
+                            </i>
+                        </div>
+                        <div class='col-6'>
+                            <i class="btn-icon fa-solid fa-circle-info" type="button" data-bs-toggle="collapse" data-bs-target="#paidInfo" aria-expanded="false" aria-controls="paidInfo">
+                            </i>
+                        </div>
+                    </div>
+                    <div class="collapse" id="paidInfo" style='width:100%'>
+                        <p class='p-p mt-4  mb-4'>
+                            Was this paid in cash or outside of this site, if so toggle
+                            <b>Paid</b> to <b>On</b>. Doing so will show this item as paid.
+                        </p>
+                    </div>
+                    <div class="collapse" id="openInfo" style='width:100%'>
+                        <p class='p-p mt-4 mb-4'>
+                            By defualt all invoices are marked as <b>Drafts</b>, 
+                            to mark the invoice as <b>Open</b> toggle open to <b>On</b>. 
+                            Doing so will send the invoice to the customer.
+                        </p>
+                    </div>
+                </div>
+                <div class='col-8 text-center'> 
+                    <h1 class='h1-1 mt-4'>Total Billed</h1>
+                    <h1 class='nums' id='total'></h1>
+                </div>
+            </div>
+			<button class='btn-cust mt-4' id='addLoader'>submit</button>
+        </div>
+       
+    </form>
+</div>
+
+<script src="{% static 'js/invoice.js' %}"></script>
+
+
+{% endblock %}
+
+
+
+

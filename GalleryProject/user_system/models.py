@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User, Group
 from django.urls import reverse
-
+from GalleryProject.env.app_Logic.untility.quick_tools import DateFunction
+df = DateFunction()
 class Coupon(models.Model):
 
     name = models.CharField(max_length=255)
@@ -36,7 +37,7 @@ class Invoice(models.Model):
     paid = models.FloatField(default=0.00)
     details = models.TextField(max_length=500)
     fufiled = models.BooleanField(default=False)
-    due_date = models.DateField(blank=True, auto_now=True)
+    due_date = models.DateField(blank=True, default=df.date_now())
     open_date = models.DateField(auto_now=True)
     status = models.CharField(max_length=30, default='draft')
     project_id = models.ForeignKey('client.Project',blank=True, null=True, on_delete=models.SET_NULL)

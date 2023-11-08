@@ -1,0 +1,214 @@
+{% extends 'panel.html' %}
+{% block title %}Billing{% endblock %}
+{% block content %}
+<div class='row mt-4 mb-4 '>
+	<div class='col-12'>
+		<div class='section-min'>
+			<h1 class='h1-1 '>
+				Billing Snap Shot
+			</h1>
+			<hr>
+		
+
+			<div class='row mt-4'>
+				<div class='col-3'>
+					<h1 class='h1-1'>Total Due</h1>
+					<p class='nums'>${{ billing_totals.totalDue|floatformat:2 }}</p>
+				</div>
+				<div class='col-3'>
+					<h1 class='h1-1'>Total paid</h1>
+					<p class='nums'>${{ billing_totals.totalPaid|floatformat:2 }}</p>
+				</div>
+				<div class='col-3'>
+					<h1 class='h1-1'>Outstand</h1>
+					<p class='nums'>${{ billing_totals.outstanding|floatformat:2 }}</p>
+				</div>
+				<div class='col-3'>
+					<h1 class='h1-1'>Earned</h1>
+					<p class='nums'>${{ billing_totals.totalEarned|floatformat:2 }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class='row mt-4 mb-4 '>
+	<div class='col-12'>
+		<div class='section-small'>
+			<h1 class='h1-1 '>
+				Billing Options
+			</h1>
+			<hr>
+			<div class='row'>
+				<div class='col-6 col-md-3 mt-4'>
+					<a href="{% url 'create-invoice' %}">
+						<div class='section-pad addLoader text-center'>
+							<i class="fa-solid fa-file-invoice fa-2xl"></i>
+							<p class='mt-2'>Create Invoice</p>
+						</div>
+					</a>
+				</div>
+				<div class='col-6 col-md-3 mt-4'>
+					<a href="{% url 'o-project' %}">
+						<div class='section-pad addLoader text-center'>
+							<i class="fa-solid fa-money-bill-1-wave fa-2xl"></i>
+							<p class='mt-2'>Cash Payment</p>
+						</div>
+					</a>
+				</div>
+				<div class='col-6 col-md-3 mt-4'>
+					<a href="{% url 'o-project' %}">
+						<div class='section-pad addLoader text-center'>
+							<i class="fa-solid fa-stamp fa-2xl"></i>
+							<p class='mt-2'>Void Invoice</p>
+						</div>
+					</a>
+				</div>
+				<div class='col-6 col-md-3 mt-4'>
+					<a href="{% url 'o-project' %}">
+						<div class='section-pad addLoader text-center'>
+							<i class="fa-solid fa-sliders fa-2xl"></i>
+							<p class='mt-2'>Invoice Settings</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class='col-12 mt-4 mb-4'>
+		<div class='section-med'>
+			<div class='row'>
+				<h1 class='h1-1 '>
+					Invoice Search and Filter
+				</h1>
+				<hr>
+				<form method="GET" action="." class='form-group'>
+					<div class='row'>
+						<div class='col-8 mb-2'>	
+							<div class='row'>
+								<div class='col-12 mb-2'>
+									<input class="form-control" type="search" name="number" placeholder="Invoice Number">
+								</div>
+							</div>
+							<div class='row'>
+								<div class='col-12 mb-2'>
+									<input class="form-control" list="project-list" type="search" name="project" placeholder="Project">
+									<datalist id="project-list">
+									{% for project in project_list %}
+										<option value="{{ project.name }}"></option>
+									{% endfor %}
+									</datalist>
+								</div>
+								<div class='col-12 mb-2'>
+									<input class="form-control" list="client-list" type="search" name="client" placeholder="Client">
+									<datalist id="client-list">
+									{% for client in client_list %}
+										<option value="{{ client.name }}"></option>
+									{% endfor %}
+									</datalist>
+								</div>
+							</div>
+						</div>
+
+						<div class='col-2 text-center'>
+							<div class="form-check">
+								<input class="form-check-input" value="all" type="radio" name="fufiled" id="fufiled1" checked>
+								<label class="form-check-label p-p" for="fufiled1">All</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" value='draft' type="radio" name="fufiled" id="fufiled2">
+								<label class="form-check-label p-p" for="fufiled2">Draft</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" value='open' type="radio" name="fufiled" id="fufiled3">
+								<label class="form-check-label p-p" for="fufiled3">Open</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" value='paid' type="radio" name="fufiled" id="fufiled4">
+								<label class="form-check-label p-p" for="fufiled4">Paid</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" value='void' type="radio" name="fufiled" id="fufiled5">
+								<label class="form-check-label p-p" for="fufiled5">Void</label>
+							</div>
+						</div>
+					</div>
+					<div class='row'>
+						<div class="col-2 mt-4">
+							<select class="form-select" type="select" name="order">
+								<option value="Newest">Newest</option>
+								<option value="Oldest">Oldest</option>
+							</select>
+						</div>                
+						<div class="col-5">
+							<button type="submit" class="btn-cust">Search</button>
+						</div>
+						<div class="col-5">
+							<button type="submit" class="btn-cust">Clear Search</button>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class='row mt-1'>
+				<div class='col-12'>
+						<div class='row mt-1 text-center' style='width:95%'>
+							<div class='col-3 '>
+								<p class="p-p">Project</p>
+							</div>
+							<div class='col-3'>
+								<p class="p-p"> Client</p>
+							</div>
+							<div class='col-1'>
+								<p class="p-p">Status</p>
+							</div>
+							<div class='col-2'>
+								<p class="p-p">Billed</p>
+							</div>
+							<div class='col-2'>
+								<p class="p-p">Paid</p>
+							</div>
+							<div class='col-1'>
+								<p class="p-p">Details</p>
+							</div>
+						</div>
+					<hr>
+					<div class="overflow-auto scroll-menu">
+					{% for inv in invoice %}
+						<div class='col-12 text-center' style='width:95%'>
+							<div class='row mt-1'>
+								<div class='col-3'>
+									<p class="p-p">{{ inv.project_details.project }}</p>
+								</div>
+								<div class='col-3'>
+									<p class="p-p">{{ inv.project_details.client }}</p>
+								</div>
+								<div class='col-1'>
+									<p class="p-p">{{ inv.project_details.status }}</p>
+								</div>
+								<div class='col-2'>
+									<p class="p-p">${{ inv.project_details.billed|floatformat:2}}</p>
+								</div>
+								<div class='col-2'>
+									<p class="p-p">${{ inv.project_details.paid|floatformat:2}}</p>
+								</div>
+								<div class='col-1'>
+									<button class="btn-icon" onclick="window.location.href='{% url 'billing-details' inv.billID %}'">
+										<i class="fa-solid fa-file-invoice-dollar"></i>
+									</button>
+								</div>
+							</div>
+							<hr>
+						</div>
+					{% endfor %}
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

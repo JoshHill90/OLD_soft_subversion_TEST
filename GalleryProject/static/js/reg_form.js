@@ -98,7 +98,6 @@ async function validateUserForm() {
 		const userEmailList = data[2].email_list;
 		let fFirstName = document.forms["regForm"]["first_name"].value;
 		let fLastName = document.forms["regForm"]["last_name"].value;
-		let fContentMethod = document.forms["regForm"]["contact_method"].value;
 		let femail = document.forms["regForm"]["email"].value;
 
 		if (fFirstName == "") {
@@ -107,10 +106,6 @@ async function validateUserForm() {
 		};
 		if (fLastName == "") {
 			alert("Last name must be filled out");
-			return false;
-		};
-		if (fContentMethod == "-") {
-			alert("Plase make a selection");
 			return false;
 		};
 		if (femail == "") {

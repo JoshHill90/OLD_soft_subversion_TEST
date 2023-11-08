@@ -4,16 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel='stylesheet' href="{% static 'css/panel.css' %}">
-
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-    <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+	{% load bootstrap5 %}
+	{% bootstrap_css %}
+	{% bootstrap_javascript %}
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel='stylesheet' href="{% static 'css/panel.css' %}">
+	<link rel='stylesheet' href="{% static 'css/panel_scroll.css' %}">
+	<link rel='stylesheet' href="{% static 'css/panel_sections.css' %}">
+	<link rel='stylesheet' href="{% static 'css/calendar.css' %}">
+	<link rel='stylesheet' href="{% static 'css/window_load.css' %}">
+	<link rel='stylesheet' href="{% static 'css/animation.css' %}">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
 
     <title>    
         {% block title %}
@@ -41,7 +45,7 @@
 			</a>
 			<div class="nav_list"> 
 
-				<a href="{% url 'project-binder' user.id %}" class="nav_link">
+				<a href="{% url 'c-panel' user.id %}" class="nav_link">
 					<i class="fa-solid fa-book fa-xl"></i>
 					<span class="nav_name">Binder</span> 
 				</a> 

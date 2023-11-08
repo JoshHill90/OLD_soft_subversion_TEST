@@ -13,7 +13,7 @@
 		<hr>
 			<div class='row'>
 
-				<div class='col'>
+				<div class='col-6 col-md-3 mt-4'>
 					<a href="{% url 'invite' %}">
 						<div class='section-pad addLoader text-center' >
 						<i class="fa-solid fa-user-plus fa-2xl"></i>
@@ -23,25 +23,31 @@
 				</div>
 
 				
-				<div class='col'>
-					<div class='section-pad text-center' onclick="window.location.href='#'">
-						<i class="fa-regular fa-address-book fa-2xl"></i>
-						<p class='mt-2'>Message Client</p>
-					</div>
+				<div class='col-6 col-md-3 mt-4'>
+					<a href="{% url 'invite' %}">
+						<div class='section-pad text-center'>
+							<i class="fa-regular fa-address-book fa-2xl"></i>
+							<p class='mt-2'>Message Client</p>
+						</div>
+					</a>
 				</div>
 
-				<div class='col'>
-					<div class='section-pad text-center' onclick="window.location.href='#'">
-						<i class="fa-solid fa-user-large-slash fa-2xl"></i>
-						<p class='mt-2'>Delete Client</p>
-					</div>
+				<div class='col-6 col-md-3 mt-4'>
+					<a href="{% url 'invite' %}">
+							<div class='section-pad addLoader text-center' >
+							<i class="fa-solid fa-user-large-slash fa-2xl"></i>
+							<p class='mt-2'>Delete Client</p>
+						</div>
+					</a>
 				</div>
-
-				<div class='col'>
-					<div class='section-pad text-center' onclick="window.location.href='#'">
-						<i class="fa-solid fa-user-gear fa-2xl"></i>
-						<p class='mt-2'>Client settings</p>
-					</div>
+				
+				<div class='col-6 col-md-3 mt-4'>
+					<a href="{% url 'invite' %}">
+							<div class='section-pad addLoader text-center' >
+							<i class="fa-solid fa-user-gear fa-2xl"></i>
+							<p class='mt-2'>Client settings</p>
+						</div>
+					</a>
 				</div>
 				
 			</div>

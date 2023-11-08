@@ -16,8 +16,8 @@ class InviteForm(forms.ModelForm):
         model = Invite
         fields = ('name', 'email')
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control', 'type': 'name'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'type': 'email'}),
         }
 
 class ProjectRequestForm(forms.ModelForm):

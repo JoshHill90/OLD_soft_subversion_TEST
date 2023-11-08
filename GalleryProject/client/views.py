@@ -9,8 +9,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import InviteForm, RequestReplyComment, ProjectRequestForm, ProjectTermsForm
 from .models import Client, Invite, Project, ProjectRequest, RequestReply, ProjectTerms, ProjectEvents
 from gallery.models import Image
-
-
+from user_system.models import Invoice, LineItem
+from django.utils.text import slugify
 from GalleryProject.env.app_Logic.json_utils import DataSetUpdate
 from log_app.logging_config import logging
 from GalleryProject.env.app_Logic.smtp.MailerDJ import AutoReply
@@ -22,9 +22,10 @@ import stripe
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-
+qs = QuickStripe()
+df = DateFunction()
 hexer = Hexer()
-smtp_request = AutoReply
+smtp_request = AutoReply()
 
 def o_client(request):
     client_list = Client.objects.exclude(Q(name='Soft Subversion'))
@@ -76,6 +77,7 @@ class InviteView(CreateView):
     template_name = 'o_panel/client/client-intake.html'
     
     def form_valid(self, form):
+        #try:
         self.object = form.save()
         email = form.cleaned_data.get('email',)
         name = form.cleaned_data.get('email',)
@@ -84,41 +86,24 @@ class InviteView(CreateView):
         add_feild.hexkey = hex_key
         add_feild.save()
         response_back = smtp_request.send_invite(email, name, hex_key)
+        print(response_back)
+    
         if response_back == 'sent':
             dataQ = DataSetUpdate()
             dataQ.json_user_list_check()
-            return redirect('invite-success')
-        else:
-            return redirect('invite-failed')
-
-def client_request(request, id):
-    project_request = get_object_or_404(ProjectRequest, id=id)
-    print(project_request.id)
-    comments = RequestReply.objects.filter(project_request_id=project_request.id)
-    new_comments = None
-    if request.method == 'POST':
-        comment_form = RequestReplyComment(data=request.POST)
-        if comment_form.is_valid():
-            user_info = request.user
-            new_comment = comment_form.save(commit=False)
-            new_comment.user_id = user_info
-            new_comment.project_request_id = project_request
-            new_comment.save()
-            comment = comment_form.cleaned_data.get('comment')
-            clinet_email = user_info.email
-            smtp_request.owner_post_comment(clinet_email, user_info, comment, project_request, id)
-            return redirect('comment-success')
-
-    else:
-        comment_form = RequestReplyComment()
-    
-    return render(request, 'o_panel/client/request-details.html', {
-		'projectrequest': project_request,
-        'comment_form': comment_form,
-        'new_comments' : new_comments,
-        'comments': comments, 
-  })
-
+            return redirect('o-client')
+        else: 
+            print('error')
+        
+        
+        #except Exception as e:
+            #logging.error("Client Invite Error: %s", str(e))
+            #slugified_error_message = slugify(str(e))
+            #return redirect('issue-backend', status=508, error_message=slugified_error_message)
+        
+#---------------------------------------------------------------------------------------------------------#
+# Project views
+#---------------------------------------------------------------------------------------------------------#
 
 def project_main(request):
     client_list = Client.objects.exclude(Q(name='Soft Subversion'))
@@ -182,87 +167,6 @@ def project_main(request):
         'cal': cal
 	})
     
-#
-#
-#
-
-def project_details(request, pk):
-    billing_total = 0
-    billing_paid = 0
-    project_deposit = 0.00
-    project = Project.objects.get(id=pk)
-    project_events = ProjectEvents.objects.filter(project_id=project).order_by('date')
-    project_terms = ProjectTerms.objects.get(project_id__id=pk)
-    client = Client.objects.get(user_id=project.user_id)
-    billing_list = Billing.objects.filter(project_id=project)
-    
-    for invoice in billing_list:
-        billing_total += invoice.billed
-        billing_paid += invoice.paid
-        if invoice.payment_type == "Deposit":
-            project_deposit = float(invoice.billed)
-        
-    images = Image.objects.filter(project_id=project)
-    
-    active_nodes = 0
-    project_progress = []
-    for event in project_events:
-
-
-         # deposit/consulation check
-        if event.billing_id and event.title == "Deposit Reminder":
-            
-            for invoice in billing_list:
-               
-                if invoice.payment_type == 'Deposit':
-                    print("in")
-                    deposit = 'Deposit Due ' + str(invoice.due_date)
-                    project_progress.append(deposit)
-                    if invoice.status == 'paid':
-                        active_nodes +=1
-
-                            
-        # event check without payment   
-        if not event.billing_id:
-            event_type = str(event.event_type) + ' on ' + str(event.date)
-            project_progress.append(event_type)
-            event_passed = date_passed_check(event.date)
-            if event_passed == True:
-                active_nodes +=1
-                                     
-        # event check with payment check
-        if event.billing_id and event.event_type == "Other Payment":
-            for event_payment in billing_list:
-                if event_payment == event.billing_id:
-                    payment_due ='Payment Due ' +  str(event_payment.due_date)
-                    
-                    project_progress.append(payment_due)
-                    
-                    if event_payment.status == 'paid':
-                        active_nodes +=1
-
-    
-        if event.billing_id and event.event_type == "Project Payment":
-            for event_payment in billing_list:
-                if event_payment == event.billing_id:
-                    project_payment = 'Payment Due ' + str(event_payment.due_date)
-                    project_progress.append(project_payment)
-                    if event_payment.status == 'paid':
-                        active_nodes +=1
-
-        billing_set = {'billing_total': billing_total, 'project_deposit':project_deposit, "billing_paid": billing_paid }        
-
-    return render(request, 'gallery/project/project-details.html', {
-        'project': project,
-        'project_events': project_events,
-        'billing_list': billing_list,
-        'billing_set': billing_set,
-        'client': client,
-        'project_terms': project_terms,
-        'project_progress': project_progress,
-        'active_nodes': active_nodes,
-        "images": images
-    })
 
 def project_gallery(request, id):
     project = Project.objects.get(id=id)
@@ -331,7 +235,7 @@ class ProjectEventsCreate(CreateView):
     
 
 def clandar(request, year, month):
-
+        
     event_list = ProjectEvents.objects.all()
     event_list = ProjectEvents.objects.order_by('date')
     try:
@@ -359,3 +263,299 @@ def clandar(request, year, month):
         'todays_date': todays_date,
         'cal_date': cal_date
     })
+
+#---------------------------------------------------------------------------------------------------------#
+# client project request
+#---------------------------------------------------------------------------------------------------------#
+
+def project_request(request):
+    client_request = ProjectRequest.objects.all()
+    request_comments = RequestReply.objects.all()
+    request_comments = RequestReply.objects.all()
+    project_terms = ProjectTermsForm
+    client_request
+    return render(request, 'o_panel/project/project_request/project-request.html', {
+		'client_request': client_request,
+        'request_comments' : request_comments,
+        'project_terms': project_terms
+  })
+
+def project_request_details(request, id):
+    project_request = get_object_or_404(ProjectRequest, id=id)
+    print(project_request.id)
+    comments = RequestReply.objects.filter(project_request_id=project_request.id)
+    new_comments = None
+    if request.method == 'POST':
+        comment_form = RequestReplyComment(data=request.POST)
+        if comment_form.is_valid():
+            user_info = request.user
+            new_comment = comment_form.save(commit=False)
+            new_comment.user_id = user_info
+            new_comment.project_request_id = project_request
+            new_comment.save()
+            comment = comment_form.cleaned_data.get('comment')
+            clinet_email = user_info.email
+            smtp_request.owner_post_comment(clinet_email, user_info, comment, project_request, id)
+            return redirect('comment-success')
+
+    else:
+        comment_form = RequestReplyComment()
+    
+    return render(request, 'o_panel/project/project_request/request-details.html', {
+		'projectrequest': project_request,
+        'comment_form': comment_form,
+        'new_comments' : new_comments,
+        'comments': comments, 
+  })
+
+def request_approval(request, id):
+    try:
+        client_request = get_object_or_404(ProjectRequest, id=id)
+        user_info = User.objects.get(username=client_request.user_id)
+        client_info = Client.objects.get(user_id__username=user_info.username)
+        comments = RequestReply.objects.filter(project_request_id=client_request)
+        new_template = None
+
+        # Form validation and approval workflow
+        if request.method == 'POST':
+            terms_form = ProjectTermsForm(data=request.POST)
+        
+            if terms_form.is_valid():
+                
+                #----------------------------------------------------------------#
+                # structures client and project infromation for addtional methods
+                #----------------------------------------------------------------#
+                
+                # Process cleaned data from terms form
+                terms_data = terms_form.cleaned_data
+                project_amount = terms_data.get('project_cost')
+                deposit_amount = terms_data.get('deposit')
+                services = terms_data.get('services')
+
+                # update the project request
+                client_request.status = 'Approved'
+                client_request.save()
+                
+                # Extracts users billing information
+                full_name, full_address, phone, email_address = qs.stripe_user_extractor(user_info, client_info)
+                
+                        # check if customer exist in stripe db
+                if not client_info.strip_id:
+                    stripe_id = qs.stripe_user_creation(
+                        client_info, 
+                        full_name, 
+                        email_address, 
+                        full_address, 
+                        phone
+                    )
+                    
+                    # Saving new strip customer id
+                    client_info.strip_id = stripe_id
+                    client_info.save()
+                else:
+                    stripe_id = client_info.strip_id
+
+                #----------------------------------------------------------------#
+                # creates the corresponding prject, billing and project-terms
+                #----------------------------------------------------------------#
+                
+                # creates project
+                new_project_model = Project.objects.create(
+                    name=client_request.name,
+                    user_id=user_info,
+                    client_id=client_info
+                )
+                
+                # creates the billing corresponding stripe invoice for the project
+                request_date_distance = df.date_distance(client_request.date)
+                project_date_distance = request_date_distance + 30
+                strip_project_invoice = qs.create_stripe_invoice(stripe_id, project_date_distance, services)
+
+                # creates new billing account for client 
+                new_billing_model = Invoice.objects.create(
+                    project_id=new_project_model,
+                    invoice_id=strip_project_invoice.id,
+                    status = strip_project_invoice.status,
+                    details=services,
+                    due_date = df.number_to_days(project_date_distance),
+                    payment_type='Project Invoice'
+                )
+                
+                # creates new Project Terms  
+                new_template = terms_form.save(commit=False)
+                
+                new_template.user_id = user_info
+                new_template.project_request_id = client_request
+                new_template.scope = client_request.scope
+                new_template.project_docs = f"{user_info}/{client_request.name}"
+                new_template.project_id = new_project_model
+                
+                new_template.save()
+                #----------------------------------------------------------------#
+                # checks for deposit and project cost and process if they exist
+                #----------------------------------------------------------------#
+                converted_to_cents = lambda dollar_amount: int(
+                    str(
+                        '{:.2f}'.format(
+                            float(dollar_amount))).replace('.','')
+                )
+                if deposit_amount > 0:
+                    deposit_date = df.deposit_distance(client_request.date)
+                    deposit_details = f'Deposit for photography project:{new_project_model.name}'
+                    deposit = converted_to_cents(deposit_amount)
+                    deposit_invoice = qs.create_stripe_invoice(stripe_id, deposit_date, deposit_details)
+
+                    
+                    deposit_lineitem = qs.create_stripe_line_item(deposit, 'Deposit Cost', deposit_invoice, stripe_id)
+                    payment_link, deposit_invoice_update = qs.send_stripe_invoice(deposit_invoice.id)
+                    deposit_billing = Invoice.objects.create(
+                        project_id=new_project_model,
+                        invoice_id=deposit_invoice.id,
+                        details=deposit_details,
+                        billed=deposit_amount,
+                        status=deposit_invoice_update.status,
+                        due_date = df.number_to_days(deposit_date),
+                        payment_link=payment_link,
+                        payment_type='Deposit'
+                    )
+                    
+                    LineItem.objects.create(
+                        billing_id=deposit_billing,
+                        amount=deposit_amount,
+                        receipt='Deposit Cost',
+                        time_stamp=df.date_now(),
+                        item_id=deposit_lineitem.id,
+                    )
+                    
+                    ProjectEvents.objects.create(
+                        title='Deposit Reminder',
+                        project_id=new_project_model,
+                        billing_id=new_billing_model,
+                        date=new_billing_model.due_date,
+                        start=df.payment_time(),
+                        end=df.payment_time(),
+                        event_type='Payment Reminder',
+                        details=f'Event for deposit reminder for project{new_project_model}'
+                    )
+    
+                    qs.send_invoice_email(user_info, new_project_model, deposit_billing)
+
+                if project_amount > 0:
+                    project_cost = converted_to_cents(project_amount)
+                    project_lineitem = qs.create_stripe_line_item(project_cost, 'Project Cost', strip_project_invoice, stripe_id)
+                    LineItem.objects.create(
+                        billing_id=new_billing_model,
+                        amount=project_amount,
+                        receipt='Project Cost',
+                        time_stamp=df.date_now(),
+                        item_id=project_lineitem.id,
+                    )
+                    
+                    new_billing_model.billed = project_amount
+                    new_billing_model.save()
+                    
+            return redirect('project-details', new_project_model.id)
+
+        else:
+            terms_form = ProjectTermsForm()
+            
+        return render(request, 'o_panel/project/project_request/request-approval.html', {
+            'client_request': client_request,
+            'user_info': user_info,
+            'comments': comments,
+            'client_info': client_info,
+            'terms_form': terms_form,
+            'new_template': new_template
+        })
+        
+    except Exception as e:
+        logging.error("Stripe customer create method failed: %s", str(e))
+        return redirect('issue-backend')
+    
+    
+#----------------------------------------------------------------#
+# client panel views 
+#----------------------------------------------------------------#
+
+def c_panel(request, id):
+    users_id = id
+    client = Client.objects.get(user_id=users_id)
+    client_id = client.id
+    client_images = Image.objects.filter(client_id=client_id)
+    project_list = Project.objects.filter(client_id=client_id)
+    project_request_info = ProjectRequest.objects.filter(client_id=client_id)
+    request_comments = RequestReply.objects.filter(user_id__id=users_id)
+                	
+    return render(request, 'c_panel/project/binder.html', {
+		'client_info': client,
+		'client_images':client_images,
+		'project_list': project_list,
+        'project_request': project_request_info,
+        'comments': request_comments
+	})
+    
+class ClienRequestCreate(CreateView):
+    form_class = ProjectRequestForm
+    model = ProjectRequest
+    
+    template_name = 'c_panel/project/request/new-request.html'
+    def form_valid(self, form):
+
+        
+        user_info = self.request.user
+        user_id = user_info.id
+        client = user_info.username
+        user_info.user_id = user_id
+        
+        project_name = form.cleaned_data.get('name')
+        date_selected = form.cleaned_data.get('date')
+        scope = form.cleaned_data.get('scope')
+        details = form.cleaned_data.get('details')
+        location_type = form.cleaned_data.get('location')
+
+
+        
+        project_request = form.save(commit=False)
+        
+        id_str = str(user_id)
+        project_name_str = str(project_name)
+        clean_name = project_name_str.replace(' ', '-')
+        randnum = hexer.hex_gen_small()
+        pj_id = str(randnum)
+
+        slug_str = str(id_str + '-' + pj_id + '-' + 'prj')
+        
+        project_request.user_id_id = user_id 
+        project_request.slug = slug_str
+        project_request.save()
+        
+        smtp_request.project_request_notice(project_name, date_selected, scope, details, location_type, user_id, client)
+        return redirect('request-status', project_request.id)
+    
+def request_status(request, id):
+    project_request = get_object_or_404(ProjectRequest, id=id)
+    print(project_request.id)
+    comments = RequestReply.objects.filter(project_request_id=project_request.id)
+    new_comments = None
+    if request.method == 'POST':
+        comment_form = RequestReplyComment(data=request.POST)
+        if comment_form.is_valid():
+            user_info = request.user
+            new_comment = comment_form.save(commit=False)
+            new_comment.user_id = user_info
+            new_comment.project_request_id = project_request
+            new_comment.save()
+            comment = comment_form.cleaned_data.get('comment')
+            return redirect('client-comment-success')
+
+    else:
+        comment_form = RequestReplyComment()
+    
+    return render(request, 'c_panel/project/request/request-status.html', {
+		'projectrequest': project_request,
+        'comment_form': comment_form,
+        'new_comments' : new_comments,
+        'comments': comments, 
+  })
+    
+    

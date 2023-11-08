@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
 from phonenumber_field.modelfields import PhoneNumberField
 from django import forms
+from .models import Invoice, LineItem
 
 
 reg_contact_method = [
@@ -23,7 +24,6 @@ class RegForm(UserCreationForm):
     last_name = forms.CharField(max_length=255)
     phone = forms.CharField()
     hexkey = forms.CharField(max_length=255)
-
     address_1 = forms.CharField(max_length=255)
     address_2 = forms.CharField(max_length=255)
     city = forms.CharField(max_length=255)
@@ -74,3 +74,33 @@ class ProfileForm(UserChangeForm):
     class Meta:
         model = User
         fields = ('username','first_name', 'last_name', 'email')
+        
+        
+class InvoiceForm(forms.ModelForm):
+
+    class Meta:
+        model = Invoice
+        fields = ('due_date', 'project_id', 'details', 'payment_type')
+        widgets = {
+            'due_date': forms.DateInput(attrs={'class': 'form-control'}),  
+            'project_id': forms.Select(attrs={'class': 'form-control'}),
+            'details': forms.Textarea(attrs={'class': 'form-control'}),  
+            'payment_type': forms.Select(attrs={'class': 'form-control'}),  
+                                         
+        }
+        
+class LineItemForm(forms.ModelForm):
+
+    class Meta:
+        model = LineItem
+        fields = (
+            'billing_id',
+            'amount',
+            'receipt',
+        )
+        
+        widgets = {
+            'billing_id': forms.Select(attrs={'class': 'form-control'}),
+            'amount': forms.TextInput(attrs={'class': 'form-control'}),
+            'receipt': forms.Select(attrs={'class': 'form-control'}),                   
+        }

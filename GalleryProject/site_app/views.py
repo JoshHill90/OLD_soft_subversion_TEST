@@ -13,6 +13,7 @@ from client.models import Project, Client
 from .forms import ContactForm
 from GalleryProject.env.app_Logic.smtp.MailerDJ import AutoReply
 from GalleryProject.env.cloudflare_API.CFAPI import APICall
+from GalleryProject.env.app_Logic.date_time_calendar import cal_gen, date_passed_check
 
 from pathlib import Path
 import os
@@ -88,8 +89,9 @@ class ContactView(FormView):
 class ContactSuccess(TemplateView):
     template_name = 'success/contact-success.html'
     
-class BackendIssue(TemplateView):
-    template_name = 'error_page/issue.html'
+def error_logger(request, status, error_message):
+    
+    return render(request, 'error_page/issue.html', {'status': status, 'e': error_message})
     
 #-------------------------------------------------------------------------------------------------------#
 # owner panel main branch
@@ -118,7 +120,7 @@ def o_main(request):
     })
     
 def o_binder(request):
-    
+    month0, month, month2, cal, year, todays_date, cal_date = cal_gen()
     project_list = Project.objects.all()
     client_list = Client.objects.all()
     image_list = Image.objects.all()
@@ -126,7 +128,9 @@ def o_binder(request):
     return render(request, 'o_panel/binder.html', {
         'image_list': image_list,
         'project_list': project_list,
-        'client_list': client_list
+        'client_list': client_list,
+        'year': year,
+        'month':month,
     })
     
 def image_upload(request):

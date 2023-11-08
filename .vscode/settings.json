@@ -1,6 +1,6 @@
 {
 	"folder-path-color.folders": [
-		{ "path": "GalleryProject/blog", "color": "red"},
+		{ "path": "GalleryProject/log_app", "color": "red"},
 		{ "path": "GalleryProject/client", "color": "green"},
 		{ "path": "GalleryProject/gallery", "color": "blue"},
 		{ "path": "GalleryProject/user_system", "color": "magenta"},

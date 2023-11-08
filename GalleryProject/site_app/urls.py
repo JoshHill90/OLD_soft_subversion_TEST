@@ -9,7 +9,7 @@ urlpatterns = [
     path('social/', views.social_page, name='social'),
     path('contact/', ContactView.as_view(), name='contact'),
     path('contact/success', ContactSuccess.as_view(), name='contact-success'),      
-    path('error/backend', BackendIssue.as_view(), name='issue-backend'),     
+    path('error/<int:status>/<slug:error_message>', views.error_logger, name='issue-backend'),     
     
     path('o-panel', views.o_main, name='o_panel'),
     path('o-panel/binder', views.o_binder, name='binder'),

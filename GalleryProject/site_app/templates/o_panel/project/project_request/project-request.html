@@ -1,0 +1,53 @@
+{% extends 'panel.html' %}
+{% block title %}Project Request{% endblock %}
+{% block content %}
+{% load static %}
+<div class='row mt-4 mb-4'>
+	<div class='col-12'>
+		<div class='section-med'>
+			<h1 class='h1-1'>Pending Project Request</h1>
+			<hr>
+			<div class='row mt-4 '>
+				<div class="overflow-auto section-scroll">
+					{% for project in client_request %}
+					{% if project.status == 'pending' %}
+					<div class='col-12 mt-1 inv-card'>
+						<div class='row text-center inv-card-content'>
+							<div class='col-3'>
+								<p class="p-p">
+									Title <br>
+									{{ project.name }} 
+									<br>
+								</p>
+							</div>
+							<div class='col-3'>
+								<p class="p-p">
+									Client <br>
+									{{ project.user_id }} 
+									<br>
+								</p>
+							</div>
+							<div class='col-3'>
+								Project scope <br>
+								<p class="p-p">
+									{{ project.scope }} 
+									<br>
+								</p>
+							</div>
+							<div class='col-3'>
+								<button
+									class="btn-cust btn-cust-color" 
+									onclick="window.location.href='{% url 'request-status' project.slug %}'">
+									Details
+								</button>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
