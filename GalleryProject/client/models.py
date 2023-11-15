@@ -27,6 +27,7 @@ class Project(models.Model):
     status = models.CharField(max_length=255, default='Pending Deposit')
     client_id = models.ForeignKey(Client, null=True, blank=True, on_delete=models.SET_NULL)
     slug = models.SlugField(null=False, unique=True)
+    documents = models.ManyToManyField('site_app.Document')
 
     def __str__(self):
         return str(self.name)
@@ -62,7 +63,7 @@ class ProjectRequest(models.Model):
 
     def get_absolute_url(self):
         
-        return reverse("request-status", args=(str(self.id)))
+        return reverse("request-status", kwargs={"slug": self.slug})
     
 class RequestReply(models.Model):
     project_request_id = models.ForeignKey(ProjectRequest, null=True, blank=True, on_delete=models.SET_NULL)
@@ -86,7 +87,6 @@ class ProjectTerms(models.Model):
     services = models.TextField(max_length=5000, blank=True)
     project_cost = models.FloatField(default='600.00')
     deposit = models.FloatField(default='0.00')
-    project_docs = models.CharField(max_length=255)
 
     def __str__(self):
         return str(self.project_request_id) + ' | ' + str(self.user_id)
@@ -100,7 +100,7 @@ class ProjectEvents(models.Model):
     title = models.CharField(max_length=255)
     billing_id = models.ForeignKey('user_system.Invoice', null=True, blank=True, on_delete=models.SET_NULL)
     project_id = models.ForeignKey(Project, null=True, blank=True, on_delete=models.SET_NULL)
-    date = models.DateField(auto_now=True)
+    date = models.DateField(auto_now=False, default=df.date_now())
     start = models.TimeField(blank=True, null=True)
     end = models.TimeField(blank=True, null=True)
     event_type = models.CharField(max_length=50, blank=True)

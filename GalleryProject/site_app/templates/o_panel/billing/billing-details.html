@@ -1,0 +1,232 @@
+{% extends 'panel.html' %}
+{% block title %}Upload Link{% endblock %}
+{% block content %}
+{% load static %}
+{% if user.is_authenticated %}
+<div class='row mt-4 mb-4'>
+	<div class='col-6'>
+		<div class='sections'>
+			<div class='row text-center'>
+				<div class='col-4'>
+					<h1 class='h1-1'>Total Due</h1>
+					<hr>
+					<p class='nums'>${{ due|floatformat:2 }}</p>
+				</div>
+				<div class='col-4'>
+					<h1 class='h1-1'>Total paid</h1>
+					<hr>
+					<p class='nums'>${{ paid|floatformat:2 }}</p>
+				</div>
+				<div class='col-4'>
+					<h1 class='h1-1'>Outstand</h1>
+					<hr>
+					<p class='nums'>${{ out|floatformat:2 }}</p>
+				</div>
+				
+				<div class='col-12'>
+					<div class='sections-2'>
+						<div id="dueProgress">
+							<div id="due" value="{{ ratio }}"></div>
+						</div>
+						<h1 class='h1-1 mt-2 mb-2'>{{ ratio }}% Paid</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='col-3'>
+		<div class='sections h-100'>
+			<h1 class='h1-1'>{{ invoice.project_id.client_id.user_id.first_name }} {{ invoice.project_id.client_id.user_id.last_name }}</h1>
+			<hr>
+			<div class='sections-2'>
+				<p class='p-p'>Email<br> {{ invoice.project_id.client_id.email }}</p>
+				<p class='p-p'>Phone <br> {{ invoice.project_id.client_id.phone }}</p>
+				<p class='p-p'>Client ID: {{ invoice.project_id.client_id.id }}</p>
+			</div>
+		</div>
+	</div>
+
+	<div class='col-3 text-center'>
+		<div class="sections h-100">					
+			<h1 class='h1-1'>
+				Status
+			</h1>
+			<hr>
+			<div class="sections-2">
+				<div class="loader-box">
+					<div class="intern">
+						<p class='nums'>
+							{{invoice.status}}
+						</p>
+					</div>
+					<div class="external-shadow">
+						<div class="sections-sepc spec1">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class='row mt-4'>
+
+	<div class='col-3'>	
+		<div class='sections'>
+			<h1 class='h1-1'>Invoice Details</h1>
+			<hr>
+
+			<div class='sections-2'>
+				<div class='row'>
+					<div class='col-4'>
+						<p class='p-2'>Project</p>
+					</div>
+
+					<div class='col-8'>
+						<p class='p-p'>{{ invoice.project_id }}</p>
+					</div>
+					<div class='col-4'>
+						<p class='p-2'>Invoice ID:</p>
+					</div>
+
+					<div class='col-8'>
+						<p class='p-p'>{{ invoice.id }}</p>
+					</div>
+					<div class='col-4'>
+						<p class='p-2'>Payment Type</p>
+					</div>
+
+					<div class='col-8'>
+						<p class='p-p'>{{ invoice.payment_type}}</p>
+					</div>
+		
+				</div>
+			</div>
+		</div>
+	</div>
+		
+
+		
+
+	<div class='col-3'>
+		<div class='sections'>
+		
+			<h1 class='h1-1'>
+				Due Date
+			</h1>
+			<hr>
+			<div class='sections-2'>
+				<h1 class='h1-1'>
+					{{invoice.due_date}}
+				</h1>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class='col-6'>
+		<div class='sections'>
+			
+			<h1 class='h1-1'>
+				Services Provided
+		</h1>
+			<hr>
+			<div class='sections-2'>
+				<div class='overflow-auto scroll-menu'>
+					<p class='p-p'>{{ invoice.details}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class='col-12 mt-4'>	
+		<div class='sections'>
+			<h1 class='h1-1'>Line Items</h1>
+			<hr>
+			<div class='sections-2'>
+				<div class='row mt-1'>
+					<div class='col-12'>
+						<div class='row mt-1 text-center' style='width:95%'>
+							<div class='col-3 '>
+								<p class="p-p">Line Item</p>
+							</div>
+							<div class='col-3'>
+								<p class="p-p"> Amount</p>
+							</div>
+							<div class='col-3'>
+								<p class="p-p">Line Item ID</p>
+							</div>
+							<div class='col-3'>
+								<p class="p-p">Details</p>
+							</div>
+						</div>
+						<hr>
+						<div class="overflow-auto scroll-menu">
+						{% for item in line_items %}
+							<div class='col-12 text-center' style='width:95%'>
+								<div class='row mt-1'>
+									<div class='col-3'>
+										<p class="p-p">{{ item.receipt }}</p>
+									</div>
+									<div class='col-3'>
+										<p class="p-p">{{ item.amount|floatformat:2 }}</p>
+									</div>
+									<div class='col-3'>
+										<p class="p-p">{{ item.item_id }}</p>
+									</div>
+									<div class='col-3'>
+										<button class="btn-icon" onclick="window.location.href='{% url 'payment-details' item.id %}'">
+											<i class="fa-solid fa-file-invoice-dollar"></i>
+										</button>
+									</div>
+								</div>
+								<hr>
+							</div>
+						{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class='row mt-4 sections-small'>
+	<div class='col-6 col-md-3 mt-4'>
+		<div class='bookcard text-center' onclick="window.location.href='#'">
+			<i class="fa-solid fa-file-lines fa-2xl"></i>
+			<p class='mt-2'>Edit Invoice</p>
+		</div>
+	</div>
+	<div class='col-6 col-md-3 mt-4'>
+		<form method="post" action="{% url 'billing-details' invoice.id %}">
+			{% csrf_token %}
+			<button class='btn-cust text-center'  type="submit" name="cash" value="Cash" style='width:100%'>
+				<i class="fa-solid fa-money-bill-1-wave fa-2xl"></i>
+				<p class='mt-2'>Mark Paid in Cash</p>
+			</button>
+		</form>
+	</div>
+	<div class='col-6 col-md-3 mt-4'>
+		<form method="post" action="{% url 'billing-details' invoice.id %}">
+			{% csrf_token %}
+			<button class='btn-cust text-center'  type="submit" name="open" value="Open" style='width:100%'>
+				<i class="fa-solid fa-file-invoice-dollar fa-2xl"></i>
+				<p class='mt-2'>Send Invoice</p>
+			</button>
+		</form>
+	</div>
+	<div class='col-6 col-md-3 mt-4'>
+		<form method="post" action="{% url 'billing-details' invoice.id %}">
+			{% csrf_token %}
+			<button class='btn-cust text-center'  type="submit" name="delete" value="Delete" style='width:100%'>
+				<i class="fa-regular fa-file-lines fa-2xl"></i>
+				<p class='mt-2'>Void Invoice</p>
+			</button>
+		</form>
+	</div>
+</div>
+
+{% endif %}
+<script src={% static 'js/invoiceBar.js' %}></script>
+{% endblock %}

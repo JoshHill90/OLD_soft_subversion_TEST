@@ -67,6 +67,14 @@ class DateFunction:
 
 	def payment_time(self):
 		return datetime.strptime("5:00 pm", "%I:%M %p").time()
+
+	def DMY_date_format(self, date):
+		formated_date = datetime.strftime(date, '%d-%b-%Y')
+		return formated_date
+
+	def DmY_date_format(self, date):
+		formated_date = datetime.strftime(date, '%d-%m-%Y')
+		return formated_date
   
 #-------------------------------------------------------------------------------------------------------#
 # hex_gen
@@ -183,22 +191,31 @@ class QuickStripe:
 		return payment_link, invoice_update
 
         
-	def send_invoice_email(self, user_info, project, invoice):
-		project_link = f"https://SoftSubversion.com/client-portal/project-binder/{project.id}/details"
-		invoice_link = f"https://SoftSubversion.com/client-portal/billing/{invoice.id}/"
-		smtp_request.new_project_and_invoice(user_info.email,
-			user_info.first_name,
-			invoice.payment_link,
+	def send_invoice_email(self, user_info, project, invoice, pdf_path):
+		project_link = f"https://SoftSubversion.com/c-panel/binder/project/{project.slug}/"
+		invoice_link = f"https://SoftSubversion.com/c-panel/binder/invoice/{invoice.id}/"
+		smtp_request.send_new_project_and_invoice(
+      		user_info,
+   			project,
+			invoice,
 			project_link,
-			invoice_link
+			invoice_link,
+   			pdf_path,
 		)   
   
-	def resend_invoice(self, user_info, project, invoice):
-		project_link = f"https://SoftSubversion.com/client-portal/project-binder/{project.id}/details"
-		invoice_link = f"https://SoftSubversion.com/client-portal/billing/{invoice.id}/"
-		smtp_request.new_project_and_invoice(user_info.email,
-			user_info.first_name,
-			invoice.payment_link,
-			project_link,
-			invoice_link
+  
+	def send_project_only_email(self, user_info, project, pdf_path):
+		project_link = f"https://SoftSubversion.com/c-panel/binder/project/{project.slug}/"
+		smtp_request.send_new_project_no_invoice(
+		user_info,
+  		project,
+		project_link,
+		pdf_path
+		) 
+  
+	def new_invoice(self, user_info, project, pdf_path):
+		smtp_request.new_invoice_notice(
+		user_info,
+  		project,
+		pdf_path
 		) 

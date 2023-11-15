@@ -6,14 +6,14 @@
   --text-color-secondary:rgb(121, 121, 121);
   --bg-color:rgb(255, 255, 255);
   --bg-color-secondary:linear-gradient(315deg, #cacaca, #f0f0f0);
-  --bg-shadow:  -10px -10px 10px #a6a6a6, 10px 10px 10px #ffffff;
+  --bg-shadow:  rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   --bg-color-nav:#e7e7e7;
-  --bg-color-opec:rgba(39, 39, 39, 0.281);  
+  --bg-color-opec:rgba(39, 39, 39, 0.897);  
   --font-family-header:'Arvo', serif;
   --numbers: 'Calistoga', cursive;
-  --h1: 20px;
+  --h1: 25px;
   --p: 16px;
-  --np:36px;
+  --np:25px;
   --font-weights-norm: 400;
   --arvo-norm: 400;
   --nav-width: 70px;           
@@ -127,9 +127,6 @@ hr {
   .form-fit {
     width: 100%;
     left: 0;
-  }
-  .nums {
-    font-size: var(--p);
   }
   
 }
@@ -558,7 +555,7 @@ project progress
   align-items: center;
   position: relative;
   cursor: not-allowed;
-  scale: 0.7;
+  scale: 1;
   cursor: default;
 }
 
@@ -567,8 +564,8 @@ project progress
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 10em;
-  height: 10em;
+  width: 25vh;
+  height: 25vh;
   border-radius: 50%;
   box-shadow: 0.5em 1em 1em #26ccb3,
   -0.5em 0.5em 1em #7933FC,
@@ -580,8 +577,8 @@ project progress
 
 
 .external-shadow {
-  width: 10em;
-  height: 10em;
+  width: 25vh;
+  height: 25vh;
   border-radius: 50%;
   display: flex;
   justify-content: center;

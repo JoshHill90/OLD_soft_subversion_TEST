@@ -73,16 +73,16 @@
 					</div>
 				</div>
 				<div class='row'>
-					<div class="col-4 mt-4">
+					<div class="col-12 col-md-4 mt-4">
 						<select class="form-select" type="select" name="order">
 							<option value="Newest">Newest</option>
 							<option value="Oldest">Oldest</option>
 						</select>
 					</div>                
-					<div class="col-4">
+					<div class="col-12 col-md-4">
 						<button type="submit" class="btn-cust btn-cust-color mt-4">Search</button>
 					</div>
-					<div class="col-4">
+					<div class="col-12 col-md-4">
 						<button
 						type="submit"
 						class="btn-cust btn-cust-color mt-4"
@@ -93,30 +93,30 @@
 			</form>
 
 
-			<div class="overflow-auto section-small scroll-menu">
-				<div class='row'>
-				{% for project in project_info %}
+			<div class="overflow-auto section-scroll">
+				<div class='row'  style='width:98%'>
+				{% for project in project_list %}
 					<div class='col-12 mt-4'>
 						<div class='inv-card'>
 							<div class='inv-card-content'>
 								<div class='row mt-1'>
 									<div class='col-5'>
 										<p class="p-p">
-											{{ project.project_details.project }} 
+											{{ project.name }} 
 											<br>
-											{{ project.project_details.project_client }}
+											{{ project.client_id }}
+											
 										</p>
 									</div>
 									<div class='col-5'>
 										
-										<p class="p-p">Status: <br> {{ project.project_details.project_status }}</p>
+										<p class="p-p">Status: <br> {{ project.status }}</p>
 									</div>
 									<div class='col-2'>
-										<button
-										class="btn-icon" 
-										onclick="window.location.href='{% url 'project-details' project.project_details.project_id %}'">
+										<button class="btn-icon"id="detailsBtn" onclick="window.location.href='{%url 'o-project-details' project.slug%}'">
 											<i class="fa-regular fa-folder-open"></i>
 										</button>
+
 									</div>
 								</div>
 							</div>
@@ -128,12 +128,5 @@
 		</div>
 	</div>
 </div>
-
-
-
-
-
-<script src={% static 'js/graphs.js' %}></script>
-
 
 {% endblock %}

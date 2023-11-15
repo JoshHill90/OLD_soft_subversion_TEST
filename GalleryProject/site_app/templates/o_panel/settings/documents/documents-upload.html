@@ -1,0 +1,81 @@
+
+{% extends 'panel.html' %}
+{% block title %}O | Image Upload{% endblock %}
+{% block content %}
+{% load static %}
+
+
+
+
+{{object_path}}
+<div class='row mt-4 mb-4'>
+	<div class='col-12 h-100'>
+        <form class='form-group' id="uploadForm" method="post" enctype="multipart/form-data">
+            <div class='section-form'>
+              <h1 class='h1-1'>Upload Image and Prints</h1>
+                <div class="mb-5" id='onWait'>
+            {% csrf_token %}
+                    <input class="form-control" id='cfR2URL' type="text" value="{{ front_end_url }}" hidden>
+
+                    <input class="form-control mt-4 mb-4" value="" type="file" id="documentUpload">
+                    <h1 class='h1-1'>Upload Procedure and Limitations</h1>
+                    <p class='p-p'>You are welcome to upload documents in the following formats:</p>
+                    <ol>
+                      <p class='p-p'>DOCX</p>
+                      <p class='p-p'>PDF</p>
+                      <p class='p-p'>TXT</p>
+                    </ol>
+                    <p class='p-p'>Please keep in mind the following size and dimension limitations:</p>
+                    <ol>
+                      <p class='p-p'>Max file size 50mb</p>
+                    </ol>
+                    <p class='p-p'>If an error message shows upload fails please contact the site admin.</p>
+
+                    <input class="form-control" value="{{}}" type="text" id="cloudflareid" hidden>
+                    <button class="btn-cust mt-3" onclick="delayedRedirect(#)">Upload document</button>
+                </div>
+            </div>
+        </form>
+	</div>
+</div>
+
+<script>
+	const uploadForm = document.getElementById("uploadForm");
+	const docUpload = document.getElementById("documentUpload");
+	const cfURL = document.getElementById("cfr2URL");
+
+	uploadForm.addEventListener("submit", e => {
+	  e.preventDefault();
+	  const cloudflareId=document.getElementById("cloudflareid").value;
+	  localStorage.setItem('setId', cloudflareId);
+	  const cloudflare = cfURL.value;
+	  const multiPart = new FormData();
+	  const metaData = new FormData(uploadForm);
+	  multiPart.append('file', docUpload.files[0]);
+
+	  fetch(cloudflare, {
+		method: "post",
+		body: multiPart,
+	  })
+		.then(response => response.json())
+		.then(data => {
+
+		  console.log(data); // You can access the response data here
+		})
+		.catch(error => {
+		  console.error(error);
+		  alert(error);
+		  return false;
+		});
+	});
+
+	function delayedRedirect(url) {
+	  setTimeout(function() {
+		window.location.href = url;
+	  }, 1000); // Delay of 1 second (3000 milliseconds)
+	}
+  </script>
+
+</div>
+
+{% endblock %}

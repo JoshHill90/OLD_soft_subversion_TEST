@@ -92,7 +92,7 @@
 									<h1 class="h1-1">
 										{{ project.name }} 
 									</h1>
-									<button class="btn-cust btn-cust-color" onclick="window.location.href='{% url 'project-details' project.pk %}'">Details</button>
+									<button class="btn-cust btn-cust-color" onclick="window.location.href='{% url 'c-project-details' project.slug %}'">Details</button>
 								</div>
 								<div class='col-6'>
 									{% if project.status == 'Pending Deposit' %}

@@ -35,13 +35,13 @@
 					<div class='col-12 col-sm-6 mt-4'>
 						<h1 class='h1-1 mb-4'> Client Detials</h1>
 						<p class='p-p'>
-							Clients Name: {{ client_request.user_id.first_name|title  }} {{ client_request.user_id.last_name|title  }}<br>
+							Name: {{ client_request.client_id.user_id.first_name|title  }} {{ client_request.client_id.user_id.last_name|title  }}<br>
 						</p>
 						<p class='p-p'>
-							Clients Email: {{ client_request.user_id.email|title  }}<br>
+							Email: {{ client_request.client_id.user_id.email|title  }}<br>
 						</p>
 						<p class='p-p'>
-							Project Scope: {{ client_info.phone }}<br>
+							Phone: {{ client_info.phone }}<br>
 						</p>
 						<p class='p-p'>
 							Billing Address <br>
@@ -60,7 +60,7 @@
 
 
 			<div class='sections-2'>
-			<form method=POST class='p-p row'>
+			<form method=POST class='p-p row' id='projectForm'>
 				{% csrf_token %}
 
 
@@ -83,7 +83,7 @@
 					<div class="collapse" id="projectCostCollapse">
 						<div class=" mt-4">
 							<label for="id_project_cost">Project cost:</label>
-							<input type="text" name="project_cost" value="0.00" class="form-control" required="" id="id_project_cost">
+							<input type="text" name="project_cost" step="0.01" value="0.00" class="form-control" required="" id="id_project_cost">
 						</div>
 					</div>
 
@@ -92,7 +92,7 @@
 						<div class="mt-4">
 
 							<label for="id_deposit" class=' mt-2'>Deposit:</label>
-							<input type="text" name="deposit" value="0.00" class="form-control" required="" id="id_deposit">
+							<input type="text" name="deposit" step="0.01" value="0.00" class="form-control" required="" id="id_deposit">
 						</div>
 					</div>
 				</div>
@@ -114,11 +114,11 @@
 						<p class='p-p'>Please detail anny Addtional notes about the services that will be provded</p>
 
 						<label for="id_services">Outline Details</label>
-						<textarea name="services" cols="40" rows="10" class="form-control" maxlength="500" id="id_services"></textarea>
+						<textarea name="services" cols="40" rows="10" class="form-control" maxlength="499" id="id_services"></textarea>
 				</div>
 
 				<div class='col-12 mt-4'>
-					<button class="btn-cust">
+					<button class="btn-cust" onclick='validateFlaotFeilds()'>
 						Submit
 					</button>
 				</div>
@@ -142,48 +142,67 @@
 	
 			<div class='row'>
 				<div class="collapse" id="collapseComments" style='width:100%'>
-				<div class='overflow-auto sections-2 scroll-menu'>
-					{% for comment in comments %}
-					{% if comment.user_id == user %}
-					<div class='col-12 mt-4 mb-4'>
-						<div class='row'>
-							<div class='col-12 comment-sub-box'> 
-								<div class="user-content" >
-									<h1 class='user-box h1-1'>
-										{{ comment.user_id }}
-									</h1>
-									<hr>
-									<p class='p-p'>
-										{{ comment.comment}}
-									</p>
-									<div class='comment-line-3'></div>
+					<div class='overflow-auto sections-2 scroll-menu'>
+						{% for comment in comments %}
+						{% if comment.user_id == user %}
+						<div class='col-12 mt-4 mb-4'>
+							<div class='row'>
+								<div class='col-12 comment-sub-box'> 
+									<div class="user-content" >
+										<h1 class='user-box h1-1'>
+											{{ comment.user_id }}
+										</h1>
+										<hr>
+										<p class='p-p'>
+											{{ comment.comment}}
+										</p>
+										<div class='comment-line-3'></div>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					{% else %}
-					<div class='col-12 mt-4 mb-4'>
-						<div class='row'>
-							<div class='col-12 comment-sub-box'> 
-								<div class="comment-content" >
-									<h1 class='h1-1'>
-										{{ comment.user_id }}
-									</h1>
-									<hr>
-									<p class='p-p'>
-										{{ comment.comment}}
-									</p>
-									<div class='comment-line-2'></div>
+						{% else %}
+						<div class='col-12 mt-4 mb-4'>
+							<div class='row'>
+								<div class='col-12 comment-sub-box'> 
+									<div class="comment-content" >
+										<h1 class='h1-1'>
+											{{ comment.user_id }}
+										</h1>
+										<hr>
+										<p class='p-p'>
+											{{ comment.comment}}
+										</p>
+										<div class='comment-line-2'></div>
+									</div>
 								</div>
 							</div>
 						</div>
+						{% endif %}
+						{% endfor %}
 					</div>
-					{% endif %}
-					{% endfor %}
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+	function validateFlaotFeilds() {
+		const fcost = document.forms["projectForm"]["project_cost"].value;
+		const fdeposit = document.forms["projectForm"]["deposit"].value;
+		
+		if (isNaN(fcost)) {
+			alert("Numbers only in the project cost field");
+			return false;
+		}
+
+		if (isNaN(fdeposit)) {
+			alert("Numbers only in the deposit");
+			return false;
+		}
+	};
+
+</script>
+
 
 {% endblock %}

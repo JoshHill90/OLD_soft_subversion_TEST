@@ -5,15 +5,13 @@
 {% if user.is_authenticated %}
 
 <div class='row'>
-
-
-	<div class='col-12 mt-4 mb-4'>
-		<div class='section-min'>
+	<div class='col-12  order-md-2 col-md-6 mt-4 mb-4'>
 		<h1 class='h1-1'>Client Options</h1>
 		<hr>
+		<div class='section-min'>
 			<div class='row'>
 
-				<div class='col-6 col-md-3 mt-4'>
+				<div class='col-6 mt-4'>
 					<a href="{% url 'invite' %}">
 						<div class='section-pad addLoader text-center' >
 						<i class="fa-solid fa-user-plus fa-2xl"></i>
@@ -21,27 +19,8 @@
 						</div>
 					</a>
 				</div>
-
 				
-				<div class='col-6 col-md-3 mt-4'>
-					<a href="{% url 'invite' %}">
-						<div class='section-pad text-center'>
-							<i class="fa-regular fa-address-book fa-2xl"></i>
-							<p class='mt-2'>Message Client</p>
-						</div>
-					</a>
-				</div>
-
-				<div class='col-6 col-md-3 mt-4'>
-					<a href="{% url 'invite' %}">
-							<div class='section-pad addLoader text-center' >
-							<i class="fa-solid fa-user-large-slash fa-2xl"></i>
-							<p class='mt-2'>Delete Client</p>
-						</div>
-					</a>
-				</div>
-				
-				<div class='col-6 col-md-3 mt-4'>
+				<div class='col-6 mt-4'>
 					<a href="{% url 'invite' %}">
 							<div class='section-pad addLoader text-center' >
 							<i class="fa-solid fa-user-gear fa-2xl"></i>
@@ -53,11 +32,11 @@
 			</div>
 		</div>
 	</div>
-
-	<div class='col-12 mt-4'>
+	<div class='col-12 order-md-1 col-md-6 mt-4 mb-4'>
+		
+		<h1 class='h1-1 mb-2'>Client Search and Filter</h1>
+		<hr>
 		<div class='sections-med'>
-
-			<h1 class='h1-1 mb-2'>Client Search and Filter</h1>
 			<form method="GET" action="." class='form-group'>
 				<div class='row'>
 					<div class='col-12 mb-2'>
@@ -78,90 +57,232 @@
 					</div>
 				</div>
 				<div class='row'>
-					<div class="col-6 col-md-2 mt-4">
+					<div class="col-12 col-md-4 mt-4">
 						<select class="form-select" type="select" name="order">
 							<option value="Newest">Newest</option>
 							<option value="Oldest">Oldest</option>
 						</select>
 					</div>                
-					<div class="col-6">
+					<div class="col-12 col-md-4 mt-4">
 						<button type="submit" class="btn-cust btn-cust-color mt-4">Search</button>
+					</div>
+					<div class="col-12 col-md-4 mt-4">
+						<button type="submit" onclick="{% url 'o-client' %}" class="btn-cust btn-cust-color mt-4">Clear</button>
 					</div>
 				</div>
 			</form>
+		</div>
+	</div>
 
-			<div class='row'>
-				<div class='col-12 mt-4'>
-					<div class='row'>
-						<div class='col'>
-							<p class="p-p">
-								Select All 
-								
-								<input class="form-check-input text-center" type="checkbox" value="" id="selectAll">
-							</p>
-						</div>
+	<div class='col-12 order-md-3  mt-4'>
+		<div class="overflow-auto section-scroll">
+			<div class='section-dt' style='width:98%'>
+				<div class='row'>
+					<div class='col-12 text-center mt-4'>
+						<div class='row'>
+							<div class='col-6 col-md-3'>
+								<p class="p-p">
+									Client ID: 
+								</p>
+							</div>
+							<div class='col-6 col-md-3'>
+								<p class="p-p">
+									Client Name: 
+								</p>
+							</div>
+							<div class='col-6 col-md-3'>
+								<p class="p-p">
+									Projet Count: 
+								</p>
+							</div>
+							<div class='col-6 col-md-3'>
+								<p class="p-p">
+									Clent Details: 
+								</p>
+							</div>
 
-						<div class='col'>
-							<p class="p-p">
-								Client ID: 
-							</p>
 						</div>
-						<div class='col'>
-							<p class="p-p">
-								Client Name: 
-							</p>
-						</div>
-						<div class='col'>
-							<p class="p-p">
-								Projet Count: 
-							</p>
-						</div>
-						<div class='col'>
-							<p class="p-p">
-								Image Count: 
-							</p>
-						</div>
-
 					</div>
-				</div>
 					<hr>
-				<div class="overflow-auto sections-2 scroll-menu">
-				{% for clients in client_info %}
-					<div class='col-12 mt-4'>
-						<div class='inv-card'>
-							<div class='inv-card-content'>
-								<div class='row mt-1'  style='width:90%'>
-									<div class='col-6 col-md-3'>
-										<p class="p-p">
-											{{ clients.client_details.client }} 
-											<br>
-											Client ID: {{ clients.client_details.client_id }}
-										</p>
-									</div>
-									<div class='col-6 col-md-3'>
-										
-										<p class="p-p"> Number of propjects: {{ clients.project_count }}</p>
-									</div>
-									<div class='col-6 col-md-3'>
-										<p class="p-p">Project Images:  {{ clients.image_count }}</p>
-									</div>
-									<div class='col-12 col-md-3'>
-										<button href="#" class="btn-cust btn-cust-color" onclick="window.location.href='#'">Details</button>
-									</div>
-								</div>
+					{% for clients in client_list %}
+					<div class='col-12  text-center mt-4'>
+						<div class='row mt-1'>
+							<div class='col-6 col-md-3'>
+								<p class="p-p">
+									{{ clients.id }}
+								</p>
+							</div>
+							<div class='col-6 col-md-3'>
+								<p class="p-p">
+									{{ clients.name }} 
+								</p>
+							</div>
+							<div class='col-6 col-md-3'>
+								<p class="p-p">
+									{% for project in project_list %}
+										{% if project.client_id == clients %}
+										{{ forloop.counter }}
+										{% endif %}
+									{% endfor %}
+								</p>
+							</div>
+
+							<div class='col-6 col-md-3'>
+								
+								<button class="btn-icon" id="detailsBtn{{ forloop.counter }}" onclick="handleModal('detailsWindow{{ forloop.counter }}', 'detailsBtn{{ forloop.counter }}', 'closeDetails{{ forloop.counter }}')">
+									Details
+								</button>
+
 							</div>
 						</div>
+						<hr>
 					</div>
-				{% endfor %}
+					{% endfor %}
 				</div>
+				
+			</div>
+			
+
+			<div class='section-mb'>
+				{% for clients in client_list %}
+				<div class='col-12  text-center mt-4'>
+					<div class='row mt-1'>
+						<div class='col-6'>
+							<p class="p-p">
+								Client ID: {{ clients.id }}
+							</p>
+						</div>
+						<div class='col-6'>
+							<p class="p-p">
+								Client Name: {{ clients.name }} 
+							</p>
+						</div>
+						<div class='col-6'>
+							<p class="p-p">
+								{% for project in project_list %}
+									{% if project.client_id == clients %}
+									Projet Count: {{ forloop.counter }}
+									{% endif %}
+								{% endfor %}
+							</p>
+						</div>
+
+						<div class='col-6'>
+							
+							<button class="btn-icon"id="detailsBtn2{{ forloop.counter }}" onclick="handleModal('detailsWindow{{ forloop.counter }}', 'detailsBtn2{{ forloop.counter }}', 'closeDetails{{ forloop.counter }}')">
+								Details
+							</button>
+						</div>
+					</div>
+					<hr>
+				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
 
+	{% for clients in client_list %}
+	<div id="detailsWindow{{ forloop.counter }}" class="details-modal">
+
+		<!-- Modal content -->
+		<div class="details-content overflow-auto">
+			<span class="closeDetails" id="closeDetails{{ forloop.counter }}"><i class="fa-solid fa-circle-xmark fa-lg icon-color"></i></span>
+			<div class='row'>
+				<div class='col-12 col-md-9'>
+					<h1 class='h1-1'>
+						Client Details 
+					</h1>
+					<hr>
+
+				</div>
+			</div>
+			<div class='row mt-4 mb-4'>
+				<div class='col-12 col-md-6'>
+					<h1 class='h1-1'>
+						Client Information
+					</h1>
+					<hr>
+
+					<div class='section-small'>
+						<div class='row mt-4 mb-4'>
+							<div class='col-12'>
+								<p class="p-p">
+									Name: {{clients.user_id.first_name }} {{clients.user_id.last_name }}
+								</p>
+							</div>
+							<div class='col-12'>
+								<p class="p-p">
+									Address: <br> {{clients.address_1 }} <br> {{clients.address_2 }} <br> {{clients.city }}, {{clients.state }} {{clients.zip_code }}
+								</p>
+							</div>		
+							<div class='col-12'>
+								<p class="p-p">
+									Contact: <br> {{clients.email }} <br> {{clients.phone }}
+								</p>
+							</div>	
+						</div>
+
+						<form method="post" action="{% url 'o-client' %}">
+							{% csrf_token %}
+							<input type="hidden" name="object_id" value="{{ clients.id }}">
+							<button class='btn-cust text-center mt-4 mb-4'  type="submit" name="delete" value="Delete">
+								<i class="fa-solid fa-user-slash fa-2xl"></i>
+								<p class='mt-2'>Delete User</p>
+							</button>
+						</form>
+					</div>	
+				</div>
+
+				<div class='col-12 col-md-3'>
+					<h1 class='h1-1'>
+						Client Projects
+					</h1>
+					<hr>
+
+					<div class='section-small'>
+						{% for project in project_list %}
+						{% if project.client_id == clients %}
+						<a href="{% url 'o-project-details' project.slug %}">
+							{{ project }}
+							</a>
+						{% endif %}
+						{% endfor %}
+					</div>	
+				</div>
+				<div class='col-12 col-md-3'>
+					<h1 class='h1-1'>
+						Project Request
+					</h1>
+					<hr>
+
+					<div class='section-small'>
+						{% for project in project_request %}
+						{% if project.client_id == clients and project.status == 'pending' %}
+						<a href="{% url 'request-details' project.slug %}">
+						{{ project }}
+						</a>
+						{% endif %}
+						{% endfor %}
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
 </div>
 
 <script src={% static 'js/graphs.js' %}></script>
-
+<script>
+	function initializeModals() {
+		document.addEventListener("DOMContentLoaded", function() {
+		  {%  for clients in client_list %}
+			handleModal("detailsWindow{{ forloop.counter }}", "detailsBtn{{ forloop.counter }}", "closeDetails{{ forloop.counter }}");
+			handleModal("detailsWindow{{ forloop.counter }}", "detailsBtn2{{ forloop.counter }}", "closeDetails{{ forloop.counter }}");
+		  {% endfor %}
+		});
+	  };
+	initializeModals();
+</script>
 
   
 

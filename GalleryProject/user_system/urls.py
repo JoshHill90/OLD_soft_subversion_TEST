@@ -11,4 +11,8 @@ urlpatterns = [
 
     path('o-panel/binder/invoice/', views.billing_panel, name='o-billing'),
     path('o-panel/binder/invoice/create', views.create_invoice, name='create-invoice'),
+    path('o-panel/binder/invoice/<int:id>', views.billing_details, name='billing-details'),
+    
+    # 
+    #path('c-panel/binder/invoice/<int:id>', views.client_billing_details, name='billing-details')
 ]

@@ -13,7 +13,8 @@ urlpatterns = [
     
     path('o-panel', views.o_main, name='o_panel'),
     path('o-panel/binder', views.o_binder, name='binder'),
-    path('o-panel/image-upload', views.image_upload, name='image-upload'),
     path('o-panel/marketing', views.marketing, name='marketing'),
     path('o-panel/gallery', views.o_gallery, name='o-gallery'),
+    
+    path('o-panel/settings/documents', views.document_settings, name='o-documents'),
 ]

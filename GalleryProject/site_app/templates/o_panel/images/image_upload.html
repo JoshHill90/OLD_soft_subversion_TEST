@@ -38,7 +38,7 @@
                     <p class='p-p'>If an error message shows upload fails please contact the site admin.</p>
 
                     <input class="form-control" value="{{clfr_id}}" type="text" id="cloudflareid" hidden>
-                    <button class="btn-cust mt-3" onclick="delayedRedirect(#)">Upload Image</button>
+                    <button class="btn-cust mt-3" onclick="delayedRedirect('{% url 'image-create' clfr_id %}')">Upload Image</button>
                 </div>
             </div>
         </form>

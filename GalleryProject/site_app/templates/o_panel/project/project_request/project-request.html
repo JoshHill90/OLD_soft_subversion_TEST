@@ -8,41 +8,43 @@
 			<h1 class='h1-1'>Pending Project Request</h1>
 			<hr>
 			<div class='row mt-4 '>
-				<div class="overflow-auto section-scroll">
+				<div class="overflow-auto section-md">
 					{% for project in client_request %}
 					{% if project.status == 'pending' %}
 					<div class='col-12 mt-1 inv-card'>
 						<div class='row text-center inv-card-content'>
-							<div class='col-3'>
+							<div class='col-4 col-md-3'>
 								<p class="p-p">
 									Title <br>
-									{{ project.name }} 
+									{{ project.name| title }} 
 									<br>
 								</p>
 							</div>
-							<div class='col-3'>
+							<div class='col-4 col-md-3'>
 								<p class="p-p">
 									Client <br>
-									{{ project.user_id }} 
+									{{ project.client_id| title }} 
 									<br>
 								</p>
 							</div>
-							<div class='col-3'>
-								Project scope <br>
+							<div class='col-4 col-md-3'>
+								
 								<p class="p-p">
-									{{ project.scope }} 
+									Scope <br>
+									{{ project.scope|title }} 
 									<br>
 								</p>
 							</div>
-							<div class='col-3'>
+							<div class='col-12 col-md-3'>
 								<button
 									class="btn-cust btn-cust-color" 
-									onclick="window.location.href='{% url 'request-status' project.slug %}'">
+									onclick="window.location.href='{% url 'request-details' project.slug %}'">
 									Details
 								</button>
 							</div>
 						</div>
 					</div>
+					<hr>
 					{% endif %}
 					{% endfor %}
 				</div>

@@ -195,12 +195,22 @@
 									<p class="p-p">${{ inv.project_details.paid|floatformat:2}}</p>
 								</div>
 								<div class='col-1'>
-									<button class="btn-icon" onclick="window.location.href='{% url 'billing-details' inv.billID %}'">
+
+									<button class="btn-icon"id="detailsBtn{{ forloop.counter }}" onclick="handleModal('detailsWindow{{ forloop.counter }}', 'detailsBtn{{ forloop.counter }}', 'closeDetails{{ forloop.counter }}')">
 										<i class="fa-solid fa-file-invoice-dollar"></i>
 									</button>
 								</div>
 							</div>
 							<hr>
+						</div>
+						<div id="detailsWindow{{ forloop.counter }}" class="details-modal">
+
+							<!-- Modal content -->
+							<div class="details-content">
+							  <span class="closeDetails" id="closeDetails{{ forloop.counter }}">&times;</span>
+							  <p>{{ inv.project_details.status }}</p>
+							</div>
+						  
 						</div>
 					{% endfor %}
 					</div>
@@ -210,5 +220,14 @@
 		</div>
 	</div>
 </div>
-
+<script>
+	function initializeModals() {
+		document.addEventListener("DOMContentLoaded", function() {
+		  {% for inv in invoice %}
+			handleModal("detailsWindow{{ forloop.counter }}", "detailsBtn{{ forloop.counter }}", "closeDetails{{ forloop.counter }}");
+		  {% endfor %}
+		});
+	  };
+	initializeModals();
+</script>
 {% endblock %}

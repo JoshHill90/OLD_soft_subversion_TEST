@@ -7,7 +7,7 @@ from django.db.models import Q
 from django.conf import settings
 from django.urls import reverse_lazy
 from django.contrib import messages
-from .models import Contact
+from .models import Contact, Document
 from gallery.models import Image
 from client.models import Project, Client
 from .forms import ContactForm
@@ -23,11 +23,7 @@ from GalleryProject.env.app_Logic.smtp.MailerDJ import AutoReply
 from GalleryProject.env.app_Logic.untility.quick_tools import QuickStripe, DateFunction, Hexer
 from log_app.logging_config import logging
 import time
-from GalleryProject.env.cloudflare_API.CFAPI import APICall, Encode_Metadata
 
-
-cf_api_call= APICall()
-encode = Encode_Metadata()
 qs = QuickStripe()
 df = DateFunction()
 hexer = Hexer()
@@ -133,21 +129,13 @@ def o_binder(request):
         'month':month,
     })
     
-def image_upload(request):
 
-    multi_encode_bond = encode.direct_request_encoder()
-    cloudflare_id = cf_api_call.auth_direct_upload(multi_encode_bond)
-    cloudflare_id = str(cloudflare_id)
-    front_end_url = f'https://upload.imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/{cloudflare_id}'
-
-    return render(request, 'o_panel/image_upload.html',
-                  {
-                      'front_end_url': front_end_url,
-                      'clfr_id': cloudflare_id}
-                  )
-    
 def marketing(request):
     return render(request, 'o_panel/marketing.html')
 
 def o_gallery(request):
     return render(request, 'o_panel/gallery.html')
+
+
+def document_settings(request):
+    documents = Document.objects.filter(doc_type='site')

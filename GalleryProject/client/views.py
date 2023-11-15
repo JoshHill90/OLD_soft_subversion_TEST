@@ -6,16 +6,18 @@ from django.db.models import Q
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import InviteForm, RequestReplyComment, ProjectRequestForm, ProjectTermsForm
-from .models import Client, Invite, Project, ProjectRequest, RequestReply, ProjectTerms, ProjectEvents
+from .forms import InviteForm, RequestReplyComment, ProjectRequestForm, ProjectTermsForm, NotesForm, ProjectEventForms
+from .models import Client, Invite, Project, ProjectRequest, RequestReply, ProjectTerms, ProjectEvents, Note
 from gallery.models import Image
 from user_system.models import Invoice, LineItem
 from django.utils.text import slugify
 from GalleryProject.env.app_Logic.json_utils import DataSetUpdate
+from site_app.models import Document
 from log_app.logging_config import logging
 from GalleryProject.env.app_Logic.smtp.MailerDJ import AutoReply
 from GalleryProject.env.app_Logic.untility.quick_tools import QuickStripe, DateFunction, Hexer
 from GalleryProject.env.app_Logic.date_time_calendar import cal_gen, date_passed_check
+from GalleryProject.env.cloudflare_API.CFAPI import APICall
 
 import calendar
 import stripe
@@ -26,13 +28,12 @@ qs = QuickStripe()
 df = DateFunction()
 hexer = Hexer()
 smtp_request = AutoReply()
-
+cf_image = APICall()
 def o_client(request):
     client_list = Client.objects.exclude(Q(name='Soft Subversion'))
     client_images = Image.objects.exclude(Q(client_id__name="Soft Subversion"))
     project_list = Project.objects.exclude(Q(name="Soft Subversion"))
-    project_temp = 0
-    image_temp = 0
+    project_request = ProjectRequest.objects.all()
 	# Get query parameters
     project_query = request.GET.get('project')
     client_query = request.GET.get('client')
@@ -41,8 +42,10 @@ def o_client(request):
     # Apply filters
     if project_query:
         project_list = project_list.filter(Q(name__icontains=project_query))
+
         project_ids = project_list.values_list('id',)
-        client_list = client_list.filter(user_id__in=project_ids)
+
+        client_list = client_list.filter(project__in=project_ids)
 
     if client_query:
         client_list = client_list.filter(Q(name__icontains=client_query))
@@ -52,23 +55,23 @@ def o_client(request):
         client_list = client_list.order_by('id')
     else:
         client_list = client_list.order_by('-id')
-   
-    clients_info =[]
-    for client in client_list:
-        client_details = {'client': client.name, 'client_id': client.id, 'client_user': client.user_id}
-        for project in project_list:
-            if client.user_id == project.user_id:
-                project_temp +=1
-                for image in client_images:
-                    if image.client_id.id == client.id and image.project_id.id == project.id:
-                        image_temp +=1
-        clients_info.append({'client_details': client_details, 'project_count': project_temp, 'image_count': image_temp})
-    print(clients_info)
-                	
+    try:    
+        if request.method == 'POST' and 'delete' in request.POST:
+            object_id = request.POST.get('object_id')
+            client_selected = Client.objects.get(id=object_id)
+            user_selected = User.objects.get(id=client_selected.user_id.id)
+            user_selected.delete()
+            client_selected.delete()
+    except Exception as e:
+        logging.error("Client Operation Error: %s", str(e))
+        slugified_error_message = slugify(str(e))
+        return redirect('issue-backend', status=508, error_message=slugified_error_message)
+        
     return render(request, 'o_panel/client/client.html', {
-		'client_info': clients_info,
+		'client_list': client_list,
 		'client_images':client_images,
-		'project_list': project_list
+		'project_list': project_list,
+        'project_request': project_request
 	})
     
 class InviteView(CreateView):
@@ -77,51 +80,43 @@ class InviteView(CreateView):
     template_name = 'o_panel/client/client-intake.html'
     
     def form_valid(self, form):
-        #try:
-        self.object = form.save()
-        email = form.cleaned_data.get('email',)
-        name = form.cleaned_data.get('email',)
-        hex_key = hexer.hex_gen()
-        add_feild = self.object
-        add_feild.hexkey = hex_key
-        add_feild.save()
-        response_back = smtp_request.send_invite(email, name, hex_key)
-        print(response_back)
-    
-        if response_back == 'sent':
-            dataQ = DataSetUpdate()
-            dataQ.json_user_list_check()
-            return redirect('o-client')
-        else: 
-            print('error')
+        try:
+            self.object = form.save()
+            email = form.cleaned_data.get('email',)
+            name = form.cleaned_data.get('name',)
+            hex_key = hexer.hex_gen()
+            add_feild = self.object
+            add_feild.hexkey = hex_key
+            add_feild.save()
+            response_back = smtp_request.send_invite(email, name, hex_key)
+            print(response_back)
         
+            if response_back == 'sent':
+                dataQ = DataSetUpdate()
+                dataQ.json_user_list_check()
+                return redirect('o-client')
+            else: 
+                print('error')
+            
         
-        #except Exception as e:
-            #logging.error("Client Invite Error: %s", str(e))
-            #slugified_error_message = slugify(str(e))
-            #return redirect('issue-backend', status=508, error_message=slugified_error_message)
+        except Exception as e:
+            logging.error("Client Invite Error: %s", str(e))
+            slugified_error_message = slugify(str(e))
+            return redirect('issue-backend', status=508, error_message=slugified_error_message)
         
 #---------------------------------------------------------------------------------------------------------#
 # Project views
 #---------------------------------------------------------------------------------------------------------#
 
 def project_main(request):
-    client_list = Client.objects.exclude(Q(name='Soft Subversion'))
-    project_images = Image.objects.exclude(Q(client_id__name="Soft Subversion"))
-    project_list = Project.objects.exclude(Q(name="Soft Subversion"))
-    project_request = ProjectRequest.objects.all()
-    project_events = ProjectEvents.objects.all()
-    project_temp = 0
-    image_temp = 0
-    client_name = ''
+    client_list = Client.objects.exclude(Q(name='Soft Subversion') | Q(user_id=None))
+    project_list = Project.objects.exclude(Q(name="Soft Subversion") | Q(client_id=None))
+
     
 	# Get query parameters
     project_query = request.GET.get('project')
     client_query = request.GET.get('client')
     order_set = request.GET.get('order')
-    
-
-
 
     month0, month1, month2, cal, year, todays_date, cal_date = cal_gen()
     # Apply filters
@@ -131,42 +126,203 @@ def project_main(request):
 
     if client_query:
         client_list = client_list.filter(Q(name__icontains=client_query))
-        #client_ids = client_list.values_list('id',)
-        #project_list = project_list.filter(user_id__in=client_ids)
+        project_list = project_list.filter(client_id__in=client_list)
 	        
     if order_set == 'Oldest':
         project_list = project_list.order_by('id')
     else:
         project_list = project_list.order_by('-id')
    
-    project_info =[]
-    for project in project_list:
-
-            
-        client_name = str(project.user_id.first_name + ' ' + project.user_id.last_name)
-        project_details = {
-            'project': project.name,
-            'project_id': project.id,
-            'project_client': client_name,
-            'project_status': project.status
-                           }
-        
-        for image in project_images:
-            if image.project_id.id == project.id:
-                image_temp +=1
-        project_info.append({'project_details': project_details, 'image_count': image_temp})
                 	
     return render(request, 'o_panel/project/projects.html', {
-		'project_info': project_info,
-		'project_images':project_images,
 		'project_list': project_list,
-        'project_request': project_request,
-        'project_events': project_events,
         'year': year,
         'month': month1,
         'cal': cal
 	})
     
+def project_details(request, slug):
+    billing_total = 0
+    billing_paid = 0
+    project_deposit = 0.00
+    billing_set = []
+    
+    project = Project.objects.get(slug=slug)
+    
+# Use related names to simplify queries
+    request_reply = RequestReply.objects.filter(project_request_id__slug=slug)
+    project_events = project.projectevents_set.order_by('date')
+    project_terms = project.projectterms_set.first()
+    client = project.client_id
+    billing_list = project.invoice_set.all()
+    line_items = LineItem.objects.filter(billing_id__in=billing_list)
+    notes = project.note_set.all()
+    images = project.image_set.all()
+    documents = project.documents.all()
+    
+    
+    #project_events = ProjectEvents.objects.filter(project_id=project).order_by('date')
+    #project_terms = ProjectTerms.objects.get(project_id__slug=slug)
+    #client = Client.objects.get(id=project.client_id.id)
+    #billing_list = Invoice.objects.filter(project_id=project)
+    #notes = Note.objects.filter(project_id=project.id)
+    #images = Image.objects.filter(project_id=project)
+    #documents = project.documents.all()
+    
+    
+    if billing_list:
+        for invoice in billing_list:
+            billing_total += invoice.billed
+            billing_paid += invoice.paid
+            if invoice.payment_type == "Deposit":
+                project_deposit = float(invoice.billed)
+
+    if project_deposit > 0:
+        billing_set.append({'cost':project_deposit, 'type':'Deposit'})
+        
+    billing_set.append({'cost':billing_total, 'type':'Total'})
+    billing_set.append({'cost':billing_paid, 'type':'Paid'})
+    
+    # calendar 
+    events_form = ProjectEventForms()
+    new_event = None
+    if request.method == 'POST' and 'calendar':
+        events_form = ProjectEventForms(data=request.POST)
+        if events_form.is_valid():
+            user_info = request.user
+            new_event = events_form.save(commit=False)
+            new_event.project_id = project
+            new_event.save()
+            return redirect('o-project-details', slug)
+        else:
+            events_form = ProjectEventForms()
+
+            
+    # invoice 
+    if request.method == 'POST' and 'open' in request.POST:
+        
+        try:
+            invoice_id = request.POST.get('invoice_id')
+            invoice = billing_list.get(id=invoice_id)
+            
+            if invoice.status == "draft":
+                payment_link, invoice_update = qs.send_stripe_invoice(invoice.invoice_id)
+                invoice.payment_link = payment_link
+                invoice.status = invoice_update.status
+                invoice.save()
+            if invoice.status =='open':
+                qs.resend_invoice(invoice.project_id.user_id,invoice.project_id, invoice)
+                
+            
+            return redirect('o-project-details', slug=slug)
+            
+        except Exception as e:
+            logging.error("Stripe invoice send operation failed: %s", str(e))
+            return redirect('issue-backend')
+        
+    if request.method == 'POST' and 'deleteOrVoid' in request.POST:
+        try:
+            object_id = request.POST.get('object_id')
+            invoice = billing_list.get(id=object_id)
+            
+            if invoice.status == "draft":
+                qs.delete_stripe_draft(invoice.invoice_id)
+                invoice.delete()
+                
+            if invoice.status =='open':
+                void_invoice = qs.void_stripe_invoice(invoice.invoice_id)
+                invoice.status = void_invoice.status
+                invoice.save()
+                
+            invoice.delete()
+            return redirect('o-project-details', slug=slug)
+        
+        except Exception as e:
+            logging.error("Stripe invoice void operation failed: %s", str(e))
+            return redirect('issue-backend')
+        
+    if request.method == 'POST' and 'cash' in request.POST:
+        try:
+            object_id = request.POST.get('object_id')
+            invoice = billing_list.get(id=object_id)
+            
+            invoice_update = qs.stripe_cash_payment(invoice.invoice_id)
+            invoice.fufiled = True
+            invoice.paid = invoice.billed
+            invoice.status = invoice_update.status
+            invoice.save()
+            
+            return redirect('billing-details', id=invoice.id)
+            
+        except Exception as e:
+            logging.error("Stripe invoice send operation failed: %s", str(e))
+            return redirect('issue-backend')  
+    
+    # Notess 
+            
+    note_form = NotesForm()
+    new_note = None
+    if request.method == 'POST' and 'Note':
+        note_form = NotesForm(data=request.POST)
+        if note_form.is_valid():
+            user_info = request.user
+            new_note = note_form.save(commit=False)
+            new_note.user_id = user_info
+            new_note.project_id = project
+            new_note.save()
+
+            return redirect('o-project-details', slug)
+
+    else:
+        note_form = NotesForm()
+        
+    # Delete
+    try:    
+        if request.method == 'POST' and 'delete' in request.POST:
+            for pic in images:
+                cf_image.delete_image(pic.cloudflare_id)
+                pic.delete()
+            
+            for note in notes:
+                note.delete()
+            
+            for events in project_events:
+                events.delete()
+                
+            for bill in billing_list:
+                if bill.status == 'draft':
+                    qs.delete_stripe_draft(bill.invoice_id)
+                    bill.delete()
+                elif bill.status == 'open':
+                    qs.void_stripe_invoice(bill.invoice_id)
+                elif bill.status == 'paid' or bill.status == 'void' or bill.status == 'uncollectible':
+                    pass
+                
+            project_terms.delete()    
+            project.delete()
+            return redirect('o-project')
+                
+    except Exception as e:
+        logging.error("Project Operation Error: %s", str(e))
+        slugified_error_message = slugify(str(e))
+        return redirect('issue-backend', status=508, error_message=slugified_error_message)
+
+
+    return render(request, 'o_panel/project/project-details.html', {
+        'project': project,
+        'project_events': project_events,
+        'billing_list': billing_list,
+        'client': client,
+        'project_terms': project_terms,
+        "images": images,
+        'billing_set':billing_set,
+        'request_reply':request_reply,
+        'note_form': note_form,
+        'notes':notes,
+        'documents': documents,
+        'line_items':line_items
+    })
+
 
 def project_gallery(request, id):
     project = Project.objects.get(id=id)
@@ -189,22 +345,7 @@ def project_notes(request, id):
     project_request = ProjectRequest.objects.get(id=project_terms.project_request_id.id)
     request_reply = RequestReply.objects.filter(Q(project_request_id=project_request.id))
     
-        
-    notes = Note.objects.filter(project_id=project_terms.project_id.id)
-    new_note = None
-    if request.method == 'POST':
-        note_form = NotesForm(data=request.POST)
-        if note_form.is_valid():
-            user_info = request.user
-            new_note = note_form.save(commit=False)
-            new_note.user_id = user_info
-            new_note.project_id = project
-            new_note.save()
 
-            return redirect('project-notes', id)
-
-    else:
-        note_form = NotesForm()
 
     return render(request, 'gallery/project/project-notes.html', {
         'request_reply': request_reply,
@@ -213,7 +354,6 @@ def project_notes(request, id):
         'notes': notes,
         'note_form': note_form
     })
-    
 #---------------------------------------------------------------------------------------------------------#
 # Calendar
 #---------------------------------------------------------------------------------------------------------#
@@ -221,7 +361,7 @@ def project_notes(request, id):
 class ProjectEventsCreate(CreateView):
     model = ProjectEvents
     form_class = ProjectTermsForm
-    template_name = 'gallery/project/project-events/new-event.html'
+    template_name = 'o_panel/project/events/new-event.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['project'] = Project.objects.exclude(name='Soft Subversion')
@@ -280,13 +420,15 @@ def project_request(request):
         'project_terms': project_terms
   })
 
-def project_request_details(request, id):
-    project_request = get_object_or_404(ProjectRequest, id=id)
+def project_request_details(request, slug):
+    project_request = get_object_or_404(ProjectRequest, slug=slug)
     print(project_request.id)
     comments = RequestReply.objects.filter(project_request_id=project_request.id)
+    comments = comments.order_by('-id')
     new_comments = None
     if request.method == 'POST':
         comment_form = RequestReplyComment(data=request.POST)
+        client = User.objects.get(id=project_request.client_id.user_id.id)
         if comment_form.is_valid():
             user_info = request.user
             new_comment = comment_form.save(commit=False)
@@ -294,9 +436,14 @@ def project_request_details(request, id):
             new_comment.project_request_id = project_request
             new_comment.save()
             comment = comment_form.cleaned_data.get('comment')
-            clinet_email = user_info.email
-            smtp_request.owner_post_comment(clinet_email, user_info, comment, project_request, id)
-            return redirect('comment-success')
+
+            smtp_request.request_project_comment(
+                client,
+                comment, 
+                project_request.name, 
+                slug 
+            )
+            return redirect('request-details', project_request.slug)
 
     else:
         comment_form = RequestReplyComment()
@@ -308,11 +455,11 @@ def project_request_details(request, id):
         'comments': comments, 
   })
 
-def request_approval(request, id):
+def request_approval(request, slug):
     try:
-        client_request = get_object_or_404(ProjectRequest, id=id)
-        user_info = User.objects.get(username=client_request.user_id)
-        client_info = Client.objects.get(user_id__username=user_info.username)
+        client_request = get_object_or_404(ProjectRequest, slug=slug)
+        client_info = Client.objects.get(id=client_request.client_id.id)
+        user_info = User.objects.get(id=client_info.user_id.id)
         comments = RequestReply.objects.filter(project_request_id=client_request)
         new_template = None
 
@@ -362,8 +509,8 @@ def request_approval(request, id):
                 # creates project
                 new_project_model = Project.objects.create(
                     name=client_request.name,
-                    user_id=user_info,
-                    client_id=client_info
+                    client_id=client_info,
+                    slug=slug
                 )
                 
                 # creates the billing corresponding stripe invoice for the project
@@ -391,6 +538,17 @@ def request_approval(request, id):
                 new_template.project_id = new_project_model
                 
                 new_template.save()
+                
+                #sets up PDf questionair path 
+                if client_request.scope == 'model':
+                    pdf_path = 'pdfs/Model-Photo-questionnaire.pdf'
+
+                elif client_request.scope == 'family':
+                    pdf_path = 'pdfs/Family-Photo-questionnaire.pdf'
+                    
+                elif client_request.scope == 'wedding':
+                    pdf_path = 'pdfs/Wedding-Photo-questionnaire.pdf'
+                
                 #----------------------------------------------------------------#
                 # checks for deposit and project cost and process if they exist
                 #----------------------------------------------------------------#
@@ -399,6 +557,7 @@ def request_approval(request, id):
                         '{:.2f}'.format(
                             float(dollar_amount))).replace('.','')
                 )
+                project_link = f'https://SoftSubversion.com/c-panel/binder/project/{slug}/'
                 if deposit_amount > 0:
                     deposit_date = df.deposit_distance(client_request.date)
                     deposit_details = f'Deposit for photography project:{new_project_model.name}'
@@ -408,7 +567,9 @@ def request_approval(request, id):
                     
                     deposit_lineitem = qs.create_stripe_line_item(deposit, 'Deposit Cost', deposit_invoice, stripe_id)
                     payment_link, deposit_invoice_update = qs.send_stripe_invoice(deposit_invoice.id)
-                    deposit_billing = Invoice.objects.create(
+                    
+
+                    invoice_object = Invoice.objects.create(
                         project_id=new_project_model,
                         invoice_id=deposit_invoice.id,
                         details=deposit_details,
@@ -420,7 +581,7 @@ def request_approval(request, id):
                     )
                     
                     LineItem.objects.create(
-                        billing_id=deposit_billing,
+                        billing_id=invoice_object,
                         amount=deposit_amount,
                         receipt='Deposit Cost',
                         time_stamp=df.date_now(),
@@ -437,8 +598,15 @@ def request_approval(request, id):
                         event_type='Payment Reminder',
                         details=f'Event for deposit reminder for project{new_project_model}'
                     )
-    
-                    qs.send_invoice_email(user_info, new_project_model, deposit_billing)
+                    
+                    qs.send_invoice_email(user_info, new_project_model, invoice_object, pdf_path)
+                    
+                else:
+                    qs.send_project_only_email(
+                        user_info,  
+                        new_project_model,
+                        pdf_path
+                        )
 
                 if project_amount > 0:
                     project_cost = converted_to_cents(project_amount)
@@ -454,7 +622,7 @@ def request_approval(request, id):
                     new_billing_model.billed = project_amount
                     new_billing_model.save()
                     
-            return redirect('project-details', new_project_model.id)
+            return redirect('o-project')
 
         else:
             terms_form = ProjectTermsForm()
@@ -470,7 +638,8 @@ def request_approval(request, id):
         
     except Exception as e:
         logging.error("Stripe customer create method failed: %s", str(e))
-        return redirect('issue-backend')
+        slugified_error_message = slugify(str(e))
+        return redirect('issue-backend', status=508, error_message=slugified_error_message)
     
     
 #----------------------------------------------------------------#
@@ -500,13 +669,13 @@ class ClienRequestCreate(CreateView):
     
     template_name = 'c_panel/project/request/new-request.html'
     def form_valid(self, form):
-
+        
         
         user_info = self.request.user
         user_id = user_info.id
-        client = user_info.username
+        client = Client.objects.get(user_id=user_id)
         user_info.user_id = user_id
-        
+        client_name = str(client.user_id.first_name)
         project_name = form.cleaned_data.get('name')
         date_selected = form.cleaned_data.get('date')
         scope = form.cleaned_data.get('scope')
@@ -518,35 +687,41 @@ class ClienRequestCreate(CreateView):
         project_request = form.save(commit=False)
         
         id_str = str(user_id)
-        project_name_str = str(project_name)
-        clean_name = project_name_str.replace(' ', '-')
         randnum = hexer.hex_gen_small()
         pj_id = str(randnum)
 
         slug_str = str(id_str + '-' + pj_id + '-' + 'prj')
         
-        project_request.user_id_id = user_id 
+        project_request.client_id = client  
         project_request.slug = slug_str
         project_request.save()
         
-        smtp_request.project_request_notice(project_name, date_selected, scope, details, location_type, user_id, client)
-        return redirect('request-status', project_request.id)
+        smtp_request.project_request_notice(project_name, date_selected, scope, details, location_type, user_id, client_name)
+        return redirect('request-status', project_request.slug)
     
-def request_status(request, id):
-    project_request = get_object_or_404(ProjectRequest, id=id)
+def request_status(request, slug):
+    project_request = get_object_or_404(ProjectRequest, slug=slug)
     print(project_request.id)
     comments = RequestReply.objects.filter(project_request_id=project_request.id)
+    comments = comments.order_by('-id')
     new_comments = None
     if request.method == 'POST':
         comment_form = RequestReplyComment(data=request.POST)
         if comment_form.is_valid():
+            owner = User.objects.get(id=1)
             user_info = request.user
             new_comment = comment_form.save(commit=False)
             new_comment.user_id = user_info
             new_comment.project_request_id = project_request
             new_comment.save()
             comment = comment_form.cleaned_data.get('comment')
-            return redirect('client-comment-success')
+            smtp_request.request_project_comment(
+                owner,
+                comment, 
+                project_request.name, 
+                slug 
+            )
+            return redirect('request-status', project_request.slug)
 
     else:
         comment_form = RequestReplyComment()
@@ -558,4 +733,8 @@ def request_status(request, id):
         'comments': comments, 
   })
     
+def client_project_details(request, slug):
+    project = Project.objects.get(slug=slug)
+    
+    return render(request, 'c_panel/project/c-project-details.html')
     

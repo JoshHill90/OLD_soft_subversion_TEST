@@ -189,28 +189,32 @@ def billing_panel(request):
         invoice_info = invoice_info.order_by('id')
     else:
         invoice_info = invoice_info.order_by('-id')
-        
+    
+    if len(invoice_info) > 0:  
     # Invoice details set  
-    for bill in invoice_info:
-        client_billed = str(bill.project_id.client_id)    
-        for project in project_list:
-            if project.id == bill.project_id.id:
-                project_images = []
-                for image in image_list:
-                    if image.project_id == project:
-                        image_set = {'imageID': image.id, 'ImageTitle': image.title}
-                        project_images.append(image_set)
-                project_details = {
-                    "project": project.name, 
-                    'invoice': bill.invoice_id,
-                    'billed': bill.billed,
-                    'paid': bill.paid,
-                    'status': bill.status,
-                    'client': client_billed,
-                    'images': project_images,
-                                }
-                project_invoice.append({'billID': bill.id, 'project_details': project_details})
-
+        for bill in invoice_info:
+            client_billed = str(bill.project_id.client_id)    
+            for project in project_list:
+                if project.id == bill.project_id.id:
+                    project_images = []
+                    for image in image_list:
+                        if image.project_id == project:
+                            image_set = {'imageID': image.id, 'ImageTitle': image.title}
+                            project_images.append(image_set)
+                    project_details = {
+                        "project": project.name, 
+                        'invoice': bill.invoice_id,
+                        'billed': bill.billed,
+                        'paid': bill.paid,
+                        'status': bill.status,
+                        'client': client_billed,
+                        'images': project_images,
+                                    }
+                    
+                    billID = str(bill.id)
+                    project_invoice.append({'billID': billID, 'project_details': project_details})
+    else:                
+        project_invoice.append({'billID': 0, 'project_details': []})
 
     return render(
         request, 'o_panel/billing/billing.html', 
@@ -325,3 +329,13 @@ def create_invoice(request):
     except Exception as e:
         logging.error("Stripe invoice create operation failed: %s", str(e))
         return redirect('issue-backend', e=str(e))
+
+
+def billing_details(request, id):
+    invoice = Invoice.objects.get(id=id)
+    lineitem = LineItem.objects.filter(billing_id=invoice)
+    
+    return render(request, 'o_panel/billing/billing-details.html', {
+        'invoice': invoice,
+        'lineitem': lineitem
+    })

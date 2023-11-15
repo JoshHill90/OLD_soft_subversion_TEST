@@ -13,6 +13,7 @@
     <link rel='stylesheet' href="{% static 'css/panel.css' %}">
 	<link rel='stylesheet' href="{% static 'css/panel_scroll.css' %}">
 	<link rel='stylesheet' href="{% static 'css/panel_sections.css' %}">
+	<link rel='stylesheet' href="{% static 'css/panel_modal.css' %}">
 	<link rel='stylesheet' href="{% static 'css/calendar.css' %}">
 	<link rel='stylesheet' href="{% static 'css/window_load.css' %}">
 	<link rel='stylesheet' href="{% static 'css/animation.css' %}">
@@ -109,6 +110,7 @@
 </div>
 
 
+
 {% else %}
 
 
@@ -117,7 +119,7 @@
 {% endif %}
 
 
-
+<script src={% static 'js/panel_modal.js' %}></script>
 <script src={% static 'js/panelNav.js' %}></script>
 <script src={% static 'js/float_in.js' %}></script>
 <script src="https://kit.fontawesome.com/00f4d71521.js" crossorigin="anonymous"></script>
