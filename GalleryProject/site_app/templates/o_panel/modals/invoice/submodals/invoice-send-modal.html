@@ -1,0 +1,25 @@
+<div id="detailsWindowInvSend{{bill.id}}" class="details-modal">
+
+
+	<div class="details-content overflow-auto">
+		<span class="closeDetails" id="closeDetailsInvSend{{bill.id}}"><i class="fa-solid fa-circle-xmark fa-lg icon-color"></i></span>
+
+		<div class="form-fit h-100 form-group">
+			<h1 class='h1-1'>Send Invoice</h1>
+			<hr>
+			{% if bill.status == 'draft' %}
+			<p clas='p-p'>This will change the invoice from a draft to an open invoice. A notice will also be sent to the client</p>
+			{% elif bill.status == 'open' %}
+			<p clas='p-p'>This will send a payment reminder to the client</p>
+			{% endif %}	
+			<form method="post" action="{{ request.get_full_path }}">
+				{% csrf_token %}
+				<input type="hidden" name="invoice_id" value="{{bill.id}}">
+				<button  class='btn-cust' type="submit" name="send" value="Send">
+					Send <i class="fa-solid fa-file-import fa-2xl"></i>
+				</button>
+			</form>
+
+		</div>		
+	</div>
+</div>

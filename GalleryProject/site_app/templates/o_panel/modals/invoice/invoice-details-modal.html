@@ -1,0 +1,190 @@
+<div id="detailsWindowInv{{ bill.id }}" class="details-modal">
+
+
+	<div class="details-content overflow-auto">
+		<span class="closeDetails mb-4" id="closeDetailsInv{{ bill.id }}"><i class="fa-solid fa-circle-xmark fa-lg icon-color"></i></span>
+		<div class='row'>
+			<div class='col-12 col-md-4'>
+				<h1 class='h1-1'>
+					Invoice #{{ bill.id }}
+				</h1>
+			</div>		
+
+
+			{%if bill.status == 'draft' or  bill.status == 'open'%}
+			<div class='col-6 mt-1 col-md-2'>
+				<button  class='btn-icon w-100'
+				id="detailsBtnInvCash{{ bill.id }}" 
+				onclick="handleModal('detailsWindowInvCash{{ bill.id }}', 'detailsBtnInvCash{{ bill.id }}', 'closeDetailsInvCash{{ bill.id }}')"
+				>
+				<i class="fa-solid fa-money-bill-1-wave fa-2xl"></i>
+				</button>
+			</div>
+
+			<div class='col-6 mt-1 col-md-2'>
+				<button  class='btn-icon w-100'
+				id="detailsBtnInvEdit{{ bill.id }}" 
+				onclick="handleModal('detailsWindowInvEdit{{ bill.id }}', 'detailsBtnInvEdit{{ bill.id }}', 'closeDetailsInvEdit{{ bill.id }}')"
+				>
+					<i class="fa-solid fa-file-pen fa-2xl"></i>
+				</button>
+			</div>	
+
+			<div class='col-6 mt-1 col-md-2'>
+				<button  class='btn-icon w-100'
+				id="detailsBtnInvSend{{ bill.id }}" 
+				onclick="handleModal('detailsWindowInvSend{{ bill.id }}', 'detailsBtnInvSend{{ bill.id }}', 'closeDetailsInvSend{{ bill.id }}')"
+				>
+				<i class="fa-solid fa-file-import fa-2xl"></i>
+				</button>
+			</div>
+
+			<div class='col-6 mt-1 col-md-2'>
+				
+				<button  class='btn-icon w-100'
+				id="detailsBtnInvDel{{ bill.id }}" 
+				onclick="handleModal('detailsWindowInvDel{{ bill.id }}', 'detailsBtnInvDel{{ bill.id }}', 'closeDetailsInvDel{{ bill.id }}')"
+				>
+					<i class="fa-solid fa-file-circle-xmark fa-2xl"></i>
+				</button>
+			</div>	
+
+			{%else%}
+			<div class='col-6 mt-1 col-md-2'>
+				<button  class='btn-icon-disabled w-100'>
+					<i class="fa-solid fa-money-bill-1-wave fa-2xl"></i>
+				</button>
+			</div>	
+			<div class='col-6 mt-1 col-md-2'>
+				<button  class='btn-icon-disabled w-100'>
+					<i class="fa-solid fa-file-pen fa-2xl"></i>
+				</button>
+			</div>	
+			<div class='col-6 mt-1 col-md-2'>
+				<button  class='btn-icon-disabled w-100'>
+					<i class="fa-solid fa-file-import fa-2xl"></i>
+				</button>
+			</div>	
+			<div class='col-6 mt-1 col-md-2'>
+				
+				<button class='btn-icon-disabled w-100'>
+					<i class="fa-solid fa-file-circle-xmark fa-2xl"></i>
+				</button>
+			</div>
+			{% endif %}
+				
+		</div>
+		<hr>
+		<div class='row'>
+		
+			<div class='col-12 mt-4 mb-4 col-md-3'>	
+				<div class='section-small'>
+					<h1 class='h1-1'>Invoice Details</h1>
+					
+					<p class='p-p'>
+					Project Name
+					<br>
+					{{ bill.project_id }}
+					<br>
+					<br>
+					Invoice ID
+					<br>
+					{{ bill.invoice_id }}
+					<br>
+					<br>
+					Payment Type
+					<br>
+					{{ bill.payment_type}}
+					</p>
+					
+				</div>
+			</div>
+				
+			<div class='col-12 mt-4 mb-4 col-md-3'>
+				<div class='cardSlide text-center'>	
+					<div class='section-min'>
+					
+						<h1 class='h1-1'>
+							Due Date
+						</h1>
+						<hr>
+						<h1 class='nums mt-4'>
+							{{bill.due_date}}
+						</h1>
+					</div>
+
+					<div class='section-min'>
+						<h1 class='h1-1'>
+							Status
+						</h1>
+						<hr>
+						<h1 class='nums'>
+							{{bill.status}}
+						</h1>
+					</div>
+					<div class='section-min'>	
+						<h1 class='h1-1'>
+							Billed
+						</h1>
+						<h1 class='mt-4 nums'> 
+							${{ bill.billed }}
+						</h1>
+					</div>
+				</div>
+			</div>
+		
+			<div class='col-12 mt-4 mb-4 col-md-6'>	
+				<div class='section-small'>
+					<h1 class='h1-1'>
+						Services Provided
+					</h1>
+					<hr>
+					<div class='overflow-auto scroll-menu'>
+						<p class='p-p'>{{ bill.details}}</p>
+					</div>
+				</div>
+			</div>
+		
+			<div class='col-12 mt-4'>	
+				<div class='sections-med'>
+					<div class='row mt-1'>
+						<div class='col-12'>
+							<div class='row mt-1 text-center' style='width:95%'>
+								<div class='col-4 col-md-3'>
+									<p class="p-p">Line Item</p>
+								</div>
+								<div class='col-4 col-md-3'>
+									<p class="p-p"> Amount</p>
+								</div>
+								<div class='col-4 col-md-3'>
+									<p class="p-p">Line Item ID</p>
+								</div>
+							</div>
+							<hr>
+							<div class="overflow-auto section-scroll">
+							{% for item in line_items %}
+								{% if item.billing_id.id == bill.id %}
+								<div class='col-12 text-center' style='width:95%'>
+									<div class='row mt-1'>
+										<div class='col-4'>
+											<p class="p-p">{{ item.receipt }}</p>
+										</div>
+										<div class='col-4'>
+											<p class="p-p">${{ item.amount|floatformat:2 }}</p>
+										</div>
+										<div class='col-4'>
+											<p class="p-p">{{ item.item_id }}</p>
+										</div>
+									</div>
+									<hr>
+								</div>
+								{% endif %}
+							{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

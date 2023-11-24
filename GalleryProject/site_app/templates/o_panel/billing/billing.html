@@ -41,12 +41,13 @@
 			<hr>
 			<div class='row'>
 				<div class='col-6 col-md-3 mt-4'>
-					<a href="{% url 'create-invoice' %}">
-						<div class='section-pad addLoader text-center'>
+						<div class='section-pad addLoader text-center'
+						id="detailsBtnInv" 
+						onclick="handleModal('detailsWindowInv', 'detailsBtnInv', 'closeDetailsInv')#detailsWindowInv"
+						>
 							<i class="fa-solid fa-file-invoice fa-2xl"></i>
 							<p class='mt-2'>Create Invoice</p>
 						</div>
-					</a>
 				</div>
 				<div class='col-6 col-md-3 mt-4'>
 					<a href="{% url 'o-project' %}">
@@ -176,41 +177,35 @@
 						</div>
 					<hr>
 					<div class="overflow-auto scroll-menu">
-					{% for inv in invoice %}
+					{% for inv in invoices %}
 						<div class='col-12 text-center' style='width:95%'>
 							<div class='row mt-1'>
 								<div class='col-3'>
-									<p class="p-p">{{ inv.project_details.project }}</p>
+									<p class="p-p">{{ inv.project_id }}</p>
 								</div>
 								<div class='col-3'>
-									<p class="p-p">{{ inv.project_details.client }}</p>
+									<p class="p-p">{{ inv.project_id.client_id }}</p>
 								</div>
 								<div class='col-1'>
-									<p class="p-p">{{ inv.project_details.status }}</p>
+									<p class="p-p">{{ inv.status }}</p>
 								</div>
 								<div class='col-2'>
-									<p class="p-p">${{ inv.project_details.billed|floatformat:2}}</p>
+									<p class="p-p">${{ inv.billed|floatformat:2}}</p>
 								</div>
 								<div class='col-2'>
-									<p class="p-p">${{ inv.project_details.paid|floatformat:2}}</p>
+									<p class="p-p">${{ inv.paid|floatformat:2}}</p>
 								</div>
 								<div class='col-1'>
 
-									<button class="btn-icon"id="detailsBtn{{ forloop.counter }}" onclick="handleModal('detailsWindow{{ forloop.counter }}', 'detailsBtn{{ forloop.counter }}', 'closeDetails{{ forloop.counter }}')">
+									<button class="btn-icon" 
+									id="detailsBtnInv{{ inv.id }}" 
+									onclick="handleModal('detailsWindowInv{{ inv.id }}', 'detailsBtnInv{{ inv.id }}', 'closeDetailsInv{{ inv.id }}')"
+									>
 										<i class="fa-solid fa-file-invoice-dollar"></i>
 									</button>
 								</div>
 							</div>
 							<hr>
-						</div>
-						<div id="detailsWindow{{ forloop.counter }}" class="details-modal">
-
-							<!-- Modal content -->
-							<div class="details-content">
-							  <span class="closeDetails" id="closeDetails{{ forloop.counter }}">&times;</span>
-							  <p>{{ inv.project_details.status }}</p>
-							</div>
-						  
 						</div>
 					{% endfor %}
 					</div>
@@ -220,11 +215,34 @@
 		</div>
 	</div>
 </div>
+<!-- new invoice -->
+{% include "o_panel/modals/invoice/invoice-crerate-modal.html" %}
+
+<!-- invoice with id  -->
+{% for bill in invoices %}
+	{% include "o_panel/modals/invoice/invoice-details-modal.html" %}
+	{% include "o_panel/modals/invoice/submodals/invoice-edit-modal.html" %}
+	{% include "o_panel/modals/invoice/submodals/invoice-delete-modal.html" %}
+	{% include "o_panel/modals/invoice/submodals/invoice-cash-modal.html" %}
+	{% include "o_panel/modals/invoice/submodals/invoice-send-modal.html" %}
+{% endfor %}
+
+
 <script>
+
 	function initializeModals() {
 		document.addEventListener("DOMContentLoaded", function() {
-		  {% for inv in invoice %}
-			handleModal("detailsWindow{{ forloop.counter }}", "detailsBtn{{ forloop.counter }}", "closeDetails{{ forloop.counter }}");
+			handleModal('detailsWindowInv', 'detailsBtnInv', 'closeDetailsInv');
+			
+		  {% for bill in invoices %}
+			handleModal('detailsWindowInv{{ bill.id }}', 'detailsBtnInv{{ bill.id }}', 'closeDetailsInv{{ bill.id }}');
+
+			{% if bill.status == 'draft' or bill.status == 'open' %}
+			handleModal('detailsWindowInvCash{{ bill.id }}', 'detailsBtnInvCash{{ bill.id }}', 'closeDetailsInvCash{{ bill.id }}');
+			handleModal('detailsWindowInvDel{{ bill.id }}', 'detailsBtnInvDel{{ bill.id }}', 'closeDetailsInvDel{{ bill.id }}');
+			handleModal('detailsWindowInvEdit{{ bill.id }}', 'detailsBtnInvEdit{{ bill.id }}', 'closeDetailsInvEdit{{ bill.id }}');
+			handleModal('detailsWindowInvSend{{ bill.id }}', 'detailsBtnInvSend{{ bill.id }}', 'closeDetailsInvSend{{ bill.id }}');
+			{% endif %}
 		  {% endfor %}
 		});
 	  };

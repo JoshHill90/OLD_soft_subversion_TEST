@@ -9,13 +9,9 @@
             <div class='col-12 col-md-4 slide-up' id='slide-in'>
                 <button class='card card-attrs'>
                     <div class="card-body">
-                        {% for image in image_list %}
-                        {% if image.display == 'model' %}
                         <div class='card-shot'>
-                        <img class='img-fluid' src="{{ image.image_link }}" onclick="window.location.href='{% url 'site-gall' 'model' 'modelgal' %}'">
+                        <img class='img-fluid' src="{{ image1.image_link }}" onclick="window.location.href='{% url 'site-gall' 3 4 %}'">
                         </div>
-                        {% endif %}
-                        {% endfor %}
                         <div class='card-text'>
                             <p class='p-p'>
                                 Model Gallery
@@ -27,13 +23,9 @@
             <div class='col-12 col-md-4 slide-up' id='slide-in'>
                 <button class='card card-attrs'>
                     <div class="card-body">
-                        {% for image in image_list %}
-                        {% if image.display == 'wedding' %}
                         <div class='card-shot'>
-                            <img class='img-fluid' src="{{ image.image_link }}" onclick="window.location.href='{% url 'site-gall' 'wedding' 'weddinggal' %}'">
+                            <img class='img-fluid' src="{{ image2.image_link }}" onclick="window.location.href='{% url 'site-gall' 5 6 %}'">
                         </div>
-                        {% endif %}
-                        {% endfor %}
                         <div class='card-text'>
                             <p class='p-p'>
                                 Wedding Gallery
@@ -45,13 +37,10 @@
             <div class='col-12 col-md-4 slide-up' id='slide-in'>
                 <button class='card card-attrs'>
                     <div class="card-body">
-                        {% for image in image_list %}
-                        {% if image.display == 'family' %}
+
                         <div class='card-shot'>
-                            <img class='img-fluid' src="{{ image.image_link }}" onclick="window.location.href='{% url 'site-gall' 'family' 'familygal' %}'">
+                            <img class='img-fluid' src="{{ image3.image_link }}" onclick="window.location.href='{% url 'site-gall' 7 8 %}'">
                         </div>   
-                        {% endif %}
-                        {% endfor %}
                         <div class='card-text'>
                             <p class='p-p'>
                                 Fameliy & Pets Gallery

@@ -1,0 +1,20 @@
+<div id="detailsWindowDel" class="details-modal">
+
+
+	<div class="details-content overflow-auto">
+		<span class="closeDetails" id="closeDetailsDel"><i class="fa-solid fa-circle-xmark fa-lg icon-color"></i></span>
+		<div class='row'>
+			<div class='col-12 mt-4 mb-4 col-md-4'>
+				<form method="post" action="{% url 'o-project-details' project.slug %}">
+					{% csrf_token %}
+					<input type="hidden" name="object_id" value="{{project.slug}}">
+					<button class='btn-cust text-center mt-4 mb-4'  type="submit" name="delete" value="Delete">
+						<i class="fa-solid fa-ban fa-2xl"></i>
+						<p class='mt-2'>Delete Project</p>
+					</button>
+				</form>
+			</div>
+
+		</div>		
+	</div>
+</div>

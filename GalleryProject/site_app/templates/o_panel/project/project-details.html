@@ -3,7 +3,7 @@
 {% block content %}
 {% load tz %}
 {% load static %}
-{% if user.is_authenticated %}
+
 <div class='row mt-4 mb-4'>
 	<div col='col-12'>
 		<div class='section-min'>
@@ -223,455 +223,57 @@
 	</div>
 </div>
 
-<!-- Project details -->
-<div id="detailsWindowTerms" class="details-modal">
-
-	
-	<div class="details-content overflow-auto">
-		<span class="closeDetails" id="closeDetailsTerms"><i class="fa-solid fa-circle-xmark fa-lg icon-color"></i></span>
-		<div class='row'>
-			<div class='col-12 mt-4 mb-4 col-md-4'>
-				<div class='section-min'>
-					<h1 class='h1-1'>
-						Project Terms
-					</h1>
-					<hr>
-			
-					<p class='p-p'>
-						Scope: {{project_terms.scope|title}}
-					</p>
-					<p class='p-p'>
-						Client: {{ client.user_id.first_name|title }} {{ client.user_id.last_name|title }}
-					</p>
-					<p class='p-p'>
-						Services: 
-						<br>{{project_terms.services }}
-					</p>
-				</div>		
-			</div>
-
-		</div>		
-	</div>
-</div>
-
+<!-- Project info -->
+{% include "o_panel/modals/projects/project-info-modal.html" %}
 
 <!-- New Event -->
-<div id="detailsWindowCal" class="details-modal">
-
-	
-	<div class="details-content">
-		<span class="closeDetails" id="closeDetailsCal"><i class="fa-solid fa-circle-xmark fa-lg icon-color"></i></span>
-		<div class="sections p-p form-fit h-100 form-group">
-			<h1 class='h1-1'>Add New Event</h1>
-			<p class='p-p'> </p>
-			<hr>
-			<form method=POST >
-				<div class='sections-2'>
-					{% csrf_token %}
-					<div class='row'>
-						<div class='col-12'>
-							<label for="id_title">Title:</label>
-							<input class='form-control' value='{{ project_event.title }}' type="text" name="title" maxlength="255" required="" id="id_title">
-						</div>
-						<div class='col-12'>
-							<label for="id_project_id">Project id:</label>
-							<select class='form-control' name="project_id" required="" id="id_project_id">
-								<option>----------</option>
-									<option value="{{ project.id }}" selected>{{ project|title }}</option>
-							</select>
-						</div>
-						
-						<div class='col-4'>
-							<label for="id_date">Date:</label>
-							<input class='form-control' type="date" name="date" required="" id="id_date">
-						</div>
-	
-						<div class='col-4'>
-							<label for="id_start">Start:</label>
-							<input class='form-control' type="time" name="start" id="id_start">
-						</div>
-	
-						<div class='col-4'>
-							<label for="id_end">End:</label>
-							<input class='form-control' type="time" name="end" id="id_end">
-						</div>
-	
-						<div class='col-12'>
-							<label for="id_event_type">Event type:</label>
-							<select class='form-control' type="select" name="event_type" maxlength="50" id="id_event_type">
-								<option value="Consultation ">Consultation</option>
-								<option value="Timed Session">Timed Session</option>
-								<option value="All-Day Session">All-Day Session</option>
-							</select>
-						</div>
-	
-						<div class='col-12'>
-						
-							<label for="id_details">Details:</label>
-							<textarea 
-							class='form-control'
-							rows='6'
-							name="details" 
-							maxlength="500" 
-							id="id_details">{{project_event.details}}</textarea>
-						</div>
-					</div>  
-				</div>  
-				<div class='col-12'>
-					<button class="btn-cust">
-						Add
-					</button>
-				</div>  
-			</form>
-		</div>
-		
-	</div>
-</div>
-
+{% include "o_panel/modals/events/event-create-modal.html" %}
 
 <!-- Project notes  -->
-<div id="detailsWindowNote" class="details-modal">
-
-	
-	<div class="details-content">
-		<span class="closeDetails" id="closeDetailsNote"><i class="fa-solid fa-circle-xmark fa-lg icon-color"></i></span>
-		<div class='row'>
-			<h1 class='h1-1'>
-				Request Thread
-			</h1>
-			<hr>
-			<div class='col-12 mt-4 mb-4 col-md-4'>
-				<div class='sections-small'>
-					<button class="btn-cust" data-bs-toggle="collapse" href="#colreply" role="button" aria-expanded="false" aria-controls="colreply">
-						Project Request Thread
-					</button>
-					<div class="collapse" id="colreply"  style='width:100%'>
-						<div class='overflow-auto section-med'>
-							<div class='row' style='width:98%'>
-								{% for comment in request_reply %}
-								{% if comment.user_id == user %}
-								<div class='col-12 mt-4 mb-4'>
-									<div class='row'>
-										<div class='col-12 comment-sub-box'> 
-											<div class="user-content" >
-												<h1 class='user-box h1-1'>
-													{{ comment.user_id }}
-												</h1>
-												<hr>
-												<p class='p-p'>
-													{{ comment.comment}}
-												</p>
-												<div class='comment-line-3'></div>
-											</div>
-										</div>
-									</div>
-								</div>
-								{% else %}
-								<div class='col-12 mt-4 mb-4'>
-									<div class='row'>
-										<div class='col-12 comment-sub-box'> 
-											<div class="comment-content" >
-												<h1 class='h1-1'>
-													{{ comment.user_id }}
-												</h1>
-												<hr>
-												<p class='p-p'>
-													{{ comment.comment}}
-												</p>
-												<div class='comment-line-2'></div>
-											</div>
-										</div>
-									</div>
-								</div>
-								{% endif %}
-								{% endfor %}
-							</div>
-						</div>
-					</div>
-					
-
-				</div>		
-			</div>
-
-		
-
-			<div class='col-12 col-md-4 mt-4 mb-4'>
-				<div class='sections-small'>
-					<button class="btn-cust" data-bs-toggle="collapse" href="#colNotesAdd" role="button" aria-expanded="false" aria-controls="colNotesAdd">
-						Add a Note <i class="fa-solid fa-message"></i>
-					</button>
-					<div class="sections-med mt-4 mb-4">
-						<div class="collapse" id="colNotesAdd" style='width:80%'>
-							<form method=POST>
-								{% csrf_token %}
-								{{note_form.as_p}}
-								<button class="btn-cust">
-									Submit
-								</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class='col-12 mt-4 mb-4 col-md-4'>
-				<div class='sections-small'>
-
-					<button class="btn-cust" data-bs-toggle="collapse" href="#colNotes" role="button" aria-expanded="false" aria-controls="colNotes">
-						Project Notes <i class="fa-regular fa-note-sticky"></i>
-					</button>
-					<div class="sections-med mt-4 mb-4">
-						<div class="collapse"  id='colNotes'>
-							<div class='overflow-auto section-med'>
-								<div class='row'>
-
-									{% for note in notes %}
-									<div class='col-12'> 
-										<p class='p-p'>
-											{{ note.date_posted}}
-										</p>
-										<hr>
-										<p class='p-p'>
-											{{ note.note}}
-										</p>
-									</div>
-									{% endfor %}
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
+{% include "o_panel/modals/projects/notes-modal.html" %}
 
 <!-- new invoice -->
-<div id="detailsWindowInv" class="details-modal">
-
-	
-	<div class="details-content overflow-auto">
-		<span class="closeDetails" id="closeDetailsInv"><i class="fa-solid fa-circle-xmark fa-lg icon-color"></i></span>
-		<div class='row'>
-			<div class='col-12 mt-4 mb-4 col-md-4'>
-				<div class='section-min'>
-					<h1 class='h1-1'>
-						Project Terms
-					</h1>
-					<hr>
-			
-					<p class='p-p'>
-						Scope: {{project_terms.scope|title}}
-					</p>
-					<p class='p-p'>
-						Client: {{ client.user_id.first_name|title }} {{ client.user_id.last_name|title }}
-					</p>
-					<p class='p-p'>
-						Services: 
-						<br>{{project_terms.services }}
-					</p>
-				</div>		
-			</div>
-
-		</div>		
-	</div>
-</div>
+{% include "o_panel/modals/invoice/invoice-crerate-modal.html" %}
 
 <!-- invoice with id  -->
 {% for bill in billing_list %}
-
-<div id="detailsWindowInv{{ bill.id }}" class="details-modal">
-
-
-	<div class="details-content overflow-auto">
-		<span class="closeDetails mb-4" id="closeDetailsInv{{ bill.id }}"><i class="fa-solid fa-circle-xmark fa-lg icon-color"></i></span>
-		<div class='row'>
-			<div class='col-12 col-md-4'>
-				<h1 class='h1-1'>
-					Invoice #{{ bill.id }}
-				</h1>
-			</div>		
-			<div class='col-6 mt-1 col-md-2'>
-				<form method="post" action="{% url 'o-project-details' project.slug %}">
-					{% csrf_token %}
-					<input type="hidden" name="object_id" value="{{bill.id}}">
-					<button  class='btn-icon w-100' type="submit" name="cash" value="Cash">
-							<i class="fa-solid fa-money-bill-1-wave fa-2xl"></i>
-					</button>
-				</form>
-			</div>
-			<div class='col-6 mt-1 col-md-2'>
-				<button  class='btn-icon w-100'>
-					<i class="fa-solid fa-file-pen fa-2xl"></i>
-				</button>
-			</div>	
-			<div class='col-6 mt-1 col-md-2'>
-				<form method="post" action="{% url 'o-project-details' project.slug %}">
-					{% csrf_token %}
-					<input type="hidden" name="object_id" value="{{bill.id}}">
-					<button  class='btn-icon w-100' type="submit" name="open" value="Open">
-						<i class="fa-solid fa-file-import fa-2xl"></i>
-					</button>
-				</form>
-			</div>	
-			<div class='col-6 mt-1 col-md-2'>
-				<form method="post" action="{% url 'o-project-details' project.slug %}">
-					{% csrf_token %}
-					<input type="hidden" name="object_id" value="{{bill.id}}">
-					<button  class='btn-icon w-100' type="submit" name="deleteOrVoid" value="Delete">
-						<i class="fa-solid fa-file-circle-xmark fa-2xl"></i>
-					</button>
-				</form>
-			</div>	
-				
-		</div>
-		<hr>
-		<div class='row'>
-		
-			<div class='col-12 col-md-3'>	
-				<div class='section-small'>
-					<h1 class='h1-1'>Invoice Details</h1>
-					<hr>
-					<p class='p-2'>Project</p>
-					<p class='p-p'>{{ bill.project_id }}</p>
-					<hr>
-					<p class='p-2'>Invoice ID:</p>
-					<p class='p-p'>{{ bill.invoice_id }}</p>
-					<hr>
-					<p class='p-2'>Payment Type</p>
-					<p class='p-p'>{{ bill.payment_type}}</p>
-					<hr>
-				</div>
-			</div>
-				
-			<div class='col-12 col-md-3'>	
-				<div class='section-min'>
-				
-					<h1 class='h1-1'>
-						Due Date
-					</h1>
-					<hr>
-					<h1 class='nums mt-4'>
-						{{bill.due_date}}
-					</h1>
-				</div>
-
-				<div class='section-min'>
-					<h1 class='h1-1'>
-						Status
-					</h1>
-					<hr>
-					<h1 class='nums'>
-						{{bill.status}}
-					</h1>
-				</div>
-			</div>
-		
-			<div class='col-12 col-md-6'>	
-				<div class='section-small'>
-					<h1 class='h1-1'>
-						Services Provided
-					</h1>
-					<hr>
-					<div class='overflow-auto scroll-menu'>
-						<p class='p-p'>{{ bill.details}}</p>
-					</div>
-				</div>
-			</div>
-		
-			<div class='col-12 mt-4'>	
-				<div class='sections'>
-					<h1 class='h1-1'>Line Items</h1>
-					<hr>
-					<div class='sections-2'>
-						<div class='row mt-1'>
-							<div class='col-12'>
-								<div class='row mt-1 text-center' style='width:95%'>
-									<div class='col-3 '>
-										<p class="p-p">Line Item</p>
-									</div>
-									<div class='col-3'>
-										<p class="p-p"> Amount</p>
-									</div>
-									<div class='col-3'>
-										<p class="p-p">Line Item ID</p>
-									</div>
-									<div class='col-3'>
-										<p class="p-p">Details</p>
-									</div>
-								</div>
-								<hr>
-								<div class="overflow-auto scroll-menu">
-								{% for item in line_items %}
-									<div class='col-12 text-center' style='width:95%'>
-										<div class='row mt-1'>
-											<div class='col-3'>
-												<p class="p-p">{{ item.receipt }}</p>
-											</div>
-											<div class='col-3'>
-												<p class="p-p">{{ item.amount|floatformat:2 }}</p>
-											</div>
-											<div class='col-3'>
-												<p class="p-p">{{ item.item_id }}</p>
-											</div>
-											<div class='col-3'>
-												<button class="btn-icon" onclick="window.location.href='#'">
-													<i class="fa-solid fa-file-invoice-dollar"></i>
-												</button>
-											</div>
-										</div>
-										<hr>
-									</div>
-								{% endfor %}
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+	{% include "o_panel/modals/invoice/invoice-details-modal.html" %}
+	{% include "o_panel/modals/invoice/submodals/invoice-edit-modal.html" %}
+	{% include "o_panel/modals/invoice/submodals/invoice-delete-modal.html" %}
+	{% include "o_panel/modals/invoice/submodals/invoice-cash-modal.html" %}
+	{% include "o_panel/modals/invoice/submodals/invoice-send-modal.html" %}
 {% endfor %}
 
 <!-- Delete Project -->
-<div id="detailsWindowDel" class="details-modal">
+{% include "o_panel/modals/projects/project-delete-modal.html" %}
 
 
-	<div class="details-content overflow-auto">
-		<span class="closeDetails" id="closeDetailsDel"><i class="fa-solid fa-circle-xmark fa-lg icon-color"></i></span>
-		<div class='row'>
-			<div class='col-12 mt-4 mb-4 col-md-4'>
-				<form method="post" action="{% url 'o-project-details' project.slug %}">
-					{% csrf_token %}
-					<input type="hidden" name="object_id" value="{{project.slug}}">
-					<button class='btn-cust text-center mt-4 mb-4'  type="submit" name="delete" value="Delete">
-						<i class="fa-solid fa-ban fa-2xl"></i>
-						<p class='mt-2'>Delete Project</p>
-					</button>
-				</form>
-			</div>
-
-		</div>		
-	</div>
-</div>
-
-
-{% endif %}
 <script>
 	function initializeModals() {
+		console.log("Initializing modals...");
 		document.addEventListener("DOMContentLoaded", function() {
+			
 			handleModal('detailsWindowCal', 'detailsBtnCal', 'closeDetailsCal');
 			handleModal('detailsWindowTerms', 'detailsBtnTerms', 'closeDetailsTerms');
 			handleModal('detailsWindowNote', 'detailsBtnNote', 'closeDetailsNote');
 			handleModal('detailsWindowInv', 'detailsBtnInv', 'closeDetailsInv');
 			handleModal('detailsWindowDel', 'detailsBtnDel', 'closeDetailsDel');
+
 			{% for bill in billing_list %}
 			handleModal('detailsWindowInv{{ bill.id }}', 'detailsBtnInv{{ bill.id }}', 'closeDetailsInv{{ bill.id }}');
+			{% if bill.status == 'draft' or bill.status == 'open' %}
+			handleModal('detailsWindowInvCash{{ bill.id }}', 'detailsBtnInvCash{{ bill.id }}', 'closeDetailsInvCash{{ bill.id }}');
+			handleModal('detailsWindowInvDel{{ bill.id }}', 'detailsBtnInvDel{{ bill.id }}', 'closeDetailsInvDel{{ bill.id }}');
+			handleModal('detailsWindowInvEdit{{ bill.id }}', 'detailsBtnInvEdit{{ bill.id }}', 'closeDetailsInvEdit{{ bill.id }}');
+			handleModal('detailsWindowInvSend{{ bill.id }}', 'detailsBtnInvSend{{ bill.id }}', 'closeDetailsInvSend{{ bill.id }}');
+			{% endif %}
 			{% endfor %}
 		});
-	  };
+
+	};
+	console.log(initializeModals());
 	initializeModals();
 </script>
+<script src="{% static 'js/invoice.js' %}"></script>
 <script src={% static 'js/mini_gallery.js' %}></script>
 {% endblock %}

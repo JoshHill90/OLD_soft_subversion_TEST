@@ -3,37 +3,50 @@
 {% block title %}O | {{ gal }} Gallery{% endblock %}
 {% block content %}
 {% load static %}
+
 <div class='row mt-4 mb-4'>
 	<div class='col-12'>
 		<div class='section-small'>
-
-			<h1 class='h1-1 text-center'>{{ gal| title}} Gallery</h1>
+			<input id='subgal' value="{{ subgal}}" disabled hidden>
+			<input id='lastPage' value="{{ last_page }}" disabled hidden>
+			<h1 class='h1-1 text-center'>{{ gal_name.name| title}}Gallery</h1>
 			
 			{% for image in current_list %}
 			
 			<div class="mini-Slides text-center">
-				<div class="numbertext">Image Gallery #{{ forloop.counter }}</div>
-				<img style="max-height:60vh" src="{{ image.image_link }}">
+				<p class="p-p">Image Gallery #{{ forloop.counter }}</p>
+				<img class='image-frame' src="{{ image.image_link }}">
+				<div class="row">
+					
+					<form method=POST action="{% url 'change-gal' gal subgal %}" >
+						{% csrf_token %}
+						<input value='{{ image.id }}' namd='{{ image.id }}' id='header_id' hidden>
+						<button class="btn-cust" name='header' value='{{ image.id }}'>Make Header</button>
+					</form>
+				
+
+				</div>
 			</div>
+	
+		
 		
 			{% endfor %}
-
-			<div class="caption-container text-center">
-				<p id="caption"></p>
-			
-				<a class="prev-mini" onclick="plusSlides(-1)"><i class="fa-solid fa-circle-arrow-left fa-2xl icon-color"></i></a>
-
-				<a class="next-mini" onclick="plusSlides(1)"><i class="fa-solid fa-circle-arrow-right fa-2xl icon-color"></i></a>
+			<div class='section-min text-center'>
+				<button class="btn-icon" onclick="plusSlides(-1)">
+					<i class="fa-solid fa-circle-arrow-left fa-2xl"></i>
+				</button>
+				<button class="btn-icon" onclick="plusSlides(1)">
+					<i class="fa-solid fa-circle-arrow-right fa-2xl"></i>
+				</button>
 			</div>
-			
 			<div class='overflow-auto text-center max-scroll'>
 				<div 'img-box-gall-sm'>
-					<div class="row" style='width:80vw;'>
+					<div class="row">
 						{% for image in current_list %}
 						<div class="col">
 							
 							<img load='lazy'
-							class="demo mt-4 mb-4  cursor-mini" 
+							class="demo mt-4 mb-4 cursor-mini {% if image.display == gal %} helight-shadow {% endif %}" 
 							src="{{ image.image_link }}" 
 							style="height:10vh" 
 							onclick="currentSlide({{ forloop.counter }})" 
@@ -51,7 +64,7 @@
 	<hr>
 	<div class='col-12 mt-4 mb-4'>
 		<div class='section-med'>
-			<h1 class='h1-1 mb-2'>Client Search and Filter</h1>
+			<h1 class='h1-1 mb-2'>Image Search and Filter</h1>
 			<form method="GET" action="." class='form-group'>
 				<div class='row'>
 					<div class='col-12 mb-2'>
@@ -88,91 +101,146 @@
 					</div>
 				</div>
 			</form>
-			<div class="row" >
-				<div class='col-12 mt-4'>
-					<div class='row'>
-						<div class='col'>
-							<p class="p-p">
-								Select All 
-								<input class="form-check-input text-center" type="checkbox" value="" id="selectAll">
-							</p>
-						</div>
 
-						<div class='col'>
-							<p class="p-p">
-								Image Title: 
-							</p>
-						</div>
-						<div class='col'>
-							<p class="p-p">
-								Image ID: 
-							</p>
-						</div>
-						<div class='col'>
-							<p class="p-p">
-								Projet Name: 
-							</p>
-						</div>
-						<div class='col'>
-							<p class="p-p">
-								Image: 
-							</p>
-						</div>
+
+			<form method=POST action="{% url 'change-gal' gal subgal %}" class='mt-4 section-med form-group'>
+				{% csrf_token %}
+				<div class="row" >
+					<div class='col-12'>
+						<h1 class='h1-1'>
+							Images 
+						</h1>
+						<hr>
+						<p class='p-p'>
+							Select and deselect images to add and remove them. 
+						</p>
+
 
 					</div>
 				</div>
-			</div>
-			<hr>
-			<div class='overflow-auto max-scroll'>
-				<div class="row" style='width:80vw;'>
-					{% for image in all_images %}
-					<div class="col-12 mb-4 text-center">
+
+
+				<div class="row">
+					<div class='col-12 mb-4'>
+						<button class='btn-cust' name="keyler" value="update">
+							Update
+						</button>
+					</div>
+					<div class='col-12 col-md-3'>
+						<p class="p-p">
+							Select All
+							<input class="form-check-input text-center" onclick='toggle(this)' type="checkbox" value="" id="selectAll">
+						</p>
+	
+					</div>
+					<div class='col-12 col-md-1'>
+						<p class="p-p">
+							Image ID: 
+						</p>
+					</div>
+					<div class='col-12 col-md-4'>
+						<p class="p-p">
+							Projet Name: 
+						</p>
+					</div>
+					<div class='col-12 col-md-4'>
+						<p class="p-p">
+							Image Title: 
+						</p>
+					</div>
+
+
+				</div>
+				<hr>
+
+					
+				<div class="row" id='imageRow'>
+					{%for image in image_sets %}
+					<div class="col-12 mb-4">
 						<div class="row">
-							<div class="col">
+							{% if image in current_list %}
+							<div class='col-6 col-md-3'>
 								<p class='p-p'>
-									Include: 
-									<input class="form-check-input text-center" type="checkbox" value="" id="selectAll">
+									Include<br>
+									<input class="form-check-input text-center" checked type="checkbox" name='checkbox{{image.id}}' value="{{image.id}}" id="id_check">
 								</p>
 							</div>
-							<div class="col">
+							{% else %}
+							<div class='col-6 col-md-3'>
 								<p class='p-p'>
-									{{ image.title|title }} 
+									Include <br>
+									<input class="form-check-input text-center" type="checkbox" name='checkbox{{image.id}}' value="{{image.id}}" id="id_check">
 								</p>
 							</div>
-							<div class="col">
+							{% endif %}
+
+							<div class='col-12 col-md-1'>
 								<p class='p-p'>
-									{{ image.id }}
+									#{{ image.id }}
 								</p>
 							</div>
-							<div class="col">
+							<div class='col-12 col-md-4'>
 								<p class='p-p'>
 									{{ image.project_id|title}}
 								</p>
 							</div>
-							<div class="col">
-								<img load='lazy' 
+
+							<div class='col-12 col-md-4'>
+								<p class='p-p'>
+									{{ image.title|title }} 
+								</p>
+							</div>
+							<div class='col-12 text-center col-md-12'>
+								<img class='image-list' load='lazy' 
 								src="{{ image.image_link }}" 
-								style="height:10vh"
+								
 								>
 							</div>
 						</div>
-					
+						<hr>
 					</div>
-					<hr>
+
 					{% endfor %}
+
 				</div>
-			</div>
+				<div class='row scroll-row'>
+
+					<div class="col-12 text-center mb-4">
+						<button class='btn-cust' 
+							value="{% url 'change-gal' gal subgal %}" 
+							type='button' 
+							name='loadMore' 
+							id='loadMore'
+							style='display:inline-block'
+							>
+							Load More
+						</button>
+						
+						<section class="dots-container" id='dotsLoader'>
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+						</section>
+						<hr>
+					</div>
+				</div>
+
+			</form>
+			
 		</div>
-	
+		
 	</div>
 
 
 </div>
 
-<div class='row mt-4 mb-4'>
-</div>
 
+<script src={% static 'js/loadMore.js' %}></script>
 
 <script src={% static 'js/mini_gallery.js' %}></script>
+<script src={% static 'js/select_all.js' %}></script>
 
 {% endblock %}
+

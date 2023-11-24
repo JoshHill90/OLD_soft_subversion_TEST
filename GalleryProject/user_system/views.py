@@ -6,14 +6,15 @@ from django.views.generic import CreateView, ListView, DeleteView, DetailView, U
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy
-from django.db.models import Q
+from django.db.models import Q, Avg, Sum
 from django.conf import settings
-
+from django.core.paginator import Paginator
 from log_app.logging_config import logging
 from client.models import Client, Invite, Project, ProjectEvents
 from .forms import RegForm, ProfileForm, LoginForm, InvoiceForm, LineItemForm
 from .models import Invoice, LineItem
 from gallery.models import Image
+import json
 import stripe
 from pathlib import Path
 import os
@@ -124,16 +125,14 @@ class UserLoginView(generic.CreateView):
 #-------------------------------------------------------------------------------------------------------#
 
 def billing_panel(request):
-    client_list = Client.objects.all()
-    image_list = Image.objects.all()
-    invoice_info = Invoice.objects.all()
-    project_list = Project.objects.exclude(name="Soft Subversion")
-    project_invoice = ['']
-    project_invoice.clear()
+    invoice_list = Invoice.objects.all()
+    current_invoce = invoice_list.exclude(Q(status='void') | Q(status='uncollectable') | Q(fufiled=True))
+
     bal_due = 0
     bal_paid = 0
     bal_ern = 0
     bal_out = 0
+    
     # Get query parameters
     project_query = request.GET.get('project')
     client_query = request.GET.get('client')
@@ -141,88 +140,87 @@ def billing_panel(request):
     completed_query = request.GET.get('fufiled')
     order_set = request.GET.get('order')
     
-
-
-    # Calculate balances
-    bills = Invoice.objects.all()
-    for bill in bills:
-        if not bill.fufiled:
-            bal_due += bill.billed
-            bal_paid += bill.paid
-            bal_out = bal_due - bal_paid
-        else:
-            bal_ern += bill.paid
-            bal_paid += bill.paid
+    # Calculate balances current balance and ytd earnings
+    for bill in current_invoce:
+       
+        bal_due += bill.billed
+        bal_paid += bill.paid
+        bal_out = bal_due - bal_paid
+        current_year = df.year_now()
+        ytd_filter = invoice_list.filter(open_date__year=current_year)
+        
+        
+        bal_paid += bill.paid
+    total_ytd = ytd_filter.aggregate(total_earnings=Sum('paid'))['total_earnings']
+        
     
-    Invoice_totals = {
+    billing_card = {
         'totalDue': bal_due,
         'totalPaid': bal_paid,
-        'totalEarned': bal_ern,
+        'totalEarned': total_ytd,
         'outstanding': bal_out,
-        }
-
-
-    # Initial query set
-    invoice_info = Invoice.objects.all()
+    }
 
     # Apply filters
     if project_query:
-        invoice_info = invoice_info.filter(project_id__name=project_query)
+        invoice_list = invoice_list.filter(project_id__name=project_query)
 
     if client_query:
-        invoice_info = invoice_info.filter(project_id__client_id__name=client_query)
+        invoice_list = invoice_list.filter(project_id__client_id__name=client_query)
 
     if number_query:
-        invoice_info = invoice_info.filter(invoice__icontains=number_query)
+        invoice_list = invoice_list.filter(invoice__icontains=number_query)
 
     # Apply completion status filter
     if completed_query == 'open':
-        invoice_info = invoice_info.filter(status='open')
+        invoice_list = invoice_list.filter(status='open')
     elif completed_query == 'paid':
-        invoice_info = invoice_info.filter(status='paid')
+        invoice_list = invoice_list.filter(status='paid')
     elif completed_query == 'draft':
-        invoice_info = invoice_info.filter(status='draft')
+        invoice_list = invoice_list.filter(status='draft')
     elif completed_query == 'void':
-        invoice_info = invoice_info.filter(status='void')
+        invoice_list = invoice_list.filter(status='void')
         
     if order_set == 'Oldest':
-        invoice_info = invoice_info.order_by('id')
+        invoice_list = invoice_list.order_by('id')
     else:
-        invoice_info = invoice_info.order_by('-id')
+        invoice_list = invoice_list.order_by('-id')
+        
+    invoice_p = Paginator(invoice_list.all(), 10)
+    last_page = invoice_p.num_pages
+    page = request.GET.get('page')
+    invoice_sets = invoice_p.get_page(page)
+    next_image_set = []
     
-    if len(invoice_info) > 0:  
-    # Invoice details set  
-        for bill in invoice_info:
-            client_billed = str(bill.project_id.client_id)    
-            for project in project_list:
-                if project.id == bill.project_id.id:
-                    project_images = []
-                    for image in image_list:
-                        if image.project_id == project:
-                            image_set = {'imageID': image.id, 'ImageTitle': image.title}
-                            project_images.append(image_set)
-                    project_details = {
-                        "project": project.name, 
-                        'invoice': bill.invoice_id,
-                        'billed': bill.billed,
-                        'paid': bill.paid,
-                        'status': bill.status,
-                        'client': client_billed,
-                        'images': project_images,
-                                    }
+    if request.method == 'POST' and 'loadMore' in request.POST.values():
+        next_p = json.load(request)['next_p'] 
+        next_page = int(next_p)
+        next_set = list(invoice_p.page(next_page).object_list.values())
+        for invoice_info in next_set:
+            get_info = invoice_list.get(id=invoice_info['id'])
+            invoice_id = str(get_info.id)
+            invoice_project = str(get_info.project_id.name)
+            invoice_billed = str(get_info.billed)
+            invoice_stripe = str(get_info.invoice_id)
+            invoice_status = str(get_info.status)
                     
-                    billID = str(bill.id)
-                    project_invoice.append({'billID': billID, 'project_details': project_details})
-    else:                
-        project_invoice.append({'billID': 0, 'project_details': []})
-
+            next_image_set.append({
+                'id':invoice_id,
+                'project':invoice_project, 
+                'invoice_billed':invoice_billed, 
+                'invoice_status':invoice_status,
+                'invoice_stripe':invoice_stripe
+                })
+            
+        return JsonResponse(next_image_set, safe=False)
+        
+    print(invoice_sets)
     return render(
         request, 'o_panel/billing/billing.html', 
         {
-            'invoice': project_invoice,
-            'billing_totals':Invoice_totals,
-            'project_list': project_list,
-            'client_list': client_list
+            'invoices': invoice_sets,
+            'billing_totals':billing_card,
+            'last_page': last_page
             }
         )        
     

@@ -1,0 +1,32 @@
+<div id="detailsWindowInvDel{{bill.id}}" class="details-modal">
+	<div class="details-content overflow-auto">
+		<span class="closeDetails" id="closeDetailsInvDel{{bill.id}}"><i class="fa-solid fa-circle-xmark fa-lg icon-color"></i></span>
+
+		<div class="form-fit h-100 form-group">
+			{%if bill.status == 'draft'%}
+			<h1 class='h1-1'>Delete Invoice</h1>
+			<hr>
+			<p class='p-p'>Are you sure you want to delete this invoice?</p>
+			<p class='p-p'>This action can not be undone!</p>
+			{%elif bill.status == 'open'%}
+			<h1 class='h1-1'>Void Invoice</h1>
+			<hr>
+			<p class='p-p'>Are you sure you want to void this invoice?</p>
+			<p class='p-p'>This action can not be undone!</p>
+			{% endif %}
+
+			<form method="post" action="{{ request.get_full_path }}">
+				{% csrf_token %}
+				<input type="hidden" name="object_id" value="{{bill.id}}">
+				<button  class='btn-cust text-center' type="submit" name="deleteOrVoid" value="Delete">
+					{%if bill.status == 'draft'%}
+					Delete 
+					{%elif bill.status == 'open'%}
+					Void 
+					{% endif %}
+					<i class="fa-solid fa-ban fa-xl"></i>
+				</button>
+			</form>
+		</div>
+	</div>
+</div>

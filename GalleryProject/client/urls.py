@@ -12,7 +12,6 @@ urlpatterns = [
   
   path('o-panel/binder/project/events/<int:year>/<str:month>', views.clandar, name='project-calendar'),
   path('o-panel/binder/project/events/new', views.clandar, name='new-event'),
-  path('o-panel/binder/project/<int:id>/notes',views.project_notes , name='project-notes'),
   
   path('o-panel/binder/project/requests/', views.project_request, name='o-reqeust'),
   path('o-panel/binder/project/requests/<slug:slug>', views.project_request_details, name='request-details'),

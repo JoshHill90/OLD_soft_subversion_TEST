@@ -3,8 +3,8 @@ const numberDisplayed = document.getElementById('total');
 var totalPaid = {};
 let liveTotal = 0;
 
-function newItem(){
-	const parentDiv = document.getElementById('lineItems')
+function newItem(lineItemById){
+	const parentDiv = document.getElementById(lineItemById)
 
 	itemCounter +=1;
 
@@ -13,26 +13,25 @@ function newItem(){
 	itemCost.name = 'line_item_cost' + itemCounter;
 	itemCost.type = 'number';
 	itemCost.placeholder = '0.00';
+	itemCost.step= "0.01"
 	itemCost.required = true
 	itemCost.id = 'id_line_item_cost' + itemCounter;
 
 	itemCost.addEventListener('input', function() {
 		updateTotal(itemCost.id, itemCost.valueAsNumber);
 	});
-	
-
 
 	const itemReceipt = document.createElement('input');
 	itemReceipt.className = 'form-control mt-2 mb-4';
 	itemReceipt.name = 'line_item_receipt' + itemCounter;
 	itemReceipt.type = 'text';
 	itemReceipt.required = true
-	itemReceipt.id = 'id_line_item_receipt' + itemCounter;
+	itemReceipt.id = lineItemById + 'id_line_item_receipt' + itemCounter;
 
 	const cancelItem = document.createElement('button');
 	cancelItem.className = 'fa-solid mt-4 mb-2 fa-xmark btn-icon';
 	cancelItem.type = 'button';
-	cancelItem.id = 'cancelItemBtn' + itemCounter;
+	cancelItem.id = lineItemById + 'cancelItemBtn' + itemCounter;
 	
 
 	const nestDiv1 = document.createElement('div');
@@ -40,10 +39,10 @@ function newItem(){
 	const nestDiv3 = document.createElement('div');
 	const nesthr = document.createElement('hr');
 
-	nestDiv1.id = 'itemDiv1C' + itemCounter; 
-	nestDiv2.id = 'itemDiv2C' + itemCounter; 
-	nestDiv3.id = 'itemDiv3C' + itemCounter;
-	nesthr.id = 'hrDivC' + itemCounter;
+	nestDiv1.id = lineItemById + 'itemDiv1C' + itemCounter; 
+	nestDiv2.id = lineItemById + 'itemDiv2C' + itemCounter; 
+	nestDiv3.id = lineItemById + 'itemDiv3C' + itemCounter;
+	nesthr.id = lineItemById + 'hrDivC' + itemCounter;
 
 	nestDiv1.className = 'col-5';
 	nestDiv2.className = 'col-5';

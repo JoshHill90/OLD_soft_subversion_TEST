@@ -13,6 +13,7 @@ function handleModal(modalSet, buttonSet, numberClose){
   // When the user clicks the button, open the modal 
   detailsBtn.onclick = function() {
     detailsWindow.style.display = "block";
+    window.scrollTo(10, 10);
   }
 
   // When the user clicks on <span> (x), close the modal
@@ -20,7 +21,6 @@ function handleModal(modalSet, buttonSet, numberClose){
     detailsWindow.style.display = "none";
   }
 
-  // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
     if (event.target == detailsWindow) {
       detailsWindow.style.display = "none";

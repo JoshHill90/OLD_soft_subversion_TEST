@@ -51,7 +51,7 @@ def append_cloundflare_id(cf_id, image_id, type_image):
 
 
 def index_page(request):
-    image_list = Image.objects.filter(display='home')[:20]
+    image_list = Image.objects.filter(display=1)[:20]
     #cf_api_call.mass_import()
     return render(request, 'index.html', { 'image_list': image_list})
 
@@ -97,9 +97,9 @@ def o_main(request):
     image_list = Image.objects.all()
     project_list = Project.objects.all()
     client_list = Client.objects.all()
-    gal1 = Image.objects.filter(Q(display="subgal1") | Q(display="gallery1"))
-    gal2 = Image.objects.filter(Q(display="subgal2") | Q(display="gallery2"))
-    gal4 = Image.objects.filter(Q(display="subgal4") | Q(display="gallery4"))
+    gal1 = Image.objects.filter(Q(display=4) | Q(display=3))
+    gal2 = Image.objects.filter(Q(display=5) | Q(display=7))
+    gal4 = Image.objects.filter(Q(display=6) | Q(display=8))
     site_image = Image.objects.filter(Q(client_id="1"))
     client_images = Image.objects.exclude(Q(client_id="1"))
     dataQ.json_chart_data()

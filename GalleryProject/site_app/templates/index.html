@@ -3,10 +3,7 @@
 {% block content %}
   <div class='hero-section'id='boxObject'>
     {% for image in image_list %}
-    {% if image.display == 'home'%}
     <div class='image-objects display-off' style="background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{image.image_link}}')"></div>
-    
-    {% endif %}
     {% endfor %}
     <div class='index-hero-box slide-up' id='slide-in'>
       <h1 class='h1-1' >Soft Subversion</h1>

@@ -216,6 +216,19 @@ button
   cursor: pointer;
 }
 
+.btn-icon-disabled {
+  font: var(--p);
+  color: #ffffff;
+  background-color: #2f2c3596;
+  padding: 8px 8px;
+  border: 2px solid #7b7a7e;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border-radius: 8px;
+  transition : 777ms;
+  align-items: center;
+  cursor: pointer;
+}
+
 .btn-cust:hover,
 .btn-icon:hover {
   transition : 777ms;
@@ -282,7 +295,19 @@ images and prints
   left: 0;
 }
 
+.image-list{
+  display: block;
+  position: relative;
+  width:95%;
+  margin: auto;
+  max-width:300px;
+}
 
+.scroll-row{
+  display: block;
+  position: relative;
+  max-width: 99%;
+}
 
 /* --------------------------------
 js parts 
@@ -308,6 +333,12 @@ js parts
   position: relative;
   top: 14px;
   left: 30%;
+}
+
+.helight-shadow {
+  box-shadow:rgba(83, 7, 133, 0.5) 0px 2px 4px,
+    rgba(83, 7, 133, 0.3) 0px 7px 13px -3px,
+    rgba(83, 7, 133, 0.2) 0px -3px 0px inset;
 }
 
 /* --------------------------------

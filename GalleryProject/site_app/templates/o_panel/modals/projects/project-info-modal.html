@@ -1,0 +1,62 @@
+<div id="detailsWindowTerms" class="details-modal">
+
+	
+	<div class="details-content overflow-auto">
+		<span class="closeDetails" id="closeDetailsTerms"><i class="fa-solid fa-circle-xmark fa-lg icon-color"></i></span>
+		<div class='row'>
+			<div class='col-6 mt-4 mb-4 col-md-4'>
+				<div class='section-small'>
+					<h1 class='h1-1'>Client Info</h1>
+					<hr>
+					<p class='p-p'>Name<br>{{ client.user_id.first_name }} {{ client.user_id.last_name }}</p>
+					<p class='p-p'>Email<br> {{ client.email }}</p>
+					<p class='p-p'>Phone <br> {{ client.phone }}</p>
+					<p class='p-p'>Client ID: {{ client.id }}</p>
+				</div>
+			</div>
+
+			<div class='col-12 mt-4 mb-4 col-md-4'>
+				<div class='section-small'>
+					
+						<h1 class="h1-1">
+							Project Image Count
+						</h1>
+						<hr>
+						<div class='cardSlide mt-4'>
+						<h1 class='nums'>
+							{{ images|length }}
+						</h1>
+					</div>	
+				</div>		
+			</div>
+
+			<div class='col-12 col-md-4 mt-4 mb-4'>
+				<div class='section-small'>
+					<h1 class='h1-1'>Project Info</h1>
+					<hr>
+					<p class='p-p'>Project Name<br>{{ project }} </p>
+					<p class='p-p'>Project Type<br>{{ project_terms.scope|title }}</p>
+					<p class='p-p'>Location Type<br>{{ project_terms.project_request_id.location|title }}</p>
+					<p class='p-p'>Project Status<br>{{ project.status }}</p>
+				</div>
+			</div>	
+			<div class='col-12'>
+				<h1 class='h1-1'>Project Services</h1>
+				<hr>
+				<button class="btn-cust" type="button" data-bs-toggle="collapse" data-bs-target="#dropdetails" aria-expanded="false" aria-controls="dropdetails">
+					Info
+				</button>
+
+				<div class="collapse" id="dropdetails" style='width:100%'>
+					<div class='cardSlide overflow-auto section-scroll'>
+						
+						<p class='p-p'>{{project_terms.services}}</p>
+					
+					</div>
+				</div>
+
+			</div>
+
+		</div>		
+	</div>
+</div>

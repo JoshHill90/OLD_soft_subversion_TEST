@@ -313,7 +313,7 @@ class AutoReply:
                 
     def new_invoice_notice(self, client_info, project, invoice, invoice_link, pdf_path):
         
-        contact_subject = "New Project in your Project Binder"
+        contact_subject = f"New Invoice: {project.name} Invoice {invoice.invoice_id}"
         billing_amount_formated = '{:.2f}'.format(invoice.billed)
         billed_amount_str = str(billing_amount_formated)
         date_value = invoice.due_date.strftime('%b-%d-%Y')
@@ -330,7 +330,54 @@ class AutoReply:
             '[PAYMENT_TYPE]': invoice.payment_type
             }
         
-        string = new_invoice
+        string = new_project_no_invoice
+        result_string = reduce(lambda old_string, key_var: old_string.replace(key_var, text_swap[key_var]), text_swap, string)
+        contact_body = result_string
+
+        mailer = EmailMessage()
+
+        mailer['From'] = formataddr(("Soft Subversion", f"{self.email_host}"))
+        mailer['To'] = client_info.email
+        mailer['Subject'] = contact_subject
+        mailer.set_content(contact_body)
+        full_path = 'static/documents/'+ pdf_path
+        with open(full_path, 'rb') as attachment:
+            mailer.add_attachment(attachment.read(), 
+                                  maintype='application', 
+                                  subtype='octet-stream', 
+                                  filename='Soft Subversion Questionnaire.pdf'
+            )
+
+        with smtplib.SMTP(self.email_host, self.email_port) as server:
+            try:
+                server.starttls()
+                server.login(self.send_from, self.email_password)
+                server.sendmail(self.send_from, client_info.email, mailer.as_string())
+                server.close()
+                return 'sent'
+            except Exception as e:
+                print(f"An error occurred while sending the email: {e}")
+                
+    def resend_invoice_notice(self, client_info, project, invoice, invoice_link, pdf_path):
+        
+        contact_subject = f"Reminder: {project.name} Invoice {invoice.invoice_id} Due Soon"
+        billing_amount_formated = '{:.2f}'.format(invoice.billed)
+        billed_amount_str = str(billing_amount_formated)
+        date_value = invoice.due_date.strftime('%b-%d-%Y')
+
+        
+        text_swap = {
+            '[CLIENT_NAME]': client_info.user_id.first_name,
+            '[PAYMENT_LINK]': invoice.payment_link,
+            '[INVOICE_LINK]': invoice_link,
+            '[PROJECT_NAME]': project.name,
+            '[INVOICE_NUMBER]': invoice.invoice_id,
+            '[DUE_DATE]': str(date_value),
+            '[PAYMENT_DUE]': billed_amount_str,
+            '[PAYMENT_TYPE]': invoice.payment_type
+            }
+        
+        string = resend_invoice
         result_string = reduce(lambda old_string, key_var: old_string.replace(key_var, text_swap[key_var]), text_swap, string)
         contact_body = result_string
 
@@ -359,7 +406,7 @@ class AutoReply:
                 print(f"An error occurred while sending the email: {e}")
                 
                 
-#### Test
+#### Test 
 """test_send = os.getenv("TEST_SEND")
 
 subject_test = "TEST"

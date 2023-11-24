@@ -44,3 +44,7 @@ new_project_no_invoice = readtxt(new_project_no_invoice_doc)
 # New invoice 
 new_invoice_doc = docx.Document('static/documents/docx/new_invoice.docx')
 new_project_no_invoice = readtxt(new_invoice_doc)   
+
+# Resend invoice 
+resend_invoice_doc = docx.Document('static/documents/docx/resend_invoice.docx')
+resend_invoice = readtxt(resend_invoice_doc)   

@@ -17,6 +17,7 @@
 	<link rel='stylesheet' href="{% static 'css/calendar.css' %}">
 	<link rel='stylesheet' href="{% static 'css/window_load.css' %}">
 	<link rel='stylesheet' href="{% static 'css/animation.css' %}">
+	<link rel='stylesheet' href="{% static 'css/mini-gallery.css' %}">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
 
@@ -70,7 +71,7 @@
 	</nav>	
 </div>
 
-<div class="height-100">
+<div>
 
 	<!-- 									-->
 	<!--        dynamic content block       -->
@@ -81,7 +82,9 @@
 		{% block content %}
 
 		{% endblock %}
+		<div class='mt-4 mb-4'></div>
 		</div>
+		
 		<div class="loader" id='windowLoader' style='display:none'>
 			<div class="square">
 				<span style="--i:0;"></span>
@@ -102,6 +105,7 @@
 				<span style="--i:3;"></span>
 			</div>
 		</div>
+		
 	</div>
 
 	<!--									-->

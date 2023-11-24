@@ -5,19 +5,13 @@ import secrets
 import random
 import datetime
 
-DISPLAY_PEACE = [    
-    ('none', 'none'),
-    ('home', 'home'),
-    ('IOTM', 'IOTM'),
-    ('model', 'model'),
-    ('wedding', 'wedding'),
-    ('family', 'family'),
-    ('modelgal', 'modelgal'),
-    ('weddinggal', 'weddinggal'),
-    ('familygal', 'familygal'),
-    ('project', 'project'),
-    ('project-header', 'project-header'),
-]
+
+class Dispaly(models.Model):
+    name = models.CharField(max_length=255)
+    def __str__(self):
+        return str(self.id) + ' | ' + str(self.name)
+
+
 
 class Image(models.Model):
     title = models.CharField(max_length=255)
@@ -25,7 +19,7 @@ class Image(models.Model):
     tag = models.CharField(max_length=255)
     portrait_format = models.CharField(max_length=50, default='square')
     private = models.BooleanField(default=False)
-    display = models.CharField(max_length=20, choices=DISPLAY_PEACE, default='none')
+    display = models.ManyToManyField(Dispaly, blank=True, null=True)
     client_id = models.ForeignKey('client.Client', null=True, blank=True, on_delete=models.SET_NULL)
     project_id = models.ForeignKey('client.Project', null=True, blank=True, on_delete=models.SET_NULL)
     image_link = models.URLField(blank=True, default=' ')

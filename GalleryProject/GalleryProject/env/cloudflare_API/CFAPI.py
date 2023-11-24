@@ -5,8 +5,8 @@ import time
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-from gallery.models import Image
-from client.models import Client, Project
+#from gallery.models import Image
+#from client.models import Client, Project
 
 current_dir = Path(__file__).resolve().parent
 ven = current_dir / "../.env"
@@ -198,7 +198,7 @@ class APICall:
         print(response.text)
     # Backend Oberations
     # this function can be used to import a large set of images that already exits in the CDN. Ideally for the initial migration to the site/app     
-    def mass_import(self):
+"""    def mass_import(self):
 
         url = f'https://api.cloudflare.com/client/v4/accounts/{account_ID}/images/v1'
 
@@ -238,5 +238,5 @@ class APICall:
                 project_id=project,
                 image_link=image_linked,
                 cloudflare_id=imageid
-            )
+            )"""
         

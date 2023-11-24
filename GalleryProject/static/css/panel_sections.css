@@ -30,7 +30,7 @@
 .section-med {
 	background-image: var(--bg-color);
 	width: auto;
-	max-height: 50vh;
+	min-height: 50vh;
 	margin: auto;
 	position: relative;
 	padding: 10px 10px;

@@ -1,0 +1,35 @@
+<div id="detailsWindowInvEdit{{bill.id}}" class="details-modal">
+
+
+	<div class="details-content overflow-auto">
+		<span class="closeDetails" id="closeDetailsInvEdit{{bill.id}}"><i class="fa-solid fa-circle-xmark fa-lg icon-color"></i></span>
+
+		<div class="sections p-p form-fit h-100 form-group">
+			<h1 class='h1-1'>Edit Invoice Details</h1>
+			<hr>
+			<form method=POST>
+				{% csrf_token %}
+	
+				<label for="id_due_date">Due date:</label>
+				<input type="date" name="due_date" value="{{billing.due_date|date:'Y-m-d'}}" class="form-control" id="id_due_date">
+	
+				<label for="id_details">Details:</label>
+				<textarea name="details" cols="40" rows="10" class="form-control" maxlength="500" required="" id="id_details">{{ billing.details }}</textarea>
+	
+				<label for="id_payment_type">Payment type:</label>
+				<select name="payment_type" class="form-control" maxlength="30" id="id_payment_type">
+					<option value="{{ billing.payment_type }}">{{ billing.payment_type }}</option>
+					<option value="Project Invoice">Project Invoice</option>
+					<option value="Item Invoice">Item Invoice</option>
+					<option value="Travle Cost">Travle Cost</option>
+					<option value="Overnight Stayt Cost">Overnight Stayt Cost</option>
+				</select>
+	
+				<button class="btn-cust">
+					Submit
+				</button>
+			</form>
+
+		</div>		
+	</div>
+</div>
