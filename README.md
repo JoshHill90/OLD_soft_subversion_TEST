@@ -119,7 +119,7 @@ pip3 install requests requests-toolbelt setuptools soupsieve sqlparse tzdata url
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- USAGE -->
 Usage
-is designed to assist photographers in managing their client projects, images, and payments. It provides an organized platform for efficient workflow management.
+This Webapp/Website is designed to assist photographers in managing their client projects, images, and payments. It provides an organized platform for efficient workflow management.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- CURRENT FEATURES -->
@@ -132,12 +132,6 @@ Image and image gallery hosting, email automation, front-end gallery controls.
 
 This gives the user the ability to upload images for their website. After the images are uploaded the user can select what images appear in each gallery. From the gallery controls, the user can update, remove and clear all images from the gallery. The user can filter images to narrow results to add in this process. 
 
-
-
-
-
-
-
 <div align="center">
 Gallery Controls - Click to view the video on youtube.
 
@@ -148,6 +142,27 @@ Image Upload Proccess - Click to view the video on youtube.
 [![Image Upload Process Video](https://i.ytimg.com/an_webp/c3zoDaT9-gg/mqdefault_6s.webp?du=3000&sqp=CKjluqsG&rs=AOn4CLAaL4yZbsQaiwrPr8yznWHlsHKKZw)](https://www.youtube.com/watch?v=c3zoDaT9-gg&ab_channel=SilkThreadDev)
 
  </div> 
+<!-- IN PROGRESS FEATURES -->
+In Progress New Features - comming soon!
+
+ Client Intake - Completed - not implemented
+ Client Project Request - Completed - not implemented
+ Client Portal - Completed - not implemented
+ User/Client Document Storage - in progress
+ 
+ Client Managment - in progress
+ Project Management - in progress
+ Billing Management - in progress
+ Project and Billing Calendar - in progress
+ Dashboard for analytics - in progress
+ 
+ <!-- FUTURE FEATURES -->
+ Future Planed Features
+
+ Create custome galleries
+ User/Client site settings
+ Color Themes
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- CONTRIBUTING -->
