@@ -132,7 +132,7 @@ Image and image gallery hosting, email automation, front-end gallery controls.
 
 This gives the user the ability to upload images for their website. After the images are uploaded the user can select what images appear in each gallery. From the gallery controls, the user can update, remove and clear all images from the gallery. The user can filter images to narrow results to add in this process. 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-i8q9b3i3FA?si=waeVyXC-v-c2CKoY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![Gallery Control Video](https://img.youtube.com/vi/-i8q9b3i3FA&ab_channel=SilkThreadDev/0.jpg)](https://www.youtube.com/watch?v=-i8q9b3i3FA&ab_channel=SilkThreadDev)
 
 
 
