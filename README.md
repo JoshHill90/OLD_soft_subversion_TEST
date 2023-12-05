@@ -141,48 +141,46 @@ Front-end gallery controls.<br />
 <div align="center">
 Gallery Controls - Click to view the video on youtube.
 
-[![Gallery Control Video](https://i.ytimg.com/an_webp/-i8q9b3i3FA/mqdefault_6s.webp?du=3000&sqp=COCBu6sG&rs=AOn4CLCE5DpJKitRE2yZqvad5MmIO_XXBg)](https://www.youtube.com/watch?v=-i8q9b3i3FA&ab_channel=SilkThreadDev)
+[![Gallery Control Video](https://i3.ytimg.com/vi/c3zoDaT9-gg/maxresdefault.jpg)](https://www.youtube.com/watch?v=-i8q9b3i3FA&ab_channel=SilkThreadDev)
 
 Image Upload Proccess - Click to view the video on youtube.
 
-[![Image Upload Process Video](https://i.ytimg.com/an_webp/c3zoDaT9-gg/mqdefault_6s.webp?du=3000&sqp=CKjluqsG&rs=AOn4CLAaL4yZbsQaiwrPr8yznWHlsHKKZw)](https://www.youtube.com/watch?v=c3zoDaT9-gg&ab_channel=SilkThreadDev)
+[![Image Upload Process Video](https://i3.ytimg.com/vi/-i8q9b3i3FA/maxresdefault.jpg)](https://www.youtube.com/watch?v=c3zoDaT9-gg&ab_channel=SilkThreadDev)
 
  </div> 
 <!-- IN PROGRESS FEATURES -->
 In Progress - New Features (Coming Soon!)<br />
 <br />
 Client Intake:<br />
-
 Completed, not implemented.<br />
+
 Client Project Request:<br />
-
 Completed, not implemented.<br />
+
 Client Portal:<br />
-
 Completed, not implemented.<br />
+
 User/Client Document Storage:<br />
-
 In progress.<br />
+
 Client Management:<br />
-
 In progress.<br />
+
 Project Management:<br />
-
 In progress.<br />
+
 Billing Management:<br />
-
 In progress.<br />
+
 Project and Billing Calendar:<br />
-
 In progress.<br />
+
 Dashboard for Analytics:<br />
-
 In progress.<br />
+
 Future Planned Features<br />
 Create Custom Galleries.<br />
-
 User/Client Site Settings.<br />
-
 Color Themes.<br />
 
 <br /><br />
