@@ -128,7 +128,14 @@ Soft Subversion currently includes:
 Front-end responsive website that host the user's gallerys, contact form, and about me page.
 The site also includes a photo management system that is accessiable after the register client or user is logged in. 
 current featurs of the photo managment system includes:
-Image and image gallery hosting, email automation, front-end gallery controls,  
+Image and image gallery hosting, email automation, front-end gallery controls. 
+
+This gives the user the ability to upload images for their website. After the images are uploaded the user can select what images appear in each gallery. From the gallery controls, the user can update, remove and clear all images from the gallery. The user can filter images to narrow results to add in this process. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-i8q9b3i3FA?si=waeVyXC-v-c2CKoY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+
 <div align="center">
 
  <img src="https://imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/8bdd3a14-00c1-4be4-d401-3f90897fd900/display" alt="application screenshot" width="600" height="auto">
