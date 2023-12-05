@@ -110,12 +110,9 @@ To get started with Soft Subversion, you'll need to have Python 3 and Django ins
    # Install Django
    pip3 install Django
 Install project dependencies:
-sh
-Copy code
-pip3 install asgiref beautifulsoup4 certifi charset-normalizer
-pip3 install django-bootstrap-v5 django-ckeditor django-js-asset django-phonenumber-field
-pip3 install idna mysql mysqlclient python-decouple python-dotenv
-pip3 install requests requests-toolbelt setuptools soupsieve sqlparse tzdata urllib3
+Run the requirements 
+<br />
+This project is set tp run using a connections to Planet Scale, you will need to create an account and set up a a DB, all other needed files are included.  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- USAGE -->
 Usage:
