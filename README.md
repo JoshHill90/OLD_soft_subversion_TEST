@@ -118,19 +118,24 @@ pip3 install idna mysql mysqlclient python-decouple python-dotenv
 pip3 install requests requests-toolbelt setuptools soupsieve sqlparse tzdata urllib3
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- USAGE -->
-Usage
-This Webapp/Website is designed to assist photographers in managing their client projects, images, and payments. It provides an organized platform for efficient workflow management.
+Usage:
+This web application/website is crafted to assist photographers in efficiently managing their client projects, images, and payments. It provides a well-organized platform to streamline workflow management.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-<!-- CURRENT FEATURES -->
 Current Features
 Soft Subversion currently includes:
-Front-end responsive website that host the user's gallerys, contact form, and about me page.
-The site also includes a photo management system that is accessiable after the register client or user is logged in. 
-current featurs of the photo managment system includes:
-Image and image gallery hosting, email automation, front-end gallery controls. 
 
-This gives the user the ability to upload images for their website. After the images are uploaded the user can select what images appear in each gallery. From the gallery controls, the user can update, remove and clear all images from the gallery. The user can filter images to narrow results to add in this process. 
+Front-end Responsive Website:
+
+Hosts user galleries, contact form, and an about me page.
+Photo Management System:
+
+Accessible post registration or login.
+Current features include image and image gallery hosting, email automation, and front-end gallery controls.
+Photo Management System Features:
+
+Image and image gallery hosting.
+Email automation.
+Front-end gallery controls.
 
 <div align="center">
 Gallery Controls - Click to view the video on youtube.
@@ -143,26 +148,42 @@ Image Upload Proccess - Click to view the video on youtube.
 
  </div> 
 <!-- IN PROGRESS FEATURES -->
-In Progress New Features - comming soon!<br />
+In Progress - New Features (Coming Soon!)
+Client Intake:
 
- Client Intake - Completed - not implemented<br />
- Client Project Request - Completed - not implemented<br />
- Client Portal - Completed - not implemented<br />
- User/Client Document Storage - in progress<br />
- 
- Client Managment - in progress<br />
- Project Management - in progress<br />
- Billing Management - in progress<br />
- Project and Billing Calendar - in progress<br />
- Dashboard for analytics - in progress<br />
- 
- <!-- FUTURE FEATURES -->
- Future Planed Features<br />
+Completed, not implemented.
+Client Project Request:
 
- Create custome galleries<br />
- User/Client site settings<br />
- Color Themes<br />
+Completed, not implemented.
+Client Portal:
 
+Completed, not implemented.
+User/Client Document Storage:
+
+In progress.
+Client Management:
+
+In progress.
+Project Management:
+
+In progress.
+Billing Management:
+
+In progress.
+Project and Billing Calendar:
+
+In progress.
+Dashboard for Analytics:
+
+In progress.
+Future Planned Features
+Create Custom Galleries.
+
+User/Client Site Settings.
+
+Color Themes.
+
+Feel free to explore the current features and stay tuned for exciting updates as we continue to enhance the functionality and user experience. If you have any suggestions or feedback, we'd love to hear from you!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- CONTRIBUTING -->
