@@ -126,16 +126,20 @@ Soft Subversion currently includes:
 
 Front-end Responsive Website:
 
-Hosts user galleries, contact form, and an about me page.
-Photo Management System:
-
-Accessible post registration or login.
+Hosts user galleries, contact form, and an about me page.<br />
+Photo Management System:<br />
+<br />
+Accessible post registration or login.<br />
 Current features include image and image gallery hosting, email automation, and front-end gallery controls.
-Photo Management System Features:
 
-Image and image gallery hosting.
-Email automation.
-Front-end gallery controls.
+
+Photo Management System Features:<br />
+<br />
+Image and image gallery hosting.<br />
+Email automation.<br />
+Front-end gallery controls.<br />
+
+
 
 <div align="center">
 Gallery Controls - Click to view the video on youtube.
@@ -148,40 +152,43 @@ Image Upload Proccess - Click to view the video on youtube.
 
  </div> 
 <!-- IN PROGRESS FEATURES -->
-In Progress - New Features (Coming Soon!)
-Client Intake:
+In Progress - New Features (Coming Soon!)<br />
+<br />
+Client Intake:<br />
 
-Completed, not implemented.
-Client Project Request:
+Completed, not implemented.<br />
+Client Project Request:<br />
 
-Completed, not implemented.
-Client Portal:
+Completed, not implemented.<br />
+Client Portal:<br />
 
-Completed, not implemented.
-User/Client Document Storage:
+Completed, not implemented.<br />
+User/Client Document Storage:<br />
 
-In progress.
-Client Management:
+In progress.<br />
+Client Management:<br />
 
-In progress.
-Project Management:
+In progress.<br />
+Project Management:<br />
 
-In progress.
-Billing Management:
+In progress.<br />
+Billing Management:<br />
 
-In progress.
-Project and Billing Calendar:
+In progress.<br />
+Project and Billing Calendar:<br />
 
-In progress.
-Dashboard for Analytics:
+In progress.<br />
+Dashboard for Analytics:<br />
 
-In progress.
-Future Planned Features
-Create Custom Galleries.
+In progress.<br />
+Future Planned Features<br />
+Create Custom Galleries.<br />
 
-User/Client Site Settings.
+User/Client Site Settings.<br />
 
-Color Themes.
+Color Themes.<br />
+
+<br /><br />
 
 Feel free to explore the current features and stay tuned for exciting updates as we continue to enhance the functionality and user experience. If you have any suggestions or feedback, we'd love to hear from you!
 
