@@ -143,25 +143,25 @@ Image Upload Proccess - Click to view the video on youtube.
 
  </div> 
 <!-- IN PROGRESS FEATURES -->
-In Progress New Features - comming soon!
+In Progress New Features - comming soon!<br />
 
- Client Intake - Completed - not implemented
- Client Project Request - Completed - not implemented
- Client Portal - Completed - not implemented
- User/Client Document Storage - in progress
+ Client Intake - Completed - not implemented<br />
+ Client Project Request - Completed - not implemented<br />
+ Client Portal - Completed - not implemented<br />
+ User/Client Document Storage - in progress<br />
  
- Client Managment - in progress
- Project Management - in progress
- Billing Management - in progress
- Project and Billing Calendar - in progress
- Dashboard for analytics - in progress
+ Client Managment - in progress<br />
+ Project Management - in progress<br />
+ Billing Management - in progress<br />
+ Project and Billing Calendar - in progress<br />
+ Dashboard for analytics - in progress<br />
  
  <!-- FUTURE FEATURES -->
- Future Planed Features
+ Future Planed Features<br />
 
- Create custome galleries
- User/Client site settings
- Color Themes
+ Create custome galleries<br />
+ User/Client site settings<br />
+ Color Themes<br />
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
