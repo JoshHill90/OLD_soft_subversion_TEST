@@ -16,9 +16,9 @@
 <br />
 <div align="center">
   <a href="https://github.com/JoshHill90/soft_subversionProd">
-    
+   </a>  
     <img src="https://imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/80334d4c-e947-461a-8387-2e21d40c9800/icon" alt="Logo" width="80" height="auto">
-  </a>
+ 
 
   <h3 align="center">Soft Subversion</h3>
 
