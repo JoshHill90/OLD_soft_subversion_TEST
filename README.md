@@ -132,6 +132,13 @@ Image and image gallery hosting, email automation, front-end gallery controls.
 
 This gives the user the ability to upload images for their website. After the images are uploaded the user can select what images appear in each gallery. From the gallery controls, the user can update, remove and clear all images from the gallery. The user can filter images to narrow results to add in this process. 
 
+
+
+
+
+
+
+<div align="center">
 Gallery Controls - Click to view the video on youtube.
 
 [![Gallery Control Video](https://i.ytimg.com/an_webp/-i8q9b3i3FA/mqdefault_6s.webp?du=3000&sqp=COCBu6sG&rs=AOn4CLCE5DpJKitRE2yZqvad5MmIO_XXBg)](https://www.youtube.com/watch?v=-i8q9b3i3FA&ab_channel=SilkThreadDev)
@@ -139,20 +146,6 @@ Gallery Controls - Click to view the video on youtube.
 Image Upload Proccess - Click to view the video on youtube.
 
 [![Image Upload Process Video](https://i.ytimg.com/an_webp/c3zoDaT9-gg/mqdefault_6s.webp?du=3000&sqp=CKjluqsG&rs=AOn4CLAaL4yZbsQaiwrPr8yznWHlsHKKZw)](https://www.youtube.com/watch?v=c3zoDaT9-gg&ab_channel=SilkThreadDev)
-
-
-
-
-
-<div align="center">
-
- <img src="https://imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/8bdd3a14-00c1-4be4-d401-3f90897fd900/display" alt="application screenshot" width="600" height="auto">
-
-  <img src="https://imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/288eac0f-3018-4a0e-3b2a-010f4131f900/display" alt="application screenshot" width="600" height="auto">
-
-  <img src="https://imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/da1333e7-71d3-4008-5758-6fb255599f00/display" alt="application screenshot" width="600" height="auto">
-
-  <img src="https://imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/84b8a042-909d-427d-8f6a-ff697337be00/display" alt="application screenshot" width="600" height="auto">
 
  </div> 
 
