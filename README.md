@@ -138,7 +138,7 @@ Gallery Controls - Click to view the video on youtube.
 
 Image Upload Proccess - Click to view the video on youtube.
 
-[![Image Upload Process Video]([https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg](https://i.ytimg.com/an_webp/c3zoDaT9-gg/mqdefault_6s.webp?du=3000&sqp=CKjluqsG&rs=AOn4CLAaL4yZbsQaiwrPr8yznWHlsHKKZw)](https://www.youtube.com/watch?v=c3zoDaT9-gg&ab_channel=SilkThreadDev)
+[![Image Upload Process Video](https://i.ytimg.com/an_webp/c3zoDaT9-gg/mqdefault_6s.webp?du=3000&sqp=CKjluqsG&rs=AOn4CLAaL4yZbsQaiwrPr8yznWHlsHKKZw)](https://www.youtube.com/watch?v=c3zoDaT9-gg&ab_channel=SilkThreadDev)
 
 
 
