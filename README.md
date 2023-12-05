@@ -134,7 +134,7 @@ This gives the user the ability to upload images for their website. After the im
 
 Gallery Controls - Click to view the video on youtube.
 
-[![Gallery Control Video]([https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg](https://i.ytimg.com/an_webp/-i8q9b3i3FA/mqdefault_6s.webp?du=3000&sqp=COCBu6sG&rs=AOn4CLCE5DpJKitRE2yZqvad5MmIO_XXBg)](https://www.youtube.com/watch?v=-i8q9b3i3FA&ab_channel=SilkThreadDev)
+[![Gallery Control Video](https://i.ytimg.com/an_webp/-i8q9b3i3FA/mqdefault_6s.webp?du=3000&sqp=COCBu6sG&rs=AOn4CLCE5DpJKitRE2yZqvad5MmIO_XXBg)](https://www.youtube.com/watch?v=-i8q9b3i3FA&ab_channel=SilkThreadDev)
 
 Image Upload Proccess - Click to view the video on youtube.
 
