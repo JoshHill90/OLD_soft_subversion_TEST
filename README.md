@@ -134,7 +134,12 @@ This gives the user the ability to upload images for their website. After the im
 
 Gallery Controls - Click to view the video on youtube.
 
-[![Gallery Control Video](https://i.ytimg.com/an_webp/-i8q9b3i3FA/mqdefault_6s.webp?du=3000&sqp=CPDeuqsG&rs=AOn4CLBvHemTbHmMRpJX0UJiWz_e8hTD0Q)](https://www.youtube.com/watch?v=-i8q9b3i3FA&ab_channel=SilkThreadDev)
+[![Gallery Control Video]([https://i.ytimg.com/an_webp/-i8q9b3i3FA/mqdefault_6s.webp?du=3000&sqp=CPDeuqsG&rs=AOn4CLBvHemTbHmMRpJX0UJiWz_e8hTD0Q](https://i.ytimg.com/an_webp/c3zoDaT9-gg/mqdefault_6s.webp?du=3000&sqp=CKjluqsG&rs=AOn4CLAaL4yZbsQaiwrPr8yznWHlsHKKZw))](https://www.youtube.com/watch?v=-i8q9b3i3FA&ab_channel=SilkThreadDev)
+
+Image Upload Proccess - Click to view the video on youtube.
+
+[![Gallery Control Video](https://i.ytimg.com/an_webp/-i8q9b3i3FA/mqdefault_6s.webp?du=3000&sqp=CPDeuqsG&rs=AOn4CLBvHemTbHmMRpJX0UJiWz_e8hTD0Q)](https://www.youtube.com/watch?v=c3zoDaT9-gg&ab_channel=SilkThreadDev)
+
 
 
 
