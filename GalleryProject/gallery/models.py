@@ -9,14 +9,17 @@ import datetime
 class Dispaly(models.Model):
     name = models.CharField(max_length=255)
     def __str__(self):
-        return str(self.id) + ' | ' + str(self.name)
+        return str(self.name)
 
-
+class Tag(models.Model):
+    name = models.CharField(max_length=255)
+    def __str__(self):
+        return str(self.name)
 
 class Image(models.Model):
     title = models.CharField(max_length=255)
     date = models.DateField(auto_now_add=True)
-    tag = models.CharField(max_length=255)
+    tag = models.ManyToManyField(Tag, blank=True, null=True)
     portrait_format = models.CharField(max_length=50, default='square')
     private = models.BooleanField(default=False)
     display = models.ManyToManyField(Dispaly, blank=True, null=True)

@@ -4,19 +4,17 @@
 {% block title %}Gallery{% endblock %}
 {% block content %}
 
-<div class='container'>
-	<div class="gal-hero float-in">
-		{% for image in image_list %}
-		{% if image.display == 'model' %}
+<div class='container gal-hero'>
 		<div class="gal-hero-image" style=" background-image: url({{ header_image.image_link }})">
 			<div class='gal-hero-box float-in-sec'>
-				<h2 class='h2-2'>Capter the magic</h2>
-				<p class='p-p'>Save the memories from your specail day</p>
+				<h2 class='h2-2'>Capture the Moment</h2>
+				<p class='p-p'>At Soft Subversion, we specialize in freezing time, 
+					capturing the essence of fleeting moments that tell unique stories. 
+					Whether it's a tender glance, a joyous celebration, or a quite intimate scene, 
+					our lens is poised to seize the beauty in every moment, preserving it for a lifetime.
+				</p>
 			</div>
 		</div>
-		{% endif %}
-		{% endfor %}
-
 	</div>
 </div>
 
@@ -86,14 +84,14 @@
 </div>
 <div clss='container'>
 	<div class='gal-roller'>
-		<div class='row gal-inner '>
-			<div class='col mb-4 mb-lg-0'>
-				<button class='btn-cust-2'  onclick="window.location.href='{% url 'gallery' %}#how'">How it works</button>
+		<div class='row gall-inner text-center'>
+			<div class='col-12 col-md-4 mb-4'>
+				<button class='btn-cust-2'  onclick="window.location.href='{% url 'index' %}#how'">How it works</button>
 			</div>
-			<div class='col mb-4 mb-lg-0'>
+			<div class='col-12 col-md-4 mb-4'>
 				<button class='btn-cust btn-cust-color'  onclick="window.location.href='{% url 'contact' %}'">Book</button>
 			</div>
-			<div class='col mb-4 mb-lg-0'>
+			<div class='col-12 col-md-4 mb-4'>
 				<button class='btn-cust-2'  onclick="window.location.href='{% url 'site-gall' 5 6 %}'">Wedding Gallery</button>
 			</div>
 		</div>

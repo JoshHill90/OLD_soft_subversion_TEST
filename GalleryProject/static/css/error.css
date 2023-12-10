@@ -1,0 +1,24 @@
+
+.hero-img-success {
+	background-image:url(https://imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/75396d51-07db-440e-e916-3d325e4a1f00/display);
+	background-color: var(--bg-color);
+	height: 90vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	padding: 80px;
+  }
+
+
+
+.section-error {
+	font: var(--p);
+	color: #ffffff;
+	background-color: var(--mc-5-o);
+	padding: 10px 21px;
+	border: 1px solid var(--mc-6);
+	box-shadow: var(--bg-shadow);
+	border-radius: 16px;
+	margin: auto;
+	height: 80vh;
+}

@@ -1,33 +1,4 @@
-/*font import*/
-@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Calistoga&display=swap');
-/*variable*/
-:root{
-  --text-color:rgb(0, 0, 0);
-  --text-color-secondary:rgb(121, 121, 121);
-  --bg-color:rgb(255, 255, 255);
-  --bg-color-secondary:linear-gradient(315deg, #cacaca, #f0f0f0);
-  --bg-shadow:  rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  --bg-color-nav:#e7e7e7;
-  --bg-color-opec:rgba(39, 39, 39, 0.897);  
-  --font-family-header:'Arvo', serif;
-  --numbers: 'Calistoga', cursive;
-  --h1: 25px;
-  --p: 16px;
-  --np:25px;
-  --font-weights-norm: 400;
-  --arvo-norm: 400;
-  --nav-width: 70px;           
-  --first-color: #7933FC; 
-  --sec-color: #58ffa3;          
-  --first-color-light: #000000;          
-  --white-color: #7933FC;                           
-  --z-fixed: 100;
-  --lingrand: linear-gradient(123deg, #7933FC 05%, #2b6ce4 35%, #26ccb3 50%, #91c72e 62%, #26ccb3 70%, #2b6ce4 85%, #7933FC 95%);
-  --lingrand-bar: linear-gradient(to right, #7933fc, #007aff, #00a4ff, #00c4ff, #00dfff, 
-    #00ecf4, #00f7de, #3dffbf, #58ffa3, #76ff84, #96ff60, #b6fc33);
-  --line-border-fill: #7933FC;
-  --line-border-empty: #131313c0;
-}
+
 
 /* --------------------------------
 Topography
@@ -82,7 +53,7 @@ html {
   font-size: var(--np);
   font-weight: var(--font-weights-norm);
   color: var(--text-color);
-  background-image: var(--lingrand);
+  background-image: var(--lingrand-bar);
   background-repeat: repeat;
   background-position: fixed;
   -webkit-background-clip: text;
@@ -106,7 +77,7 @@ html {
 }
 
 .icon-color{
-  color:#fc3379;
+  color:var(--mc-6);
 }
 
 hr {
@@ -193,8 +164,8 @@ button
   color: #ffffff;
   background-color: #7933fc96;
   padding: 10px 21px;
-  border: 2px solid #7933FC;
-  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border: 2px solid var(--line-border-fill);
+  box-shadow: var(--bg-shadow);
   border-radius: 8px;
   transition : 777ms;
   align-items: center;
@@ -208,12 +179,13 @@ button
   color: #ffffff;
   background-color: #7933fc96;
   padding: 8px 8px;
-  border: 2px solid #7933FC;
-  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border: 2px solid var(--line-border-fill);
+  box-shadow: var(--bg-shadow);
   border-radius: 8px;
   transition : 777ms;
   align-items: center;
   cursor: pointer;
+  margin: 5px;
 }
 
 .btn-icon-disabled {
@@ -230,11 +202,12 @@ button
 }
 
 .btn-cust:hover,
-.btn-icon:hover {
+.btn-icon:hover,
+.btn-icon:active {
   transition : 777ms;
-  background-color: #ffffff00;
-  color: #5b23c4;
-  border: solid 2px #1c0c3a;
+  background-color: rgba(53, 52, 52, 0);
+  color: var(--mc-6);
+  border: solid 2px var(--mc-4);
 }
 
 .right-i{
@@ -426,11 +399,11 @@ a{
 
 .nav_logo-icon{
   font-size: 1.25rem;           
-  color: var(--white-color);
+  color: var(--mc-4);
 }
 
 .nav_logo-name{
-  color: var(--white-color);           
+  color: var(--mc-4);           
   font-weight: 700;
 }
 
@@ -441,7 +414,7 @@ a{
   transition: .3s;
 }
 .nav_link:hover{
-  color: var(--white-color);
+  color: var(--mc-4);
 }
 
 .nav_icon{
@@ -457,7 +430,7 @@ a{
 }
 
 .active{
-  color: var(--white-color)
+  color: var(--mc-4)
 }
 
 .active::before{
@@ -466,7 +439,7 @@ a{
   left: 0;           
   width: 2px;           
   height: 32px;           
-  background-color: var(--white-color);
+  background-color: var(--mc-4);
 }
 
 .height-100{
@@ -595,8 +568,8 @@ project progress
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 25vh;
-  height: 25vh;
+  width: 30vh;
+  height: 30vh;
   border-radius: 50%;
   box-shadow: 0.5em 1em 1em #26ccb3,
   -0.5em 0.5em 1em #7933FC,
@@ -608,8 +581,8 @@ project progress
 
 
 .external-shadow {
-  width: 25vh;
-  height: 25vh;
+  width: 40vh;
+  height: 30vh;
   border-radius: 50%;
   display: flex;
   justify-content: center;

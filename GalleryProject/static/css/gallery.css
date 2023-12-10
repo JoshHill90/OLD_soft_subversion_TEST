@@ -1,28 +1,3 @@
-/*font import*/
-@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Cormorant+Garamond:wght@300;400;600;700&display=swap');
-
-/*variable*/
-:root{
-    --text-color:rgb(255, 255, 255);
-    --text-color-secondary:rgb(0, 0, 0);
-    --bg-color:rgb(24, 24, 24);
-    --bg-color-secondary:rgb(255, 254, 254);
-    --bg-color-opec:rgba(255, 253, 253, 0.534);  
-    --font-family-header:'Cormorant Garamond', serif;
-    --font-family-body: 'Arvo', serif;
-    --h1: 48px;
-    --h2: 42px;
-    --h3: 20px;
-    --p:16px;
-    --font-weights-norm: 400;
-    --font-weights-bold: 700;
-    --arvo-light: 300;
-    --arvo-norm: 400;
-    --arvo-simi: 600;
-    --arvo-bold: 700;
-
-}
-
 
 /* --------------------------------
 Gallery 
@@ -38,8 +13,8 @@ Gallery
 
 .card-shot{
   width: 100%;
-  height: 80vh;
-  max-height: 900px;
+  height: 75vh;
+  max-height: 1200px;
   overflow: hidden;
   position: relative;
 }
@@ -65,7 +40,7 @@ Gallery
 }
 
 .hr-hr {
-  color: var(--text-color);
+  color: var(--sc-2);
 }
 
 .timeline{
@@ -188,35 +163,71 @@ Gallery
   z-index: 3;
 }
 
+.sub-height{
+  margin: auto;
+}
+
+.item-gal4{
+  background-color: var(--bg-color-secondary);
+  top:20%;
+  height: 100%;
+  width: 40%;
+  padding: 15px;
+  position: relative;
+  left: 25%;
+  margin: auto ;
+
+}
+
 .gall-back {
-  background-image: url(https://imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/ce6217c7-d3d2-44aa-5918-97aa6fb8bc00/display);
+  background-image: url(https://imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/c0ab4009-3e22-44cb-346c-98326d393000/display);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   position: relative;
   height: 100vh;
 }
-.sub-height{
-  margin: auto;
-}
-.item-gal4{
-  top:20%;
-  width: 300px;
+
+.next-book {
   position: relative;
-  left: -50px;
-  margin: auto ;
+  color: var(--mc-3);
+  top:-155px
 }
+
+
+
+.next-gal {
+  position: relative;
+  color: var(--mc-3);
+  top:10px
+}
+.next-book:hover, .next-gal:hover{
+  color: var(--mc-4);
+  transition: all 1s ease-in-out;
+}
+
 @media (max-width:774px) and (orientation: portrait) {
   .gall-back {
     background-position: center;
     background-size: auto 100vh ;
     overflow: hidden;
   }
+
   .sub-height{
     height: 100vh;
   }
+
+  .next-book {
+
+    top:5px
+  }
+
   .item-gal4{
+    height: 100%;
+    width: 100%;
+    top:0;
     left: 0;
+    z-index: 999;
     margin: auto ;
   }
 }
@@ -228,16 +239,19 @@ sub gallery view
 .gal-hero {
   position: relative;
   overflow: hidden;
+  max-height: 82vh;
+  padding: 10px;
 }
 
 .gal-hero-image{
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center top;
   background-size: cover;
   position: relative;
   height: 80vh;
   transform: scale(1);
   transition:transform 1.2s ease-in-out !important;
+
 }
 
 .gal-hero-image:hover{
@@ -250,7 +264,7 @@ sub gallery view
   left: 65%;
   position: absolute;
   padding: 5px 5px;
-  background-color: #181324b0;
+  background-color: #2d2b33b0;
   width: 30%;
 }
 
@@ -291,22 +305,17 @@ sub gallery view
 .gal-roller {
   background-color: #71717250;
   position: relative;
-  height: 60px;
 
 }
 
 .gal-inner {
-  width: 60%;
   position: relative;
   object-position: center;
   margin: auto;
 }
-
 .gal-inner button{
-  width: 90%;
+  width: 100% !important;
 }
-
-
 
 .sub-gal-img{
   max-height: 50vh;

@@ -103,9 +103,9 @@ class AutoReply:
                 server.login(self.send_from, self.email_password)
                 server.sendmail(self.send_from, user_email, mailer.as_string())
                 server.close()
-                print('email sent')
+                return 'success'
             except Exception as e:
-                print(f"An error occurred while sending the email: {e}")
+                return f"An error occurred while sending the email: {e}"
 
 
     #------------------------#
@@ -140,9 +140,9 @@ class AutoReply:
                 server.login(self.send_from, self.email_password)
                 server.sendmail(self.send_from, self.receive_email, mailer.as_string())
                 server.close()
-                print('alart sent')
+                return 'success'
             except Exception as e:
-                print(f"An error occurred while sending the email: {e}")
+                return f"An error occurred while sending the email: {e}"
     
     #------------------------#
     # Client invite
@@ -174,9 +174,9 @@ class AutoReply:
                 server.login(self.send_from, self.email_password)
                 server.sendmail(self.send_from, client_email, mailer.as_string())
                 server.close()
-                return 'sent'
+                return 'success'
             except Exception as e:
-                print(f"An error occurred while sending the email: {e}")
+                return f"An error occurred while sending the email: {e}"
                 
     #------------------------#
     # Project Request
@@ -211,9 +211,9 @@ class AutoReply:
                 server.login(self.send_from, self.email_password)
                 server.sendmail(self.send_from, self.receive_email, mailer.as_string())
                 server.close()
-                print('alart sent')
+                return 'success'
             except Exception as e:
-                print(f"An error occurred while sending the email: {e}")
+                return f"An error occurred while sending the email: {e}"
                 
     #------------------------#
     # project/invoice creation
@@ -263,9 +263,9 @@ class AutoReply:
                 server.login(self.send_from, self.email_password)
                 server.sendmail(self.send_from, client_info.email, mailer.as_string())
                 server.close()
-                return 'sent'
+                return 'success'
             except Exception as e:
-                print(f"An error occurred while sending the email: {e}")
+                return f"An error occurred while sending the email: {e}"
                 
                 
     #------------------------#

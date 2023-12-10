@@ -1,46 +1,49 @@
 {% extends 'panel.html' %}
 {% block title %}Billing{% endblock %}
 {% block content %}
+{% load static %}
 <div class='row mt-4 mb-4 '>
-	<div class='col-12'>
+	<div class='col-6'>
 		<div class='section-min'>
-			<h1 class='h1-1 '>
-				Billing Snap Shot
-			</h1>
-			<hr>
-		
 
-			<div class='row mt-4'>
-				<div class='col-3'>
-					<h1 class='h1-1'>Total Due</h1>
-					<p class='nums'>${{ billing_totals.totalDue|floatformat:2 }}</p>
+			<h1 class='h1-1'>Billing Overview </h1>
+			<hr>
+			
+
+			{% for biiling in billing_set%}
+			<div class="mini-Slides text-center">
+				<div class="numbertext">
 				</div>
-				<div class='col-3'>
-					<h1 class='h1-1'>Total paid</h1>
-					<p class='nums'>${{ billing_totals.totalPaid|floatformat:2 }}</p>
+				<div class='cardSlide'>
+					<h1 class='h1-1'> 
+						{{ biiling.type|title }}
+					</h1>
+					
+					<h1 class=' mt-4 nums'>
+						${{ biiling.cost|floatformat:'2' }}
+					</h1>
+						
+
 				</div>
-				<div class='col-3'>
-					<h1 class='h1-1'>Outstand</h1>
-					<p class='nums'>${{ billing_totals.outstanding|floatformat:2 }}</p>
-				</div>
-				<div class='col-3'>
-					<h1 class='h1-1'>Earned</h1>
-					<p class='nums'>${{ billing_totals.totalEarned|floatformat:2 }}</p>
-				</div>
+			</div>
+		
+			{% endfor %}
+			<div class='section-min text-center mt-4'>
+				<button class="btn-icon" onclick="plusSlides(-1)"><i class="fa-solid fa-circle-arrow-left fa-2xl"></i></button>
+
+				<button class="btn-icon" onclick="plusSlides(1)"><i class="fa-solid fa-circle-arrow-right fa-2xl"></i></button>
 			</div>
 		</div>
 	</div>
-</div>
-
-<div class='row mt-4 mb-4 '>
-	<div class='col-12'>
+	<div class='col-6'>
+		
 		<div class='section-small'>
 			<h1 class='h1-1 '>
-				Billing Options
+				Billing
 			</h1>
 			<hr>
 			<div class='row'>
-				<div class='col-6 col-md-3 mt-4'>
+				<div class='col-6 mt-4'>
 						<div class='section-pad addLoader text-center'
 						id="detailsBtnInv" 
 						onclick="handleModal('detailsWindowInv', 'detailsBtnInv', 'closeDetailsInv')#detailsWindowInv"
@@ -49,23 +52,7 @@
 							<p class='mt-2'>Create Invoice</p>
 						</div>
 				</div>
-				<div class='col-6 col-md-3 mt-4'>
-					<a href="{% url 'o-project' %}">
-						<div class='section-pad addLoader text-center'>
-							<i class="fa-solid fa-money-bill-1-wave fa-2xl"></i>
-							<p class='mt-2'>Cash Payment</p>
-						</div>
-					</a>
-				</div>
-				<div class='col-6 col-md-3 mt-4'>
-					<a href="{% url 'o-project' %}">
-						<div class='section-pad addLoader text-center'>
-							<i class="fa-solid fa-stamp fa-2xl"></i>
-							<p class='mt-2'>Void Invoice</p>
-						</div>
-					</a>
-				</div>
-				<div class='col-6 col-md-3 mt-4'>
+				<div class='col-6 mt-4'>
 					<a href="{% url 'o-project' %}">
 						<div class='section-pad addLoader text-center'>
 							<i class="fa-solid fa-sliders fa-2xl"></i>
@@ -152,52 +139,73 @@
 					</div>
 				</form>
 			</div>
+			<div class='row'>
+				<div class='col-12 mt-4 mb-4'>
+					{% if invoices %}
+						{% if invoices.has_other_pages %}
+						<div class="btn-group" role="group" aria-label="Item pagination">
+							{% if invoices.has_previous %}
+								<button onclick="window.location.href='?page={{ invoices.previous_page_number }}'" class="btn-icon">&laquo;</button>
+							{% endif %}
 
+							{% for page_number in invoices.paginator.page_range %}
+								{% if invoices.number == page_number %}
+									<button class="btn-icon active">
+										<span>{{ page_number }} <span class="sr-only">(current)</span></span>
+									</button>
+								{% else %}
+									<button onclick="window.location.href='?page={{ page_number }}'" class="btn-icon">
+										{{ page_number }}
+									</button>
+								{% endif %}
+							{% endfor %}
+
+							{% if invoices.has_next %}
+								<button onclick="window.location.href='?page={{ invoices.next_page_number }}'" class="btn-icon">&raquo;</button>
+							{% endif %}
+						</div>
+						{% endif %}
+					{% else %}
+						<p>No items found.</p>
+					{% endif %}
+				</div>
+			</div>
 			<div class='row mt-1'>
 				<div class='col-12'>
 						<div class='row mt-1 text-center' style='width:95%'>
-							<div class='col-3 '>
-								<p class="p-p">Project</p>
+							<div class='col-6 col-md-3'>
+								<p class="p-p">Due Date</p>
 							</div>
-							<div class='col-3'>
-								<p class="p-p"> Client</p>
-							</div>
-							<div class='col-1'>
+							<div class='col-6 col-md-2'>
 								<p class="p-p">Status</p>
 							</div>
-							<div class='col-2'>
+							<div class='col-6 col-md-3'>
+								<p class="p-p"> Client</p>
+							</div>
+							<div class='col-6 col-md-2'>
 								<p class="p-p">Billed</p>
-							</div>
-							<div class='col-2'>
-								<p class="p-p">Paid</p>
-							</div>
-							<div class='col-1'>
-								<p class="p-p">Details</p>
 							</div>
 						</div>
 					<hr>
-					<div class="overflow-auto scroll-menu">
-					{% for inv in invoices %}
-						<div class='col-12 text-center' style='width:95%'>
+					<div class="row">
+						{% for inv in invoices %}
+						<div class='col-12 text-center'>
 							<div class='row mt-1'>
-								<div class='col-3'>
-									<p class="p-p">{{ inv.project_id }}</p>
+								<div class='col-6 col-md-3'>
+									<p class="p-p">{{ inv.due_date }}</p>
 								</div>
-								<div class='col-3'>
-									<p class="p-p">{{ inv.project_id.client_id }}</p>
-								</div>
-								<div class='col-1'>
+								<div class='col-6 col-md-2'>
 									<p class="p-p">{{ inv.status }}</p>
 								</div>
-								<div class='col-2'>
+								<div class='col-6 col-md-3'>
+									<p class="p-p">{{ inv.project_id.client_id }}</p>
+								</div>
+								<div class='col-6 col-md-2'>
 									<p class="p-p">${{ inv.billed|floatformat:2}}</p>
 								</div>
-								<div class='col-2'>
-									<p class="p-p">${{ inv.paid|floatformat:2}}</p>
-								</div>
-								<div class='col-1'>
+								<div class='col-12 col-md-2'>
 
-									<button class="btn-icon" 
+									<button class="btn-icon w-100" 
 									id="detailsBtnInv{{ inv.id }}" 
 									onclick="handleModal('detailsWindowInv{{ inv.id }}', 'detailsBtnInv{{ inv.id }}', 'closeDetailsInv{{ inv.id }}')"
 									>
@@ -208,7 +216,8 @@
 							<hr>
 						</div>
 					{% endfor %}
-					</div>
+				</div>
+				
 				
 				</div>
 			</div>
@@ -219,7 +228,7 @@
 {% include "o_panel/modals/invoice/invoice-crerate-modal.html" %}
 
 <!-- invoice with id  -->
-{% for bill in invoices %}
+{% for bill in invoice_list %}
 	{% include "o_panel/modals/invoice/invoice-details-modal.html" %}
 	{% include "o_panel/modals/invoice/submodals/invoice-edit-modal.html" %}
 	{% include "o_panel/modals/invoice/submodals/invoice-delete-modal.html" %}
@@ -227,7 +236,7 @@
 	{% include "o_panel/modals/invoice/submodals/invoice-send-modal.html" %}
 {% endfor %}
 
-
+<script src="{% static 'js/invoice.js' %}"></script>
 <script>
 
 	function initializeModals() {
@@ -248,4 +257,5 @@
 	  };
 	initializeModals();
 </script>
+<script src={% static 'js/mini_gallery.js' %}></script>
 {% endblock %}

@@ -1,0 +1,1 @@
+const deleteBtn = document.getElementById('delete')

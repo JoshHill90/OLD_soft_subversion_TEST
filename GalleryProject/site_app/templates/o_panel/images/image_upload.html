@@ -1,24 +1,34 @@
 
 {% extends 'panel.html' %}
 {% block title %}O | Image Upload{% endblock %}
-{% block content %}
 {% load static %}
+{% block css %}
+	<link rel='stylesheet' href="{% static 'css/uploadAnimation.css' %}">
+{% endblock %}
+{% block content %}
+
 
 
 
 
 {{object_path}}
-<div class='row mt-4 mb-4'>
+<div class='row mt-4 mb-4' id='uploadsection'>
 	<div class='col-12 h-100'>
-        <form class='form-group' id="uploadForm" method="post" enctype="multipart/form-data">
-            <div class='section-form'>
+        <form class='form-group' id="uploadForm" method=POST enctype="multipart/form-data">
+            <div class='section-form mt-4'>
               <h1 class='h1-1'>Upload Image and Prints</h1>
+              <hr>
                 <div class="mb-5" id='onWait'>
             {% csrf_token %}
-                    <input class="form-control" id='cfURL' type="text" value="{{ front_end_url }}" hidden>
-
-                    <input class="form-control mt-4 mb-4" value="" type="file" id="imageUpload">
+                    <!--   Image upload form  -->
+                    <!--                      -->
+                    <!--                      -->
+                    <input class="form-control mt-4 mb-4" name="files[]" type="file" id="imageUpload" multiple accept="image/*"/>
+                    <!--                      -->
+                    <!--                      -->
+                    <!--                      -->
                     <h1 class='h1-1'>Upload Procedure and Limitations</h1>
+                    <h1 class='h1-1'>Bulk uploads are limit to 100 at a time.</h1>
                     <p class='p-p'> All uploaded images are securely stored using Cloudflare's image hosting service.</p>
                     <p class='p-p'>You are welcome to upload images in the following formats:</p>
                     <ol>
@@ -36,58 +46,50 @@
                       <p class='p-p'>Animated GIFs, inclusive of all frames, must adhere to a limit of 50 megapixels</p>
                     </ol>
                     <p class='p-p'>If an error message shows upload fails please contact the site admin.</p>
-
-                    <input class="form-control" value="{{clfr_id}}" type="text" id="cloudflareid" hidden>
-                    <button class="btn-cust mt-3" onclick="delayedRedirect('{% url 'image-create' clfr_id %}')">Upload Image</button>
-                </div>
+                    <!-- Button -->
+                    <input name='url' value="{% url 'image-upload' %}" id='url' hidden>
+                    <input name='imageCreatePage' value="{% url 'image-process' %}" id='imageCreatePage' hidden>
+                    <input name='cf_token' value="{{ cf_token }}" id='cf_token' hidden>
+                    <button class="btn-cust mt-3" id='uploadButton' name='uploadButton' >Upload Image</button>
+                    <section class="dots-container" id='dotsLoader'>
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                    </section>
+                    <!-- Button -->
+                  </div>
             </div>
         </form>
+        
 	</div>
 </div>
-
-
-        <script>
-          const uploadForm = document.getElementById("uploadForm");
-          const imageUpload = document.getElementById("imageUpload");
-          const cfURL = document.getElementById("cfURL");
-
-          uploadForm.addEventListener("submit", e => {
-            e.preventDefault();
-            const cloudflareId=document.getElementById("cloudflareid").value;
-            localStorage.setItem('setId', cloudflareId);
-            const cloudflare = cfURL.value;
-            const multiPart = new FormData();
-            const metaData = new FormData(uploadForm);
-            multiPart.append('file', imageUpload.files[0]);
-
-            fetch(cloudflare, {
-              method: "post",
-              body: multiPart,
-            })
-              .then(response => response.json())
-              .then(data => {
-
-                console.log(data); // You can access the response data here
-              })
-              .catch(error => {
-                console.error(error);
-                alert(error);
-                return false;
-              });
-          });
-
-          function delayedRedirect(url) {
-            setTimeout(function() {
-              window.location.href = url;
-            }, 1000); // Delay of 1 second (3000 milliseconds)
-          }
-        </script>
-
-
 <div class='row mt-4 mb-4'>
+  <div class='col-12 mt-4 noshow mb-4 float-in text-center' id='uploadAnimation'>
+    <div class="loaderVal mt-4 mb-4" id='validate'>
+      <div class="loaderVal-text"><h1 class='h1-1'>Validating Data...</h1></div>
+      <div class="loaderVal-bar-1 slide-left" id='slide-in'></div>
+    </div>
+
+    <div class="loaderVal mt-4 mb-4" id='backend'>
+      <div class="loaderVal-text"><h1 class='h1-1'>Processing Request...</h1></div>
+      <div class="loaderVal-bar-2 slide-right" id='slide-in'></div>
+    </div>
+
+    <div class='col-12 mt-4 noshow mb-4' id='fileLoader'>
+      <h1 class='h1-1 mt-4 mb-4'>File Upload Progress</h1>
+      <div class='section-specail overflow-auto slide-up mt-4 mb-4' id='slide-in'>
+        <div class='row' id='fileLoaderRow'>
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 </div>
 
 
-<script src={% static 'js/graphs.js' %}></script>
-
+<script src={% static 'js/uploadImages.js' %}></script>
 {% endblock %}

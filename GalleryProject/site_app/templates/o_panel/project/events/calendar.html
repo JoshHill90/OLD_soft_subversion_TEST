@@ -2,70 +2,13 @@
 {% block title %}Projects{% endblock %}
 {% block content %}
 {% load static %}
-{% if user.is_authenticated %}
-
 <div class='row mt-4 mb-4'>
-	<div class='col-4'>
-		<div class='sections-small h-100'>
-			<i class="fa-solid fa-plus">
-				<a onclick="window.location.href='{% url 'project-calendar' year month2 %}'">
-					Add Event
-				</a>
-			</i>
-			<div class='row mt-4 mb-4'>
-				<div class='col-12'>
-					<h1 class='h1-1 text-center'>
-						Soft Subversion Calendar
-					</h1>
-				</div>
-				<div class='col-4 text-center'>
-					{% if month0 == 'December' %}
-					<i class="fa-solid fa-arrow-left" onclick="window.location.href='{% url 'project-calendar' last_year month0 %}'"></i>
-					{% else %}
-					<i class="fa-solid fa-arrow-left" onclick="window.location.href='{% url 'project-calendar' year month0 %}'"></i>
-					{% endif%}
-				</div>
-				<div class='col-4 text-center'>
-					<h1 class='nums'>
-						 {{cal_date|date:"M Y"}}
-					</h1>
-
-				</div>
-				<div class='col-4 text-center'>
-					{% if month2 == 'January' %}
-					<i class="fa-solid fa-arrow-right" onclick="window.location.href='{% url 'project-calendar' next_year month2 %}'"></i>
-					{% else %}
-					<i class="fa-solid fa-arrow-right" onclick="window.location.href='{% url 'project-calendar' year month2 %}'"></i>
-					{% endif%}
-				</div>
-			</div>
-		
-			<h1 class='h1-1 text-center'>Selected Events</h1>
-			<hr>
-			<div class="overflow-auto sections-2"  style='max-height:40vh'>
-				{% for event in event_list %}
-				<div class="collapse w-100" id="{{ event.date|date:"M-d-Y"|slugify }}"> 
-					<div class="inv-card mt-4 mb-4">
-						<div class='inv-card-content'>
-
-							<h1 class='h1-1'>{{ event.title|title }}</h1> 
-
-							<hr>
-							<p class='p-p'>Client: {{ event.project_id.user_id.first_name|title}} {{ event.project_id.user_id.last_name|title}}</p>
-							<p class='p-p'>Date: {{ event.date|date:"Y-M-d"|title}}</p>
-							<p class='p-p'>Start: {{ event.start}} To {{ event.end}} </p> 
-							<button class='btn-cust' onclick="window.location.href='{% url 'project-event' event.id %}'">
-								Event Details
-							</button>
-						</div>
-					</div>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
+	<div class='col-12 mt-4 mb-4'>
+		<h1 class='h1-1'>
+		Soft Subversion Project and Payment Calendar
+		</h1>
 	</div>
-
-	<div class='col-8'>
+	<div class='col-12 order-md-2 col-md-8'>
 		<div class='sections-small'>
 			<div class="big-cal">
 
@@ -128,9 +71,94 @@
 			</div>
 		</div>
 	</div>
+	<div class='col-12 order-md-1 col-md-4'>
+		<div class='sections-mind h-100'>
+
+			<div class='row mt-4 mb-4'>
+				<div class='col-12'>
+					<h1 class='h1-1 text-center'>
+						Soft Subversion Calendar
+					</h1>
+				</div>
+				
+				<div class='col-4 text-center'>
+					{% if month0 == 'December' %}
+					<i class="fa-solid btn-icon fa-arrow-left" onclick="window.location.href='{% url 'project-calendar' last_year month0 %}'"></i>
+					{% else %}
+					<i class="fa-solid btn-icon fa-arrow-left" onclick="window.location.href='{% url 'project-calendar' year month0 %}'"></i>
+					{% endif%}
+				</div>
+				<div class='col-4 text-center'>
+					<h1 class='nums'>
+						 {{cal_date|date:"M Y"}}
+					</h1>
+
+				</div>
+				<div class='col-4 text-center'>
+					{% if month2 == 'January' %}
+					<i class="fa-solid btn-icon fa-arrow-right" onclick="window.location.href='{% url 'project-calendar' next_year month2 %}'"></i>
+					{% else %}
+					<i class="fa-solid btn-icon fa-arrow-right" onclick="window.location.href='{% url 'project-calendar' year month2 %}'"></i>
+					{% endif%}
+				</div>
+			</div>
+		
+			<h1 class='h1-1 text-center'>Selected Events</h1>
+			<hr>
+			<div class='col-12'>
+				<button class=' btn-icon' id="detailsBtnCal" onclick="handleModal('detailsWindowCal', 'detailsBtnCal', 'closeDetailsCal')">
+					<i class="fa-regular fa-plus fa-2xl"></i>
+					<p class="p-p">Add Event</p>
+		
+				</button>
+			</div>
+			<div class="overflow-auto sections-2"  style='max-height:40vh'>
+				{% for event in event_list %}
+				<div class="collapse w-100" id="{{ event.date|date:"M-d-Y"|slugify }}"> 
+					<div class="inv-card mt-4 mb-4">
+						<div class='inv-card-content'>
+
+							<h1 class='h1-1'>{{ event.title|title }}</h1> 
+
+							<hr>
+							<p class='p-p'>Client: {{ event.project_id.client_id.user_id.first_name|title}} {{ event.project_id.client_id.user_id.last_name|title}}</p>
+							<p class='p-p'>Date: {{ event.date|date:"Y-M-d"|title}}</p>
+							<p class='p-p'>Start: {{ event.start}} To {{ event.end}} </p> 
+							<button class='btn-cust' onclick="window.location.href='#'">
+								Event Details
+							</button>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+
 </div>
+{% include "o_panel/modals/events/event-create-modal.html" %}
+<script>
+	function initializeModals() {
+		console.log("Initializing modals...");
+		document.addEventListener("DOMContentLoaded", function() {
+			
+			handleModal('detailsWindowCal', 'detailsBtnCal', 'closeDetailsCal');
+			
+			{% for bill in billing_list %}
+			handleModal('detailsWindowInv{{ bill.id }}', 'detailsBtnInv{{ bill.id }}', 'closeDetailsInv{{ bill.id }}');
+			{% if bill.status == 'draft' or bill.status == 'open' %}
+			handleModal('detailsWindowInvCash{{ bill.id }}', 'detailsBtnInvCash{{ bill.id }}', 'closeDetailsInvCash{{ bill.id }}');
+			handleModal('detailsWindowInvDel{{ bill.id }}', 'detailsBtnInvDel{{ bill.id }}', 'closeDetailsInvDel{{ bill.id }}');
+			handleModal('detailsWindowInvEdit{{ bill.id }}', 'detailsBtnInvEdit{{ bill.id }}', 'closeDetailsInvEdit{{ bill.id }}');
+			handleModal('detailsWindowInvSend{{ bill.id }}', 'detailsBtnInvSend{{ bill.id }}', 'closeDetailsInvSend{{ bill.id }}');
+			{% endif %}
+			{% endfor %}
+		});
 
-
-{% endif %}
+	};
+	console.log(initializeModals());
+	initializeModals();
+</script>
 
 {% endblock %}

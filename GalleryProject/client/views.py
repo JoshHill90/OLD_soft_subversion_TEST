@@ -33,7 +33,10 @@ smtp_request = AutoReply()
 cf_image = APICall()
 vef = ViewExtendedFunctions()
 docf = DocumentFunctions()
+
+
 def o_client(request):
+    
 	client_list = Client.objects.exclude(Q(name='Soft Subversion'))
 	client_images = Image.objects.exclude(Q(client_id__name="Soft Subversion"))
 	project_list = Project.objects.exclude(Q(name="Soft Subversion"))
@@ -59,6 +62,11 @@ def o_client(request):
 		client_list = client_list.order_by('id')
 	else:
 		client_list = client_list.order_by('-id')
+	set_number = 4	
+	client_p = Paginator(client_list.all(), set_number)
+	page = request.GET.get('page')
+	client_sets = client_p.get_page(page)
+ 
 	try:    
 		if request.method == 'POST' and 'delete' in request.POST:
 			object_id = request.POST.get('object_id')
@@ -75,7 +83,8 @@ def o_client(request):
 		'client_list': client_list,
 		'client_images':client_images,
 		'project_list': project_list,
-		'project_request': project_request
+		'project_request': project_request,
+		'client_sets': client_sets, 
 	})
 	
 class InviteView(CreateView):
@@ -284,8 +293,6 @@ def project_details(request, slug):
 					slugified_error_message = slugify(str(operation)) 
 					return redirect('issue-backend', status=508, error_message=slugified_error_message)
 
-	else:
-		note_form = NotesForm()
 	
 	# Notess 
 			

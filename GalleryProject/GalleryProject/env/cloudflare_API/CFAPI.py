@@ -45,6 +45,18 @@ class APICall:
 
     def __int__(self):
         super().__init__()
+        
+    def get_batch_token(self):
+        url = f'https://api.cloudflare.com/client/v4/accounts/{account_ID}/images/v1/batch_token'
+        headers = {
+            'Authorization': f'Bearer {api_key}',
+            'Content-type': 'application/json',
+            'X-Auth-Email': user_email
+        }
+        response = requests.get(url, headers=headers)
+        cloudflare_token = response.json()["result"]["token"]
+        print(cloudflare_token)
+        return cloudflare_token
 
     def auth_direct_upload(self, encoded_data, ):
         url = f'https://api.cloudflare.com/client/v4/accounts/{account_ID}/images/v2/direct_upload'
@@ -54,21 +66,29 @@ class APICall:
             'X-Auth-Email': user_email
         }
         response = requests.post(url, headers=headers, data=encoded_data)
-        print(response.text)
-        cloudflare_id = response.json()["result"]["id"]
-        print('id ', cloudflare_id)
-        return cloudflare_id
+        
+        if response.json()["result"]["id"]:
+            cloudflare_id = response.json()["result"]["id"]
+            
+            return str(cloudflare_id)
+        else:
+            
+            return 'error', response
 
-    def front_end_upoload(self, encoded_data, cloudflare_id, metadata, img_file):
+    def get_batch_urls(self, encoded_data, token):
 
-        url = f'https://upload.imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/{cloudflare_id}'
-        print(url)
-        meta_list = metadata
+        url = f'https://batch.imagedelivery.net/images/v2/direct_upload?result=3'
         headers = {
+            'Authorization': f'Bearer {token}',
             'Content-type': encoded_data.content_type,
+            'X-Auth-Email': user_email
+            
         }
-        response = requests.post(url, headers=headers, data=meta_list)
-        print(response.text)
+
+        response = requests.post(url, headers=headers, data=encoded_data)
+        cloudflare_id = response.json()
+        
+        return cloudflare_id
 
     def back_end_upoload(self, meta_passed, img_file):
         print('made it')
@@ -115,7 +135,7 @@ class APICall:
             'Content-type': 'application/json',
             'X-Auth-Email': user_email
         }
-        time.sleep(15)
+        time.sleep(.02)
         response = requests.delete(url, headers=headers)
         print(response.text)
 
@@ -133,7 +153,7 @@ class APICall:
         print(response.text)
 
     def image_download(self, cloudflare_id):
-        ''
+
         url = f'https://api.cloudflare.com/client/v4/accounts/{account_ID}/images/v1/{cloudflare_id}/blob'
 
         headers = {
@@ -145,43 +165,22 @@ class APICall:
         response = requests.get(url, headers=headers)
         print(response.text)
 
-    def image_update(self, meta_passed, cloudflare_id, type_image):
-        print(meta_passed, cloudflare_id)
-        if type_image == 'image':
-            title, tag, private, display, aspect, client_id, project_id, cloudflare_id, silk_id  = meta_passed
+    def image_update(self, meta_passed, cloudflare_id):
+        print(cloudflare_id)
 
-            metadata_packed = { 
-                            'title': title,
-                            'tag': tag,
-                            'private': private,
-                            'display': display,
-                            'aspect': aspect,
-                            'client_id': client_id,
-                            'project_id': project_id, 
-                            'cloudflare_id': cloudflare_id, 
-                            'silk_id': silk_id
-
-            }
+        metadata_packed = { 
+                        'title': str(meta_passed.get('title')),
+                        'tag': str(meta_passed.get('tag')),
+                        'display': str(meta_passed.get('display')),
+                        'client_id': str(meta_passed.get('client_id')),
+                        'project_id': str(meta_passed.get('project_id')), 
+                        'silk_id': str(meta_passed.get('silk_id'))
+        }
             
-            
-        elif type_image == 'print':
-            title, cost, details, status, display, aspect, cloudflare_id, silk_id  = meta_passed
-            cost = str(cost)
-            metadata_packed = { 
-                            'title': title,
-                            'cost': cost,
-                            'details': details,
-                            'status': status,
-                            'display': display,
-                            'aspect': aspect,
-                            'cloudflare_id': cloudflare_id, 
-                            'silk_id': silk_id
 
-            }
-            private = status
 
-        url = f'https://api.cloudflare.com/client/v4/accounts/{account_ID}/images/v1/{cloudflare_id}'
-        print(url)
+        url = f"https://api.cloudflare.com/client/v4/accounts/{account_ID}/images/v1/{cloudflare_id}"
+        
 
         headers = {
             'Authorization': f'Bearer {api_key}',
@@ -189,13 +188,18 @@ class APICall:
             'X-Auth-Email': user_email
         }
         data = {
-            'filename': title,
+            'filename': meta_passed.get('title'),
             'metadata': metadata_packed,
-            'requireSignedURLs': private
+            'requireSignedURLs': False
         }
-        time.sleep(15)
+        time.sleep(.02)
         response = requests.patch(url, headers=headers, json=data)
-        print(response.text)
+        if response.json()["success"] == True:
+            cloudflare_id = response.json()["result"]["id"]
+            
+            return 'success'
+        else:
+            return 'error', response
     # Backend Oberations
     # this function can be used to import a large set of images that already exits in the CDN. Ideally for the initial migration to the site/app     
 """    def mass_import(self):

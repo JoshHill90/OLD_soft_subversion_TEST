@@ -30,8 +30,8 @@
 		</div>
 		
 		<div class='mt-4 mb-4'>
-			<a href="{% url 'o-client' %}">
-				<div class='section-pad text-center'>
+			<a href="#">
+				<div class='section-pad-disabled text-center'>
 					<i class="fa-regular fa-address-book fa-2xl"></i>
 					<p class='mt-2'>Message Client</p>
 				</div>
@@ -89,21 +89,12 @@
 		</div>
 
 		<div class='mt-4 mb-4'>
-		<a href="{% url 'create-invoice' %}">
+		<a href="{% url 'o-billing' %}">
 			<div class='section-pad addLoader text-center'>
 				<i class="fa-solid fa-file-invoice fa-2xl"></i>
 				<p class='mt-2'>Create Invoice</p>
 			</div>
 		</a>
-		</div>
-
-		<div class='mt-4 mb-4'>
-			<a href="{% url 'o-project' %}">
-				<div class='section-pad addLoader text-center'>
-					<i class="fa-solid fa-money-bill-1-wave fa-2xl"></i>
-					<p class='mt-2'>Cash Payment</p>
-				</div>
-			</a>
 		</div>
 	</div>
 
@@ -115,7 +106,7 @@
 		<hr>
 		<div class='mt-4 mb-4'>
 			<a href="{% url 'o-client' %}">
-				<div class='section-pad addLoader text-center'>
+				<div class='section-pad-disabled addLoader text-center'>
 					<i class="fa-solid fa-gears fa-2xl"></i>
 					<p class='mt-2'>Automate</p>
 				</div>
@@ -124,7 +115,7 @@
 		
 		<div class='mt-4 mb-4'>
 			<a href="{% url 'invite' %}">
-					<div class='section-pad addLoader text-center' >
+					<div class='section-pad-disabled addLoader text-center' >
 					<i class="fa-solid fa-user-gear fa-2xl"></i>
 					<p class='mt-2'>Client settings</p>
 				</div>
@@ -133,7 +124,7 @@
 		
 		<div class='mt-4 mb-4'>		
 			<a href="{% url 'o-project' %}">
-				<div class='section-pad addLoader text-center'>
+				<div class='section-pad-disabled addLoader text-center'>
 					<i class="fa-solid fa-sliders fa-2xl"></i>
 					<p class='mt-2'>Invoice Settings</p>
 				</div>
@@ -142,7 +133,7 @@
 		
 		<div class='mt-4 mb-4'>
 			<a href="{% url 'o-client' %}">
-				<div class='section-pad addLoader text-center'>
+				<div class='section-pad-disabled addLoader text-center'>
 					<i class="fa-solid fa-file-contract fa-2xl"></i>
 					<p class='mt-2'>Documents</p>
 				</div>

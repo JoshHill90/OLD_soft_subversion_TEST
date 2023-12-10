@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel='stylesheet' href="{% static 'css/main_style.css' %}">
+    <link rel='stylesheet' href="{% static 'css/gallery.css' %}">
     <link rel='stylesheet' href="{% static 'css/animation.css' %}">
 		<script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -18,14 +19,14 @@
 
     <title>    
         {% block title %}
-          Silk Threads
+          Soft Subversion
         {% endblock %}
     </title>
 </head>
 <body class='body-main'>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand">Soft Subveersion</a>
+      <a class="navbar-brand">Soft Subversion</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,13 +36,13 @@
             <a class="nav-link active" href="{% url 'index' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link p-p" href="{% url 'gallery' %}">Gallery</a>
+            <a class="nav-link p-p" href="{% url 'index' %}#Gallery">Gallery</a>
           </li>
           <li class="nav-item">
             <a class="nav-link p-p" href="{% url 'contact' %}">Book</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link p-p" href="{% url 'about' %}">About</a>
+            <a class="nav-link p-p" href="{% url 'index' %}#about">About</a>
           </li>
 
           {% if user.is_authenticated %}
@@ -56,7 +57,7 @@
                     <li><a class="dropdown-item" href="{% url 'c-panel' user.id %}">Clients Panel</a></li>
                     <li><a class="dropdown-item" href="#">Billing</a></li>
                     <div class="dropdown-divider"></div>
-                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                    <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                     <li><a class="dropdown-item" href="#">Profile</a></li>
                   </ul>
                 </li>
@@ -66,13 +67,13 @@
                     Owners 
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="{% url 'o_panel' %}">Owners Panel</a></li>
+                    <li><a class="dropdown-item" href="{% url 'binder' %}">Owners Panel</a></li>
                     <div class="dropdown-divider"></div>
-                    <li><a class="dropdown-item" href="#">Clients Panel</a></li>
-                    <li><a class="dropdown-item" href="#">Gallery Panel</a></li>
-                    <li><a class="dropdown-item" href="#">Billing Panel</a></li>
+                    
+                    <li><a class="dropdown-item" href="{% url 'o-gallery' %}">Galleries</a></li>
+                   
                     <div class="dropdown-divider"></div>
-                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                    <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                     <li><a class="dropdown-item" href="#">Profile</a></li>
                   </ul>
                 </li>
@@ -96,29 +97,31 @@
     </div>
   </nav>
 
-  <!------------------------------------------------>
+  <!--                       --> 
   <!-- dynamic content block -->
-  <!------------------------------------------------>
-  
-  <div class='container-fluid'>
-    {% block content %}
-  
-    {% endblock %}
-  </div>
+  <!--                       --> 
 
-    <!------------------------------------------------>
-    <!-- dynamic content block -->
-    <!------------------------------------------------>  
-    <div class="container-fluid bg-dark">
+
+  {% block content %}
+
+  {% endblock %}
+
+
+  <!--                       --> 
+  <!-- dynamic content block -->
+  <!--                       -->  
+  
+  <div class="container-fluid bg-dark">
+    <div class="container">
       <footer class="py-5">
         <div class="row">
           <div class="col-6 col-md-2 mb-3">
             <h3 class='h3-3'>Soft Subversion</h3>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" target="_blank" class="nav-link p-0 p-p text-body-secondary">How it Works</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 p-p text-body-secondary">Contact</a></li>
-              <li class="nav-item mb-2"><a href="#" target="_blank" class="nav-link p-0 p-p text-body-secondary">Gallery</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 p-p text-body-secondary">About</a></li>
+              <li class="nav-item mb-2"><a href="{%url 'index' %}#how" class="nav-link p-0 p-p text-body-secondary">How it Works</a></li>
+              <li class="nav-item mb-2"><a href="{%url 'contact' %}" class="nav-link p-0 p-p text-body-secondary">Contact</a></li>
+              <li class="nav-item mb-2"><a href="{%url 'index' %}#Gallery" class="nav-link p-0 p-p text-body-secondary">Gallery</a></li>
+              <li class="nav-item mb-2"><a href="{%url 'index' %}#about" class="nav-link p-0 p-p text-body-secondary">About</a></li>
             </ul>
           </div>
     
@@ -126,17 +129,17 @@
             <h3 class='h3-3 text-center'>Follow Me</h3>
             <div class="nav">
             <ul>
-              <a  href='https://github.com/JoshHill90' target='bank'> <i class="fa-brands fa-instagram fa-2xl fa-space" style="color: #7933fc;"></i></a>
+              <a  href='https://www.instagram.com/soft_subversion/' target='bank'> <i class="fa-brands fa-instagram fa-2xl fa-space" style="color: #7933fc;"></i></a>
             </ul>
             </div>
           </div>
     
           <div class="col-md-5 offset-md-3 mb-3 form-group">
-            <form autocomplete="off" method="POST" action="{% url 'index' %}">
-              <h3 class='h3-3'>Soft Subversion</h3>
-              <p class='p-p'>Book you next shoot today!</p>
-              <button type="submit" class="btn-cust btn-cust-color">Book</button>
-            </form>
+            
+            <h3 class='h3-3'>Soft Subversion</h3>
+            <p class='p-p'>Book you next shoot today!</p>
+            <button onclick="window.location.href='{% url 'contact' %}'" class="btn-cust btn-cust-color">Book</button>
+          
           </div>
         </div>
         <hr class='p-p'>
@@ -151,6 +154,7 @@
         
       </footer>
     </div>
-      <script src="https://kit.fontawesome.com/00f4d71521.js" crossorigin="anonymous"></script>
+  </div>
+  <script src="https://kit.fontawesome.com/00f4d71521.js" crossorigin="anonymous"></script>
 </body>
 </html>

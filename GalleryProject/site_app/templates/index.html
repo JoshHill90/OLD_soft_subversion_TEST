@@ -1,16 +1,63 @@
 {% extends 'scheme.html' %}
 {% load static %}
 {% block content %}
-  <div class='hero-section'id='boxObject'>
-    {% for image in image_list %}
-    <div class='image-objects display-off' style="background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{image.image_link}}')"></div>
-    {% endfor %}
-    <div class='index-hero-box slide-up' id='slide-in'>
-      <h1 class='h1-1' >Soft Subversion</h1>
-      <p class='p-p'>Let's capture the moment and make it a memorey</p>
-    </div>
-  </div>
+
+<div class='container-fluid'>
+
+			
+	<div class='hero-section scroll-up2'id='boxObject'>
+		{% for image in image_list %}
+		<div class='image-objects display-off' style="background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{image.image_link}}')"></div>
+		{% endfor %}
+		<div class='index-hero-box slide-up' id='slide-in'>
+			<div class='row'>
+				<article class='col-12'>
+					<h1 class='h1-1' >Soft Subversion</h1>
+
+					<p class='p-p'>
+						Photographer and Videographer based in Nashville TN.<br>
+						Let's capture the moment</br>
+						Make it a memorey</br>
+						Charresit the magic
+					</p>
+				</article>
+
+				<div class='col-12 col-md-4'>
+					<button class='btn-cust btn-cust-color' onclick="window.location.href={% url 'contact' %}">Book</button>
+				</div>
+				<div class='col-12 col-md-8'>
+					<a href='#Gallery'>
+						<h3 class='h3-3 text-right next-gal'>
+						<b>Galleries</b> <i class="fa-solid down-arrow fa-arrow-down"></i>
+						</h3>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class='section-inner-2'></div>
+<div class='container-fluid bg-set'>
+	<div class='container mt-4 mb-4'>
+	{% include "index-gallery.html" %}
+	</div>
+</div>
+
+
+
+<div class='container mt-4 mb-4'>	
+	
+	{% include "about.html" %}
+	
+</div>
+
+
+<div class='section-inner'></div>
+
+
 <script src="{% static '/js/float_in.js' %}"></script>
 <script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
 <script src="{% static '/js/heroGallery.js'%}"></script>
+
 {% endblock %}

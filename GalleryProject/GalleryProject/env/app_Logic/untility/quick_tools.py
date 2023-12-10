@@ -421,3 +421,14 @@ class ViewExtendedFunctions:
 		except Exception as e:
 			return f'Invoice Operation Error:{e}'
 
+
+	def delete_image_set(self, image_object):
+		try:
+			for pic in image_object:
+				cf_images.delete_image(pic.cloudflare_id)
+				pic.delete()
+
+			return 'success'
+
+		except Exception as e:
+			return f'Invoice Operation Error:{e}'
