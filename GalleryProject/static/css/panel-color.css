@@ -1,0 +1,67 @@
+/*font import*/
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Calistoga&display=swap');
+/*variable*/
+:root{
+  --mc-1: #0c0519;
+  --mc-2: #301365;
+  --mc-3: #5422b0;
+  --mc-4: #7830fc;
+  --mc-5: #a16efd;
+  --mc-6: #c9acfe;
+  --mc-7: #f2eaff;
+
+  --mc2-1: #001119;
+  --mc2-2: #004464;
+  --mc2-3: #0077af;
+  --mc2-4: #00aafa;
+  --mc2-5: #4dc4fc;
+  --mc2-6: #99ddfd;
+  --mc2-7: #e6f7ff;
+
+  --mc3-1: #031400;
+  --mc3-2: #0e5200;
+  --mc3-3: #198f00;
+  --mc3-4: #23cc00;
+  --mc3-5: #65db4d;
+  --mc3-6: #a7eb99;
+  --mc3-7: #e9fae6;
+
+  --bg-1: #030304;
+  --bg-2: #0c0d11;
+  --bg-3: #16161e;
+  --bg-4: #1f202b;
+  --bg-5: #62636b;
+  --bg-6: #a5a6aa;
+  --bg-7: #e9e9ea;
+
+  --mc-3-o: #5422b08e;
+  --mc-4-o: #7730fccc;
+  --mc-5-o: #a16efd8e;
+
+
+  --text-color:var(--bg-7);
+  --text-color-secondary:rgb(121, 121, 121);
+  --bg-color:var(--bg-4);
+  --bg-color-secondary:linear-gradient(315deg, var(--mc-1), var(--mc2-1));
+  --bg-shadow:  rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  --bg-color-nav:var(--bg-6);
+  --bg-color-opec:#979090a2;
+  --font-family-header:'Arvo', serif;
+  --numbers: 'Calistoga', cursive;
+  --h1: 25px;
+  --p: 16px;
+  --np:25px;
+  --font-weights-norm: 400;
+  --arvo-norm: 400;
+  --nav-width: 70px;           
+  --first-color: #7933FC; 
+  --sec-color: #58ffa3;          
+  --first-color-light: #000000;          
+  --white-color: #7933FC;         
+  --border-light-color: var(--mc-7);                    
+  --z-fixed: 100;
+  --lingrand: linear-gradient(39deg, rgba(120,48,252,1) 0%, rgba(0,170,250,1) 64%, rgba(35,204,0,1) 100%);
+  --lingrand-bar: radial-gradient(circle, rgba(120,48,252,1) 0%, rgba(0,170,250,1) 64%, rgba(35,204,0,1) 100%);
+  --line-border-fill: var(--mc-5);
+  --line-border-empty: #13131300;
+}

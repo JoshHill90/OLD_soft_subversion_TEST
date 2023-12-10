@@ -51,19 +51,19 @@ def col3_col6_col3(list_items):
 
 		elif item in land_list:
 			if balancer_1 < balancer_3 and balancer_1 < balancer_2 or balancer_1 == 0:
-				balancer_1 += .75
+				balancer_1 += .5
 				col1.append(item)
 			elif balancer_3 < balancer_2:
-				balancer_3 += .75
+				balancer_3 += .5
 				col3.append(item)
 			elif balancer_1 < left_ratio:
-				balancer_1 += .75
+				balancer_1 += .5
 				col1.append(item)
 			elif balancer_3 < right_ratio:
-				balancer_3 += .75
+				balancer_3 += .5
 				col3.append(item)
 			else: 
-				balancer_2 += .75
+				balancer_2 += .5
 				col2.append(item)
     
     

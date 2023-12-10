@@ -1,45 +1,58 @@
-{% extends 'scheme.html' %}
-{% load static %}
-{% block content %}
-<div class="body-about scroll-up">
-  <div class="row">
-    <div class="col-md-6 about-box-2">
-      <div class="text-center">
-        <br/>
-        <br/>
-        <h1 class="h1-1">Hi there! I'm Carly</h1>
-        <p class="p-p">I'd be honored to capture your memories and bring your vision to life.</p>
-        <a href="/book.html">
-        <button class="btn-cust btn-cust-color p-2">Book</button></a>
-      </div>
-    </div>
-    <div class='col-md-6 about-box'>
-      <img class="img-fluid" src='https://imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/6ebb9247-da59-4b0e-eab2-92e7b604fd00/heroObjectLeft'>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 order-md-2 about-box-2">
-      <h1 class="h1-1">About me</h1>
-      <p class="p-p">Hi there! I'm Carly, a photographer based in the beautiful Pacific Northwest. 
-      Growing up in eastern Washington sparked my love for visual arts and eventually led me to pursue a 
-      career in film production. Videography is a passion of mine that I hold near and dear, but after graduating, 
-      I fell in love with capturing the stillness through the lens of a camera. I've been drawn to photography for 
-      the past six years, and I especially love film photography for its ability to add a unique texture 
-      and depth to each image.
 
-      <br><br>
+<div class="about h-100 scroll-up1">
+	<div class='section-inner'>
+		<hr class='hr-hr'>
+		<h1 class='h1-1 text-center' id="about">
+			About Me
+		</h1>
+		<hr class='hr-hr'>
+	</div>
+	<div class="row">
+		<div class="col-md-6 about-box-2">
 
-      My goal is to create bold, dramatic scenes filled with vibrant colors that transport you to another time and 
-      place. I'm a dreamer at heart and love to explore new concepts and ideas. I'm open to all types of projects, 
-      from branding to portraits, couples to concerts, and special events. I'd be honored to capture your memories and 
-      bring your vision to life. Let's create something beautiful together!</p>
-    </div>
-    <div class="col-md-6 order-md-1 about-box">
-      <img class="img-fluid" src="https://imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/5e4031fb-98ff-4279-a120-3c0e66779e00/public" style="max-height: 50vh;">
-    </div>
-  </div>
+			<div class="text-center">
+				<br/>
+				<br/>
+				<h1 class="h1-1">Hi there! I'm Carly</h1>
+				<p class="p-p">I'd be honored to capture your memories and bring your vision to life.</p>
+				<a href="{%url 'contact' %}">
+				<button class="btn-cust btn-cust-color p-2">Book</button></a>
+			</div>
+
+		</div>
+
+		<div class='col-md-6 about-box'>
+			<img class="img-fluid" src='https://imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/6ebb9247-da59-4b0e-eab2-92e7b604fd00/heroObjectLeft'>
+		</div>
+		
+	</div>
+
+	<div class="row "  id='scrollHit1'>
+		<div class="col-md-6 order-md-2 about-box-2">
+			<h1 class="h1-1">About me</h1>
+			<p class="p-p">Hello there! I'm Carly, a photographer now based in the vibrant city of Nashville, TN. 
+			Originally from the beautiful Pacific Northwest, my journey in visual arts began in eastern 
+			Washington, sparking a deep love for creative expression. While my background initially led 
+			me to a career in film production, my post-graduation exploration brought me to a profound 
+			appreciation for capturing moments through the stillness of a camera lens.
+
+			<br><br>
+
+			With over six years of experience in photography, I've developed a particular fondness for film 
+			photography, drawn to its ability to infuse each image with a unique texture and depth. My 
+			mission is to craft bold, dramatic scenes saturated with vibrant colors, transporting viewers 
+			to other times and places. As a dreamer at heart, I thrive on exploring new concepts and ideas, 
+			welcoming a diverse range of projects, from branding and portraits to couples, concerts, and 
+			special events.
+			<br><br>
+
+			I would be honored to be a part of capturing your memories and bringing your vision to life 
+			in my new home of Nashville, TN. Let's collaborate and create something beautiful together!
+			</p>
+		</div>
+
+		<div class="col-md-6 order-md-1 about-box">
+			<img class="img-fluid about-img" src="https://imagedelivery.net/4_y5kVkw2ENjgzV454LjcQ/5e4031fb-98ff-4279-a120-3c0e66779e00/public" style="max-height: 50vh;">
+		</div>
+	</div>
 </div>
-<script src="{% static '/js/float_in.js' %}"></script>
-<script src="{% static '/js/scroll_effects.js' %}"></script>
-
-{% endblock %}

@@ -1,36 +1,45 @@
 
 {% extends 'panel.html' %}
-{% block title %}O | {{ gal }} Gallery{% endblock %}
-{% block content %}
 {% load static %}
+{% block title %}O | {{ gal }} Gallery{% endblock %}
+{% block css %}
+	<link rel='stylesheet' href="{% static 'css/imageCard.css' %}">
+{% endblock %}
+{% block content %}
 
-<div class='row mt-4 mb-4'>
-	<div class='col-12'>
-		<div class='section-small'>
-			<input id='subgal' value="{{ subgal}}" disabled hidden>
-			<input id='lastPage' value="{{ last_page }}" disabled hidden>
-			<h1 class='h1-1 text-center'>{{ gal_name.name| title}}Gallery</h1>
+<input id='subgal' value="{{ subgal}}" disabled hidden>
+<input id='lastPage' {% if last_page %} value="{{ last_page }}" {% else %} value='1' {% endif %} disabled hidden>
+<input id='pageName' value="gal" disabled hidden>
+<div class='row'>
+	<div class='col-12 mt-4 mb-4'>
+		<h1 class='h1-1'>{{ gal_name.name| title}}  Gallery</h1>
+		<hr>
+	</div>
+	{% if current_list %}
+	<div class='col-12 col-md-6'>
+		
+		<div class='section-min'>
+
+
 			
 			{% for image in current_list %}
 			
 			<div class="mini-Slides text-center">
-				<p class="p-p">Image Gallery #{{ forloop.counter }}</p>
-				<img class='image-frame' src="{{ image.image_link }}">
-				<div class="row">
-					
-					<form method=POST action="{% url 'change-gal' gal subgal %}" >
-						{% csrf_token %}
-						<input value='{{ image.id }}' namd='{{ image.id }}' id='header_id' hidden>
-						<button class="btn-cust" name='header' value='{{ image.id }}'>Make Header</button>
-					</form>
-				
-
+				{% if subgal == '4' or subgal == '6' or subgal == '8' %}
+				<form method=POST action="{% url 'change-gal' gal subgal %}" >
+					{% csrf_token %}
+					<input value='{{ image.id }}' namd='{{ image.id }}' id='header_id' hidden>
+					<button class="btn-cust" name='header' value='{{ image.id }}'>Make Header</button>
+				</form>
+				{% endif %}
+				<div class='section-holder'>
+					<p class="p-p">Image name{{ image.title}}</p>
+					<img class='image-frame' src="{{ image.image_link }}">
 				</div>
+				
 			</div>
-	
-		
-		
 			{% endfor %}
+			
 			<div class='section-min text-center'>
 				<button class="btn-icon" onclick="plusSlides(-1)">
 					<i class="fa-solid fa-circle-arrow-left fa-2xl"></i>
@@ -39,35 +48,46 @@
 					<i class="fa-solid fa-circle-arrow-right fa-2xl"></i>
 				</button>
 			</div>
-			<div class='overflow-auto text-center max-scroll'>
-				<div 'img-box-gall-sm'>
-					<div class="row">
-						{% for image in current_list %}
-						<div class="col">
-							
-							<img load='lazy'
-							class="demo mt-4 mb-4 cursor-mini {% if image.display == gal %} helight-shadow {% endif %}" 
-							src="{{ image.image_link }}" 
-							style="height:10vh" 
-							onclick="currentSlide({{ forloop.counter }})" 
-							alt="Image ID: {{image.id}}"
-							>
-						</div>
-						{% endfor %}
-					</div>
-					
-				</div>
-			</div>
-			
+
 		</div>
 	</div>
+	<div class='col-12 col-md-6'>
+		<div class='overflow-auto '>
+			<div class="row section-scroll-2">
+				{% for image in current_list %}
+				<div class="slide-up text-center col" id='slide-in'>
+						<img load='lazy'
+						class="demo mt-4 mb-4 cursor-mini {% if gal in image.display %} helight-shadow {% endif %}" 
+						src="{{ image.image_link }}"
+						style="height:20vh" 
+						onclick="currentSlide({{ forloop.counter }})" 
+						alt="Image ID: {{image.id}}"
+						>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+	{% else %}
+	<div class='col-12'>
+		<div class='cardSlide mt-4 mb-4'>
+			<h1 class='h1-1 text-center'>
+				Please use the gallery controls to add images.
+			</h1>
+		</div>
+	</div>
+	{% endif %}
 	<hr>
 	<div class='col-12 mt-4 mb-4'>
 		<div class='section-med'>
 			<h1 class='h1-1 mb-2'>Image Search and Filter</h1>
 			<form method="GET" action="." class='form-group'>
 				<div class='row'>
-					<div class='col-12 mb-2'>
+					<div class='col-12 col-md-4 mb-2'>
+						<input class="form-control"  type="search" name="tags" placeholder="Tags">
+					</div>
+					<div class='col-12 col-md-4 mb-2'>
 						<input class="form-control" list="project-list" type="search" name="project" placeholder="Project">
 						<datalist id="project-list">
 						{% for project in project_list %}
@@ -75,7 +95,7 @@
 						{% endfor %}
 						</datalist>
 					</div>
-					<div class='col-12 mb-2'>
+					<div class='col-12 col-md-4 mb-2'>
 						<input class="form-control" 
 						list="client-list" 
 						type="search" 
@@ -90,121 +110,127 @@
 					</div>
 				</div>
 				<div class='row'>
-					<div class="col-6 col-md-2 mt-4">
+					<div class="col-12 col-md-3 mt-4">
 						<select class="form-select" type="select" name="order">
 							<option value="Newest">Newest</option>
 							<option value="Oldest">Oldest</option>
 						</select>
+						
+						<lable class='p-p mt-4'>Currrent gallery images only</lable>
+						<input class="form-check-input text-center" type="checkbox" id='current' name="current" value='True'>
+
 					</div>                
-					<div class="col-6">
+					<div class="col-12 col-md-3 mt-4">
 						<button type="submit" class="btn-cust btn-cust-color mt-4">Search</button>
+					</div>
+
+					<div class="col-12 col-md-3 mt-4">
+						<button type="submit" onclick="{% url 'change-gal' gal subgal %}" class="btn-cust btn-cust-color mt-4">Clear Search</button>
 					</div>
 				</div>
 			</form>
-
 
 			<form method=POST action="{% url 'change-gal' gal subgal %}" class='mt-4 section-med form-group'>
 				{% csrf_token %}
 				<div class="row" >
 					<div class='col-12'>
 						<h1 class='h1-1'>
-							Images 
+							Gallery Controls 
 						</h1>
 						<hr>
 						<p class='p-p'>
 							Select and deselect images to add and remove them. 
 						</p>
-
-
 					</div>
 				</div>
 
-
 				<div class="row">
-					<div class='col-12 mb-4'>
-						<button class='btn-cust' name="keyler" value="update">
+					<div class='col-12 col-md-3 mb-4'>
+						<button class='btn-cust addLoader' name="keyler" value="update">
 							Update
 						</button>
 					</div>
-					<div class='col-12 col-md-3'>
+					<div class='col-12 col-md-3 mb-4'>
+						<button class='btn-cust addLoader' name="keyler" value="remove">
+							Remove
+						</button>
+					</div>
+					<div class='col-12 col-md-3 mb-4'>
+						<button class='btn-cust addLoader' name="keyler" value="clearAll">
+							Clear Gallery
+						</button>
+					</div>
+					<div class='col-12'>
 						<p class="p-p">
 							Select All
-							<input class="form-check-input text-center" onclick='toggle(this)' type="checkbox" value="" id="selectAll">
+							<input class="form-check-input text-center" onclick='toggle(this)' name='selectAll' type="checkbox" value="" id="selectAll">
 						</p>
 	
 					</div>
-					<div class='col-12 col-md-1'>
-						<p class="p-p">
-							Image ID: 
-						</p>
-					</div>
-					<div class='col-12 col-md-4'>
-						<p class="p-p">
-							Projet Name: 
-						</p>
-					</div>
-					<div class='col-12 col-md-4'>
-						<p class="p-p">
-							Image Title: 
-						</p>
-					</div>
-
-
 				</div>
 				<hr>
 
 					
-				<div class="row" id='imageRow'>
+				<div class="row text-center" id='loaderRow'>
 					{%for image in image_sets %}
-					<div class="col-12 mb-4">
-						<div class="row">
-							{% if image in current_list %}
-							<div class='col-6 col-md-3'>
-								<p class='p-p'>
-									Include<br>
-									<input class="form-check-input text-center" checked type="checkbox" name='checkbox{{image.id}}' value="{{image.id}}" id="id_check">
-								</p>
-							</div>
+					<div class="col mt-4 mb-4 slide-up" id='slide-in'>
+						{% if image in current_list %}
+						<div class="image-card-a">
+							<input 
+								class="noshow checkImage form-check-input" 
+								checked type="checkbox" 
+								name='checkbox{{image.id}}' 
+								value="{{image.id}}" 
+								id="id_check{{image.id}}"
+							>
 							{% else %}
-							<div class='col-6 col-md-3'>
-								<p class='p-p'>
-									Include <br>
-									<input class="form-check-input text-center" type="checkbox" name='checkbox{{image.id}}' value="{{image.id}}" id="id_check">
-								</p>
-							</div>
-							{% endif %}
-
-							<div class='col-12 col-md-1'>
-								<p class='p-p'>
-									#{{ image.id }}
-								</p>
-							</div>
-							<div class='col-12 col-md-4'>
-								<p class='p-p'>
-									{{ image.project_id|title}}
-								</p>
-							</div>
-
-							<div class='col-12 col-md-4'>
-								<p class='p-p'>
-									{{ image.title|title }} 
-								</p>
-							</div>
-							<div class='col-12 text-center col-md-12'>
-								<img class='image-list' load='lazy' 
+						<div class="image-card">
+							<input 
+								class="noshow checkImage form-check-input" 
+								type="checkbox" name='checkbox{{image.id}}' 
+								value="{{image.id}}" 
+								id="id_check{{image.id}}"
+							>
+						{% endif %}
+							<label for="id_check{{image.id}}" class="image-card-info">
+								<img 
+								class='image-list' 
+								load='lazy' 
 								src="{{ image.image_link }}" 
-								
 								>
-							</div>
-						</div>
-						<hr>
-					</div>
+							
+								<div class="row title">
 
+
+									<div class='col-6'>
+										<p class='p-p'>
+											ID: #{{ image.id }}
+										</p>
+									</div>
+									
+									<div class='col-12'>
+										<p class='p-p'>
+											Project: {{ image.project_id|title}}
+										</p>
+									</div>
+
+									<div class='col-12'>
+										<p class='p-p'>
+											Title: {{ image.title|title }} 
+										</p>
+									</div>
+	
+		
+								</div>
+							</label >
+						</div>
+						
+					</div>
 					{% endfor %}
 
 				</div>
 				<div class='row scroll-row'>
-
+					{% if last_page >= 2 %}
 					<div class="col-12 text-center mb-4">
 						<button class='btn-cust' 
 							value="{% url 'change-gal' gal subgal %}" 
@@ -215,7 +241,7 @@
 							>
 							Load More
 						</button>
-						
+					{% endif %}
 						<section class="dots-container" id='dotsLoader'>
 							<div class="dot"></div>
 							<div class="dot"></div>
@@ -236,11 +262,10 @@
 
 </div>
 
-
 <script src={% static 'js/loadMore.js' %}></script>
 
 <script src={% static 'js/mini_gallery.js' %}></script>
 <script src={% static 'js/select_all.js' %}></script>
-
+<script src={% static 'js/toggle.js' %}></script>
 {% endblock %}
 

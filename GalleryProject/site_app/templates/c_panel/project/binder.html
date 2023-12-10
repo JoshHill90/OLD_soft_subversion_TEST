@@ -20,7 +20,7 @@
 	</div>
 
 	<div class='col-6 col-md-3'>
-		<a href="{% url 'create-invoice' %}">
+		<a href="#">
 			<div class='section-pad addLoader text-center'>
 				<i class="fa-solid fa-credit-card fa-2xl"></i>
 				<p class='mt-2'>Make a Payment</p>
@@ -55,8 +55,10 @@
 		<div class='col-4'>
 			<div class='sections'>
 				<h1 class='h1-1'>Pending Project Request</h1>
+				<hr>
 				<div class='row mt-4 '>
 					<div class="overflow-auto scroll-menu">
+					{% if project_request %}
 						{% for project in project_request %}
 						{% if project.status == 'pending' %}
 						<div class='col-12 mt-1 inv-card'>
@@ -71,9 +73,23 @@
 									<button href="#" class="btn-cust btn-cust-color" onclick="window.location.href='{% url 'request-status' project.slug %}'">Details</button>
 								</div>
 							</div>
+							<hr>
 						</div>
+
 						{% endif %}
 						{% endfor %}
+					{% else %}
+					<div class='col-12 mt-1 inv-card'>
+						<div class='row text-center inv-card-content'>
+							<div class='col-12'>
+								<p class="p-p">
+								No project request at this time
+								</p>
+								<hr>
+							</div>
+						</div>
+					</div>
+					{% endif %}
 					</div>
 				</div>
 			</div>
@@ -82,8 +98,10 @@
 		<div class='col-8'>
 			<div class='sections'>
 				<h1 class='h1-1'>Open Projects</h1>
+				<hr>
 				<div class='row mt-4'>
 					<div class="overflow-auto scroll-menu">
+					{% if project_list %}
 						{% for project in project_list %}
 						{% if project.status != 'closed' %}
 						<div class='col-12 mt-1 inv-card'>
@@ -109,8 +127,21 @@
 								</div>
 							</div>
 						</div>
+						<hr>
 						{% endif %}
 						{% endfor %}
+					{% else %}
+					<div class='col-12 mt-1 inv-card'>
+						<div class='row text-center inv-card-content'>
+							<div class='col-12'>
+								<p class="p-p">
+								No projects at this time
+								</p>
+								<hr>
+							</div>
+						</div>
+					</div>
+					{% endif %}
 					</div>
 				</div>
 			</div>

@@ -1,0 +1,87 @@
+<div id="detailsWindow{{ forloop.counter }}" class="details-modal">
+
+	<!-- Modal content -->
+	<div class="details-content overflow-auto">
+		<span class="closeDetails" id="closeDetails{{ forloop.counter }}"><i class="fa-solid fa-circle-xmark fa-lg icon-color"></i></span>
+		<div class='row'>
+			<div class='col-12 col-md-4'>
+				<h1 class='h1-1'>
+					Client Details
+				</h1>
+			</div>	
+
+			<div class='col-6 mt-1 col-md-2'>
+				<form method="post" action="{% url 'o-client' %}">
+					{% csrf_token %}
+					<input type="hidden" name="object_id" value="{{ clients.id }}">
+						<button  class='btn-icon w-100' type="submit" name="delete" value="Delete">
+						<i class="fa-solid fa-user-slash fa-2xl"></i>
+						</button>
+				</form>
+			</div>
+
+		</div>
+		<hr>
+		<div class='row mt-4 mb-4'>
+			<div class='col-12 col-md-6'>
+				<h1 class='h1-1'>
+					Client Information
+				</h1>
+				<hr>
+
+				<div class='section-small'>
+					<div class='row mt-4 mb-4'>
+						<div class='col-12'>
+							<p class="p-p">
+								Name: {{clients.user_id.first_name }} {{clients.user_id.last_name }}
+							</p>
+						</div>
+						<div class='col-12'>
+							<p class="p-p">
+								Address: <br> {{clients.address_1 }} <br> {{clients.address_2 }} <br> {{clients.city }}, {{clients.state }} {{clients.zip_code }}
+							</p>
+						</div>		
+						<div class='col-12'>
+							<p class="p-p">
+								Contact: <br> {{clients.email }} <br> {{clients.phone }}
+							</p>
+						</div>	
+					</div>
+				</div>	
+			</div>
+
+			<div class='col-12 col-md-3'>
+				<h1 class='h1-1'>
+					Client Projects
+				</h1>
+				<hr>
+
+				<div class='section-small'>
+					{% for project in project_list %}
+					{% if project.client_id == clients %}
+					<a href="{% url 'o-project-details' project.slug %}">
+						{{ project }}
+						</a>
+					{% endif %}
+					{% endfor %}
+				</div>	
+			</div>
+			<div class='col-12 col-md-3'>
+				<h1 class='h1-1'>
+					Project Request
+				</h1>
+				<hr>
+
+				<div class='section-small'>
+					{% for project in project_request %}
+					{% if project.client_id == clients and project.status == 'pending' %}
+					<a href="{% url 'request-details' project.slug %}">
+					{{ project }}
+					</a>
+					{% endif %}
+					{% endfor %}
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>

@@ -13,6 +13,7 @@ calendar
   text-align: center; 
   width: 100%;
   height: 50%;
+  color: var(--text-color);
 }
 
 .day {
@@ -21,7 +22,7 @@ calendar
   height: 10vh;
   border-radius: 20px;
   padding: 1px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-shadow: var(--bg-shadow);
   background-image:var(--lingrand-bar);
   z-index: 2;
 }
@@ -35,18 +36,19 @@ calendar
   position: relative;
 }
 .day-box:active {
-  background-color: #7b2be47a;
+  background-color: #120720da;
   background-image: none;
 }
 
 .event-tag {
-
+  position: absolute;
   width: 20px;
   height: 20px;
   background-color: #8BC6EC;
-  background-image: linear-gradient(135deg, #2be4c8 0%, #7933FC 100%);
+  background-image: linear-gradient(135deg,var(--mc2-4) 0%, var(--mc-4)100%);
   border-radius: 50%;
-  margin-left: 2.5rem;
+  left: 39%;
+  top: 50%;
   animation: pulse 3s ease-in-out infinite;
 }
 
@@ -57,7 +59,7 @@ calendar
   left: 30%;
   top: 50%;
   background-color: #8BC6EC;
-  background-image: linear-gradient(135deg, #2be4c8 0%, #7933FC 100%);
+  background-image: linear-gradient(135deg,var(--mc2-4) 0%, var(--mc-4)100%);
   width: 20px;
   height: 20px;
 }
@@ -93,14 +95,14 @@ calendar
   top: -3px;
   width: 110%;
   left: -5%;
-  background-color: #e7e7e7;
+  background-color: var(--bg-5);
 }
 .day-tail {
   border-radius: 15px;
   width: 100%;
   height: 95%;
   position: relative;
-  background-color: #d6d6d6c2!important;
+  background-color: var(--mc-6)!important;
 }
 
 .sm-day p {

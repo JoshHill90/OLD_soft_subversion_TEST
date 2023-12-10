@@ -46,12 +46,12 @@ Animation effects
   }
 
 .slide-down{
-  transform: translateY(25%);
+  transform: translateY(-25%);
   opacity: 0;
 }
 
 .slide-up{
-  transform: translateY(45%);
+  transform: translateY(5%);
   opacity: 0;
 }
 
@@ -87,4 +87,34 @@ Animation effects
 .slide-right.appear {
   transform: translateX(0);
   opacity: 1;
+}
+
+
+@media (max-width:774px) and (orientation: portrait) {
+  .slide-up{
+    transform: translateY(5%);
+
+  }
+
+}
+
+.hero-image-runner {
+	animation: hero-image-animation 20s ease-in-out infinite;
+}
+
+@keyframes hero-image-animation {
+  0% {
+    /* transform: translateX(-100%) rotate(270deg); */
+    transform: translateX(-100%);
+  }
+
+  50% {
+    /* transform: translateX(100%) rotate(-90deg); */
+    transform: translateX(0);
+  }
+
+  100% {
+    /* transform: translateX(-100%) rotate(270deg); */
+    transform: translateX(-100%);
+  }
 }

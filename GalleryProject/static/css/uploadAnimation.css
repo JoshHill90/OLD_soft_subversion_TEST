@@ -1,0 +1,104 @@
+.loaderVal {
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loaderVal-text {
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.loaderVal-bar-1 {
+  width: 30%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--mc2-3);
+  animation: loaderVal-bar-animation 2s ease-in-out infinite;
+}
+
+.loaderVal-bar-2 {
+	width: 30%;
+	height: 10px;
+	border-radius: 5px;
+	background-color: var(--mc-3);
+	animation: loaderVal-bar-animation 2s ease-in-out infinite;
+}
+
+.down-arrow {
+	animation: down-arrow-animation 2s ease-in-out infinite;
+}
+
+@keyframes loaderVal-bar-animation {
+  0% {
+    /* transform: translateX(-100%) rotate(270deg); */
+    transform: translateX(-100%);
+  }
+
+  50% {
+    /* transform: translateX(100%) rotate(-90deg); */
+    transform: translateX(100%);
+  }
+
+  100% {
+    /* transform: translateX(-100%) rotate(270deg); */
+    transform: translateX(-100%);
+  }
+}
+
+
+.loaderFile{
+  position: relative;
+  width: calc(160px / 0.707);
+  height: 8px;
+  background: repeating-linear-gradient(-45deg, var(--mc2-4) 0 30px, var(--mc2-2) 0 40px) left/200% 100%;
+  animation: i3 2s infinite linear;
+  border-radius: 2px;
+  border: 1px solid var(--mc2-6);
+  padding: 5px;
+  margin: auto;
+}
+
+.loadedFile{
+  position: relative;
+  width: calc(160px / 0.707);
+  height: 8px;
+  background-color: var(--mc2-6) ;
+  border-radius: 2px;
+  border: 1px solid var(--mc2-3);
+  padding: 5px;
+  margin: auto;
+}
+.loadedFailed {
+  position: relative;
+  width: calc(160px / 0.707);
+  height: 8px;
+  background-color: var(--bg-3) ;
+  border-radius: 2px;
+  border: 1px solid var(--mc-7);
+  padding: 5px;
+  margin: auto;
+}
+@keyframes i3 {
+  100% {
+    background-position: right
+  }
+}
+
+
+
+.section-specail {
+	font: var(--p);
+	color: #ffffff;
+	background-color: var(--mc-4);
+	padding: 10px 21px;
+	border: 2px solid var(--mc-6);
+	box-shadow: var(--bg-shadow);
+	border-radius: 16px;
+	align-items: center;
+	margin: 5px;
+	width: auto;
+	height: 80vh;
+}

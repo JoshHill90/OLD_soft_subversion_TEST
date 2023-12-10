@@ -14,9 +14,7 @@
 					</h1>
 				</div>		
 				<div class='col-4 mt-1 col-md-1'>
-					<button  class='btn-icon w-100'
-					id="detailsBtnCal" 
-					onclick="handleModal('detailsWindowCal', 'detailsBtnCal', 'closeDetailsCal')">
+					<button  class='btn-icon w-100' id="detailsBtnCal" onclick="handleModal('detailsWindowCal', 'detailsBtnCal', 'closeDetailsCal')">
 						<i class="fa-regular fa-calendar-plus fa-2xl"></i>
 					</button>
 				</div>	
@@ -103,12 +101,12 @@
 		
 			{% endfor %}
 
-			<div class="caption-container text-center">
-				<p id="caption"></p>
-			
-				<a class="prev-mini" onclick="plusSlides(-1)"><i class="fa-solid fa-circle-arrow-left fa-2xl icon-color"></i></a>
+			<div class='section-min text-center mt-4'>
 
-				<a class="next-mini" onclick="plusSlides(1)"><i class="fa-solid fa-circle-arrow-right fa-2xl icon-color"></i></a>
+			
+				<button class="btn-icon" onclick="plusSlides(-1)"><i class="fa-solid fa-circle-arrow-left fa-2xl"></i></button>
+
+				<button class="btn-icon" onclick="plusSlides(1)"><i class="fa-solid fa-circle-arrow-right fa-2xl"></i></button>
 			</div>	
 		</div>
 	</div>
@@ -127,12 +125,7 @@
 				
 			{% for date in project_events %}
 
-				<div class='col-2'>
-					<p class='p-p'>
-					{{ date.id }}
-					</p>
-				</div>
-				<div class='col-4'>
+				<div class='col-6'>
 					<p class='p-p'>
 					{{ date.date|date:'m/d/y' }}
 					</p>

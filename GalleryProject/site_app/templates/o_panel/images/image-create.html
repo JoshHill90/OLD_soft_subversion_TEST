@@ -1,0 +1,60 @@
+{% extends 'panel.html' %}
+{% block title %}Upload Link{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="section-med p-p">
+    <h1>Set Image Details</h1>
+
+    <div class="form-group p-p">
+        <form method=POST enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class='row'>
+
+                <div class='col-12 col-md-6'>
+                    <label class='mt-2' for="id_title">Title:</label>
+                    <input type="text" name="title" class="form-control" placeholder="Title for the post" maxlength="255" required id="id_title">
+
+                    <select type="text" name="tag"  class="form-select" multiple id="id_tag" hidden>
+                    
+                    </select>
+                    <label class='mt-2' for="id_display">Display:</label>
+                    <select name="display" class="form-select" multiple id="id_display">
+                        {% for display in display_objects %}
+
+                        <option value="{{display.id}}">{{display.name|title}}</option>
+
+                        {% endfor %}
+                    </select>
+                </div>
+                
+
+                <div class='col-12 col-md-6'>
+                    <label class='mt-2' for="id_project_id">Project id:</label>
+                    <select name="project_id" class="form-select" id="id_project_id">
+                        {% for project in project_objects %}
+
+                        <option value="{{project.id}}">{{project.name}}</option>
+
+                        {% endfor %}
+                    </select>
+
+                    <label class='mt-2' for="id_tagCreate">Add a Tag:</label>
+                    <input type="text" name="tagCreate" class="form-control" id="id_tagCreate">
+
+                    <label class='mt-2' for="id_tag">Tags</label>
+                    <div class='row' id="tags"></div>
+                </div>
+                <div class='col-12 mt-4 mb-4'>
+                    <button type="submit" class="btn-cust addLoader" id='clicker' onclick=clickedHide()>
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src={% static 'js/tags.js' %}></script>
+{% endblock %}

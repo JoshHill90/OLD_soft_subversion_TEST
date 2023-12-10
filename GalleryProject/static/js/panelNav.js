@@ -12,7 +12,7 @@ function clickedHide() {
   mainWindow.style.display = 'none';
 }
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function() {
   const toggleIcons = document.querySelectorAll('.header_toggle');
   const nav = document.getElementById('nav-bar');
   const bodypd = document.getElementById('body-pd');

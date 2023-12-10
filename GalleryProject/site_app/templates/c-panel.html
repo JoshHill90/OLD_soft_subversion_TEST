@@ -10,12 +10,15 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel='stylesheet' href="{% static 'css/panel.css' %}">
+    <link rel='stylesheet' href="{% static 'css/panel.css' %}">
+	<link rel='stylesheet' href="{% static 'css/panel-color.css' %}">
 	<link rel='stylesheet' href="{% static 'css/panel_scroll.css' %}">
 	<link rel='stylesheet' href="{% static 'css/panel_sections.css' %}">
+	<link rel='stylesheet' href="{% static 'css/panel_modal.css' %}">
 	<link rel='stylesheet' href="{% static 'css/calendar.css' %}">
 	<link rel='stylesheet' href="{% static 'css/window_load.css' %}">
 	<link rel='stylesheet' href="{% static 'css/animation.css' %}">
+	<link rel='stylesheet' href="{% static 'css/mini-gallery.css' %}">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
 
@@ -34,7 +37,9 @@
     <div class="header_toggle">
         <i class="fa-solid fa-ellipsis fa-2xl menu-icon"></i>
     </div>
-	 <i class="fa-solid fa-right-from-bracket fa-2xl home-i"></i>
+	<a href="{% url 'logout' %}" class=" btn-icon addLoader"> 
+		<i class="fa-solid fa-right-from-bracket fa-2xl"></i>
+   </a>
 </header>
 <div class="l-navbar" id="nav-bar">
 	<nav class="nav">

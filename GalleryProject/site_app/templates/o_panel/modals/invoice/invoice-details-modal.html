@@ -161,19 +161,21 @@
 								</div>
 							</div>
 							<hr>
-							<div class="overflow-auto section-scroll">
-							{% for item in line_items %}
-								{% if item.billing_id.id == bill.id %}
+
+							<div class="section-min">
+								
+							{% for lines in line_items %}
+								{% if lines.billing_id == bill %}
 								<div class='col-12 text-center' style='width:95%'>
 									<div class='row mt-1'>
 										<div class='col-4'>
-											<p class="p-p">{{ item.receipt }}</p>
+											<p class="p-p">{{ lines.receipt }}</p>
 										</div>
 										<div class='col-4'>
-											<p class="p-p">${{ item.amount|floatformat:2 }}</p>
+											<p class="p-p">${{ lines.amount|floatformat:2 }}</p>
 										</div>
 										<div class='col-4'>
-											<p class="p-p">{{ item.item_id }}</p>
+											<p class="p-p">{{ lines.item_id }}</p>
 										</div>
 									</div>
 									<hr>

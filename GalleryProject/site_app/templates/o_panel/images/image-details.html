@@ -1,0 +1,195 @@
+
+{% extends 'panel.html' %}
+{% load static %}
+{% block title %}O | {{ gal }} Gallery{% endblock %}
+{% block css %}
+	<link rel='stylesheet' href="{% static 'css/imageCard.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class='row mt-4 mb-4'>
+
+
+<div class='col-12 mt-4 mb-4'>
+	<input id='subgal' value="none" disabled hidden>
+	<input id='lastPage' value="{{ last_page }}" disabled hidden>
+	<input id='pageName' value="gal" disabled hidden>
+	<h1 class='h1-1 text-center'>Image Gallery</h1>
+	<hr>
+	<div class='col-12 mt-4 mb-4'>
+		<div class='section-med'>
+			<h1 class='h1-1 mb-2'>Image Search and Filter</h1>
+			<form method="GET" action="." class='form-group'>
+				<div class='row'>
+					<div class='col-12 col-md-4 mb-2'>
+						<input class="form-control"  type="search" name="tags" placeholder="Tags">
+					</div>
+					<div class='col-12 col-md-4 mb-2'>
+						<input class="form-control" list="project-list" type="search" name="project" placeholder="Project">
+						<datalist id="project-list">
+						{% for project in project_list %}
+							<option value="{{ project.name }}"></option>
+						{% endfor %}
+						</datalist>
+					</div>
+					<div class='col-12 col-md-4 mb-2'>
+						<input class="form-control" 
+						list="client-list" 
+						type="search" 
+						name="client" 
+						placeholder="Client"
+						>
+						<datalist id="client-list">
+						{% for client in client_info %}
+							<option value="{{ client.client_details.client }}"></option>
+						{% endfor %}
+						</datalist>
+					</div>
+				</div>
+				<div class='row'>
+					<div class="col-12 col-md-3 mt-4">
+						<select class="form-select" type="select" name="order">
+							<option value="Newest">Newest</option>
+							<option value="Oldest">Oldest</option>
+						</select>
+					</div>                
+					<div class="col-12 col-md-3 mt-4">
+						<button type="submit" class="btn-cust btn-cust-color mt-4">Search</button>
+					</div>
+					<div class="col-12 col-md-3 mt-4">
+						<button type="submit" onclick="{% url 'image-details'%}" class="btn-cust btn-cust-color mt-4">Clear Search</button>
+					</div>
+				</div>
+			</form>
+
+			<form method=POST action="{% url 'image-details' %}" class='mt-4 section-med form-group'>
+				{% csrf_token %}
+				<div class="row" >
+					<div class='col-12'>
+						<h1 class='h1-1'>
+							Gallery Controls 
+						</h1>
+						<hr>
+						<p class='p-p'>
+							Select images to delete them. 
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class='col-12 col-md-3 mb-4'>
+						<button class='btn-cust' id='delete' name="delete" value="Delete">
+							Delete
+						</button>
+					</div>
+	
+					<div class='col-12'>
+						<p class="p-p">
+							Select All
+							<input class="form-check-input text-center" onclick='toggle(this)' name='selectAll' type="checkbox" value="" id="selectAll">
+						</p>
+	
+					</div>
+				</div>
+				<hr>
+
+					
+				<div class="row text-center" id='loaderRow'>
+					{%for image in image_sets %}
+					<div class="col mt-4 mb-4 slide-up" id='slide-in'>
+						{% if image in current_list %}
+						<div class="image-card-a">
+							<input 
+								class="noshow checkImage form-check-input" 
+								checked type="checkbox" 
+								name='checkbox{{image.id}}' 
+								value="{{image.id}}" 
+								id="id_check{{image.id}}"
+							>
+							{% else %}
+						<div class="image-card">
+							<input 
+								class="noshow checkImage form-check-input" 
+								type="checkbox" name='checkbox{{image.id}}' 
+								value="{{image.id}}" 
+								id="id_check{{image.id}}"
+							>
+						{% endif %}
+							<label for="id_check{{image.id}}" class="image-card-info">
+								<img 
+								class='image-list' 
+								load='lazy' 
+								src="{{ image.image_link }}" 
+								>
+							
+								<div class="row title">
+
+
+									<div class='col-6'>
+										<p class='p-p'>
+											ID: #{{ image.id }}
+										</p>
+									</div>
+									
+									<div class='col-12'>
+										<p class='p-p'>
+											Project: {{ image.project_id|title}}
+										</p>
+									</div>
+
+									<div class='col-12'>
+										<p class='p-p'>
+											Title: {{ image.title|title }} 
+										</p>
+									</div>
+	
+		
+								</div>
+							</label >
+						</div>
+						
+					</div>
+					{% endfor %}
+
+				</div>
+				<div class='row scroll-row'>
+					{% if last_page >= 2 %}
+					<div class="col-12 text-center mb-4">
+						<button class='btn-cust' 
+							value="{% url 'image-details' %}" 
+							type='button' 
+							name='loadMore' 
+							id='loadMore'
+							style='display:inline-block'
+							>
+							Load More
+						</button>
+					{% endif %}
+						<section class="dots-container" id='dotsLoader'>
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+							<div class="dot"></div>
+						</section>
+						<hr>
+					</div>
+				</div>
+
+			</form>
+			
+		</div>
+		
+	</div>
+
+
+</div>
+
+<script src={% static 'js/loadMore.js' %}></script>
+
+<script src={% static 'js/mini_gallery.js' %}></script>
+<script src={% static 'js/select_all.js' %}></script>
+<script src={% static 'js/toggle.js' %}></script>
+
+{% endblock %}
+
